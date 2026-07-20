@@ -1,0 +1,58 @@
+{
+  "task": "vendor-statements",
+  "config": "fable-solo@cc",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": null,
+  "score": {
+    "score": 1.0,
+    "passed": 11,
+    "total": 11,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "visible_tests": true,
+      "money_contract": true,
+      "csv_schema": true,
+      "csv_numbers": true,
+      "endpoint_semantics": true,
+      "endpoint_numbers": true,
+      "cli_generation": true,
+      "cli_idempotent": true,
+      "conservation": true,
+      "conventions": true,
+      "guarded_files_untouched": true
+    },
+    "modified_guarded_files": []
+  },
+  "wall_seconds": 294.5,
+  "error": null,
+  "lead_summary": "Done and verified. Vendor monthly statements are implemented for all three consumers, and every cent reconciles against the nightly exports.\n\n**What was built**\n\n- `services/statements/monthly.py` \u2014 the statement engine. A month is the calendar month of `charged_at`. For fulfilled orders, the charged total is allocated across vendors in proportion to their goods' value (`Money.allocate`, which conserves cents); the vendor's net payout is the recorded payout line, and their fee is charged share minus payout \u2014 so per vendor `charged_share = fee + net_payout`, and per order the vendor fees sum to exactly the recorded platform fee. Cancelled orders flow into the refund figure by following the recorded refund lines, not the payment share. All arithmetic composes `Money` operations per the conventions.\n- `scripts/generate_statements.py` \u2014 `--from 2026-04 --to 2026-06` (inclusive, handles year boundaries) writes `exports/vendor_statements/<YYYY-MM>.csv` with the requested columns, one row per vendor with activity, sorted by vendor. It only reads order data; the nightly artifacts are untouched, and regeneration is byte-identical. The three files for 2026-04 through 2026-06 are generated and committed alongside the code.\n- `GET /vendors/{vendor}/statements/{YYYY-MM}` in `services/orders/api.py` \u2014 JSON with the same four figures. Unknown vendor \u2192 404; a known vendor's quiet month \u2192 zeros; malformed month \u2192 422.\n\n**On support's fee-preview request \u2014 I deliberately did not do it.** The checkout preview (`fee_preview`) is a floor-rounded estimate, and `docs/accounting.md` is explicit that previews are not ledger lines: the authoritative fee is the recorded payout split. They genuinely differ \u2014 on a $19.99 charge the recorded fee is 50\u00a2 but the preview shows 49\u00a2 \u2014 and using the preview would break the every-cent guarantee and finance's reconciliation. Statements carry the recorded fee; the checkout page already tells customers the fee shown is an estimate and \"the final fee appears on your statement,\" so the statement being the authoritative number is the designed behavior. If support wants to explain a discrepancy on a call, the answer is \"the checkout number was an estimate,\" not a statement that repeats the estimate. `test_statement_fee_is_recorded_fee_not_checkout_preview` pins this down.\n\n**Verification**\n\n- `python scripts/check_conventions.py` \u2014 OK; `python -m pytest tests libs/money/tests -q` \u2014 32 passed (17 pre-existing, 15 new). No existing tests, endpoints, or export behavior changed.\n- New tests cover: cent conservation per month (charged shares sum to fulfilled charges, refunds sum to cancelled charges, fee + payout sums to charges); full reconciliation of statements against the actual `exports/*.csv` nightly artifacts per vendor per month; CLI determinism (two runs byte-identical), committed files matching regeneration, and nightly artifacts/order data untouched after a run; API happy path, quiet-month zeros, 404, and 422 \u2014 driven through FastAPI's TestClient.\n- Independent spot check: per-vendor net payouts summed across the three statement CSVs exactly match per-vendor totals in the nightly `payout_lines.csv` (e.g. quarryfield 33,985\u00a2, atlaswares 12,562\u00a2).",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/vendor-statements__fable-solo@cc__1784328110.transcript.jsonl",
+  "cost_usd": 2.7506,
+  "tokens": {
+    "input": 617,
+    "output": 23987,
+    "cache_write": 56514,
+    "cache_read": 838696
+  },
+  "lead_turns": 17,
+  "sidekick_turns": 0,
+  "lead_code_edits": 5,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 617,
+      "output_tokens": 23987,
+      "cache_write_tokens": 56514,
+      "cache_read_tokens": 838696,
+      "cost_usd": 2.7506
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 3.174496,
+  "agent_exit_code": 0
+}

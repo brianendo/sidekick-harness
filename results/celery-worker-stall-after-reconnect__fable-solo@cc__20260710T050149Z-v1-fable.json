@@ -1,0 +1,50 @@
+{
+  "task": "celery-worker-stall-after-reconnect",
+  "config": "fable-solo@cc",
+  "driver": "cc",
+  "imported_from": "/Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/runs/20260710T050149Z-v1-fable",
+  "task_version": 1,
+  "lead_model": null,
+  "sidekick_model": null,
+  "score": {
+    "score": 1.0,
+    "passed": 4,
+    "total": 4,
+    "detail": "imported grade.json (task v1)",
+    "checkpoints": {
+      "f2p_contract": true,
+      "repro_test": true,
+      "self_consistent": true,
+      "tests_untampered": true
+    }
+  },
+  "wall_seconds": 917,
+  "error": null,
+  "transcript": "/Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/runs/20260710T050149Z-v1-fable/transcript.jsonl",
+  "cost_usd": 5.1973,
+  "tokens": {
+    "input": 17167,
+    "output": 30206,
+    "cache_write": 89550,
+    "cache_read": 2395966
+  },
+  "lead_turns": 31,
+  "sidekick_turns": 0,
+  "lead_code_edits": 2,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 17167,
+      "output_tokens": 30206,
+      "cache_write_tokens": 89550,
+      "cache_read_tokens": 2395966,
+      "cost_usd": 5.1973
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 5.868936
+}

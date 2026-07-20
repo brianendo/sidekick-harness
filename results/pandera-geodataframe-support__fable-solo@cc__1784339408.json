@@ -1,0 +1,98 @@
+{
+  "task": "pandera-geodataframe-support",
+  "config": "fable-solo@cc",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": null,
+  "score": {
+    "score": 1.0,
+    "passed": 8,
+    "total": 8,
+    "detail": "weighted checkpoints (task v2 grader)",
+    "checkpoints": {
+      "core_schema": true,
+      "core_model": true,
+      "io_roundtrip": true,
+      "infer_schema": true,
+      "pydantic_field": true,
+      "repro_test": true,
+      "self_consistent": true,
+      "existing_suite_regression": true
+    },
+    "tails": {
+      "core_schema": [
+        "hidden_tests/test_geo_schema.py::test_schema_coercion_preserves_geo PASSED [100%]",
+        "",
+        "============================== 3 passed in 1.05s ==============================="
+      ],
+      "core_model": [
+        "hidden_tests/test_geo_model.py::test_model_failures_still_raise PASSED   [100%]",
+        "",
+        "============================== 2 passed in 0.88s ==============================="
+      ],
+      "io_roundtrip": [
+        "hidden_tests/test_geo_io.py::test_json_roundtrip_still_validates_geodataframe PASSED [100%]",
+        "",
+        "============================== 1 passed in 0.90s ==============================="
+      ],
+      "infer_schema": [
+        "hidden_tests/test_geo_infer.py::test_infer_schema_validates_geodataframe PASSED [100%]",
+        "",
+        "============================== 1 passed in 0.91s ==============================="
+      ],
+      "pydantic_field": [
+        "hidden_tests/test_geo_pydantic.py::test_pydantic_field_rejects_invalid_frame PASSED [100%]",
+        "",
+        "============================== 2 passed in 0.90s ==============================="
+      ],
+      "self_consistent": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "======================== 86 passed, 1 warning in 1.54s ========================="
+      ],
+      "repro_test": [
+        "failures on pristine=999 vs own tree=0",
+        "=============================== 1 error in 1.05s ==============================="
+      ],
+      "existing_suite_regression": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "======================== 66 passed, 1 warning in 1.58s ========================="
+      ]
+    }
+  },
+  "wall_seconds": null,
+  "error": null,
+  "salvaged": "run.py diff-archiving crashed on binary content AFTER the session completed; session, transcript, and workspace intact (bug fixed in run.py same day)",
+  "lead_summary": "Done \u2014 first-class GeoPandas validation is implemented, tested, and verified. `pandera.geopandas` now exists with the same ergonomics as the pandas API, and `validate()` is guaranteed to hand back a `geopandas.GeoDataFrame` with active geometry and CRS intact.\n\n## What was built\n\n**New modules**\n- `pandera/geopandas.py` \u2014 the entrypoint (`import pandera.geopandas as pa`), mirroring `pandera.polars`: exports `GeoDataFrameSchema`, `GeoDataFrameModel`, `Column`, `Check`, `Field`, `Geometry`, `check`/`dataframe_check`, decorators, `infer_schema`, and the `GeoDataFrame`/`GeoSeries` typing annotations.\n- `pandera/api/geopandas/container.py` \u2014 `GeoDataFrameSchema(DataFrameSchema)`. It reuses the pandas validation backend (mirrored into the backend registry, which is keyed by exact schema class), then converts the validated result to a `GeoDataFrame`, activating the geometry column (preferring one named `geometry`, else the only geometry-typed column). This fixes the concrete type-loss I confirmed empirically: validating a plain `pd.DataFrame` with a coercible (e.g. WKT) geometry column through a pandas schema returns a plain DataFrame; the geo schema returns a `GeoDataFrame` with the schema's CRS applied.\n- `pandera/api/geopandas/model.py` \u2014 `GeoDataFrameModel(DataFrameModel)` whose `build_schema_` produces a `GeoDataFrameSchema`, so `Field`, custom checks, `Config` (coercion etc.), `@check_types`, and pydantic integration all inherit for free.\n- `pandera/schema_inference/geopandas.py` \u2014 `infer_schema(gdf)` returns a `GeoDataFrameSchema` (and enriches geometry columns with the data's CRS); GeoSeries input falls back to `SeriesSchema`.\n\n**Toolchain wiring** (`pandera/io/pandas_io.py`, ~20 lines)\n- Added `\"geopandas\"` to the `dataframe_library` tag choices; serialization now infers the tag from the schema class (checked by fully-qualified name, so geopandas is never imported for plain-pandas users), and deserialization reconstructs a `GeoDataFrameSchema` when the tag is present. JSON and YAML round-trips both return the geo class, and the loaded schema still returns a `GeoDataFrame` from `validate()`.\n\n**Docs**: rewrote `docs/source/geopandas.md` to lead with the new API (docstring examples verified with xdoctest, which CI runs), and added the new classes to the API-reference RST files and the AGENTS.md entrypoint list.\n\n## Regression tests\n\n`tests/geopandas/test_geopandas_api.py` \u2014 20 tests covering the module surface, GeoDataFrame return type + CRS from both APIs, geometry restoration from plain DataFrames (including a contrast assertion that the pandas schema loses the type), non-standard geometry column names, error raising (eager and lazy), Field/checks/Config coercion, `@check_types`, JSON/YAML/model round-trips, inference (including CRS capture), pydantic field accept/reject, and plain-pandas-unchanged. I verified they fail on today's code by temporarily removing the new modules (collection ImportError).\n\n## Verification\n\n- New tests: 20/20 pass. Full `tests/geopandas`: 86/86 (66 pre-existing untouched).\n- Broad suite (`tests/base`, `io`, `pandas`, `polars`, `geopandas`, `strategies`, `hypotheses`): **3,764 passed, 25 skipped, 8 xfailed**, with one failure \u2014 `test_polars_decimal_from_parametrized_dtype`, caused by polars 1.33 changing its default Decimal precision (38 vs the expected 28); it exercises the polars engine only, which this change doesn't touch. Backends not installed here (pyspark, dask, modin, ibis, xarray) weren't run.\n- Ruff lint/format clean on all new files; `pandera.io.pandas_io` verified to import without pulling in geopandas.",
+  "transcript": "results/pandera-geodataframe-support__fable-solo@cc__1784339408.transcript.jsonl",
+  "contamination_hits": [
+    "pip\\s+install\\s+(?!-e\\b|\\.\\[|\\\"\\.|'\\.)[a-zA-Z] x2"
+  ],
+  "cost_usd": 12.7604,
+  "tokens": {
+    "input": 165,
+    "output": 62610,
+    "cache_write": 130026,
+    "cache_read": 8002973
+  },
+  "lead_turns": 83,
+  "sidekick_turns": 0,
+  "lead_code_edits": 16,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 165,
+      "output_tokens": 62610,
+      "cache_write_tokens": 130026,
+      "cache_read_tokens": 8002973,
+      "cost_usd": 12.7604
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 13.735643000000007
+}

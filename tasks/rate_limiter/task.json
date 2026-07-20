@@ -1,0 +1,4 @@
+{
+  "name": "rate_limiter",
+  "prompt": "Complete the task described in spec.md. Hidden tests will be run against your workspace when you finish; the spec tells you the exact API they expect."
+}

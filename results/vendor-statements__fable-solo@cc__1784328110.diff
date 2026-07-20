@@ -1,0 +1,548 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-04.csv /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-04.csv
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-04.csv	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-04.csv	2026-07-17 15:46:13
+@@ -0,0 +1,6 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-04,4623,578,115,4508
++brightloom,2026-04,3896,1647,98,3798
++fernco,2026-04,2660,1132,66,2594
++northmill,2026-04,2411,334,61,2350
++quarryfield,2026-04,10461,6853,261,10200
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-05.csv /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-05.csv
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-05.csv	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-05.csv	2026-07-17 15:46:13
+@@ -0,0 +1,5 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-05,7460,0,186,7274
++fernco,2026-05,6179,1548,154,6025
++northmill,2026-05,3365,364,84,3281
++quarryfield,2026-05,12648,635,316,12332
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-06.csv /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-06.csv
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/exports/vendor_statements/2026-06.csv	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/exports/vendor_statements/2026-06.csv	2026-07-17 15:46:13
+@@ -0,0 +1,6 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-06,800,5949,20,780
++brightloom,2026-06,1147,1582,28,1119
++fernco,2026-06,9125,0,228,8897
++northmill,2026-06,1935,1440,48,1887
++quarryfield,2026-06,11747,3427,294,11453
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/scripts/generate_statements.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/scripts/generate_statements.py
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/scripts/generate_statements.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/scripts/generate_statements.py	2026-07-17 15:45:21
+@@ -0,0 +1,40 @@
++#!/usr/bin/env python3
++"""Regenerate per-vendor monthly statement CSVs on demand.
++
++Usage:
++    python scripts/generate_statements.py --from 2026-04 --to 2026-06
++
++Writes one file per month in the inclusive range to
++exports/vendor_statements/<YYYY-MM>.csv (override with --out). Reads the
++order data only; the nightly artifacts in exports/ are never touched, and
++regenerating a period reproduces identical files.
++"""
++import argparse
++import sys
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++sys.path.insert(0, str(ROOT))
++
++from services.statements.monthly import month_range, write_monthly_statements  # noqa: E402
++
++DEFAULT_OUT = ROOT / "exports" / "vendor_statements"
++
++
++def main(argv: list) -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--from", dest="start", required=True, metavar="YYYY-MM")
++    parser.add_argument("--to", dest="end", required=True, metavar="YYYY-MM")
++    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
++    args = parser.parse_args(argv)
++    try:
++        months = month_range(args.start, args.end)
++    except ValueError as exc:
++        parser.error(str(exc))
++    for path in write_monthly_statements(months, args.out):
++        print(f"wrote {path}")
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main(sys.argv[1:]))
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/services/orders/api.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/services/orders/api.py
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/services/orders/api.py	2026-07-17 15:21:54
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/services/orders/api.py	2026-07-17 15:45:32
+@@ -9,10 +9,12 @@
+ from services.orders.payouts import platform_split, vendor_payouts
+ from services.orders.pricing import fee_preview
+ from services.orders.refunds import refund_for_cancellation
++from services.statements.monthly import MONTH_RE, vendor_statement
+ 
+ app = FastAPI(title="storefront")
+ 
+ ORDERS: dict[str, Order] = {o.id: o for o in load_orders()}
++VENDORS: set = {item.vendor for o in ORDERS.values() for item in o.items}
+ 
+ 
+ def _get(order_id: str) -> Order:
+@@ -58,6 +60,28 @@
+         "seller_pool_cents": seller_pool.to_cents(),
+         "platform_fee_cents": platform_fee.to_cents(),
+         "vendor_payout_cents": {v: m.to_cents() for v, m in vendor_payouts(order).items()},
++    }
++
++
++@app.get("/vendors/{vendor}/statements/{month}")
++def get_vendor_statement(vendor: str, month: str) -> dict:
++    """Monthly statement figures for a vendor, from the recorded money lines.
++
++    The fee here is the authoritative recorded fee, not the checkout fee
++    preview — previews are estimates, not ledger lines (docs/accounting.md).
++    """
++    if vendor not in VENDORS:
++        raise HTTPException(status_code=404, detail="vendor not found")
++    if not MONTH_RE.fullmatch(month):
++        raise HTTPException(status_code=422, detail="month must be YYYY-MM")
++    statement = vendor_statement(list(ORDERS.values()), vendor, month)
++    return {
++        "vendor": statement.vendor,
++        "month": statement.month,
++        "charged_share_cents": statement.charged_share.to_cents(),
++        "refund_cents": statement.refund.to_cents(),
++        "fee_cents": statement.fee.to_cents(),
++        "net_payout_cents": statement.net_payout.to_cents(),
+     }
+ 
+ 
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/services/statements/monthly.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/services/statements/monthly.py
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/services/statements/monthly.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/services/statements/monthly.py	2026-07-17 15:45:13
+@@ -0,0 +1,159 @@
++"""Per-vendor monthly statements.
++
++A statement month covers orders charged in that calendar month. All figures
++come from the recorded money lines (docs/accounting.md):
++
++- fulfilled orders contribute the vendor's share of the customer charge
++  (allocated by the value of their goods), the recorded platform fee, and
++  the recorded payout — per vendor, charged share = fee + net payout;
++- cancelled orders contribute the recorded refund lines, attributed to each
++  line's vendor.
++
++Checkout fee previews are estimates, not ledger lines, and are never used
++here (docs/accounting.md, "Estimates vs. ledger lines").
++"""
++from __future__ import annotations
++
++import csv
++import re
++from dataclasses import dataclass
++from pathlib import Path
++
++from libs.money import Money
++from services.orders.models import Order
++from services.orders.payouts import vendor_payouts
++from services.orders.refunds import itemized_refund_amounts
++from services.orders.repository import load_orders
++
++MONTH_RE = re.compile(r"\d{4}-(0[1-9]|1[0-2])")
++
++CSV_COLUMNS = [
++    "vendor",
++    "month",
++    "charged_share_cents",
++    "refund_cents",
++    "fee_cents",
++    "net_payout_cents",
++]
++
++
++@dataclass(frozen=True)
++class VendorStatement:
++    vendor: str
++    month: str
++    charged_share: Money
++    refund: Money
++    fee: Money
++    net_payout: Money
++
++
++def order_month(order: Order) -> str:
++    """Calendar month the customer was charged, as YYYY-MM."""
++    return order.charged_at[:7]
++
++
++def month_range(start: str, end: str) -> list[str]:
++    """Every YYYY-MM month from ``start`` to ``end``, inclusive."""
++    for label, value in (("start", start), ("end", end)):
++        if not MONTH_RE.fullmatch(value):
++            raise ValueError(f"{label} month must be YYYY-MM, got {value!r}")
++    if start > end:
++        raise ValueError(f"start month {start} is after end month {end}")
++    year, month = int(start[:4]), int(start[5:])
++    months = []
++    while f"{year:04d}-{month:02d}" <= end:
++        months.append(f"{year:04d}-{month:02d}")
++        year, month = (year + 1, 1) if month == 12 else (year, month + 1)
++    return months
++
++
++def _vendor_charged_shares(order: Order) -> dict[str, Money]:
++    """Split the charged total across vendors by the value of their goods."""
++    vendor_totals: dict[str, Money] = {}
++    for item in order.items:
++        current = vendor_totals.get(item.vendor, Money(0))
++        vendor_totals[item.vendor] = current + item.line_total
++    vendors = list(vendor_totals)
++    weights = [vendor_totals[v].to_cents() for v in vendors]
++    shares = order.charged_total.allocate(weights)
++    return dict(zip(vendors, shares))
++
++
++def monthly_statements(orders: list[Order], month: str) -> list[VendorStatement]:
++    """One statement per vendor with activity in ``month``, sorted by vendor."""
++    charged: dict[str, Money] = {}
++    refunds: dict[str, Money] = {}
++    payouts: dict[str, Money] = {}
++
++    def add(bucket: dict[str, Money], vendor: str, amount: Money) -> None:
++        bucket[vendor] = bucket.get(vendor, Money(0)) + amount
++
++    for order in orders:
++        if order_month(order) != month:
++            continue
++        if order.status == "cancelled":
++            for item, amount in zip(order.items, itemized_refund_amounts(order)):
++                add(refunds, item.vendor, amount)
++        elif order.status == "fulfilled":
++            shares = _vendor_charged_shares(order)
++            for vendor, payout in vendor_payouts(order).items():
++                add(charged, vendor, shares[vendor])
++                add(payouts, vendor, payout)
++
++    statements = []
++    for vendor in sorted(set(charged) | set(refunds)):
++        share = charged.get(vendor, Money(0))
++        payout = payouts.get(vendor, Money(0))
++        statements.append(
++            VendorStatement(
++                vendor=vendor,
++                month=month,
++                charged_share=share,
++                refund=refunds.get(vendor, Money(0)),
++                fee=share - payout,
++                net_payout=payout,
++            )
++        )
++    return statements
++
++
++def vendor_statement(orders: list[Order], vendor: str, month: str) -> VendorStatement:
++    """The statement for one vendor; all-zeros if they had a quiet month."""
++    for statement in monthly_statements(orders, month):
++        if statement.vendor == vendor:
++            return statement
++    zero = Money(0)
++    return VendorStatement(vendor, month, zero, zero, zero, zero)
++
++
++def statement_rows(statements: list[VendorStatement]) -> list[dict]:
++    return [
++        {
++            "vendor": s.vendor,
++            "month": s.month,
++            "charged_share_cents": s.charged_share.to_cents(),
++            "refund_cents": s.refund.to_cents(),
++            "fee_cents": s.fee.to_cents(),
++            "net_payout_cents": s.net_payout.to_cents(),
++        }
++        for s in statements
++    ]
++
++
++def write_monthly_statements(months: list[str], out_dir: Path) -> list[Path]:
++    """Write one <YYYY-MM>.csv per month into ``out_dir``; return the paths.
++
++    Reads order data only. A month with no activity gets a header-only file,
++    so regenerating any period is deterministic.
++    """
++    out_dir.mkdir(parents=True, exist_ok=True)
++    orders = load_orders()
++    written = []
++    for month in months:
++        path = out_dir / f"{month}.csv"
++        with path.open("w", newline="") as f:
++            writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
++            writer.writeheader()
++            writer.writerows(statement_rows(monthly_statements(orders, month)))
++        written.append(path)
++    return written
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/tests/test_monthly_statements.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/tests/test_monthly_statements.py
+--- /Users/brianendo/Projects/rl-environments/tasks/vendor-statements/world/tests/test_monthly_statements.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-vendor-statements-gzouypb7/tests/test_monthly_statements.py	2026-07-17 15:46:09
+@@ -0,0 +1,263 @@
++import csv
++import subprocess
++import sys
++from pathlib import Path
++
++import pytest
++
++from libs.money import Money
++from services.orders.models import LineItem, Order
++from services.orders.payouts import platform_split
++from services.orders.pricing import fee_preview
++from services.orders.repository import load_orders
++from services.statements.monthly import (
++    monthly_statements,
++    month_range,
++    order_month,
++    vendor_statement,
++)
++
++ROOT = Path(__file__).resolve().parent.parent
++EXPORTS = ROOT / "exports"
++
++
++def data_months():
++    return sorted({order_month(o) for o in load_orders()})
++
++
++def money_sum(amounts):
++    return sum(amounts, Money(0))
++
++
++# --- month handling ---------------------------------------------------------
++
++
++def test_month_range_is_inclusive_and_crosses_years():
++    assert month_range("2026-04", "2026-06") == ["2026-04", "2026-05", "2026-06"]
++    assert month_range("2025-11", "2026-02") == [
++        "2025-11", "2025-12", "2026-01", "2026-02",
++    ]
++    assert month_range("2026-04", "2026-04") == ["2026-04"]
++
++
++def test_month_range_rejects_bad_input():
++    with pytest.raises(ValueError):
++        month_range("2026-13", "2026-14")
++    with pytest.raises(ValueError):
++        month_range("2026-06", "2026-04")
++    with pytest.raises(ValueError):
++        month_range("April", "2026-06")
++
++
++# --- accounting: every cent accounted for -----------------------------------
++
++
++def test_statements_account_for_every_cent_each_month():
++    orders = load_orders()
++    for month in data_months():
++        in_month = [o for o in orders if order_month(o) == month]
++        charged_fulfilled = money_sum(
++            o.charged_total for o in in_month if o.status == "fulfilled"
++        )
++        charged_cancelled = money_sum(
++            o.charged_total for o in in_month if o.status == "cancelled"
++        )
++        statements = monthly_statements(orders, month)
++        assert money_sum(s.charged_share for s in statements) == charged_fulfilled
++        assert money_sum(s.refund for s in statements) == charged_cancelled
++        assert (
++            money_sum(s.fee for s in statements)
++            + money_sum(s.net_payout for s in statements)
++            == charged_fulfilled
++        )
++        for s in statements:
++            assert s.charged_share == s.fee + s.net_payout
++
++
++def test_statements_reconcile_with_nightly_exports():
++    # Recorded lines are authoritative (docs/accounting.md); statements must
++    # match the published nightly artifacts to the cent.
++    orders = {o.id: o for o in load_orders()}
++    with (EXPORTS / "charges.csv").open() as f:
++        month_of = {r["order_id"]: r["charged_at"][:7] for r in csv.DictReader(f)}
++
++    expected_payout = {}
++    expected_fee = {}
++    with (EXPORTS / "payout_lines.csv").open() as f:
++        for r in csv.DictReader(f):
++            key_month = month_of[r["order_id"]]
++            amount = int(r["amount_cents"])
++            if r["payee"] == "platform":
++                expected_fee[key_month] = expected_fee.get(key_month, 0) + amount
++            else:
++                key = (key_month, r["payee"])
++                expected_payout[key] = expected_payout.get(key, 0) + amount
++
++    expected_refund = {}
++    with (EXPORTS / "refund_lines.csv").open() as f:
++        for r in csv.DictReader(f):
++            order = orders[r["order_id"]]
++            vendor = next(i.vendor for i in order.items if i.sku == r["sku"])
++            key = (month_of[r["order_id"]], vendor)
++            expected_refund[key] = expected_refund.get(key, 0) + int(r["amount_cents"])
++
++    for month in data_months():
++        statements = monthly_statements(list(orders.values()), month)
++        assert sum(s.fee.to_cents() for s in statements) == expected_fee.get(month, 0)
++        for s in statements:
++            assert s.net_payout.to_cents() == expected_payout.get((month, s.vendor), 0)
++            assert s.refund.to_cents() == expected_refund.get((month, s.vendor), 0)
++
++
++def test_statement_fee_is_recorded_fee_not_checkout_preview():
++    # A $19.99 charge: the recorded split rounds the fee to 50c so the lines
++    # conserve the charge; the checkout preview floors to 49c. Statements
++    # must carry the recorded fee (docs/accounting.md, estimates vs. ledger).
++    order = Order(
++        id="T-FEE",
++        status="fulfilled",
++        charged_at="2026-01-15",
++        items=[LineItem(sku="A", vendor="solo", price=Money.from_cents(1999))],
++    )
++    (statement,) = monthly_statements([order], "2026-01")
++    _, recorded_fee = platform_split(order)
++    assert statement.fee == recorded_fee == Money(50)
++    assert fee_preview(order.charged_total) == Money(49)
++    assert statement.charged_share == statement.fee + statement.net_payout
++
++
++def test_cancelled_orders_land_in_refunds_not_payment_share():
++    orders = [
++        Order(
++            id="T-CX",
++            status="cancelled",
++            charged_at="2026-02-10",
++            items=[
++                LineItem(sku="A", vendor="alpha", price=Money.from_cents(600)),
++                LineItem(sku="B", vendor="beta", price=Money.from_cents(400)),
++            ],
++        ),
++        Order(
++            id="T-OK",
++            status="fulfilled",
++            charged_at="2026-02-11",
++            items=[LineItem(sku="C", vendor="alpha", price=Money.from_cents(1000))],
++        ),
++    ]
++    by_vendor = {s.vendor: s for s in monthly_statements(orders, "2026-02")}
++    assert by_vendor["beta"].refund == Money(400)
++    assert by_vendor["beta"].charged_share == Money(0)
++    assert by_vendor["beta"].net_payout == Money(0)
++    assert by_vendor["alpha"].refund == Money(600)
++    assert by_vendor["alpha"].charged_share == Money(1000)
++
++
++def test_vendor_statement_zero_for_quiet_month():
++    statement = vendor_statement(load_orders(), "northmill", "2026-01")
++    assert statement.charged_share == Money(0)
++    assert statement.refund == Money(0)
++    assert statement.fee == Money(0)
++    assert statement.net_payout == Money(0)
++
++
++# --- CLI --------------------------------------------------------------------
++
++
++def run_cli(out_dir, start="2026-04", end="2026-06"):
++    subprocess.run(
++        [
++            sys.executable,
++            "scripts/generate_statements.py",
++            "--from", start,
++            "--to", end,
++            "--out", str(out_dir),
++        ],
++        cwd=ROOT,
++        check=True,
++        capture_output=True,
++    )
++
++
++def test_cli_regeneration_is_deterministic(tmp_path):
++    first, second = tmp_path / "first", tmp_path / "second"
++    run_cli(first)
++    run_cli(second)
++    names = sorted(p.name for p in first.iterdir())
++    assert names == ["2026-04.csv", "2026-05.csv", "2026-06.csv"]
++    for name in names:
++        assert (first / name).read_bytes() == (second / name).read_bytes()
++
++
++def test_cli_matches_published_statements(tmp_path):
++    run_cli(tmp_path)
++    for path in tmp_path.iterdir():
++        published = EXPORTS / "vendor_statements" / path.name
++        assert published.read_bytes() == path.read_bytes()
++
++
++def test_cli_leaves_nightly_artifacts_and_order_data_untouched(tmp_path):
++    watched = sorted(EXPORTS.glob("*.csv")) + [
++        ROOT / "services" / "orders" / "data" / "orders.json"
++    ]
++    before = {p: p.read_bytes() for p in watched}
++    run_cli(tmp_path)
++    assert {p: p.read_bytes() for p in watched} == before
++
++
++def test_statement_csv_shape(tmp_path):
++    run_cli(tmp_path, "2026-04", "2026-04")
++    with (tmp_path / "2026-04.csv").open() as f:
++        rows = list(csv.DictReader(f))
++    assert rows
++    assert list(rows[0]) == [
++        "vendor", "month", "charged_share_cents", "refund_cents",
++        "fee_cents", "net_payout_cents",
++    ]
++    assert [r["vendor"] for r in rows] == sorted(r["vendor"] for r in rows)
++    assert all(r["month"] == "2026-04" for r in rows)
++
++
++# --- API --------------------------------------------------------------------
++
++
++@pytest.fixture()
++def client():
++    from fastapi.testclient import TestClient
++
++    from services.orders.api import app
++
++    return TestClient(app)
++
++
++def test_api_statement_matches_computation(client):
++    response = client.get("/vendors/quarryfield/statements/2026-06")
++    assert response.status_code == 200
++    statement = vendor_statement(load_orders(), "quarryfield", "2026-06")
++    assert response.json() == {
++        "vendor": "quarryfield",
++        "month": "2026-06",
++        "charged_share_cents": statement.charged_share.to_cents(),
++        "refund_cents": statement.refund.to_cents(),
++        "fee_cents": statement.fee.to_cents(),
++        "net_payout_cents": statement.net_payout.to_cents(),
++    }
++    assert response.json()["charged_share_cents"] > 0
++
++
++def test_api_quiet_month_is_zeros_not_error(client):
++    response = client.get("/vendors/northmill/statements/2026-01")
++    assert response.status_code == 200
++    body = response.json()
++    assert body["charged_share_cents"] == 0
++    assert body["refund_cents"] == 0
++    assert body["fee_cents"] == 0
++    assert body["net_payout_cents"] == 0
++
++
++def test_api_unknown_vendor_is_404(client):
++    assert client.get("/vendors/nobody/statements/2026-04").status_code == 404
++
++
++def test_api_bad_month_is_422(client):
++    assert client.get("/vendors/northmill/statements/2026-13").status_code == 422
++    assert client.get("/vendors/northmill/statements/April").status_code == 422

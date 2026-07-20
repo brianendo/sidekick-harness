@@ -1,0 +1,120 @@
+{
+  "task": "marketplace-q3-milestone",
+  "config": "fable-solo@cc",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": null,
+  "score": {
+    "score": 1.0,
+    "passed": 14,
+    "total": 14,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "stmt_csv": true,
+      "stmt_endpoint": true,
+      "stmt_cli": true,
+      "notif_coverage": true,
+      "notif_signature": true,
+      "notif_cli": true,
+      "audit_coverage": true,
+      "audit_chain": true,
+      "audit_cli": true,
+      "conservation": true,
+      "money_contract": true,
+      "visible_tests": true,
+      "conventions": true,
+      "guarded_files_untouched": true
+    },
+    "modified_guarded_files": [],
+    "blockers": {
+      "conservation": true,
+      "money_contract": true,
+      "guarded_files_untouched": true
+    },
+    "grader_pass": true,
+    "tails": {
+      "stmt_cli": [
+        "ok"
+      ],
+      "notif_cli": [
+        "ok"
+      ],
+      "audit_cli": [
+        "ok"
+      ],
+      "stmt_csv": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "stmt_endpoint": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "4 passed, 1 warning in 0.45s"
+      ],
+      "notif_coverage": [
+        "..                                                                       [100%]",
+        "2 passed in 0.04s"
+      ],
+      "notif_signature": [
+        ".                                                                        [100%]",
+        "1 passed in 0.02s"
+      ],
+      "audit_coverage": [
+        ".                                                                        [100%]",
+        "1 passed in 0.03s"
+      ],
+      "audit_chain": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "conservation": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "2 passed, 1 warning in 0.37s"
+      ],
+      "money_contract": [
+        "....                                                                     [100%]",
+        "4 passed in 0.02s"
+      ],
+      "visible_tests": [
+        ".................                                                        [100%]",
+        "17 passed in 0.07s"
+      ],
+      "conventions": [
+        "Conventions OK."
+      ]
+    }
+  },
+  "wall_seconds": 487.9,
+  "error": null,
+  "lead_summary": "All three initiatives are implemented, tested, and verified \u2014 41 tests pass (17 pre-existing + 24 new), the convention checker is clean, and reruns of every generator are byte-identical.\n\n**The one design decision that shapes everything:** per `docs/accounting.md`, recorded money lines are authoritative, so all three features read the nightly CSVs in `exports/` (`services/statements/recorded.py` is the shared reader) rather than recomputing from order data. Before committing to that I verified the recorded lines reconcile perfectly with the domain code \u2014 zero cent drift across all 48 orders. Order data is consulted only for attribution (vendor value weights, sku\u2192vendor mapping), never for amounts.\n\n**1. Vendor statements** \u2014 `services/statements/vendor_statements.py`, CLI `scripts/generate_statements.py`, files written to `exports/vendor_statements/2026-0{4,5,6}.csv`. A vendor's `charged_share` is the recorded charge allocated across the order's vendors by goods value (`Money.allocate`, so shares sum back exactly); `net_payout` is their recorded payout lines; `fee` is defined as charged_share minus net_payout, so `charged_share == fee + net_payout` holds on every row and monthly totals tie out to the recorded platform-fee lines exactly (tested). Refund figures follow the recorded refund lines. The API endpoint `GET /vendors/{vendor}/statements/{YYYY-MM}` returns the same four figures; unknown vendor \u2192 404, quiet month \u2192 zeros.\n\n**On support's ask to reuse the checkout fee preview: I deliberately did not.** The policy is explicit that previews are floor-rounded *estimates*, not ledger lines, and a statement endpoint quoting an estimate would misstate recorded money. The endpoint serves the recorded fee \u2014 which *is* \"the number on the customer's statement,\" resolving the actual ticket need \u2014 and a comment plus a test (`test_statement_fee_is_recorded_not_preview`) guard the distinction.\n\n**2. Webhook outbox** \u2014 `services/notifications/outbox.py`, CLI `scripts/dispatch_notifications.py`. Writes per-subscriber `.jsonl` files filtered to subscribed events, ordered by (charged_at, order_id, event type, payee/sku), each line signed with HMAC-SHA256 over the compact sorted-key JSON payload. Line counts reconcile: finance-hub 157 (38 fulfilled + 20 refund lines + 99 payout lines), ops-pager exactly the 10 cancellations, vendor-portal 119. Subset ranges produce exactly that range's events (tested).\n\n**3. Audit log** \u2014 `services/audit/log.py`, CLI `scripts/build_audit_log.py`, writes `exports/audit_log.jsonl`: 167 records (48 charges + 20 refund lines + 99 payout lines), each amount equal to its recorded line, hash-chained from a 64-zero genesis. A `verify_chain` helper recomputes every hash; tests tamper with each field individually \u2014 and also re-hash a tampered record \u2014 and confirm verification breaks from that point on.\n\nNotes for review: `libs/money` is untouched (no CHANGELOG entry needed); the only change to existing code is extracting `vendor_value_weights` in `payouts.py` (behavior-identical, so statement attribution and payout splits share one source of truth) and the new API route. Nightly artifacts were verified byte-unchanged after all runs, and a test locks that in.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/marketplace-q3-milestone__fable-solo@cc__1784588014.transcript.jsonl",
+  "contamination_hits": [],
+  "cost_usd": 4.5834,
+  "tokens": {
+    "input": 647,
+    "output": 40132,
+    "cache_write": 66019,
+    "cache_read": 1745071
+  },
+  "lead_turns": 33,
+  "sidekick_turns": 0,
+  "lead_code_edits": 18,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 647,
+      "output_tokens": 40132,
+      "cache_write_tokens": 66019,
+      "cache_read_tokens": 1745071,
+      "cost_usd": 4.5834
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 5.078520999999998,
+  "agent_exit_code": 0
+}

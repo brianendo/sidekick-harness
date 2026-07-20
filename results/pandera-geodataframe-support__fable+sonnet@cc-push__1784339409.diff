@@ -1,0 +1,1718 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/.gitignore /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/.gitignore
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/.gitignore	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/.gitignore	2026-07-17 19:08:51
+@@ -0,0 +1,9 @@
++# This .gitignore file was automatically created by Hypothesis. Hypothesis gitignores
++# .hypothesis by default, because we generally recommend that .hypothesis not be checked
++# into version control.
++#
++# If you *would* like to check .hypothesis into version control, you should delete this
++# file. Hypothesis will not re-create this .gitignore unless .hypothesis is deleted (and
++# if it does, that's a bug - please report it!)
++
++*
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/01bf51d592da37d2 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/01bf51d592da37d2
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/01bf51d592da37d2	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/01bf51d592da37d2	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/types.py
++# hypothesis_version: 6.156.6
++
++['*', 'PolarsFrame']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/025e3af480d5a358 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/025e3af480d5a358
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/025e3af480d5a358	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/025e3af480d5a358	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/components.py
++# hypothesis_version: 6.156.6
++
++['__module__', '_unique', 'column_in_index', 'column_ordered', 'columns', 'determined_by_unique', 'drop_invalid_rows', 'failure_case', 'first', 'index', 'inner', 'level_value', 'multiindex_strict', 'multiindex_unique', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/09cbcf951d5bad0a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/09cbcf951d5bad0a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/09cbcf951d5bad0a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/09cbcf951d5bad0a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/decorators.py
++# hypothesis_version: 6.156.6
++
++['.', 'Dict', 'F', 'List', 'Tuple', '__wrapped__', 'check_input', 'check_output', 'cls', 'coerce', 'from_format', 'index', 'pandera', 'return', 'self', 'to_format', 'validate']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0bebf873a459924a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0bebf873a459924a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0bebf873a459924a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0bebf873a459924a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/type_aliases.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0d797ac322967130 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0d797ac322967130
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0d797ac322967130	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0d797ac322967130	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/polars.py
++# hypothesis_version: 6.156.6
++
++['Check', 'Column', 'DataFrameModel', 'DataFrameSchema', 'Field', 'PolarsData', 'check', 'check_input', 'check_io', 'check_output', 'check_types', 'dataframe_check', 'errors', 'infer_schema']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0ed9dca2438ae180 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0ed9dca2438ae180
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0ed9dca2438ae180	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0ed9dca2438ae180	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/external_config.py
++# hypothesis_version: 6.156.6
++
++['1', '127.0.0.1', 'SPARK_LOCAL_IP']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0f50becdf39a32ba /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0f50becdf39a32ba
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/0f50becdf39a32ba	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/0f50becdf39a32ba	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/base.py
++# hypothesis_version: 6.156.6
++
++['T', 'astype', 'dtype', 'index', 'reason_code']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/10ef8492d56ad208 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/10ef8492d56ad208
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/10ef8492d56ad208	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/10ef8492d56ad208	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/base/__init__.py
++# hypothesis_version: 6.156.6
++
++['BaseCheck', 'BaseParser']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/13d7f38e9308f64c /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/13d7f38e9308f64c
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/13d7f38e9308f64c	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/13d7f38e9308f64c	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/utils.py
++# hypothesis_version: 6.156.6
++
++['all', 'exclude_first', 'exclude_last', 'first', 'last']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/143c8e1f170ccfb1 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/143c8e1f170ccfb1
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/143c8e1f170ccfb1	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/143c8e1f170ccfb1	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/utils.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/19fc7894eb6e3e0a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/19fc7894eb6e3e0a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/19fc7894eb6e3e0a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/19fc7894eb6e3e0a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/engine.py
++# hypothesis_version: 6.156.6
++
++['Engine', '_DataType', '_Engine', '_TypedDictMeta', '__annotations__', '__bases__', '__origin__', '_base_pandera_dtypes', '_registered_dtypes', 'base_pandera_dtypes', 'typing_extensions']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1a9aa7fa5481c614 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1a9aa7fa5481c614
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1a9aa7fa5481c614	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1a9aa7fa5481c614	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_statistics/polars.py
++# hypothesis_version: 6.156.6
++
++['checks', 'coerce', 'columns', 'default', 'description', 'drop_invalid_rows', 'dtype', 'index', 'isin', 'nullable', 'regex', 'report_duplicates', 'required', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1c4893c5a21116bf /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1c4893c5a21116bf
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1c4893c5a21116bf	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1c4893c5a21116bf	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_inference/pandas.py
++# hypothesis_version: 6.156.6
++
++['checks', 'columns', 'dtype', 'index', 'name', 'nullable']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1e252751379d775a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1e252751379d775a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1e252751379d775a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1e252751379d775a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/base/builtin_checks.py
++# hypothesis_version: 6.156.6
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1fc71c6d4958baca /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1fc71c6d4958baca
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/1fc71c6d4958baca	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/1fc71c6d4958baca	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/strategies/base_strategies.py
++# hypothesis_version: 6.156.6
++
++['F', 'T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/201c539aab1910e4 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/201c539aab1910e4
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/201c539aab1910e4	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/201c539aab1910e4	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/__init__.py
++# hypothesis_version: 6.156.6
++
++['AnnotationInfo', 'DataFrame', 'Index', 'Series', 'get_dataframe_types', 'get_index_types', 'get_series_types']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/20a1f2b926414be3 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/20a1f2b926414be3
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/20a1f2b926414be3	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/20a1f2b926414be3	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/error_formatters.py
++# hypothesis_version: 6.156.6
++
++[', ', 'check', 'check_number', 'column', 'failure_case', 'index', 'modin.pandas', 'pyspark.pandas', 'schema_context']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2403b69c25d36253 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2403b69c25d36253
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2403b69c25d36253	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2403b69c25d36253	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/common.py
++# hypothesis_version: 6.156.6
++
++['DataFrameModel', 'GenericDtype', 'T', '__args__', '__metadata__', '__orig_class__', 'default_dtype', 'pandera']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/274296a5d1643064 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/274296a5d1643064
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/274296a5d1643064	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/274296a5d1643064	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/components.py
++# hypothesis_version: 6.156.6
++
++['[\n', '_checks', '_parsers', 'all', 'checks', 'coerce', 'default', 'description', 'dtype', 'ignore', 'metadata', 'name', 'nullable', 'parsers', 'regex', 'report_duplicates', 'required', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/28e7c06c45773621 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/28e7c06c45773621
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/28e7c06c45773621	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/28e7c06c45773621	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/dataframe/model_components.py
++# hypothesis_version: 6.156.6
++
++['__check_config__', '__parser_config__', 'between', 'checks', 'coerce', 'description', 'dtype', 'eq', 'ge', 'gt', 'ignore_na', 'in_range', 'isin', 'le', 'lt', 'metadata', 'n_failure_cases', 'name', 'ne', 'notin', 'nullable', 'parsers', 'parses', 'raise_warning', 'regex', 'str_contains', 'str_endswith', 'str_length', 'str_matches', 'str_startswith', 'title', 'unique_values_eq']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/291f254cf993da15 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/291f254cf993da15
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/291f254cf993da15	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/291f254cf993da15	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2a1bd51c64774f12 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2a1bd51c64774f12
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2a1bd51c64774f12	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2a1bd51c64774f12	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_inference/polars.py
++# hypothesis_version: 6.156.6
++
++['checks', 'columns', 'dtype', 'nullable']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2a32b571e29ba4d4 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2a32b571e29ba4d4
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/2a32b571e29ba4d4	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/2a32b571e29ba4d4	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/model.py
++# hypothesis_version: 6.156.6
++
++['BaseModel', 'TBaseModel']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/33df717eb63c5caa /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/33df717eb63c5caa
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/33df717eb63c5caa	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/33df717eb63c5caa	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/model_config.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/35a9ddc172887170 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/35a9ddc172887170
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/35a9ddc172887170	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/35a9ddc172887170	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/checks.py
++# hypothesis_version: 6.156.6
++
++['Check', 'T', '__iter__', '__name__', 'allowed_values', 'attrs', 'cf_has_cell_methods', 'cf_standard_name', 'cf_units', 'coord', 'coords', 'determined_by_unique', 'dim', 'dim_size', 'dims', 'encoding', 'equal_to', 'expected', 'expected_name', 'expected_units', 'forbidden_values', 'greater_than', 'has_attrs', 'has_coords', 'has_dims', 'has_encoding', 'in_range', 'increasing', 'is_monotonic', 'isin', 'less_than', 'n', 'names', 'ndim', 'not_equal_to', 'notin', 'pattern', 'size', 'str_contains', 'str_endswith', 'str_length', 'str_matches', 'str_startswith', 'unique_values_eq', 'values']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/3e34656bb981eaa8 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/3e34656bb981eaa8
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/3e34656bb981eaa8	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/3e34656bb981eaa8	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/types.py
++# hypothesis_version: 6.156.6
++
++['.', 'DataFrame', 'GeoDataFrame', 'GeoSeries', 'Index', 'MultiIndex', 'Series', 'T', 'dask', 'dask_expr', 'geopandas', 'modin', 'pandas', 'pandera', 'pyspark', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/3fb927edbc4456a4 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/3fb927edbc4456a4
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/3fb927edbc4456a4	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/3fb927edbc4456a4	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/_minimal.py
++# hypothesis_version: 6.156.6
++
++['add_missing_columns', 'all', 'check_name', 'checks', 'coerce', 'columns', 'coords', 'data_vars', 'dataframe_library', 'default', 'description', 'dims', 'drop_invalid_rows', 'dtype', 'ignore_na', 'index', 'name', 'nullable', 'options', 'ordered', 'ordered_dims', 'pandas', 'raise_warning', 'regex', 'report_duplicates', 'required', 'shape', 'sizes', 'strict', 'strict_attrs', 'strict_coords', 'title', 'unique', 'unique_column_names', 'version']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/436f02c0ad4234e7 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/436f02c0ad4234e7
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/436f02c0ad4234e7	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/436f02c0ad4234e7	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/schema.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/43754d0c3164379e /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/43754d0c3164379e
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/43754d0c3164379e	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/43754d0c3164379e	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/449bd9d30c83d6ce /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/449bd9d30c83d6ce
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/449bd9d30c83d6ce	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/449bd9d30c83d6ce	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/constants.py
++# hypothesis_version: 6.156.6
++
++['check_output', 'failure_case']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/475c520a30f6c24a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/475c520a30f6c24a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/475c520a30f6c24a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/475c520a30f6c24a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/polars_engine.py
++# hypothesis_version: 6.156.6
++
++['*', '<missing>', 'Category', 'belongs', 'binary', 'bool', 'categories', 'category', 'date', 'datetime', 'decimal', 'float32', 'float64', 'horizontal', 'int16', 'int32', 'int64', 'int8', 'loc', 'ms', 'ns', 'null', 'object', 'precision', 'scale', 'shape', 'string', 'time', 'time_zone_agnostic', 'timedelta', 'type', 'uint16', 'uint32', 'uint64', 'uint8', 'us']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/479947a07609b1ae /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/479947a07609b1ae
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/479947a07609b1ae	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/479947a07609b1ae	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/base/builtin_hypotheses.py
++# hypothesis_version: 6.156.6
++
++['propagate']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/47b22ae1da4a3e1a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/47b22ae1da4a3e1a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/47b22ae1da4a3e1a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/47b22ae1da4a3e1a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/_version.py
++# hypothesis_version: 6.156.6
++
++['0.0.1', '__commit_id__', '__version__', '__version_tuple__', 'commit_id', 'version', 'version_tuple']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/48d416d01ceea98d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/48d416d01ceea98d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/48d416d01ceea98d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/48d416d01ceea98d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_statistics/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/49425e88ba4117c5 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/49425e88ba4117c5
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/49425e88ba4117c5	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/49425e88ba4117c5	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/import_utils.py
++# hypothesis_version: 6.156.6
++
++['F']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/49b2b4b2fb99eb6f /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/49b2b4b2fb99eb6f
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/49b2b4b2fb99eb6f	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/49b2b4b2fb99eb6f	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/parsers.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/4abc1119e1b33f3b /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/4abc1119e1b33f3b
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/4abc1119e1b33f3b	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/4abc1119e1b33f3b	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/utils.py
++# hypothesis_version: 6.156.6
++
++['$', 'F', '^']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/4ae5493a39baf409 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/4ae5493a39baf409
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/4ae5493a39baf409	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/4ae5493a39baf409	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/53ea3771f55ccd2d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/53ea3771f55ccd2d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/53ea3771f55ccd2d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/53ea3771f55ccd2d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/model.py
++# hypothesis_version: 6.156.6
++
++['any', 'array', 'check_name', 'coerce', 'extDtype', 'fields', 'items', 'multiindex_', 'name', 'object', 'properties', 'title', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/553fab26ef2cf227 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/553fab26ef2cf227
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/553fab26ef2cf227	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/553fab26ef2cf227	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/inspection_utils.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/56553393ad743090 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/56553393ad743090
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/56553393ad743090	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/56553393ad743090	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/5d98b3fd9c7764ad /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/5d98b3fd9c7764ad
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/5d98b3fd9c7764ad	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/5d98b3fd9c7764ad	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/container.py
++# hypothesis_version: 6.156.6
++
++['dask', 'ignore']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/5da7aa5d06157063 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/5da7aa5d06157063
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/5da7aa5d06157063	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/5da7aa5d06157063	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/_flat_checks.py
++# hypothesis_version: 6.156.6
++
++['alias', 'check_name', 'checks', 'coerce', 'columns', 'coords', 'data_vars', 'default', 'description', 'dims', 'drop_invalid_rows', 'dtype', 'ignore_na', 'index', 'n_failure_cases', 'name', 'nullable', 'options', 'ordered_dims', 'raise_warning', 'regex', 'report_duplicates', 'required', 'schema_type', 'shape', 'sizes', 'title', 'unique', 'value', 'version']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/69c20a69b0087a9a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/69c20a69b0087a9a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/69c20a69b0087a9a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/69c20a69b0087a9a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/types.py
++# hypothesis_version: 6.156.6
++
++['filter']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6b209779fa390dab /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6b209779fa390dab
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6b209779fa390dab	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6b209779fa390dab	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/base.py
++# hypothesis_version: 6.156.6
++
++['check', 'check_number', 'column', 'failure_case', 'index', 'reason_code', 'schema_context', 'valid_rows', 'with_row_index']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6d77e42ddfb4122d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6d77e42ddfb4122d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6d77e42ddfb4122d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6d77e42ddfb4122d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/pandas_engine.py
++# hypothesis_version: 6.156.6
++
++[128, 256, '.', "<class 'numpy.str_'>", "<class 'str'>", 'Complex', 'Float', 'Int', 'NamedTuple', 'O', 'TypedDict', 'UInt', 'ambiguous', 'arrow_string', 'binary[pyarrow]', 'bool', 'bool[pyarrow]', 'boolean', 'bytes', 'categorical', 'category', 'coercion_model', 'complex', 'data_container', 'date', 'date32[day][pyarrow]', 'date64[ms][pyarrow]', 'datetime', 'datetime64', 'datetime64[ns]', 'decimal', 'decimals', 'dict', 'double[pyarrow]', 'dt', 'failure_cases', 'float', 'float[pyarrow]', 'floating', 'generic_type', 'geometry', 'halffloat[pyarrow]', 'infer', 'int', 'int16[pyarrow]', 'int32[pyarrow]', 'int64', 'int64[pyarrow]', 'int8[pyarrow]', 'integer', 'list', 'loc', 'mixed', 'mixed-integer', 'mixed-integer-float', 'modin.pandas', 'ms', 'ns', 'null[pyarrow]', 'object', 'object0', 'object_', 'pyarrow', 'pyspark.pandas', 'python', 'records', 'special_type', 'storage', 'str', 'string', 'string[pyarrow]', 'string[python]', 'time', 'timedelta', 'timedelta64', 'to_datetime_kwargs', 'tuple', 'type', 'tz', 'tz_localize', 'uint', 'uint16[pyarrow]', 'uint32[pyarrow]', 'uint64', 'uint64[pyarrow]', 'uint8[pyarrow]', 'unit']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6e2f28fe5908f1e2 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6e2f28fe5908f1e2
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/6e2f28fe5908f1e2	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/6e2f28fe5908f1e2	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/builtin_checks.py
++# hypothesis_version: 6.156.6
++
++['T', 'between', 'eq', 'equal_to({value})', 'ge', 'gt', 'le', 'lt', 'modin', 'ne', 'pyspark']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/717c85daa2595f6d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/717c85daa2595f6d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/717c85daa2595f6d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/717c85daa2595f6d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/pandas_io.py
++# hypothesis_version: 6.156.6
++
++[',', ',\n    ', ', ', 'Column()', 'None', 'Timedelta', 'Timestamp', 'add_missing_columns', 'all', 'any', 'array', 'bool', 'boolean', 'category', 'check_name', 'checks', 'coerce', 'columns', 'dask', 'dataframe', 'dataframe_library', 'date', 'datetime', 'datetime64[ns]', 'description', 'drop_invalid_rows', 'dtype', 'duration', 'enum', 'float', 'geojson', 'geopoint', 'in_range', 'index', 'int', 'integer', 'isin', 'maxLength', 'max_value', 'maximum', 'metadata', 'minLength', 'min_value', 'minimum', 'modin', 'name', 'ns', 'nullable', 'number', 'object', 'options', 'ordered', 'pandas', 'pattern', 'pyspark.pandas', 'r', 'regex', 'report_duplicates', 'required', 'schema_type', 'str_length', 'str_matches', 'strftime', 'strict', 'string', 'time', 'timedelta64[ns]', 'title', 'unique', 'unique_column_names', 'utf-8', 'value', 'version', 'w', 'year', 'yearmonth']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/71eec02b7309f214 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/71eec02b7309f214
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/71eec02b7309f214	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/71eec02b7309f214	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/error_handler.py
++# hypothesis_version: 6.156.6
++
++['check', 'column', 'data', 'data-failures', 'error', 'failure_case', 'failure_cases_count', 'reason_code', 'schema', 'schema-failures', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/734ae0f15b6ce8ff /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/734ae0f15b6ce8ff
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/734ae0f15b6ce8ff	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/734ae0f15b6ce8ff	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/geopandas.py
++# hypothesis_version: 6.156.6
++
++['T', '__class_getitem__', 'geometry']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/743d0749bd533388 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/743d0749bd533388
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/743d0749bd533388	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/743d0749bd533388	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/numpy_engine.py
++# hypothesis_version: 6.156.6
++
++[128, 256, 'Complex', 'Float', 'Int', 'O', 'UInt', 'bool', 'bytes', 'complex', 'complex128', 'complex256', 'complex64', 'datetime64', 'float', 'float128', 'float16', 'float32', 'float64', 'int', 'int16', 'int32', 'int64', 'int8', 'modin.pandas', 'name', 'object', 'str', 'string', 'timedelta64[ns]', 'type', 'uint', 'uint16', 'uint32', 'uint64', 'uint8']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/781373140c5ba336 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/781373140c5ba336
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/781373140c5ba336	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/781373140c5ba336	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/pandas.py
++# hypothesis_version: 6.156.6
++
++['1.24.4', '2.1.1', 'BOOL', 'Bool', 'Category', 'Check', 'Column', 'Complex', 'Complex128', 'Complex256', 'Complex64', 'DataFrameModel', 'DataFrameSchema', 'DataType', 'Date', 'DateTime', 'Decimal', 'Field', 'Float', 'Float128', 'Float16', 'Float32', 'Float64', 'Hypothesis', 'INT16', 'INT32', 'INT64', 'INT8', 'Index', 'Int', 'Int16', 'Int32', 'Int64', 'Int8', 'MultiIndex', 'Object', 'Parser', 'STRING', 'SeriesSchema', 'String', 'Timedelta', 'Timestamp', 'UINT16', 'UINT32', 'UINT64', 'UINT8', 'UInt', 'UInt16', 'UInt32', 'UInt64', 'UInt8', 'Windows', 'check', 'check_input', 'check_io', 'check_output', 'check_types', 'dataframe_check', 'dataframe_parser', 'dtypes', 'extensions', 'infer_schema', 'pandas_version', 'parser', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/798920903c8c1f6b /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/798920903c8c1f6b
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/798920903c8c1f6b	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/798920903c8c1f6b	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/checks.py
++# hypothesis_version: 6.156.6
++
++['BaseCheck', '_T', '_check_fn', 'args', 'error', 'func', 'keywords', 'strategy']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/7e2747b2e0160e2e /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/7e2747b2e0160e2e
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/7e2747b2e0160e2e	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/7e2747b2e0160e2e	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/checks.py
++# hypothesis_version: 6.156.6
++
++['*', 'horizontal']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/7e7fecbb2631354c /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/7e7fecbb2631354c
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/7e7fecbb2631354c	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/7e7fecbb2631354c	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/accessors/_schema_registry.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/85f6b870b2d0a191 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/85f6b870b2d0a191
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/85f6b870b2d0a191	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/85f6b870b2d0a191	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/modin.py
++# hypothesis_version: 6.156.6
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8c21168b0f06db4d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8c21168b0f06db4d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8c21168b0f06db4d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8c21168b0f06db4d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/parsers.py
++# hypothesis_version: 6.156.6
++
++['_parser_fn']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8d2ead4faf975845 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8d2ead4faf975845
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8d2ead4faf975845	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8d2ead4faf975845	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_statistics/pandas.py
++# hypothesis_version: 6.156.6
++
++['check_name', 'checks', 'coerce', 'columns', 'description', 'dtype', 'error', 'ignore_na', 'index', 'isin', 'n_failure_cases', 'name', 'nullable', 'object', 'options', 'raise_warning', 'regex', 'required', 'string', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8f02f768d7dd53d1 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8f02f768d7dd53d1
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8f02f768d7dd53d1	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8f02f768d7dd53d1	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/container.py
++# hypothesis_version: 6.156.6
++
++['all']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8f62eed49157167d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8f62eed49157167d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/8f62eed49157167d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/8f62eed49157167d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/array.py
++# hypothesis_version: 6.156.6
++
++['bool', 'default', 'drop_invalid_rows', 'empty', 'field_uniqueness', 'float', 'int', 'not_nullable', 'object', 'pandera', 'pyspark.pandas', 'str', 'string', 'string[pyarrow]']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9120925a93e49c24 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9120925a93e49c24
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9120925a93e49c24	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9120925a93e49c24	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/array.py
++# hypothesis_version: 6.156.6
++
++['all', 'dask', 'ignore']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/91cb0413c7417485 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/91cb0413c7417485
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/91cb0413c7417485	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/91cb0413c7417485	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/accessors/pandas_accessor.py
++# hypothesis_version: 6.156.6
++
++['__pandera_schema__', 'attrs', 'pandera']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/92bfbf462118bf45 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/92bfbf462118bf45
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/92bfbf462118bf45	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/92bfbf462118bf45	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/dataframe/model_config.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9398fbbd87809970 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9398fbbd87809970
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9398fbbd87809970	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9398fbbd87809970	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/register.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/93a58560f1e3f225 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/93a58560f1e3f225
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/93a58560f1e3f225	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/93a58560f1e3f225	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/builtin_hypotheses.py
++# hypothesis_version: 6.156.6
++
++['propagate', 'sample', 'sample1', 'sample2']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/95b62f676535b292 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/95b62f676535b292
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/95b62f676535b292	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/95b62f676535b292	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/pandas.py
++# hypothesis_version: 6.156.6
++
++['DataFrame[T]', 'GenericDtype', 'T', 'any', 'boolean', 'datetime', 'duration', 'float64', 'index', 'integer', 'items', 'number', 'properties', 'string', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/984d32852eb74b7a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/984d32852eb74b7a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/984d32852eb74b7a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/984d32852eb74b7a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/validation_depth.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/991aeca37d6dbb6b /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/991aeca37d6dbb6b
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/991aeca37d6dbb6b	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/991aeca37d6dbb6b	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9a44e8ef60818a05 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9a44e8ef60818a05
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9a44e8ef60818a05	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9a44e8ef60818a05	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/register.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9fc2a148f3a6e986 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9fc2a148f3a6e986
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/9fc2a148f3a6e986	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/9fc2a148f3a6e986	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/formats.py
++# hypothesis_version: 6.156.6
++
++['csv', 'dict', 'feather', 'json', 'json_normalize', 'parquet', 'pickle']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a2f84646c7247f21 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a2f84646c7247f21
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a2f84646c7247f21	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a2f84646c7247f21	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/model.py
++# hypothesis_version: 6.156.6
++
++['array', 'bool', 'boolean', 'check_name', 'date', 'datetime', 'float', 'int', 'integer', 'items', 'number', 'object', 'properties', 'string', 'time', 'title', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a5085f3b5fe252ff /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a5085f3b5fe252ff
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a5085f3b5fe252ff	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a5085f3b5fe252ff	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/geopandas_engine.py
++# hypothesis_version: 6.156.6
++
++['crs', 'geometry']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a5575523be703434 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a5575523be703434
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a5575523be703434	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a5575523be703434	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/function_dispatch.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a680827b332875be /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a680827b332875be
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/a680827b332875be	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/a680827b332875be	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/dataframe/container.py
++# hypothesis_version: 6.156.6
++
++['TDataObject', 'all', 'columns', 'dataframe', 'filter', 'index not in schema', 'metadata', 'name']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/adc597f023e05dc2 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/adc597f023e05dc2
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/adc597f023e05dc2	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/adc597f023e05dc2	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/components.py
++# hypothesis_version: 6.156.6
++
++['*', '_duplicated', 'default', 'drop_invalid_rows', 'field_uniqueness', 'horizontal', 'not_nullable', 'regex']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/af7a2b1071e85d9e /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/af7a2b1071e85d9e
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/af7a2b1071e85d9e	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/af7a2b1071e85d9e	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/_check_io.py
++# hypothesis_version: 6.156.6
++
++['check_name', 'options', 'value']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b3ecea957b9a287d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b3ecea957b9a287d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b3ecea957b9a287d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b3ecea957b9a287d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/checks.py
++# hypothesis_version: 6.156.6
++
++['check_output', 'column', 'columns', 'failure_case', 'failure_cases', 'index', 'modin.pandas', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b6662182fe2129e6 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b6662182fe2129e6
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b6662182fe2129e6	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b6662182fe2129e6	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/_patch_numpy2.py
++# hypothesis_version: 6.156.6
++
++['NaN', '_expired_attrs_2_0', 'float_', 'string_', 'unicode_']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b77c4c40bd8aeee1 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b77c4c40bd8aeee1
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b77c4c40bd8aeee1	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b77c4c40bd8aeee1	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/config.py
++# hypothesis_version: 6.156.6
++
++['1', 'DATA_ONLY', 'False', 'SCHEMA_AND_DATA', 'SCHEMA_ONLY', 'True', 'data', 'false', 'schema', 'true']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b79b8ee80a4f4e72 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b79b8ee80a4f4e72
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b79b8ee80a4f4e72	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b79b8ee80a4f4e72	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/hypotheses.py
++# hypothesis_version: 6.156.6
++
++[0.01, 'equal', 'greater_than', 'less_than', 'not_equal']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b84c84f73ec38277 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b84c84f73ec38277
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/b84c84f73ec38277	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/b84c84f73ec38277	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/dataframe/model.py
++# hypothesis_version: 6.156.6
++
++['Config', 'DataFrameModel', 'TDataFrame', 'TSchema', '_', '__annotations__', '__parameters__', 'add_missing_columns', 'coerce', 'columns', 'dataframe', 'description', 'drop_invalid_rows', 'dtype', 'metadata', 'name', 'ordered', 'strict', 'title', 'unique', 'unique_column_names']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/bbcd416c5325d88c /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/bbcd416c5325d88c
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/bbcd416c5325d88c	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/bbcd416c5325d88c	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/strategies/pandas_strategies.py
++# hypothesis_version: 6.156.6
++
++['Column', 'Dataframe', 'Element-wise', 'F', '[', 'allow_infinity', 'allow_nan', 'column', 'datetime64', 'datetime64[ns]', 'dtype', 'index', 'max_value', 'min_value', 'ns', 'object', 'str', 'string', 'type', 'tz', '\ud800', '\udfff']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/bc27e8111dfd1f5a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/bc27e8111dfd1f5a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/bc27e8111dfd1f5a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/bc27e8111dfd1f5a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/io/_constants.py
++# hypothesis_version: 6.156.6
++
++['%Y-%m-%d %H:%M:%S']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c171193ec69bfb8b /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c171193ec69bfb8b
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c171193ec69bfb8b	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c171193ec69bfb8b	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/model_components.py
++# hypothesis_version: 6.156.6
++
++['__name__', 'alias', 'check_name', 'checks', 'coerce', 'default', 'description', 'dtype_kwargs', 'metadata', 'name', 'nullable', 'original_name', 'parses', 'regex', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c49d0c79f7a35b12 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c49d0c79f7a35b12
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c49d0c79f7a35b12	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c49d0c79f7a35b12	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/dataframe/components.py
++# hypothesis_version: 6.156.6
++
++['ComponentSchema', 'TComponentSchemaBase', 'TDataObject', 'all']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c4cff8663e881f6c /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c4cff8663e881f6c
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c4cff8663e881f6c	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c4cff8663e881f6c	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/strategies/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c8b2a46aab64b709 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c8b2a46aab64b709
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c8b2a46aab64b709	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c8b2a46aab64b709	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/system.py
++# hypothesis_version: 6.156.6
++
++['Windows', 'float128']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c9bfdc6d6019dd4f /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c9bfdc6d6019dd4f
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/c9bfdc6d6019dd4f	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/c9bfdc6d6019dd4f	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/dask.py
++# hypothesis_version: 6.156.6
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ca347c123848a8b3 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ca347c123848a8b3
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ca347c123848a8b3	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ca347c123848a8b3	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/dtypes.py
++# hypothesis_version: 6.156.6
++
++[128, 256, '1.', '_Dtype', '__init__', '_ctx', '_exp', 'all', 'binary', 'bool', 'categories', 'category', 'complex', 'date', 'exclude_first', 'exclude_last', 'float', 'frozen', 'init', 'int', 'ordered', 'precision', 'repr', 'rounding', 'scale', 'string', 'timedelta', 'timestamp', 'uint']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/cbb7d6bd61dc5dc5 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/cbb7d6bd61dc5dc5
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/cbb7d6bd61dc5dc5	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/cbb7d6bd61dc5dc5	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/components.py
++# hypothesis_version: 6.156.6
++
++['checks', 'coerce', 'default', 'description', 'dtype', 'metadata', 'name', 'nullable', 'parsers', 'regex', 'report_duplicates', 'required', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ce7ceaa26cb29631 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ce7ceaa26cb29631
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ce7ceaa26cb29631	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ce7ceaa26cb29631	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/extensions.py
++# hypothesis_version: 6.156.6
++
++[', ', 'element_wise', 'error', 'groupby', 'groups', 'vectorized']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ce8ce3f6ea082234 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ce8ce3f6ea082234
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ce8ce3f6ea082234	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ce8ce3f6ea082234	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/_pandas_deprecated.py
++# hypothesis_version: 6.156.6
++
++['1.24.4', '2.1.1', 'BOOL', 'Bool', 'Category', 'Check', 'Column', 'Complex', 'Complex128', 'Complex256', 'Complex64', 'DataFrameModel', 'DataFrameSchema', 'DataType', 'Date', 'DateTime', 'Decimal', 'Field', 'Float', 'Float128', 'Float16', 'Float32', 'Float64', 'Hypothesis', 'INT16', 'INT32', 'INT64', 'INT8', 'Index', 'Int', 'Int16', 'Int32', 'Int64', 'Int8', 'MultiIndex', 'Object', 'Parser', 'STRING', 'SeriesSchema', 'String', 'Timedelta', 'Timestamp', 'UINT16', 'UINT32', 'UINT64', 'UINT8', 'UInt', 'UInt16', 'UInt32', 'UInt64', 'UInt8', 'Windows', 'check', 'check_input', 'check_io', 'check_output', 'check_types', 'dataframe_check', 'dataframe_parser', 'dtypes', 'extensions', 'false', 'infer_schema', 'pandas_version', 'parser', 'true', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d0e24f9e390859b1 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d0e24f9e390859b1
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d0e24f9e390859b1	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d0e24f9e390859b1	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/__init__.py
++# hypothesis_version: 6.156.6
++
++['Check', 'Field', '__version__', 'check', 'dataframe_check', 'dataframe_parser', 'dtypes', 'parser', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d3249349ea2ae0f5 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d3249349ea2ae0f5
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d3249349ea2ae0f5	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d3249349ea2ae0f5	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/errors.py
++# hypothesis_version: 6.156.6
++
++['args', 'check', 'check_error', 'check_output', 'column_name', 'column_not_in_schema', 'column_not_ordered', 'data', 'dataframe_check', 'dataframe_parser', 'dtype_coercion_error', 'duplicates', 'failure_cases', 'invalid_column_name', 'invalid_type', 'mismatch_index', 'no_errors', 'parser', 'parser_error', 'parser_output', 'reason_code', 'schema', 'wrong_dtype', 'wrong_field_name']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d36e3793fc1ae4cb /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d36e3793fc1ae4cb
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d36e3793fc1ae4cb	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d36e3793fc1ae4cb	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d5bcd353880948bd /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d5bcd353880948bd
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d5bcd353880948bd	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d5bcd353880948bd	2026-07-17 19:10:03
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/pyarrow_engine.py
++# hypothesis_version: 6.156.6
++
++['binary[pyarrow]', 'bool[pyarrow]', 'date32[day][pyarrow]', 'date64[ms][pyarrow]', 'double[pyarrow]', 'float[pyarrow]', 'halffloat[pyarrow]', 'int16[pyarrow]', 'int32[pyarrow]', 'int64[pyarrow]', 'int8[pyarrow]', 'ms', 'ns', 'null[pyarrow]', 'type', 'uint16[pyarrow]', 'uint32[pyarrow]', 'uint64[pyarrow]', 'uint8[pyarrow]']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d8d2cb4a2b609f27 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d8d2cb4a2b609f27
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d8d2cb4a2b609f27	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d8d2cb4a2b609f27	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/parsers.py
++# hypothesis_version: 6.156.6
++
++['__name__']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d8f718259f5c8acb /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d8f718259f5c8acb
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d8f718259f5c8acb	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d8f718259f5c8acb	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/model_config.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d994eb5400c0eee6 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d994eb5400c0eee6
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/d994eb5400c0eee6	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/d994eb5400c0eee6	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/pandas/model_config.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/da39a3ee5e6b4b0d /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/da39a3ee5e6b4b0d
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/da39a3ee5e6b4b0d	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/da39a3ee5e6b4b0d	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/base/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/dfb8a0a267120578 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/dfb8a0a267120578
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/dfb8a0a267120578	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/dfb8a0a267120578	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/polars.py
++# hypothesis_version: 6.156.6
++
++['T', 'boolean', 'datetime', 'integer', 'items', 'number', 'properties', 'string', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/dfc898df5e39cf43 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/dfc898df5e39cf43
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/dfc898df5e39cf43	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/dfc898df5e39cf43	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/builtin_checks.py
++# hypothesis_version: 6.156.6
++
++['T', '^', 'between', 'eq', 'equal_to({value})', 'ge', 'gt', 'le', 'lt', 'ne']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e1a701c37a02240c /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e1a701c37a02240c
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e1a701c37a02240c	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e1a701c37a02240c	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/hypotheses.py
++# hypothesis_version: 6.156.6
++
++[0.01, 'Hypothesis', 'T', 'alpha', 'equal', 'greater_than', 'groupby', 'less_than', 'not_equal', 'one_sample_ttest', 'propagate', 'relationship', 'samples', 'two_sample_ttest']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e1ec7946e44d23f8 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e1ec7946e44d23f8
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e1ec7946e44d23f8	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e1ec7946e44d23f8	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/pandas/container.py
++# hypothesis_version: 6.156.6
++
++['T', 'column_in_dataframe', 'column_in_schema', 'column_ordered', 'drop_invalid_rows', 'filter', 'pandera', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e292010a81e60ac3 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e292010a81e60ac3
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/e292010a81e60ac3	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/e292010a81e60ac3	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/backends/polars/container.py
++# hypothesis_version: 6.156.6
++
++['check_output', 'coerce', 'column_in_dataframe', 'column_in_schema', 'column_ordered', 'default', 'drop_invalid_rows', 'filter', 'try_coerce']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ea6c67955c51310a /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ea6c67955c51310a
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ea6c67955c51310a	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ea6c67955c51310a	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/polars/utils.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ee0f9122fcadef02 /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ee0f9122fcadef02
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/ee0f9122fcadef02	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/ee0f9122fcadef02	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/typing/pyspark.py
++# hypothesis_version: 6.156.6
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/fd44b16a1b5ea9dd /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/fd44b16a1b5ea9dd
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/.hypothesis/constants/fd44b16a1b5ea9dd	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/.hypothesis/constants/fd44b16a1b5ea9dd	2026-07-17 19:08:51
+@@ -0,0 +1,4 @@
++# file: /private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/engines/__init__.py
++# hypothesis_version: 6.156.6
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/AGENTS.md /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/AGENTS.md
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/AGENTS.md	2026-07-17 18:22:30
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/AGENTS.md	2026-07-17 19:10:14
+@@ -21,6 +21,7 @@
+ │   ├── polars/           # Polars schema and model implementations
+ │   ├── pyspark/          # PySpark schema and model implementations
+ │   ├── ibis/             # Ibis schema and model implementations
++│   ├── geopandas/        # GeoPandas GeoDataFrameSchema/GeoDataFrameModel (rides on pandas backend)
+ │   ├── dataframe/        # Shared dataframe components
+ │   ├── checks.py         # Check class (ge, le, isin, str_matches, etc.)
+ │   └── hypotheses.py     # Hypothesis-based statistical testing
+@@ -53,6 +54,7 @@
+ ├── pandas.py             # Pandas entry point: `import pandera.pandas as pa`
+ ├── polars.py             # Polars entry point: `import pandera.polars as pa`
+ ├── pyspark.py            # PySpark entry point: `import pandera.pyspark as pa`
++├── geopandas.py          # GeoPandas entry point: `import pandera.geopandas as pa`
+ └── ibis.py               # Ibis entry point: `import pandera.ibis as pa`
+ 
+ tests/                    # Test suite (mirrors backend structure)
+@@ -105,6 +107,7 @@
+ import pandera.polars as pa    # Polars
+ import pandera.pyspark as pa   # PySpark
+ import pandera.ibis as pa      # Ibis
++import pandera.geopandas as pa # GeoPandas
+ ```
+ 
+ The top-level `import pandera` falls back to the pandas API for backward
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/geopandas.md /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/geopandas.md
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/geopandas.md	2026-07-17 18:22:30
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/geopandas.md	2026-07-17 19:05:14
+@@ -21,17 +21,23 @@
+ pip install 'pandera[geopandas]'
+ ```
+ 
+-Then you can use pandera schemas to validate geodataframes. In the example
+-below we'll use the {ref}`class-based API <dataframe-models>` to define a
+-{py:class}`~pandera.api.pandas.model.DataFrameModel` for validation.
++## The `pandera.geopandas` entry point
+ 
++The recommended way to validate geodataframes is through the
++`pandera.geopandas` entry point, which mirrors the ergonomics of
++`pandera.pandas` but guarantees that
++{py:class}`~pandera.api.geopandas.container.GeoDataFrameSchema`'s
++``validate`` method always returns a {py:class}`~geopandas.GeoDataFrame`
++with its geometry dtype and CRS intact -- even when the schema coerces a
++plain {py:class}`~pandas.DataFrame` (e.g. one containing WKT strings) into
++geometries.
++
+ ```{code-cell} python
+ import geopandas as gpd
+-import pandas as pd
+-import pandera.pandas as pa
++import pandera.geopandas as pa
+ from shapely.geometry import Polygon
+ 
+-geo_schema = pa.DataFrameSchema({
++geo_schema = pa.GeoDataFrameSchema({
+     "geometry": pa.Column("geometry"),
+     "region": pa.Column(str),
+ })
+@@ -44,14 +50,34 @@
+     "region": ["NA", "SA"]
+ })
+ 
+-geo_schema.validate(geo_df)
++validated = geo_schema.validate(geo_df)
++assert isinstance(validated, gpd.GeoDataFrame)
++validated
+ ```
+ 
++You can also use the {ref}`class-based API <dataframe-models>` to define a
++{py:class}`~pandera.api.geopandas.model.GeoDataFrameModel`:
++
++```{code-cell} python
++from pandera.typing import Series
++from pandera.typing.geopandas import GeoSeries
++
++
++class GeoSchema(pa.GeoDataFrameModel):
++    geometry: GeoSeries
++    region: Series[str]
++
++
++validated = GeoSchema.validate(geo_df)
++assert isinstance(validated, gpd.GeoDataFrame)
++validated
++```
++
+ You can also use the `GeometryDtype` data type in either instantiated or
+ un-instantiated form:
+ 
+ ```{code-cell} python
+-geo_schema = pa.DataFrameSchema({
++geo_schema = pa.GeoDataFrameSchema({
+     "geometry": pa.Column(gpd.array.GeometryDtype),
+     # or
+     "geometry": pa.Column(gpd.array.GeometryDtype()),
+@@ -59,21 +85,15 @@
+ ```
+ 
+ If you want to validate-on-instantiation, you can use the
+-{py:class}`~pandera.typing.geopangas.GeoDataFrame` generic type with the
++{py:class}`~pandera.typing.geopandas.GeoDataFrame` generic type with the
+ dataframe model defined above:
+ 
+ ```{code-cell} python
+-from pandera.typing import Series
+-from pandera.typing.geopandas import GeoDataFrame, GeoSeries
++from pandera.typing.geopandas import GeoDataFrame
+ 
+ 
+-class Schema(pa.DataFrameModel):
+-    geometry: GeoSeries
+-    region: Series[str]
+-
+-
+ # create a geodataframe that's validated on object initialization
+-df = GeoDataFrame[Schema](
++df = GeoDataFrame[GeoSchema](
+     {
+         'geometry': [
+             Polygon(((0, 0), (0, 1), (1, 1), (1, 0))),
+@@ -83,4 +103,24 @@
+     }
+ )
+ df
++```
++
++## Using the pandas API on GeoDataFrames
++
++Because GeoPandas objects subclass their pandas counterparts, the
++pandas-based `pandera.pandas` schemas and models are still fully supported
++for validating geodataframes and geoseries. The difference is that
++`pa.DataFrameSchema.validate`/`pa.DataFrameModel.validate` return whatever
++type the pandas backend happens to produce, whereas `pandera.geopandas`'s
++`GeoDataFrameSchema`/`GeoDataFrameModel` always return a `GeoDataFrame`.
++
++```{code-cell} python
++import pandera.pandas as pa
++
++geo_schema = pa.DataFrameSchema({
++    "geometry": pa.Column("geometry"),
++    "region": pa.Column(str),
++})
++
++geo_schema.validate(geo_df)
+ ```
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/reference/core.rst /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/reference/core.rst
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/reference/core.rst	2026-07-17 18:22:30
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/reference/core.rst	2026-07-17 19:04:28
+@@ -15,6 +15,7 @@
+    pandera.api.pandas.array.SeriesSchema
+    pandera.api.polars.container.DataFrameSchema
+    pandera.api.pyspark.container.DataFrameSchema
++   pandera.api.geopandas.container.GeoDataFrameSchema
+    pandera.api.dataframe.container.DataFrameSchema
+ 
+ Schema Components
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/reference/dataframe_models.rst /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/reference/dataframe_models.rst
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/docs/source/reference/dataframe_models.rst	2026-07-17 18:22:30
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/docs/source/reference/dataframe_models.rst	2026-07-17 19:04:36
+@@ -13,6 +13,7 @@
+    pandera.api.pandas.model.DataFrameModel
+    pandera.api.polars.model.DataFrameModel
+    pandera.api.pyspark.model.DataFrameModel
++   pandera.api.geopandas.model.GeoDataFrameModel
+    pandera.api.dataframe.model.DataFrameModel
+ 
+ Model Components
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/__init__.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/__init__.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/__init__.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/__init__.py	2026-07-17 18:59:54
+@@ -0,0 +1 @@
++"""GeoPandas core."""
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/container.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/container.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/container.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/container.py	2026-07-17 19:07:44
+@@ -0,0 +1,234 @@
++"""Core geopandas dataframe container specification."""
++
++import sys
++from typing import Any, Union
++
++import geopandas as gpd
++import pandas as pd
++
++if sys.version_info < (3, 11):
++    from typing_extensions import Self
++else:
++    from typing import Self
++
++from pandera.api.pandas.container import DataFrameSchema as PandasDataFrameSchema
++
++
++def _active_geometry_name(gdf: gpd.GeoDataFrame) -> str | None:
++    """Get the name of a GeoDataFrame's active geometry column.
++
++    Newer versions of geopandas expose ``active_geometry_name``; older
++    versions only have the private ``_geometry_column_name`` attribute.
++    """
++    return getattr(
++        gdf, "active_geometry_name", None
++    ) or gdf._geometry_column_name
++
++
++class GeoDataFrameSchema(PandasDataFrameSchema):
++    """A lightweight geopandas GeoDataFrame validator.
++
++    This schema rides on the pandas validation backend and engine -- it
++    does not define its own -- but guarantees that :func:`validate` always
++    returns a :class:`geopandas.GeoDataFrame` with its geometry dtype and
++    CRS intact, even when validating a plain :class:`pandas.DataFrame`
++    (e.g. one containing WKT strings that get coerced into geometries).
++    """
++
++    @classmethod
++    def get_backend(cls, check_obj=None, check_type=None):
++        """Get the pandas backend associated with the type of ``check_obj``.
++
++        ``get_backend`` is a classmethod, so calling it as ``self.get_backend``
++        binds ``cls`` to ``GeoDataFrameSchema`` (the most-derived class),
++        which has no backend registered under its own name -- only
++        :class:`~pandera.api.pandas.container.DataFrameSchema` does.
++        Delegate explicitly to the pandas schema class so the existing
++        pandas backend registry is used, without duplicating any
++        registration logic.
++        """
++        return PandasDataFrameSchema.get_backend(
++            check_obj=check_obj, check_type=check_type
++        )
++
++    def validate(
++        self,
++        check_obj: Union[pd.DataFrame, gpd.GeoDataFrame],
++        head: int | None = None,
++        tail: int | None = None,
++        sample: int | None = None,
++        random_state: int | None = None,
++        lazy: bool = False,
++        inplace: bool = False,
++    ) -> gpd.GeoDataFrame:
++        """Validate a GeoDataFrame based on the schema specification.
++
++        This delegates to the pandas validation backend and then guarantees
++        that the returned object is a :class:`geopandas.GeoDataFrame` with
++        the active geometry column and CRS preserved from the input (or
++        inferred, if the input/output was a plain DataFrame).
++
++        :param check_obj: the dataframe to be validated.
++        :param head: validate the first n rows.
++        :param tail: validate the last n rows.
++        :param sample: validate a random sample of n rows.
++        :param random_state: random seed for the ``sample`` argument.
++        :param lazy: if True, lazily evaluates dataframe against all
++            validation checks and raises a ``SchemaErrors``. Otherwise,
++            raise ``SchemaError`` as soon as one occurs.
++        :param inplace: if True, applies coercion to the object of
++            validation, otherwise creates a copy of the data.
++        :returns: validated :class:`geopandas.GeoDataFrame`
++        :raises SchemaError: when the object violates built-in or custom
++            checks.
++        """
++        validated = super().validate(
++            check_obj, head, tail, sample, random_state, lazy, inplace
++        )
++        return self._ensure_geodataframe(validated, check_obj)
++
++    @staticmethod
++    def _ensure_geodataframe(
++        validated: Union[pd.DataFrame, gpd.GeoDataFrame],
++        original: Any,
++    ) -> gpd.GeoDataFrame:
++        """Guarantee that ``validated`` is a GeoDataFrame with geometry
++        dtype and CRS intact, using ``original`` (the pre-validation input)
++        to recover the active geometry column name and CRS when needed.
++        """
++        geometry_name: str | None = None
++        crs = None
++        if isinstance(original, gpd.GeoDataFrame):
++            geometry_name = _active_geometry_name(original)
++            if geometry_name is not None:
++                # ``GeoDataFrame.crs`` raises AttributeError when there is
++                # no active geometry column, so only access it once we
++                # know one is set.
++                crs = original.crs
++
++        if isinstance(validated, gpd.GeoDataFrame):
++            # Backend already returned a GeoDataFrame: avoid unnecessary
++            # copies/reconstruction.
++            result = validated
++        else:
++            # A column-level ``Geometry(crs=...)`` coercion (done by the
++            # engine) may have already produced geometry-dtyped columns
++            # with a CRS baked into their underlying GeometryArray, even
++            # though the container itself is still a plain DataFrame. The
++            # generic ``_coerce_geometry`` re-coercion below only knows how
++            # to build shapely geometries from scratch, so it drops that
++            # CRS; capture it here so it can be restored afterward.
++            column_crs = {
++                col: col_crs
++                for col in validated.columns
++                if str(validated[col].dtype) == "geometry"
++                and (col_crs := validated[col].array.crs) is not None
++            }
++
++            # Plain DataFrame result (e.g. after coercion): reuse the
++            # geometry-coercion logic from pandera.typing.geopandas so we
++            # don't invent a second set of conversion rules.
++            from pandera.typing.geopandas import (
++                GeoDataFrame as _PanderaGeoDataFrame,
++            )
++
++            result = _PanderaGeoDataFrame._coerce_geometry(validated)
++            if not isinstance(result, gpd.GeoDataFrame):
++                result = gpd.GeoDataFrame(result)
++
++            for col, col_crs in column_crs.items():
++                if col in result.columns and result[col].crs is None:
++                    result[col] = result[col].set_crs(col_crs)
++
++        result = GeoDataFrameSchema._restore_active_geometry(
++            result, geometry_name
++        )
++        result = GeoDataFrameSchema._restore_crs(result, crs)
++        return result
++
++    @staticmethod
++    def _restore_active_geometry(
++        gdf: gpd.GeoDataFrame, geometry_name: str | None
++    ) -> gpd.GeoDataFrame:
++        """Ensure ``gdf`` has an active geometry column set.
++
++        Prefers ``geometry_name`` (the input's active geometry column) when
++        present. Otherwise, falls back to a column literally named
++        "geometry", or the single geometry-dtyped column if there is
++        exactly one.
++        """
++        current = _active_geometry_name(gdf)
++
++        if geometry_name is not None and geometry_name in gdf.columns:
++            if current != geometry_name:
++                gdf = gdf.set_geometry(geometry_name)
++            return gdf
++
++        if current is not None:
++            # Already has an active geometry column; nothing more to do.
++            return gdf
++
++        geometry_dtyped_cols = [
++            col for col in gdf.columns if str(gdf[col].dtype) == "geometry"
++        ]
++        if "geometry" in geometry_dtyped_cols:
++            gdf = gdf.set_geometry("geometry")
++        elif len(geometry_dtyped_cols) == 1:
++            gdf = gdf.set_geometry(geometry_dtyped_cols[0])
++
++        return gdf
++
++    @staticmethod
++    def _restore_crs(gdf: gpd.GeoDataFrame, crs: Any) -> gpd.GeoDataFrame:
++        """If the input had a CRS but the output's active geometry column
++        does not, restore it. A CRS declared on a schema column via
++        ``Geometry(crs=...)`` is otherwise applied during coercion by the
++        engine, so this only fills in the gap left by non-coercing
++        validation of a GeoDataFrame that already carries a CRS.
++        """
++        if crs is None:
++            return gdf
++        active_name = _active_geometry_name(gdf)
++        if active_name is not None and gdf[active_name].crs is None:
++            gdf[active_name] = gdf[active_name].set_crs(crs)
++        return gdf
++
++    @classmethod
++    def _from_pandas_schema(cls, schema: PandasDataFrameSchema) -> Self:
++        """Convert a plain pandas :class:`DataFrameSchema` into a
++        :class:`GeoDataFrameSchema`, passing through all constructor
++        attributes.
++        """
++        return cls(
++            columns=schema.columns,
++            checks=schema.checks,
++            parsers=schema.parsers,
++            index=schema.index,
++            dtype=schema.dtype,
++            coerce=schema.coerce,
++            strict=schema.strict,
++            name=schema.name,
++            ordered=schema.ordered,
++            unique=schema.unique,
++            report_duplicates=schema.report_duplicates,
++            unique_column_names=schema.unique_column_names,
++            add_missing_columns=schema.add_missing_columns,
++            title=schema.title,
++            description=schema.description,
++            metadata=schema.metadata,
++            drop_invalid_rows=schema.drop_invalid_rows,
++        )
++
++    @classmethod
++    def from_json(cls, source) -> Self:
++        """Load schema from JSON (see :mod:`pandera.io.pandas_io`)."""
++        from pandera.io import pandas_io
++
++        return cls._from_pandas_schema(pandas_io.from_json(source))
++
++    @classmethod
++    def from_yaml(cls, yaml_schema) -> Self:
++        """Load schema from YAML (see :mod:`pandera.io.pandas_io`)."""
++        from pandera.io import pandas_io
++
++        return cls._from_pandas_schema(pandas_io.from_yaml(yaml_schema))
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/model.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/model.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/api/geopandas/model.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/api/geopandas/model.py	2026-07-17 19:00:34
+@@ -0,0 +1,22 @@
++"""Class-based API for geopandas models."""
++
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.api.pandas.model import DataFrameModel as PandasDataFrameModel
++from pandera.api.pandas.model_config import BaseConfig
++
++
++class GeoDataFrameModel(PandasDataFrameModel):
++    """Model of a :class:`~pandera.api.geopandas.container.GeoDataFrameSchema`.
++
++    See the :ref:`User Guide <dataframe-models>` for more, and
++    :class:`~pandera.api.geopandas.container.GeoDataFrameSchema` for the
++    guarantees this model's ``validate`` provides (namely, that it always
++    returns a :class:`geopandas.GeoDataFrame`).
++    """
++
++    Config: type[BaseConfig] = BaseConfig
++
++    @classmethod
++    def build_schema_(cls, **kwargs) -> GeoDataFrameSchema:
++        pandas_schema = super().build_schema_(**kwargs)
++        return GeoDataFrameSchema._from_pandas_schema(pandas_schema)
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/geopandas.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/geopandas.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/geopandas.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/geopandas.py	2026-07-17 19:03:27
+@@ -0,0 +1,54 @@
++"""A flexible and expressive geopandas validation library."""
++
++try:
++    import geopandas as gpd  # noqa: F401
++except ImportError as exc:  # pragma: no cover
++    raise ImportError(
++        "geopandas is required for pandera.geopandas. Please install it "
++        "with: pip install 'pandera[geopandas]'"
++    ) from exc
++
++# Importing pandera.pandas sets up the pandas backend/engine machinery
++# (numpy2 patch, external config, lazy backend registration, etc.) that
++# pandera.geopandas rides on -- geopandas validation is handled entirely by
++# the pandas backend and engine.
++import pandera.pandas  # noqa: F401
++
++from pandera import errors
++from pandera.api.checks import Check
++from pandera.api.dataframe.model_components import (
++    Field,
++    check,
++    dataframe_check,
++    dataframe_parser,
++    parser,
++)
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.api.geopandas.model import GeoDataFrameModel
++from pandera.api.pandas.components import Column, Index, MultiIndex
++from pandera.decorators import check_input, check_io, check_output, check_types
++from pandera.engines.geopandas_engine import Geometry
++from pandera.schema_inference.geopandas import infer_schema
++from pandera.typing import geopandas as typing
++
++__all__ = [
++    "Check",
++    "Column",
++    "Index",
++    "MultiIndex",
++    "Field",
++    "check",
++    "dataframe_check",
++    "parser",
++    "dataframe_parser",
++    "GeoDataFrameSchema",
++    "GeoDataFrameModel",
++    "Geometry",
++    "errors",
++    "check_input",
++    "check_io",
++    "check_output",
++    "check_types",
++    "infer_schema",
++    "typing",
++]
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/schema_inference/geopandas.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_inference/geopandas.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/pandera/schema_inference/geopandas.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/pandera/schema_inference/geopandas.py	2026-07-17 19:03:22
+@@ -0,0 +1,23 @@
++"""Module for inferring geopandas GeoDataFrame schema."""
++
++import geopandas as gpd
++
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.schema_inference.pandas import infer_dataframe_schema
++
++
++def infer_schema(gpd_obj: gpd.GeoDataFrame) -> GeoDataFrameSchema:
++    """Infer schema for a geopandas GeoDataFrame object.
++
++    :param gpd_obj: GeoDataFrame object to infer.
++    :returns: GeoDataFrameSchema
++    :raises: TypeError if gpd_obj is not expected type.
++    """
++    if isinstance(gpd_obj, gpd.GeoDataFrame):
++        pandas_schema = infer_dataframe_schema(gpd_obj)
++        return GeoDataFrameSchema._from_pandas_schema(pandas_schema)
++    else:
++        raise TypeError(
++            "gpd_obj type not recognized. Expected a geopandas GeoDataFrame, "
++            f"found {type(gpd_obj)}"
++        )
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/tests/geopandas/test_geodataframe_schema.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/tests/geopandas/test_geodataframe_schema.py
+--- /Users/brianendo/Projects/rl-environments/tasks/pandera-geodataframe-support/world/tests/geopandas/test_geodataframe_schema.py	1969-12-31 16:00:00
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-pandera-geodataframe-support-6k3_azf6/tests/geopandas/test_geodataframe_schema.py	2026-07-17 19:07:23
+@@ -0,0 +1,206 @@
++"""Tests for the first-class ``pandera.geopandas`` module.
++
++These tests cover the dedicated geopandas API surface:
++``GeoDataFrameSchema`` and ``GeoDataFrameModel``, whose ``validate`` returns a
++``geopandas.GeoDataFrame`` (geometry dtype and CRS intact) where the pandas
++equivalents return a plain ``pandas.DataFrame``.
++"""
++
++import geopandas as gpd
++import pandas as pd
++import pytest
++from pydantic import BaseModel, ValidationError
++from shapely.geometry import Point
++
++import pandera.geopandas as pa_gpd
++from pandera.errors import SchemaError, SchemaErrors
++from pandera.typing.geopandas import GeoDataFrame, GeoSeries
++
++
++@pytest.fixture
++def gdf() -> gpd.GeoDataFrame:
++    return gpd.GeoDataFrame(
++        {
++            "geometry": gpd.GeoSeries([Point(0, 0), Point(1, 1)]),
++            "value": [1.0, 2.0],
++        },
++        crs="EPSG:4326",
++    )
++
++
++@pytest.fixture
++def schema() -> "pa_gpd.GeoDataFrameSchema":
++    return pa_gpd.GeoDataFrameSchema(
++        {
++            "geometry": pa_gpd.Column("geometry"),
++            "value": pa_gpd.Column(float, pa_gpd.Check.ge(0)),
++        }
++    )
++
++
++def test_module_exports():
++    """The geopandas module mirrors the pandas entrypoint ergonomics."""
++    for name in [
++        "GeoDataFrameSchema",
++        "GeoDataFrameModel",
++        "Column",
++        "Check",
++        "Field",
++        "Index",
++        "MultiIndex",
++        "Geometry",
++        "check",
++        "dataframe_check",
++        "check_types",
++        "check_input",
++        "check_output",
++        "check_io",
++        "infer_schema",
++        "errors",
++    ]:
++        assert hasattr(pa_gpd, name), f"pandera.geopandas missing {name}"
++
++
++def test_schema_validate_returns_geodataframe(schema, gdf):
++    """Object-based API returns a GeoDataFrame with geometry + CRS intact."""
++    validated = schema.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert str(validated["geometry"].dtype) == "geometry"
++    assert validated.geometry.name == "geometry"
++    assert validated.crs == "EPSG:4326"
++    # __call__ alias behaves the same
++    called = schema(gdf)
++    assert isinstance(called, gpd.GeoDataFrame)
++
++
++def test_schema_validate_failure_raises(schema, gdf):
++    """Validation failures raise pandera's usual errors."""
++    bad = gdf.copy()
++    bad["value"] = [-1.0, 2.0]
++    with pytest.raises(SchemaError):
++        schema.validate(bad)
++    with pytest.raises(SchemaErrors):
++        schema.validate(bad, lazy=True)
++
++
++def test_schema_validate_plain_dataframe_coercion():
++    """Coercing a plain DataFrame (e.g. WKT strings) yields a GeoDataFrame."""
++    schema = pa_gpd.GeoDataFrameSchema(
++        {"geometry": pa_gpd.Column(pa_gpd.Geometry(crs="EPSG:4326"))},
++        coerce=True,
++    )
++    df = pd.DataFrame({"geometry": ["POINT (0 0)", "POINT (1 1)"]})
++    validated = schema.validate(df)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert str(validated["geometry"].dtype) == "geometry"
++    assert validated.geometry.name == "geometry"
++    assert validated["geometry"].crs == "EPSG:4326"
++
++
++def test_schema_validate_preserves_nonstandard_geometry_column():
++    """The input's active geometry column is preserved on output."""
++    gdf = gpd.GeoDataFrame(
++        {"geom": gpd.GeoSeries([Point(0, 0), Point(1, 1)])},
++        geometry="geom",
++        crs="EPSG:3857",
++    )
++    schema = pa_gpd.GeoDataFrameSchema({"geom": pa_gpd.Column("geometry")})
++    validated = schema.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert validated.geometry.name == "geom"
++    assert validated.crs == "EPSG:3857"
++
++
++def test_schema_validate_geodataframe_without_active_geometry():
++    """A GeoDataFrame with no active geometry column validates cleanly."""
++    gdf = gpd.GeoDataFrame({"value": [1.0, 2.0]})
++    schema = pa_gpd.GeoDataFrameSchema({"value": pa_gpd.Column(float)})
++    validated = schema.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++
++
++def test_geodataframe_model(gdf):
++    """Class-based API validates and returns a GeoDataFrame."""
++
++    class Model(pa_gpd.GeoDataFrameModel):
++        geometry: GeoSeries
++        value: float = pa_gpd.Field(ge=0)
++
++    assert isinstance(Model.to_schema(), pa_gpd.GeoDataFrameSchema)
++
++    validated = Model.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert validated.crs == "EPSG:4326"
++
++    bad = gdf.copy()
++    bad["value"] = [-1.0, 2.0]
++    with pytest.raises(SchemaError):
++        Model.validate(bad)
++
++
++def test_geodataframe_model_config_coerce():
++    """Model-level Config coercion produces a GeoDataFrame with target CRS."""
++
++    class Model(pa_gpd.GeoDataFrameModel):
++        geometry: GeoSeries = pa_gpd.Field(dtype_kwargs={"crs": "EPSG:4326"})
++
++        class Config:
++            coerce = True
++
++    df = pd.DataFrame({"geometry": ["POINT (0 0)", "POINT (1 1)"]})
++    validated = Model.validate(df)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert validated["geometry"].crs == "EPSG:4326"
++
++
++def test_schema_json_roundtrip(schema, gdf):
++    """A schema serialized to JSON and loaded back still validates a
++    GeoDataFrame and still returns a GeoDataFrame."""
++    loaded = pa_gpd.GeoDataFrameSchema.from_json(schema.to_json())
++    assert isinstance(loaded, pa_gpd.GeoDataFrameSchema)
++    validated = loaded.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert validated.crs == "EPSG:4326"
++
++    bad = gdf.copy()
++    bad["value"] = [-1.0, 2.0]
++    with pytest.raises(SchemaError):
++        loaded.validate(bad)
++
++
++def test_schema_yaml_roundtrip(schema, gdf):
++    """YAML round trip behaves like the JSON round trip."""
++    loaded = pa_gpd.GeoDataFrameSchema.from_yaml(schema.to_yaml())
++    assert isinstance(loaded, pa_gpd.GeoDataFrameSchema)
++    validated = loaded.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++
++
++def test_infer_schema(gdf):
++    """Schema inference on a GeoDataFrame produces a schema that validates
++    it and returns a GeoDataFrame."""
++    inferred = pa_gpd.infer_schema(gdf)
++    assert isinstance(inferred, pa_gpd.GeoDataFrameSchema)
++    validated = inferred.validate(gdf)
++    assert isinstance(validated, gpd.GeoDataFrame)
++    assert validated.crs == "EPSG:4326"
++
++
++def test_geodataframe_model_as_pydantic_field(gdf):
++    """A GeoDataFrameModel-typed field works in a pydantic model."""
++
++    class Model(pa_gpd.GeoDataFrameModel):
++        geometry: GeoSeries
++        value: float = pa_gpd.Field(ge=0)
++
++    class PydanticModel(BaseModel):
++        data: GeoDataFrame[Model]
++
++    obj = PydanticModel(data=gdf)
++    assert isinstance(obj.data, gpd.GeoDataFrame)
++    assert obj.data.crs == "EPSG:4326"
++
++    bad = gdf.copy()
++    bad["value"] = [-1.0, 2.0]
++    with pytest.raises(ValidationError):
++        PydanticModel(data=bad)

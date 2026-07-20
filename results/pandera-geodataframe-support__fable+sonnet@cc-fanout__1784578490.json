@@ -1,0 +1,109 @@
+{
+  "task": "pandera-geodataframe-support",
+  "config": "fable+sonnet@cc-fanout",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": "claude-sonnet-5",
+  "score": {
+    "score": 1.0,
+    "passed": 8,
+    "total": 8,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "core_schema": true,
+      "core_model": true,
+      "io_roundtrip": true,
+      "infer_schema": true,
+      "pydantic_field": true,
+      "repro_test": true,
+      "self_consistent": true,
+      "existing_suite_regression": true
+    },
+    "modified_guarded_files": [],
+    "blockers": null,
+    "grader_pass": null,
+    "tails": {
+      "core_schema": [
+        "hidden_tests/test_geo_schema.py::test_schema_coercion_preserves_geo PASSED [100%]",
+        "",
+        "============================== 3 passed in 2.19s ==============================="
+      ],
+      "core_model": [
+        "hidden_tests/test_geo_model.py::test_model_failures_still_raise PASSED   [100%]",
+        "",
+        "============================== 2 passed in 0.94s ==============================="
+      ],
+      "io_roundtrip": [
+        "hidden_tests/test_geo_io.py::test_json_roundtrip_still_validates_geodataframe PASSED [100%]",
+        "",
+        "============================== 1 passed in 0.94s ==============================="
+      ],
+      "infer_schema": [
+        "hidden_tests/test_geo_infer.py::test_infer_schema_validates_geodataframe PASSED [100%]",
+        "",
+        "============================== 1 passed in 0.94s ==============================="
+      ],
+      "pydantic_field": [
+        "hidden_tests/test_geo_pydantic.py::test_pydantic_field_rejects_invalid_frame PASSED [100%]",
+        "",
+        "============================== 2 passed in 0.97s ==============================="
+      ],
+      "self_consistent": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "======================== 84 passed, 5 warnings in 1.79s ========================"
+      ],
+      "repro_test": [
+        "failures on pristine=999 vs own tree=0",
+        "=============================== 1 error in 1.13s ==============================="
+      ],
+      "existing_suite_regression": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "======================== 66 passed, 1 warning in 1.60s ========================="
+      ]
+    }
+  },
+  "wall_seconds": 937.5,
+  "error": null,
+  "lead_summary": "Done \u2014 first-class GeoPandas validation is implemented, tested, and documented. Everything is green.\n\n## What was built\n\n**New module `pandera.geopandas`** (`pandera/geopandas.py`), mirroring `pandera.polars`'s surface: `GeoDataFrameSchema`, `GeoDataFrameModel`, `Column`, `Check`, `Field`, `check`/`dataframe_check`, the `check_*` decorators, the `Geometry` dtype, `infer_schema`, and the `GeoDataFrame`/`GeoSeries` typing aliases, with a helpful `ImportError` when geopandas isn't installed. Backing it:\n\n- `pandera/api/geopandas/container.py` \u2014 `GeoDataFrameSchema` subclasses the pandas `DataFrameSchema`; `validate()` runs the normal pandas-backend validation, then guarantees the result is a `gpd.GeoDataFrame` with the active geometry column set (CRS rides along on the GeometryArray). So a GeoDataFrame in \u2192 GeoDataFrame out, and a *plain* DataFrame in \u2192 GeoDataFrame out, which the pandas classes don't do. It also registers itself in pandera's backend registry (which keys on the exact schema class, no MRO fallback) and overrides `from_json`/`from_yaml` so io round-trips come back as `GeoDataFrameSchema`.\n- `pandera/api/geopandas/model.py` + `model_config.py` \u2014 `GeoDataFrameModel` whose `build_schema_` produces a `GeoDataFrameSchema`, so `Model.validate()`, `to_schema()`, `from_json`, and pydantic-field usage all route through the geo schema.\n- `pandera/schema_inference/geopandas.py` \u2014 `infer_schema(gdf)` returning a `GeoDataFrameSchema`.\n\nI wrote the acceptance tests myself as the contract, then delegated the implementation to a sidekick and verified its two deviations (the backend-registry mirroring is exactly the hook the framework intends; the model base-class change was necessary since the pandas `DataFrameModel` already fixes its generic parameters).\n\n**Regression tests** \u2014 `tests/geopandas/test_geodataframe_schema.py`, 18 tests that fail on today's code (`ModuleNotFoundError: pandera.geopandas`): import surface, GeoDataFrame + CRS preservation, plain-DataFrame and WKT-coercion upgrades, `SchemaError`/`SchemaErrors` on failure, class-based API with `Field`/custom checks/`Config`, JSON+YAML round-trips, schema inference, and pydantic field accept/reject.\n\n**Docs** \u2014 `docs/source/geopandas.md` gained a \"First-class GeoDataFrame schemas\" section (snippets verified to run); the existing pandas-schema guidance remains.\n\n## Verification\n\n- `tests/geopandas`: **84 passed** (66 pre-existing + 18 new).\n- `tests/pandas`: **2352 passed**, 16 skipped, 4 xfailed \u2014 zero failures (a couple of earlier failures turned out to be missing dev deps like `pyarrow`/`hypothesis` in the fresh venv, not code issues).\n- `tests/io` + `tests/base`: green, including JSON/YAML serdes.\n- No existing source file was modified (confirmed via mtime audit \u2014 only the six new files, the test file, and the docs page), so plain-pandas behavior is untouched by construction.\n- Extra smoke tests beyond the suite: `check_types` with `GeoDataFrame[Model]` annotations, `Geometry(crs=...)` coercion actually reprojecting to the target CRS, `strict=\"filter\"`, and geometry-less schemas all return proper GeoDataFrames.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/pandera-geodataframe-support__fable+sonnet@cc-fanout__1784578490.transcript.jsonl",
+  "contamination_hits": [
+    "pip\\s+install\\s+(?!-e\\b|\\.\\[|\\\"\\.|'\\.)[a-zA-Z] x5"
+  ],
+  "cost_usd": 6.4362,
+  "tokens": {
+    "input": 135,
+    "output": 56366,
+    "cache_write": 145226,
+    "cache_read": 3978052
+  },
+  "lead_turns": 39,
+  "sidekick_turns": 30,
+  "lead_code_edits": 2,
+  "delegations": 1,
+  "first_delegation_turn": 15,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 73,
+      "output_tokens": 40252,
+      "cache_write_tokens": 76774,
+      "cache_read_tokens": 2530234,
+      "cost_usd": 5.5032
+    },
+    "sidekick/claude-sonnet-5": {
+      "calls": 1,
+      "input_tokens": 62,
+      "output_tokens": 16114,
+      "cache_write_tokens": 68452,
+      "cache_read_tokens": 1447818,
+      "cost_usd": 0.9329
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 7.011980399999997,
+  "agent_exit_code": 0
+}

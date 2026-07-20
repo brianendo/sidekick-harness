@@ -1,0 +1,1687 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/.gitignore b/.hypothesis/.gitignore
+--- a/.hypothesis/.gitignore	1969-12-31 16:00:00
++++ b/.hypothesis/.gitignore	2026-07-20 13:27:21
+@@ -0,0 +1,9 @@
++# This .gitignore file was automatically created by Hypothesis. Hypothesis gitignores
++# .hypothesis by default, because we generally recommend that .hypothesis not be checked
++# into version control.
++#
++# If you *would* like to check .hypothesis into version control, you should delete this
++# file. Hypothesis will not re-create this .gitignore unless .hypothesis is deleted (and
++# if it does, that's a bug - please report it!)
++
++*
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/025e3af480d5a358 b/.hypothesis/constants/025e3af480d5a358
+--- a/.hypothesis/constants/025e3af480d5a358	1969-12-31 16:00:00
++++ b/.hypothesis/constants/025e3af480d5a358	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/components.py
++# hypothesis_version: 6.157.1
++
++['__module__', '_unique', 'column_in_index', 'column_ordered', 'columns', 'determined_by_unique', 'drop_invalid_rows', 'failure_case', 'first', 'index', 'inner', 'level_value', 'multiindex_strict', 'multiindex_unique', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/09cbcf951d5bad0a b/.hypothesis/constants/09cbcf951d5bad0a
+--- a/.hypothesis/constants/09cbcf951d5bad0a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/09cbcf951d5bad0a	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/decorators.py
++# hypothesis_version: 6.157.1
++
++['.', 'Dict', 'F', 'List', 'Tuple', '__wrapped__', 'check_input', 'check_output', 'cls', 'coerce', 'from_format', 'index', 'pandera', 'return', 'self', 'to_format', 'validate']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/0bebf873a459924a b/.hypothesis/constants/0bebf873a459924a
+--- a/.hypothesis/constants/0bebf873a459924a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/0bebf873a459924a	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/type_aliases.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/0ed9dca2438ae180 b/.hypothesis/constants/0ed9dca2438ae180
+--- a/.hypothesis/constants/0ed9dca2438ae180	1969-12-31 16:00:00
++++ b/.hypothesis/constants/0ed9dca2438ae180	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/external_config.py
++# hypothesis_version: 6.157.1
++
++['1', '127.0.0.1', 'SPARK_LOCAL_IP']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/0f50becdf39a32ba b/.hypothesis/constants/0f50becdf39a32ba
+--- a/.hypothesis/constants/0f50becdf39a32ba	1969-12-31 16:00:00
++++ b/.hypothesis/constants/0f50becdf39a32ba	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/base.py
++# hypothesis_version: 6.157.1
++
++['T', 'astype', 'dtype', 'index', 'reason_code']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/10ef8492d56ad208 b/.hypothesis/constants/10ef8492d56ad208
+--- a/.hypothesis/constants/10ef8492d56ad208	1969-12-31 16:00:00
++++ b/.hypothesis/constants/10ef8492d56ad208	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/base/__init__.py
++# hypothesis_version: 6.157.1
++
++['BaseCheck', 'BaseParser']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/13d7f38e9308f64c b/.hypothesis/constants/13d7f38e9308f64c
+--- a/.hypothesis/constants/13d7f38e9308f64c	1969-12-31 16:00:00
++++ b/.hypothesis/constants/13d7f38e9308f64c	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/utils.py
++# hypothesis_version: 6.157.1
++
++['all', 'exclude_first', 'exclude_last', 'first', 'last']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/143c8e1f170ccfb1 b/.hypothesis/constants/143c8e1f170ccfb1
+--- a/.hypothesis/constants/143c8e1f170ccfb1	1969-12-31 16:00:00
++++ b/.hypothesis/constants/143c8e1f170ccfb1	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/utils.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/19fc7894eb6e3e0a b/.hypothesis/constants/19fc7894eb6e3e0a
+--- a/.hypothesis/constants/19fc7894eb6e3e0a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/19fc7894eb6e3e0a	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/engine.py
++# hypothesis_version: 6.157.1
++
++['Engine', '_DataType', '_Engine', '_TypedDictMeta', '__annotations__', '__bases__', '__origin__', '_base_pandera_dtypes', '_registered_dtypes', 'base_pandera_dtypes', 'typing_extensions']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/1c4893c5a21116bf b/.hypothesis/constants/1c4893c5a21116bf
+--- a/.hypothesis/constants/1c4893c5a21116bf	1969-12-31 16:00:00
++++ b/.hypothesis/constants/1c4893c5a21116bf	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/schema_inference/pandas.py
++# hypothesis_version: 6.157.1
++
++['checks', 'columns', 'dtype', 'index', 'name', 'nullable']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/1e252751379d775a b/.hypothesis/constants/1e252751379d775a
+--- a/.hypothesis/constants/1e252751379d775a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/1e252751379d775a	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/base/builtin_checks.py
++# hypothesis_version: 6.157.1
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/1fc71c6d4958baca b/.hypothesis/constants/1fc71c6d4958baca
+--- a/.hypothesis/constants/1fc71c6d4958baca	1969-12-31 16:00:00
++++ b/.hypothesis/constants/1fc71c6d4958baca	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/strategies/base_strategies.py
++# hypothesis_version: 6.157.1
++
++['F', 'T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/201c539aab1910e4 b/.hypothesis/constants/201c539aab1910e4
+--- a/.hypothesis/constants/201c539aab1910e4	1969-12-31 16:00:00
++++ b/.hypothesis/constants/201c539aab1910e4	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/__init__.py
++# hypothesis_version: 6.157.1
++
++['AnnotationInfo', 'DataFrame', 'Index', 'Series', 'get_dataframe_types', 'get_index_types', 'get_series_types']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/20a1f2b926414be3 b/.hypothesis/constants/20a1f2b926414be3
+--- a/.hypothesis/constants/20a1f2b926414be3	1969-12-31 16:00:00
++++ b/.hypothesis/constants/20a1f2b926414be3	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/error_formatters.py
++# hypothesis_version: 6.157.1
++
++[', ', 'check', 'check_number', 'column', 'failure_case', 'index', 'modin.pandas', 'pyspark.pandas', 'schema_context']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/2403b69c25d36253 b/.hypothesis/constants/2403b69c25d36253
+--- a/.hypothesis/constants/2403b69c25d36253	1969-12-31 16:00:00
++++ b/.hypothesis/constants/2403b69c25d36253	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/common.py
++# hypothesis_version: 6.157.1
++
++['DataFrameModel', 'GenericDtype', 'T', '__args__', '__metadata__', '__orig_class__', 'default_dtype', 'pandera']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/274296a5d1643064 b/.hypothesis/constants/274296a5d1643064
+--- a/.hypothesis/constants/274296a5d1643064	1969-12-31 16:00:00
++++ b/.hypothesis/constants/274296a5d1643064	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/components.py
++# hypothesis_version: 6.157.1
++
++['[\n', '_checks', '_parsers', 'all', 'checks', 'coerce', 'default', 'description', 'dtype', 'ignore', 'metadata', 'name', 'nullable', 'parsers', 'regex', 'report_duplicates', 'required', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/28e7c06c45773621 b/.hypothesis/constants/28e7c06c45773621
+--- a/.hypothesis/constants/28e7c06c45773621	1969-12-31 16:00:00
++++ b/.hypothesis/constants/28e7c06c45773621	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/dataframe/model_components.py
++# hypothesis_version: 6.157.1
++
++['__check_config__', '__parser_config__', 'between', 'checks', 'coerce', 'description', 'dtype', 'eq', 'ge', 'gt', 'ignore_na', 'in_range', 'isin', 'le', 'lt', 'metadata', 'n_failure_cases', 'name', 'ne', 'notin', 'nullable', 'parsers', 'parses', 'raise_warning', 'regex', 'str_contains', 'str_endswith', 'str_length', 'str_matches', 'str_startswith', 'title', 'unique_values_eq']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/291f254cf993da15 b/.hypothesis/constants/291f254cf993da15
+--- a/.hypothesis/constants/291f254cf993da15	1969-12-31 16:00:00
++++ b/.hypothesis/constants/291f254cf993da15	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/2a32b571e29ba4d4 b/.hypothesis/constants/2a32b571e29ba4d4
+--- a/.hypothesis/constants/2a32b571e29ba4d4	1969-12-31 16:00:00
++++ b/.hypothesis/constants/2a32b571e29ba4d4	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/model.py
++# hypothesis_version: 6.157.1
++
++['BaseModel', 'TBaseModel']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/33df717eb63c5caa b/.hypothesis/constants/33df717eb63c5caa
+--- a/.hypothesis/constants/33df717eb63c5caa	1969-12-31 16:00:00
++++ b/.hypothesis/constants/33df717eb63c5caa	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/model_config.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/35a9ddc172887170 b/.hypothesis/constants/35a9ddc172887170
+--- a/.hypothesis/constants/35a9ddc172887170	1969-12-31 16:00:00
++++ b/.hypothesis/constants/35a9ddc172887170	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/checks.py
++# hypothesis_version: 6.157.1
++
++['Check', 'T', '__iter__', '__name__', 'allowed_values', 'attrs', 'cf_has_cell_methods', 'cf_standard_name', 'cf_units', 'coord', 'coords', 'determined_by_unique', 'dim', 'dim_size', 'dims', 'encoding', 'equal_to', 'expected', 'expected_name', 'expected_units', 'forbidden_values', 'greater_than', 'has_attrs', 'has_coords', 'has_dims', 'has_encoding', 'in_range', 'increasing', 'is_monotonic', 'isin', 'less_than', 'n', 'names', 'ndim', 'not_equal_to', 'notin', 'pattern', 'size', 'str_contains', 'str_endswith', 'str_length', 'str_matches', 'str_startswith', 'unique_values_eq', 'values']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/3e34656bb981eaa8 b/.hypothesis/constants/3e34656bb981eaa8
+--- a/.hypothesis/constants/3e34656bb981eaa8	1969-12-31 16:00:00
++++ b/.hypothesis/constants/3e34656bb981eaa8	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/types.py
++# hypothesis_version: 6.157.1
++
++['.', 'DataFrame', 'GeoDataFrame', 'GeoSeries', 'Index', 'MultiIndex', 'Series', 'T', 'dask', 'dask_expr', 'geopandas', 'modin', 'pandas', 'pandera', 'pyspark', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/3fb927edbc4456a4 b/.hypothesis/constants/3fb927edbc4456a4
+--- a/.hypothesis/constants/3fb927edbc4456a4	1969-12-31 16:00:00
++++ b/.hypothesis/constants/3fb927edbc4456a4	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/_minimal.py
++# hypothesis_version: 6.157.1
++
++['add_missing_columns', 'all', 'check_name', 'checks', 'coerce', 'columns', 'coords', 'data_vars', 'dataframe_library', 'default', 'description', 'dims', 'drop_invalid_rows', 'dtype', 'ignore_na', 'index', 'name', 'nullable', 'options', 'ordered', 'ordered_dims', 'pandas', 'raise_warning', 'regex', 'report_duplicates', 'required', 'shape', 'sizes', 'strict', 'strict_attrs', 'strict_coords', 'title', 'unique', 'unique_column_names', 'version']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/436f02c0ad4234e7 b/.hypothesis/constants/436f02c0ad4234e7
+--- a/.hypothesis/constants/436f02c0ad4234e7	1969-12-31 16:00:00
++++ b/.hypothesis/constants/436f02c0ad4234e7	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/schema.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/43754d0c3164379e b/.hypothesis/constants/43754d0c3164379e
+--- a/.hypothesis/constants/43754d0c3164379e	1969-12-31 16:00:00
++++ b/.hypothesis/constants/43754d0c3164379e	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/479947a07609b1ae b/.hypothesis/constants/479947a07609b1ae
+--- a/.hypothesis/constants/479947a07609b1ae	1969-12-31 16:00:00
++++ b/.hypothesis/constants/479947a07609b1ae	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/base/builtin_hypotheses.py
++# hypothesis_version: 6.157.1
++
++['propagate']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/47b22ae1da4a3e1a b/.hypothesis/constants/47b22ae1da4a3e1a
+--- a/.hypothesis/constants/47b22ae1da4a3e1a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/47b22ae1da4a3e1a	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/_version.py
++# hypothesis_version: 6.157.1
++
++['0.0.1', '__commit_id__', '__version__', '__version_tuple__', 'commit_id', 'version', 'version_tuple']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/48d416d01ceea98d b/.hypothesis/constants/48d416d01ceea98d
+--- a/.hypothesis/constants/48d416d01ceea98d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/48d416d01ceea98d	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/schema_statistics/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/49425e88ba4117c5 b/.hypothesis/constants/49425e88ba4117c5
+--- a/.hypothesis/constants/49425e88ba4117c5	1969-12-31 16:00:00
++++ b/.hypothesis/constants/49425e88ba4117c5	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/import_utils.py
++# hypothesis_version: 6.157.1
++
++['F']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/49b2b4b2fb99eb6f b/.hypothesis/constants/49b2b4b2fb99eb6f
+--- a/.hypothesis/constants/49b2b4b2fb99eb6f	1969-12-31 16:00:00
++++ b/.hypothesis/constants/49b2b4b2fb99eb6f	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/parsers.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/4abc1119e1b33f3b b/.hypothesis/constants/4abc1119e1b33f3b
+--- a/.hypothesis/constants/4abc1119e1b33f3b	1969-12-31 16:00:00
++++ b/.hypothesis/constants/4abc1119e1b33f3b	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/utils.py
++# hypothesis_version: 6.157.1
++
++['$', 'F', '^']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/4ae5493a39baf409 b/.hypothesis/constants/4ae5493a39baf409
+--- a/.hypothesis/constants/4ae5493a39baf409	1969-12-31 16:00:00
++++ b/.hypothesis/constants/4ae5493a39baf409	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/53ea3771f55ccd2d b/.hypothesis/constants/53ea3771f55ccd2d
+--- a/.hypothesis/constants/53ea3771f55ccd2d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/53ea3771f55ccd2d	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/model.py
++# hypothesis_version: 6.157.1
++
++['any', 'array', 'check_name', 'coerce', 'extDtype', 'fields', 'items', 'multiindex_', 'name', 'object', 'properties', 'title', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/553fab26ef2cf227 b/.hypothesis/constants/553fab26ef2cf227
+--- a/.hypothesis/constants/553fab26ef2cf227	1969-12-31 16:00:00
++++ b/.hypothesis/constants/553fab26ef2cf227	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/inspection_utils.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/5d98b3fd9c7764ad b/.hypothesis/constants/5d98b3fd9c7764ad
+--- a/.hypothesis/constants/5d98b3fd9c7764ad	1969-12-31 16:00:00
++++ b/.hypothesis/constants/5d98b3fd9c7764ad	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/container.py
++# hypothesis_version: 6.157.1
++
++['dask', 'ignore']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/5da7aa5d06157063 b/.hypothesis/constants/5da7aa5d06157063
+--- a/.hypothesis/constants/5da7aa5d06157063	1969-12-31 16:00:00
++++ b/.hypothesis/constants/5da7aa5d06157063	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/_flat_checks.py
++# hypothesis_version: 6.157.1
++
++['alias', 'check_name', 'checks', 'coerce', 'columns', 'coords', 'data_vars', 'default', 'description', 'dims', 'drop_invalid_rows', 'dtype', 'ignore_na', 'index', 'n_failure_cases', 'name', 'nullable', 'options', 'ordered_dims', 'raise_warning', 'regex', 'report_duplicates', 'required', 'schema_type', 'shape', 'sizes', 'title', 'unique', 'value', 'version']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/69c20a69b0087a9a b/.hypothesis/constants/69c20a69b0087a9a
+--- a/.hypothesis/constants/69c20a69b0087a9a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/69c20a69b0087a9a	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/types.py
++# hypothesis_version: 6.157.1
++
++['filter']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/6d77e42ddfb4122d b/.hypothesis/constants/6d77e42ddfb4122d
+--- a/.hypothesis/constants/6d77e42ddfb4122d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/6d77e42ddfb4122d	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/pandas_engine.py
++# hypothesis_version: 6.157.1
++
++[128, 256, '.', "<class 'numpy.str_'>", "<class 'str'>", 'Complex', 'Float', 'Int', 'NamedTuple', 'O', 'TypedDict', 'UInt', 'ambiguous', 'arrow_string', 'binary[pyarrow]', 'bool', 'bool[pyarrow]', 'boolean', 'bytes', 'categorical', 'category', 'coercion_model', 'complex', 'data_container', 'date', 'date32[day][pyarrow]', 'date64[ms][pyarrow]', 'datetime', 'datetime64', 'datetime64[ns]', 'decimal', 'decimals', 'dict', 'double[pyarrow]', 'dt', 'failure_cases', 'float', 'float[pyarrow]', 'floating', 'generic_type', 'geometry', 'halffloat[pyarrow]', 'infer', 'int', 'int16[pyarrow]', 'int32[pyarrow]', 'int64', 'int64[pyarrow]', 'int8[pyarrow]', 'integer', 'list', 'loc', 'mixed', 'mixed-integer', 'mixed-integer-float', 'modin.pandas', 'ms', 'ns', 'null[pyarrow]', 'object', 'object0', 'object_', 'pyarrow', 'pyspark.pandas', 'python', 'records', 'special_type', 'storage', 'str', 'string', 'string[pyarrow]', 'string[python]', 'time', 'timedelta', 'timedelta64', 'to_datetime_kwargs', 'tuple', 'type', 'tz', 'tz_localize', 'uint', 'uint16[pyarrow]', 'uint32[pyarrow]', 'uint64', 'uint64[pyarrow]', 'uint8[pyarrow]', 'unit']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/6e2f28fe5908f1e2 b/.hypothesis/constants/6e2f28fe5908f1e2
+--- a/.hypothesis/constants/6e2f28fe5908f1e2	1969-12-31 16:00:00
++++ b/.hypothesis/constants/6e2f28fe5908f1e2	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/builtin_checks.py
++# hypothesis_version: 6.157.1
++
++['T', 'between', 'eq', 'equal_to({value})', 'ge', 'gt', 'le', 'lt', 'modin', 'ne', 'pyspark']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/717c85daa2595f6d b/.hypothesis/constants/717c85daa2595f6d
+--- a/.hypothesis/constants/717c85daa2595f6d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/717c85daa2595f6d	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/pandas_io.py
++# hypothesis_version: 6.157.1
++
++[',', ',\n    ', ', ', 'Column()', 'None', 'Timedelta', 'Timestamp', 'add_missing_columns', 'all', 'any', 'array', 'bool', 'boolean', 'category', 'check_name', 'checks', 'coerce', 'columns', 'dask', 'dataframe', 'dataframe_library', 'date', 'datetime', 'datetime64[ns]', 'description', 'drop_invalid_rows', 'dtype', 'duration', 'enum', 'float', 'geojson', 'geopoint', 'in_range', 'index', 'int', 'integer', 'isin', 'maxLength', 'max_value', 'maximum', 'metadata', 'minLength', 'min_value', 'minimum', 'modin', 'name', 'ns', 'nullable', 'number', 'object', 'options', 'ordered', 'pandas', 'pattern', 'pyspark.pandas', 'r', 'regex', 'report_duplicates', 'required', 'schema_type', 'str_length', 'str_matches', 'strftime', 'strict', 'string', 'time', 'timedelta64[ns]', 'title', 'unique', 'unique_column_names', 'utf-8', 'value', 'version', 'w', 'year', 'yearmonth']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/71eec02b7309f214 b/.hypothesis/constants/71eec02b7309f214
+--- a/.hypothesis/constants/71eec02b7309f214	1969-12-31 16:00:00
++++ b/.hypothesis/constants/71eec02b7309f214	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/error_handler.py
++# hypothesis_version: 6.157.1
++
++['check', 'column', 'data', 'data-failures', 'error', 'failure_case', 'failure_cases_count', 'reason_code', 'schema', 'schema-failures', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/734ae0f15b6ce8ff b/.hypothesis/constants/734ae0f15b6ce8ff
+--- a/.hypothesis/constants/734ae0f15b6ce8ff	1969-12-31 16:00:00
++++ b/.hypothesis/constants/734ae0f15b6ce8ff	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/geopandas.py
++# hypothesis_version: 6.157.1
++
++['T', '__class_getitem__', 'geometry']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/743d0749bd533388 b/.hypothesis/constants/743d0749bd533388
+--- a/.hypothesis/constants/743d0749bd533388	1969-12-31 16:00:00
++++ b/.hypothesis/constants/743d0749bd533388	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/numpy_engine.py
++# hypothesis_version: 6.157.1
++
++[128, 256, 'Complex', 'Float', 'Int', 'O', 'UInt', 'bool', 'bytes', 'complex', 'complex128', 'complex256', 'complex64', 'datetime64', 'float', 'float128', 'float16', 'float32', 'float64', 'int', 'int16', 'int32', 'int64', 'int8', 'modin.pandas', 'name', 'object', 'str', 'string', 'timedelta64[ns]', 'type', 'uint', 'uint16', 'uint32', 'uint64', 'uint8']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/781373140c5ba336 b/.hypothesis/constants/781373140c5ba336
+--- a/.hypothesis/constants/781373140c5ba336	1969-12-31 16:00:00
++++ b/.hypothesis/constants/781373140c5ba336	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/pandas.py
++# hypothesis_version: 6.157.1
++
++['1.24.4', '2.1.1', 'BOOL', 'Bool', 'Category', 'Check', 'Column', 'Complex', 'Complex128', 'Complex256', 'Complex64', 'DataFrameModel', 'DataFrameSchema', 'DataType', 'Date', 'DateTime', 'Decimal', 'Field', 'Float', 'Float128', 'Float16', 'Float32', 'Float64', 'Hypothesis', 'INT16', 'INT32', 'INT64', 'INT8', 'Index', 'Int', 'Int16', 'Int32', 'Int64', 'Int8', 'MultiIndex', 'Object', 'Parser', 'STRING', 'SeriesSchema', 'String', 'Timedelta', 'Timestamp', 'UINT16', 'UINT32', 'UINT64', 'UINT8', 'UInt', 'UInt16', 'UInt32', 'UInt64', 'UInt8', 'Windows', 'check', 'check_input', 'check_io', 'check_output', 'check_types', 'dataframe_check', 'dataframe_parser', 'dtypes', 'extensions', 'infer_schema', 'pandas_version', 'parser', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/798920903c8c1f6b b/.hypothesis/constants/798920903c8c1f6b
+--- a/.hypothesis/constants/798920903c8c1f6b	1969-12-31 16:00:00
++++ b/.hypothesis/constants/798920903c8c1f6b	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/checks.py
++# hypothesis_version: 6.157.1
++
++['BaseCheck', '_T', '_check_fn', 'args', 'error', 'func', 'keywords', 'strategy']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/7e7fecbb2631354c b/.hypothesis/constants/7e7fecbb2631354c
+--- a/.hypothesis/constants/7e7fecbb2631354c	1969-12-31 16:00:00
++++ b/.hypothesis/constants/7e7fecbb2631354c	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/accessors/_schema_registry.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/85f6b870b2d0a191 b/.hypothesis/constants/85f6b870b2d0a191
+--- a/.hypothesis/constants/85f6b870b2d0a191	1969-12-31 16:00:00
++++ b/.hypothesis/constants/85f6b870b2d0a191	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/modin.py
++# hypothesis_version: 6.157.1
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/8c21168b0f06db4d b/.hypothesis/constants/8c21168b0f06db4d
+--- a/.hypothesis/constants/8c21168b0f06db4d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/8c21168b0f06db4d	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/parsers.py
++# hypothesis_version: 6.157.1
++
++['_parser_fn']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/8d2ead4faf975845 b/.hypothesis/constants/8d2ead4faf975845
+--- a/.hypothesis/constants/8d2ead4faf975845	1969-12-31 16:00:00
++++ b/.hypothesis/constants/8d2ead4faf975845	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/schema_statistics/pandas.py
++# hypothesis_version: 6.157.1
++
++['check_name', 'checks', 'coerce', 'columns', 'description', 'dtype', 'error', 'ignore_na', 'index', 'isin', 'n_failure_cases', 'name', 'nullable', 'object', 'options', 'raise_warning', 'regex', 'required', 'string', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/8f62eed49157167d b/.hypothesis/constants/8f62eed49157167d
+--- a/.hypothesis/constants/8f62eed49157167d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/8f62eed49157167d	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/array.py
++# hypothesis_version: 6.157.1
++
++['bool', 'default', 'drop_invalid_rows', 'empty', 'field_uniqueness', 'float', 'int', 'not_nullable', 'object', 'pandera', 'pyspark.pandas', 'str', 'string', 'string[pyarrow]']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/9120925a93e49c24 b/.hypothesis/constants/9120925a93e49c24
+--- a/.hypothesis/constants/9120925a93e49c24	1969-12-31 16:00:00
++++ b/.hypothesis/constants/9120925a93e49c24	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/array.py
++# hypothesis_version: 6.157.1
++
++['all', 'dask', 'ignore']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/91cb0413c7417485 b/.hypothesis/constants/91cb0413c7417485
+--- a/.hypothesis/constants/91cb0413c7417485	1969-12-31 16:00:00
++++ b/.hypothesis/constants/91cb0413c7417485	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/accessors/pandas_accessor.py
++# hypothesis_version: 6.157.1
++
++['__pandera_schema__', 'attrs', 'pandera']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/92bfbf462118bf45 b/.hypothesis/constants/92bfbf462118bf45
+--- a/.hypothesis/constants/92bfbf462118bf45	1969-12-31 16:00:00
++++ b/.hypothesis/constants/92bfbf462118bf45	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/dataframe/model_config.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/9398fbbd87809970 b/.hypothesis/constants/9398fbbd87809970
+--- a/.hypothesis/constants/9398fbbd87809970	1969-12-31 16:00:00
++++ b/.hypothesis/constants/9398fbbd87809970	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/register.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/93a58560f1e3f225 b/.hypothesis/constants/93a58560f1e3f225
+--- a/.hypothesis/constants/93a58560f1e3f225	1969-12-31 16:00:00
++++ b/.hypothesis/constants/93a58560f1e3f225	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/builtin_hypotheses.py
++# hypothesis_version: 6.157.1
++
++['propagate', 'sample', 'sample1', 'sample2']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/95b62f676535b292 b/.hypothesis/constants/95b62f676535b292
+--- a/.hypothesis/constants/95b62f676535b292	1969-12-31 16:00:00
++++ b/.hypothesis/constants/95b62f676535b292	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/pandas.py
++# hypothesis_version: 6.157.1
++
++['DataFrame[T]', 'GenericDtype', 'T', 'any', 'boolean', 'datetime', 'duration', 'float64', 'index', 'integer', 'items', 'number', 'properties', 'string', 'type']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/984d32852eb74b7a b/.hypothesis/constants/984d32852eb74b7a
+--- a/.hypothesis/constants/984d32852eb74b7a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/984d32852eb74b7a	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/validation_depth.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/991aeca37d6dbb6b b/.hypothesis/constants/991aeca37d6dbb6b
+--- a/.hypothesis/constants/991aeca37d6dbb6b	1969-12-31 16:00:00
++++ b/.hypothesis/constants/991aeca37d6dbb6b	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/9fc2a148f3a6e986 b/.hypothesis/constants/9fc2a148f3a6e986
+--- a/.hypothesis/constants/9fc2a148f3a6e986	1969-12-31 16:00:00
++++ b/.hypothesis/constants/9fc2a148f3a6e986	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/formats.py
++# hypothesis_version: 6.157.1
++
++['csv', 'dict', 'feather', 'json', 'json_normalize', 'parquet', 'pickle']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/a5085f3b5fe252ff b/.hypothesis/constants/a5085f3b5fe252ff
+--- a/.hypothesis/constants/a5085f3b5fe252ff	1969-12-31 16:00:00
++++ b/.hypothesis/constants/a5085f3b5fe252ff	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/geopandas_engine.py
++# hypothesis_version: 6.157.1
++
++['crs', 'geometry']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/a5575523be703434 b/.hypothesis/constants/a5575523be703434
+--- a/.hypothesis/constants/a5575523be703434	1969-12-31 16:00:00
++++ b/.hypothesis/constants/a5575523be703434	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/function_dispatch.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/a680827b332875be b/.hypothesis/constants/a680827b332875be
+--- a/.hypothesis/constants/a680827b332875be	1969-12-31 16:00:00
++++ b/.hypothesis/constants/a680827b332875be	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/dataframe/container.py
++# hypothesis_version: 6.157.1
++
++['TDataObject', 'all', 'columns', 'dataframe', 'filter', 'index not in schema', 'metadata', 'name']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/ab78699575be88ed b/.hypothesis/constants/ab78699575be88ed
+--- a/.hypothesis/constants/ab78699575be88ed	1969-12-31 16:00:00
++++ b/.hypothesis/constants/ab78699575be88ed	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/.venv/bin/pytest
++# hypothesis_version: 6.157.1
++
++['.exe', '__main__']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/af7a2b1071e85d9e b/.hypothesis/constants/af7a2b1071e85d9e
+--- a/.hypothesis/constants/af7a2b1071e85d9e	1969-12-31 16:00:00
++++ b/.hypothesis/constants/af7a2b1071e85d9e	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/_check_io.py
++# hypothesis_version: 6.157.1
++
++['check_name', 'options', 'value']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/b3ecea957b9a287d b/.hypothesis/constants/b3ecea957b9a287d
+--- a/.hypothesis/constants/b3ecea957b9a287d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/b3ecea957b9a287d	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/checks.py
++# hypothesis_version: 6.157.1
++
++['check_output', 'column', 'columns', 'failure_case', 'failure_cases', 'index', 'modin.pandas', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/b6662182fe2129e6 b/.hypothesis/constants/b6662182fe2129e6
+--- a/.hypothesis/constants/b6662182fe2129e6	1969-12-31 16:00:00
++++ b/.hypothesis/constants/b6662182fe2129e6	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/_patch_numpy2.py
++# hypothesis_version: 6.157.1
++
++['NaN', '_expired_attrs_2_0', 'float_', 'string_', 'unicode_']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/b77c4c40bd8aeee1 b/.hypothesis/constants/b77c4c40bd8aeee1
+--- a/.hypothesis/constants/b77c4c40bd8aeee1	1969-12-31 16:00:00
++++ b/.hypothesis/constants/b77c4c40bd8aeee1	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/config.py
++# hypothesis_version: 6.157.1
++
++['1', 'DATA_ONLY', 'False', 'SCHEMA_AND_DATA', 'SCHEMA_ONLY', 'True', 'data', 'false', 'schema', 'true']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/b79b8ee80a4f4e72 b/.hypothesis/constants/b79b8ee80a4f4e72
+--- a/.hypothesis/constants/b79b8ee80a4f4e72	1969-12-31 16:00:00
++++ b/.hypothesis/constants/b79b8ee80a4f4e72	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/hypotheses.py
++# hypothesis_version: 6.157.1
++
++[0.01, 'equal', 'greater_than', 'less_than', 'not_equal']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/b84c84f73ec38277 b/.hypothesis/constants/b84c84f73ec38277
+--- a/.hypothesis/constants/b84c84f73ec38277	1969-12-31 16:00:00
++++ b/.hypothesis/constants/b84c84f73ec38277	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/dataframe/model.py
++# hypothesis_version: 6.157.1
++
++['Config', 'DataFrameModel', 'TDataFrame', 'TSchema', '_', '__annotations__', '__parameters__', 'add_missing_columns', 'coerce', 'columns', 'dataframe', 'description', 'drop_invalid_rows', 'dtype', 'metadata', 'name', 'ordered', 'strict', 'title', 'unique', 'unique_column_names']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/bbcd416c5325d88c b/.hypothesis/constants/bbcd416c5325d88c
+--- a/.hypothesis/constants/bbcd416c5325d88c	1969-12-31 16:00:00
++++ b/.hypothesis/constants/bbcd416c5325d88c	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/strategies/pandas_strategies.py
++# hypothesis_version: 6.157.1
++
++['Column', 'Dataframe', 'Element-wise', 'F', '[', 'allow_infinity', 'allow_nan', 'column', 'datetime64', 'datetime64[ns]', 'dtype', 'index', 'max_value', 'min_value', 'ns', 'object', 'str', 'string', 'type', 'tz', '\ud800', '\udfff']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/bc27e8111dfd1f5a b/.hypothesis/constants/bc27e8111dfd1f5a
+--- a/.hypothesis/constants/bc27e8111dfd1f5a	1969-12-31 16:00:00
++++ b/.hypothesis/constants/bc27e8111dfd1f5a	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/io/_constants.py
++# hypothesis_version: 6.157.1
++
++['%Y-%m-%d %H:%M:%S']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/c171193ec69bfb8b b/.hypothesis/constants/c171193ec69bfb8b
+--- a/.hypothesis/constants/c171193ec69bfb8b	1969-12-31 16:00:00
++++ b/.hypothesis/constants/c171193ec69bfb8b	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/model_components.py
++# hypothesis_version: 6.157.1
++
++['__name__', 'alias', 'check_name', 'checks', 'coerce', 'default', 'description', 'dtype_kwargs', 'metadata', 'name', 'nullable', 'original_name', 'parses', 'regex', 'title', 'unique']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/c49d0c79f7a35b12 b/.hypothesis/constants/c49d0c79f7a35b12
+--- a/.hypothesis/constants/c49d0c79f7a35b12	1969-12-31 16:00:00
++++ b/.hypothesis/constants/c49d0c79f7a35b12	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/dataframe/components.py
++# hypothesis_version: 6.157.1
++
++['ComponentSchema', 'TComponentSchemaBase', 'TDataObject', 'all']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/c4cff8663e881f6c b/.hypothesis/constants/c4cff8663e881f6c
+--- a/.hypothesis/constants/c4cff8663e881f6c	1969-12-31 16:00:00
++++ b/.hypothesis/constants/c4cff8663e881f6c	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/strategies/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/c8b2a46aab64b709 b/.hypothesis/constants/c8b2a46aab64b709
+--- a/.hypothesis/constants/c8b2a46aab64b709	1969-12-31 16:00:00
++++ b/.hypothesis/constants/c8b2a46aab64b709	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/system.py
++# hypothesis_version: 6.157.1
++
++['Windows', 'float128']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/c9bfdc6d6019dd4f b/.hypothesis/constants/c9bfdc6d6019dd4f
+--- a/.hypothesis/constants/c9bfdc6d6019dd4f	1969-12-31 16:00:00
++++ b/.hypothesis/constants/c9bfdc6d6019dd4f	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/dask.py
++# hypothesis_version: 6.157.1
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/ca347c123848a8b3 b/.hypothesis/constants/ca347c123848a8b3
+--- a/.hypothesis/constants/ca347c123848a8b3	1969-12-31 16:00:00
++++ b/.hypothesis/constants/ca347c123848a8b3	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/dtypes.py
++# hypothesis_version: 6.157.1
++
++[128, 256, '1.', '_Dtype', '__init__', '_ctx', '_exp', 'all', 'binary', 'bool', 'categories', 'category', 'complex', 'date', 'exclude_first', 'exclude_last', 'float', 'frozen', 'init', 'int', 'ordered', 'precision', 'repr', 'rounding', 'scale', 'string', 'timedelta', 'timestamp', 'uint']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/ce7ceaa26cb29631 b/.hypothesis/constants/ce7ceaa26cb29631
+--- a/.hypothesis/constants/ce7ceaa26cb29631	1969-12-31 16:00:00
++++ b/.hypothesis/constants/ce7ceaa26cb29631	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/extensions.py
++# hypothesis_version: 6.157.1
++
++[', ', 'element_wise', 'error', 'groupby', 'groups', 'vectorized']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/ce8ce3f6ea082234 b/.hypothesis/constants/ce8ce3f6ea082234
+--- a/.hypothesis/constants/ce8ce3f6ea082234	1969-12-31 16:00:00
++++ b/.hypothesis/constants/ce8ce3f6ea082234	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/_pandas_deprecated.py
++# hypothesis_version: 6.157.1
++
++['1.24.4', '2.1.1', 'BOOL', 'Bool', 'Category', 'Check', 'Column', 'Complex', 'Complex128', 'Complex256', 'Complex64', 'DataFrameModel', 'DataFrameSchema', 'DataType', 'Date', 'DateTime', 'Decimal', 'Field', 'Float', 'Float128', 'Float16', 'Float32', 'Float64', 'Hypothesis', 'INT16', 'INT32', 'INT64', 'INT8', 'Index', 'Int', 'Int16', 'Int32', 'Int64', 'Int8', 'MultiIndex', 'Object', 'Parser', 'STRING', 'SeriesSchema', 'String', 'Timedelta', 'Timestamp', 'UINT16', 'UINT32', 'UINT64', 'UINT8', 'UInt', 'UInt16', 'UInt32', 'UInt64', 'UInt8', 'Windows', 'check', 'check_input', 'check_io', 'check_output', 'check_types', 'dataframe_check', 'dataframe_parser', 'dtypes', 'extensions', 'false', 'infer_schema', 'pandas_version', 'parser', 'true', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d0e24f9e390859b1 b/.hypothesis/constants/d0e24f9e390859b1
+--- a/.hypothesis/constants/d0e24f9e390859b1	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d0e24f9e390859b1	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/__init__.py
++# hypothesis_version: 6.157.1
++
++['Check', 'Field', '__version__', 'check', 'dataframe_check', 'dataframe_parser', 'dtypes', 'parser', 'typing']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d3249349ea2ae0f5 b/.hypothesis/constants/d3249349ea2ae0f5
+--- a/.hypothesis/constants/d3249349ea2ae0f5	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d3249349ea2ae0f5	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/errors.py
++# hypothesis_version: 6.157.1
++
++['args', 'check', 'check_error', 'check_output', 'column_name', 'column_not_in_schema', 'column_not_ordered', 'data', 'dataframe_check', 'dataframe_parser', 'dtype_coercion_error', 'duplicates', 'failure_cases', 'invalid_column_name', 'invalid_type', 'mismatch_index', 'no_errors', 'parser', 'parser_error', 'parser_output', 'reason_code', 'schema', 'wrong_dtype', 'wrong_field_name']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d36e3793fc1ae4cb b/.hypothesis/constants/d36e3793fc1ae4cb
+--- a/.hypothesis/constants/d36e3793fc1ae4cb	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d36e3793fc1ae4cb	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d5bcd353880948bd b/.hypothesis/constants/d5bcd353880948bd
+--- a/.hypothesis/constants/d5bcd353880948bd	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d5bcd353880948bd	2026-07-20 13:29:02
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/pyarrow_engine.py
++# hypothesis_version: 6.157.1
++
++['binary[pyarrow]', 'bool[pyarrow]', 'date32[day][pyarrow]', 'date64[ms][pyarrow]', 'double[pyarrow]', 'float[pyarrow]', 'halffloat[pyarrow]', 'int16[pyarrow]', 'int32[pyarrow]', 'int64[pyarrow]', 'int8[pyarrow]', 'ms', 'ns', 'null[pyarrow]', 'type', 'uint16[pyarrow]', 'uint32[pyarrow]', 'uint64[pyarrow]', 'uint8[pyarrow]']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d8d2cb4a2b609f27 b/.hypothesis/constants/d8d2cb4a2b609f27
+--- a/.hypothesis/constants/d8d2cb4a2b609f27	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d8d2cb4a2b609f27	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/parsers.py
++# hypothesis_version: 6.157.1
++
++['__name__']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/d994eb5400c0eee6 b/.hypothesis/constants/d994eb5400c0eee6
+--- a/.hypothesis/constants/d994eb5400c0eee6	1969-12-31 16:00:00
++++ b/.hypothesis/constants/d994eb5400c0eee6	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/pandas/model_config.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/da39a3ee5e6b4b0d b/.hypothesis/constants/da39a3ee5e6b4b0d
+--- a/.hypothesis/constants/da39a3ee5e6b4b0d	1969-12-31 16:00:00
++++ b/.hypothesis/constants/da39a3ee5e6b4b0d	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/base/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/e1a701c37a02240c b/.hypothesis/constants/e1a701c37a02240c
+--- a/.hypothesis/constants/e1a701c37a02240c	1969-12-31 16:00:00
++++ b/.hypothesis/constants/e1a701c37a02240c	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/api/hypotheses.py
++# hypothesis_version: 6.157.1
++
++[0.01, 'Hypothesis', 'T', 'alpha', 'equal', 'greater_than', 'groupby', 'less_than', 'not_equal', 'one_sample_ttest', 'propagate', 'relationship', 'samples', 'two_sample_ttest']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/e1ec7946e44d23f8 b/.hypothesis/constants/e1ec7946e44d23f8
+--- a/.hypothesis/constants/e1ec7946e44d23f8	1969-12-31 16:00:00
++++ b/.hypothesis/constants/e1ec7946e44d23f8	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/backends/pandas/container.py
++# hypothesis_version: 6.157.1
++
++['T', 'column_in_dataframe', 'column_in_schema', 'column_ordered', 'drop_invalid_rows', 'filter', 'pandera', 'pyspark.pandas']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/ee0f9122fcadef02 b/.hypothesis/constants/ee0f9122fcadef02
+--- a/.hypothesis/constants/ee0f9122fcadef02	1969-12-31 16:00:00
++++ b/.hypothesis/constants/ee0f9122fcadef02	2026-07-20 13:27:22
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/typing/pyspark.py
++# hypothesis_version: 6.157.1
++
++['T']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/f8e89164c62ee9f1 b/.hypothesis/constants/f8e89164c62ee9f1
+--- a/.hypothesis/constants/f8e89164c62ee9f1	1969-12-31 16:00:00
++++ b/.hypothesis/constants/f8e89164c62ee9f1	2026-07-20 13:28:32
+@@ -0,0 +1,4 @@
++# file: /privateb/docs/source/conf.py
++# hypothesis_version: 6.157.1
++
++['#493100', '#535353', '#78ac1b', '#FEE7B8', '#docsearch', '#e5fff5', '(\\d+)', '--show-current', '-version', '.', '..', '../..', '.github', '.ipynb_checkpoints/*', '.md', '.rst', '1.', '<PLACEHOLDER>', '=', 'CONTRIBUTING.md', 'DOCSEARCH_INDEX_NAME', 'GA9NROLUXR', 'HEAD', 'JAVA_TOOL_OPTIONS', 'Pandera developers', '_static', '_tags/tagsindex', '_templates', 'announcement', 'auto', 'both', 'branch', 'colon_fence', 'color-brand-content', 'color-brand-primary', 'config-inited', 'custom.js', 'dark_css_variables', 'dask', 'default.css', 'defer', 'docs/source/', 'docsearch_api_key', 'docsearch_app_id', 'docsearch_config.js', 'docsearch_container', 'docsearch_index_name', 'facetFilters', 'fullname', 'furo', 'git', 'html', 'index', 'java', 'light_css_variables', 'main', 'modin', 'module', 'myst-nb', 'myst_nb', 'numpy', 'pandas', 'pandera', 'pandera.Check', 'pandera.check', 'polars', 'py', 'pyspark', 'python', 'restructuredtext', 'rev-parse', 'source_branch', 'source_directory', 'source_repository', 'sphinx', 'sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.linkcode', 'sphinx.util.docutils', 'sphinx_copybutton', 'sphinx_design', 'typeguard', 'undoc-members', 'utf-8', 'xarray']
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.hypothesis/constants/fd44b16a1b5ea9dd b/.hypothesis/constants/fd44b16a1b5ea9dd
+--- a/.hypothesis/constants/fd44b16a1b5ea9dd	1969-12-31 16:00:00
++++ b/.hypothesis/constants/fd44b16a1b5ea9dd	2026-07-20 13:27:21
+@@ -0,0 +1,4 @@
++# file: /privateb/pandera/engines/__init__.py
++# hypothesis_version: 6.157.1
++
++[]
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/docs/source/CONTRIBUTING.md b/docs/source/CONTRIBUTING.md
+--- a/docs/source/CONTRIBUTING.md	1969-12-31 16:00:00
++++ b/docs/source/CONTRIBUTING.md	2026-07-20 13:28:47
+@@ -0,0 +1,284 @@
++# Contributing
++
++Whether you are a novice or experienced software developer, all contributions
++and suggestions are welcome!
++
++## Getting Started
++
++If you are looking to contribute to the _pandera_ codebase, the best place to
++start is the [GitHub "issues" tab](https://github.com/pandera-dev/pandera/issues).
++This is also a great place for filing bug reports and making suggestions for
++ways in which we can improve the code and documentation.
++
++## Contributing to the Codebase
++
++The code is hosted on [GitHub](https://github.com/pandera-dev/pandera/issues),
++so you will need to use [Git](http://git-scm.com/) to clone the project and make
++changes to the codebase.
++
++First create your own fork of pandera, then clone it:
++
++```bash
++# replace <my-username> with your github username
++git clone https://github.com/<my-username>/pandera.git
++```
++
++Once you've obtained a copy of the code, create a development environment that's
++separate from your existing Python environment so that you can make and test
++changes without compromising your own work environment.
++
++An excellent guide on setting up python environments can be found
++[here](https://pandas.pydata.org/docs/development/contributing.html#creating-a-python-environment).
++Pandera offers a `environment.yml` to set up a conda-based environment and
++`requirements-dev.txt` for a virtualenv.
++
++### Environment Setup
++
++This project recommends using [uv](https://docs.astral.sh/uv) to manage the
++development environment.
++
++```bash
++pip install uv
++uv venv
++uv sync --all-extras
++source .venv/bin/activate
++```
++
++#### Run Tests
++
++```bash
++uv run pytest tests/ --ignore=tests/pyspark  # remove the `ignore` flag to test pyspark as well
++```
++
++#### Build Documentation Locally
++
++```bash
++make docs
++```
++
++#### Adding New Dependencies
++
++To add new dependencies to the project, first alter the `environment.yml` file. Then to sync the dependencies from the `environment.yml` file to the `requirements.in`, run the following command:
++
++```bash
++make deps-from-environment.yml
++```
++
++This will invoke `python scripts/generate_pip_deps_from_conda.py` to convert
++`environment.yml` to a `requirements.in` file. This is so that you can install
++your development environment using the package manager of your choice like
++`pip`, `uv`, `conda`, etc.
++
++Moreover to add new extra dependencies in `pyproject.toml`, it is necessary to
++add it to the `dependencies` and `[project.optional-dependencies]` section.
++
++
++#### Set up `prek`
++
++This project uses [prek](https://prek.j178.dev/) to ensure that code
++standard checks pass locally before pushing to the remote project repo. Follow
++the [installation instructions](https://prek.j178.dev/installation/), then
++set up hooks with `prek install`. After, `black`, `pylint` and `mypy`
++checks should be run with every commit.
++
++Make sure everything is working correctly by running
++
++```bash
++prek run --all-files
++```
++
++### Making Changes
++
++Before making changes to the codebase or documentation, create a new branch with:
++
++```bash
++git checkout -b <my-branch>
++```
++
++We recommend following the branch-naming convention described in [Making Pull Requests](#making-pull-requests).
++
++### DCO-signing Commits
++
++This project enforces the [DCO](https://developercertificate.org/) standard for
++contributions, which requires authors to sign off on their commits. This can be
++done with the `-s` or `--signoff` flag:
++
++```bash
++git commit -s -m 'my commit'
++```
++
++Refer to [this guide](https://github.com/src-d/guide/blob/master/developer-community/fix-DCO.md#dco-is-missing)
++to add sign-offs retroactivately.
++
++### Run the Full Test Suite Locally
++
++Before submitting your changes for review, make sure to check that your changes
++do not break any tests by running:
++
++```bash
++make nox-tests
++```
++
++This will run the full test suite that matches the tests that are run on
++github actions, defined in `.github/workflows/ci-tests.yml`.
++
++### Run a Specific Test Suite Locally
++
++The above command will run the tests in mamba virtual environments for all of
++the supported pandera extras packages, versions of python, pandas, etc. To run
++a test for a specific set of versions, first run:
++
++```bash
++nox --list
++```
++
++You should see an output like this:
++
++```bash
++...
++* tests-3.9(extra='pandas', pandas='2.1.1', pydantic='1.10.11') -> Run the test suite.
++* tests-3.9(extra='strategies', pandas='2.2.3', pydantic='2.10.6') -> Run the test suite.
++* tests-3.9(extra='hypotheses', pandas='2.2.3', pydantic='2.10.6') -> Run the test suite.
++...
++```
++
++Then run a specific test condition with:
++
++```bash
++nox -db uv -s "tests(extra='core', pydantic='1.10.11', python='3.9', pandas='2.1.1')"
++```
++
++### Project Releases
++
++Releases are organized under [milestones](https://github.com/pandera-dev/pandera/milestones),
++which are be associated with a corresponding branch. This project uses
++[semantic versioning](https://semver.org/), and we recommend prioritizing issues
++associated with the next release.
++
++### Contributing Documentation
++
++Maybe the easiest, fastest, and most useful way to contribute to this project
++(and any other project) is to contribute documentation. If you find an API
++within the project that doesn't have an example or description, or could be
++clearer in its explanation, contribute yours!
++
++You can also find issues for improving documentation under the
++[docs](https://github.com/pandera-dev/pandera/labels/docs) label. If you have
++ideas for documentation improvements, you can create a new issue [here](https://github.com/pandera-dev/pandera/issues/new?assignees=&labels=docs&template=documentation-improvement.md&title=)
++
++This project uses Sphinx for auto-documentation and RST syntax for docstrings.
++Once you have the code downloaded and you find something that is in need of some
++TLD, take a look at the [Sphinx](https://www.sphinx-doc.org/en/1.0/rest.html)
++documentation or well-documented
++[examples](https://pandera.readthedocs.io/en/stable/_modules/pandera/schemas.html#DataFrameSchema)
++within the codebase for guidance on contributing.
++
++You can build the html documentation by running `nox -s docs`. The built
++documentation can be found in `docs/_build`.
++
++### Contributing Bugfixes
++
++Bugs are reported under the [bug](https://github.com/pandera-dev/pandera/labels/bug)
++label, so if you find a bug create a new issue [here](https://github.com/pandera-dev/pandera/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
++
++### Contributing Enhancements
++
++New feature issues can be found under the
++[enhancements](https://github.com/pandera-dev/pandera/labels/enhancement) label.
++You can request a feature by creating a new issue [here](https://github.com/pandera-dev/pandera/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=).
++
++### Making Pull Requests
++
++Once your changes are ready to be submitted, make sure to push your changes to
++your fork of the GitHub repo before creating a pull request. Depending on the
++type of issue the pull request is resolving, your pull request should merge
++onto the appropriate branch:
++
++#### Bugfixes
++
++- branch naming convention: `bugfix/<issue number>` or `bugfix/<bugfix-name>`
++- pull request to: `main`
++
++#### Documentation
++
++- branch naming convention: `docs/<issue number>` or `docs/<doc-name>`
++- pull request to: `release/x.x.x` branch if specified in the issue milestone, otherwise `main`
++
++#### Enhancements
++
++- branch naming convention: `feature/<issue number>` or `feature/<enhancement-name>`
++- pull request to: `release/x.x.x` branch if specified in the issue milestone, otherwise `main`
++
++We will review your changes, and might ask you to make additional changes
++before it is finally ready to merge. However, once it's ready, we will merge
++it, and you will have successfully contributed to the codebase!
++
++### Questions, Ideas, General Discussion
++
++Head on over to the [discussion](https://github.com/pandera-dev/pandera/discussions)
++section if you have questions or ideas, want to show off something that you
++did with `pandera`, or want to discuss a topic related to the project.
++
++### Dataframe Schema Style Guides
++
++We have guidelines regarding dataframe and schema styles that are encouraged
++for each pull request.
++
++If specifying a single column DataFrame, this can be expressed as a one-liner:
++
++```python
++DataFrameSchema({"col1": Column(...)})
++```
++
++If specifying one column with multiple lines, or multiple columns:
++
++```python
++DataFrameSchema(
++    {
++        "col1": Column(
++            int,
++            checks=[
++                Check(...),
++                Check(...),
++            ]
++        ),
++    }
++)
++```
++
++If specifying columns with additional arguments that fit in one line:
++
++```python
++DataFrameSchema(
++    {"a": Column(int, nullable=True)},
++    strict=True
++)
++```
++
++If specifying columns with additional arguments that don't fit in one line:
++
++```python
++DataFrameSchema(
++    {
++        "a": Column(
++            int,
++            nullable=True,
++            coerce=True,
++            ...
++        ),
++        "b": Column(
++            ...,
++        )
++    },
++    strict=True)
++```
++
++## Deprecation policy
++
++This project adopts a rolling policy regarding the minimum supported version of its dependencies, based on [NEP 29](https://numpy.org/neps/nep-0029-deprecation_policy.html):
++
++- **Python**: 42 months
++- **NumPy**: 24 months
++- **Pandas**: 18 months
++
++This means the latest minor (X.Y) version from N months prior. Patch versions (x.y.Z) are not pinned, and only the latest available at the moment of publishing the release is guaranteed to work.
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/docs/source/geopandas.md b/docs/source/geopandas.md
+--- a/docs/source/geopandas.md	2026-07-17 18:22:30
++++ b/docs/source/geopandas.md	2026-07-20 13:29:53
+@@ -21,7 +21,72 @@
+ pip install 'pandera[geopandas]'
+ ```
+ 
+-Then you can use pandera schemas to validate geodataframes. In the example
++## First-class GeoDataFrame schemas
++
++The `pandera.geopandas` module provides geopandas-native equivalents of the
++pandas schema classes:
++{py:class}`~pandera.api.geopandas.container.GeoDataFrameSchema` and
++{py:class}`~pandera.api.geopandas.model.GeoDataFrameModel`. Validating with
++either always returns a {py:class}`~geopandas.GeoDataFrame` — geometry dtype,
++active geometry column, and CRS intact — even when the input is a plain
++{py:class}`~pandas.DataFrame`, so the validated result drops straight into
++downstream geospatial workflows.
++
++```{code-cell} python
++import geopandas as gpd
++import pandera.geopandas as pag
++from shapely.geometry import Polygon
++
++schema = pag.GeoDataFrameSchema({
++    "geometry": pag.Column("geometry"),
++    "region": pag.Column(str),
++})
++
++geo_df = gpd.GeoDataFrame(
++    {
++        "geometry": [
++            Polygon(((0, 0), (0, 1), (1, 1), (1, 0))),
++            Polygon(((0, 0), (0, -1), (-1, -1), (-1, 0))),
++        ],
++        "region": ["NA", "SA"],
++    },
++    crs="EPSG:4326",
++)
++
++validated = schema.validate(geo_df)
++assert isinstance(validated, gpd.GeoDataFrame)
++assert validated.crs == "EPSG:4326"
++validated
++```
++
++The class-based API works the same way, supporting `Field`, custom checks,
++and class config:
++
++```{code-cell} python
++from pandera.typing import Series
++from pandera.typing.geopandas import GeoSeries
++
++
++class RegionSchema(pag.GeoDataFrameModel):
++    geometry: GeoSeries
++    region: Series[str] = pag.Field(isin=["NA", "SA"])
++
++    class Config:
++        coerce = True
++
++
++RegionSchema.validate(geo_df)
++```
++
++The `pandera.geopandas` module also supports schema inference with
++`pag.infer_schema`, JSON/YAML serialization round-trips via
++`GeoDataFrameSchema.from_json`/`from_yaml`, and using dataframe models as
++pydantic model fields.
++
++## Validating geo data with pandas schemas
++
++Alternatively, you can use plain `pandera.pandas` schemas to validate
++geodataframes. In the example
+ below we'll use the {ref}`class-based API <dataframe-models>` to define a
+ {py:class}`~pandera.api.pandas.model.DataFrameModel` for validation.
+ 
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/api/geopandas/__init__.py b/pandera/api/geopandas/__init__.py
+--- a/pandera/api/geopandas/__init__.py	1969-12-31 16:00:00
++++ b/pandera/api/geopandas/__init__.py	2026-07-20 13:21:59
+@@ -0,0 +1 @@
++"""GeoPandas core."""
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/api/geopandas/container.py b/pandera/api/geopandas/container.py
+--- a/pandera/api/geopandas/container.py	1969-12-31 16:00:00
++++ b/pandera/api/geopandas/container.py	2026-07-20 13:23:24
+@@ -0,0 +1,121 @@
++"""Core geopandas dataframe container specification."""
++
++import sys
++
++import geopandas as gpd
++
++from pandera.api.pandas.container import DataFrameSchema as _DataFrameSchema
++
++if sys.version_info < (3, 11):
++    from typing_extensions import Self
++else:
++    from typing import Self
++
++
++def _to_geodataframe(df) -> gpd.GeoDataFrame:
++    """Convert a validated pandas DataFrame into a GeoDataFrame.
++
++    If ``df`` is already a :class:`~geopandas.GeoDataFrame`, it is returned
++    unchanged. Otherwise, the first column with a
++    :class:`~geopandas.array.GeometryDtype` (preferring a column literally
++    named ``"geometry"``) is used as the active geometry column. The
++    resulting :class:`~geopandas.GeoDataFrame` inherits its CRS from that
++    column's :class:`~geopandas.array.GeometryArray`.
++    """
++    if isinstance(df, gpd.GeoDataFrame):
++        return df
++
++    geometry_column = None
++    if "geometry" in df.columns and isinstance(
++        df["geometry"].dtype, gpd.array.GeometryDtype
++    ):
++        geometry_column = "geometry"
++    else:
++        for column in df.columns:
++            if isinstance(df[column].dtype, gpd.array.GeometryDtype):
++                geometry_column = column
++                break
++
++    if geometry_column is not None:
++        return gpd.GeoDataFrame(df, geometry=geometry_column)
++    return gpd.GeoDataFrame(df)
++
++
++class GeoDataFrameSchema(_DataFrameSchema):
++    """A lightweight geopandas GeoDataFrame validator."""
++
++    @staticmethod
++    def register_default_backends(check_obj_cls: type) -> None:
++        """Register the pandas backends under the ``GeoDataFrameSchema`` key.
++
++        ``pandera.backends.pandas.register.register_pandas_backends`` always
++        registers backends against the pandas ``DataFrameSchema`` class
++        (see :mod:`pandera.api.pandas.container`). Since
++        ``BaseSchema.BACKEND_REGISTRY`` is a shared dict keyed by
++        ``(schema_cls, check_obj_cls)``, this mirrors those entries under
++        ``GeoDataFrameSchema`` so ``get_backend`` can find them.
++        """
++        _DataFrameSchema.register_default_backends(check_obj_cls)
++        registry = GeoDataFrameSchema.BACKEND_REGISTRY
++        for (schema_cls, dtype_cls), backend in list(registry.items()):
++            if schema_cls is _DataFrameSchema:
++                registry.setdefault((GeoDataFrameSchema, dtype_cls), backend)
++
++    def validate(
++        self,
++        check_obj,
++        head: int | None = None,
++        tail: int | None = None,
++        sample: int | None = None,
++        random_state: int | None = None,
++        lazy: bool = False,
++        inplace: bool = False,
++    ) -> gpd.GeoDataFrame:
++        """Validate a GeoDataFrame based on the schema specification.
++
++        :param check_obj: the dataframe to be validated.
++        :param head: validate the first n rows. Rows overlapping with `tail` or
++            `sample` are de-duplicated.
++        :param tail: validate the last n rows. Rows overlapping with `head` or
++            `sample` are de-duplicated.
++        :param sample: validate a random sample of n rows. Rows overlapping
++            with `head` or `tail` are de-duplicated.
++        :param random_state: random seed for the ``sample`` argument.
++        :param lazy: if True, lazily evaluates dataframe against all validation
++            checks and raises a ``SchemaErrors``. Otherwise, raise
++            ``SchemaError`` as soon as one occurs.
++        :param inplace: if True, applies coercion to the object of validation,
++            otherwise creates a copy of the data.
++        :returns: validated ``GeoDataFrame``
++
++        :raises SchemaError: when ``GeoDataFrame`` violates built-in or custom
++            checks.
++        """
++        validated = super().validate(
++            check_obj, head, tail, sample, random_state, lazy, inplace
++        )
++        return _to_geodataframe(validated)
++
++    @classmethod
++    def _from_dataframe_schema(cls, schema: _DataFrameSchema) -> Self:
++        """Rebrand a :class:`~pandera.api.pandas.container.DataFrameSchema`
++        (or subclass) as a :class:`GeoDataFrameSchema`, without re-running
++        ``__init__``.
++        """
++        if isinstance(schema, cls):
++            return schema
++        obj = cls.__new__(cls)
++        obj.__dict__.update(schema.__dict__)
++        return obj
++
++    @classmethod
++    def from_json(cls, source) -> Self:
++        """Load schema from JSON (see :mod:`pandera.io.pandas_io`)."""
++        return cls._from_dataframe_schema(_DataFrameSchema.from_json(source))
++
++    @classmethod
++    def from_yaml(cls, yaml_schema) -> Self:
++        """Load schema from YAML (see :mod:`pandera.io.pandas_io`)."""
++        return cls._from_dataframe_schema(
++            _DataFrameSchema.from_yaml(yaml_schema)
++        )
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/api/geopandas/model.py b/pandera/api/geopandas/model.py
+--- a/pandera/api/geopandas/model.py	1969-12-31 16:00:00
++++ b/pandera/api/geopandas/model.py	2026-07-20 13:22:28
+@@ -0,0 +1,20 @@
++"""Class-based API for geopandas models."""
++
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.api.geopandas.model_config import BaseConfig
++from pandera.api.pandas.model import DataFrameModel as _DataFrameModel
++
++
++class GeoDataFrameModel(_DataFrameModel):
++    """Model of a :class:`~pandera.api.geopandas.container.GeoDataFrameSchema`.
++
++    See the :ref:`User Guide <dataframe-models>` for more.
++    """
++
++    Config: type[BaseConfig] = BaseConfig
++
++    @classmethod
++    def build_schema_(cls, **kwargs) -> GeoDataFrameSchema:
++        return GeoDataFrameSchema._from_dataframe_schema(
++            super().build_schema_(**kwargs)
++        )
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/api/geopandas/model_config.py b/pandera/api/geopandas/model_config.py
+--- a/pandera/api/geopandas/model_config.py	1969-12-31 16:00:00
++++ b/pandera/api/geopandas/model_config.py	2026-07-20 13:22:02
+@@ -0,0 +1,10 @@
++"""Class-based dataframe model API configuration for geopandas."""
++
++from pandera.api.pandas.model_config import BaseConfig as _BaseConfig
++
++
++class BaseConfig(_BaseConfig):
++    """Define GeoDataFrameSchema-wide options.
++
++    Inherits all options from :class:`pandera.api.pandas.model_config.BaseConfig`.
++    """
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/geopandas.py b/pandera/geopandas.py
+--- a/pandera/geopandas.py	1969-12-31 16:00:00
++++ b/pandera/geopandas.py	2026-07-20 13:22:40
+@@ -0,0 +1,54 @@
++"""A flexible and expressive geopandas validation library for Python."""
++
++try:
++    import geopandas
++except ImportError as exc:
++    raise ImportError(
++        "pandera.geopandas requires geopandas to be installed. You can "
++        'install it with "pip install \'pandera[geopandas]\'".'
++    ) from exc
++
++import pandera.pandas
++from pandera import errors
++from pandera.api.checks import Check
++from pandera.api.dataframe.model_components import (
++    Field,
++    check,
++    dataframe_check,
++    dataframe_parser,
++    parser,
++)
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.api.geopandas.model import GeoDataFrameModel
++from pandera.api.hypotheses import Hypothesis
++from pandera.api.pandas.components import Column, Index, MultiIndex
++from pandera.api.parsers import Parser
++from pandera.decorators import check_input, check_io, check_output, check_types
++from pandera.engines.geopandas_engine import Geometry
++from pandera.schema_inference.geopandas import infer_schema
++from pandera.typing.geopandas import GeoDataFrame, GeoSeries
++
++__all__ = [
++    "GeoDataFrameSchema",
++    "GeoDataFrameModel",
++    "Column",
++    "Index",
++    "MultiIndex",
++    "Check",
++    "Hypothesis",
++    "Parser",
++    "Field",
++    "check",
++    "dataframe_check",
++    "parser",
++    "dataframe_parser",
++    "check_input",
++    "check_io",
++    "check_output",
++    "check_types",
++    "errors",
++    "Geometry",
++    "infer_schema",
++    "GeoSeries",
++    "GeoDataFrame",
++]
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/pandera/schema_inference/geopandas.py b/pandera/schema_inference/geopandas.py
+--- a/pandera/schema_inference/geopandas.py	1969-12-31 16:00:00
++++ b/pandera/schema_inference/geopandas.py	2026-07-20 13:22:31
+@@ -0,0 +1,14 @@
++"""Module for inferring geopandas GeoDataFrame schema."""
++
++from pandera.api.geopandas.container import GeoDataFrameSchema
++from pandera.schema_inference.pandas import infer_schema as _infer_schema
++
++
++def infer_schema(geo_df) -> GeoDataFrameSchema:
++    """Infer a GeoDataFrameSchema from a GeoDataFrame.
++
++    :param geo_df: GeoDataFrame object to infer.
++    :returns: GeoDataFrameSchema
++    """
++    schema = _infer_schema(geo_df)
++    return GeoDataFrameSchema._from_dataframe_schema(schema)
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/geopandas/test_geodataframe_schema.py b/tests/geopandas/test_geodataframe_schema.py
+--- a/tests/geopandas/test_geodataframe_schema.py	1969-12-31 16:00:00
++++ b/tests/geopandas/test_geodataframe_schema.py	2026-07-20 13:20:38
+@@ -0,0 +1,242 @@
++"""Tests for the first-class geopandas API: pandera.geopandas."""
++
++import geopandas as gpd
++import pandas as pd
++import pytest
++from pydantic import BaseModel, ValidationError
++from shapely.geometry import Point, Polygon
++
++import pandera.geopandas as pag
++from pandera.engines.geopandas_engine import Geometry
++from pandera.errors import SchemaError, SchemaErrors
++from pandera.typing import Series
++from pandera.typing.geopandas import GeoDataFrame, GeoSeries
++
++UNIT_SQUARE = Polygon(((0, 0), (0, 1), (1, 1), (1, 0)))
++BIG_SQUARE = Polygon(((0, 0), (0, 2), (2, 2), (2, 0)))
++
++
++def sample_gdf(crs="EPSG:4326") -> gpd.GeoDataFrame:
++    return gpd.GeoDataFrame(
++        {
++            "geometry": gpd.GeoSeries([UNIT_SQUARE, BIG_SQUARE], crs=crs),
++            "name": ["a", "b"],
++        },
++        crs=crs,
++    )
++
++
++def test_import_surface():
++    """The geopandas module exposes the same ergonomics as pandera.pandas."""
++    for attr in [
++        "GeoDataFrameSchema",
++        "GeoDataFrameModel",
++        "Column",
++        "Index",
++        "MultiIndex",
++        "Check",
++        "Field",
++        "check",
++        "dataframe_check",
++        "infer_schema",
++        "Geometry",
++        "errors",
++    ]:
++        assert hasattr(pag, attr), f"pandera.geopandas missing {attr}"
++
++
++class TestGeoDataFrameSchema:
++    """Object-based API."""
++
++    def test_validate_returns_geodataframe_with_crs(self):
++        schema = pag.GeoDataFrameSchema(
++            {
++                "geometry": pag.Column("geometry"),
++                "name": pag.Column(str),
++            }
++        )
++        validated = schema.validate(sample_gdf())
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert isinstance(validated["geometry"].dtype, gpd.array.GeometryDtype)
++        assert validated.crs == "EPSG:4326"
++        # active geometry column preserved so geospatial ops work downstream
++        assert validated.geometry.name == "geometry"
++        assert (validated.area > 0).all()
++
++    def test_validate_upgrades_plain_dataframe(self):
++        """A plain pandas DataFrame comes back as a GeoDataFrame."""
++        schema = pag.GeoDataFrameSchema(
++            {"geometry": pag.Column(Geometry, coerce=True)}
++        )
++        df = pd.DataFrame({"geometry": gpd.GeoSeries([UNIT_SQUARE])})
++        assert not isinstance(df, gpd.GeoDataFrame)
++        validated = schema.validate(df)
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert validated.geometry.name == "geometry"
++
++    def test_validate_coerces_wkt(self):
++        schema = pag.GeoDataFrameSchema(
++            {"geometry": pag.Column(Geometry, coerce=True)}
++        )
++        df = pd.DataFrame({"geometry": ["POINT (0 0)", "POINT (1 1)"]})
++        validated = schema.validate(df)
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert (validated.geometry == gpd.GeoSeries([Point(0, 0), Point(1, 1)])).all()
++
++    def test_validate_failure_raises_schema_error(self):
++        schema = pag.GeoDataFrameSchema(
++            {
++                "geometry": pag.Column(
++                    "geometry",
++                    checks=pag.Check(lambda s: s.area >= 2),
++                ),
++                "name": pag.Column(str),
++            }
++        )
++        with pytest.raises(SchemaError):
++            schema.validate(sample_gdf())
++
++    def test_validate_failure_lazy_raises_schema_errors(self):
++        schema = pag.GeoDataFrameSchema(
++            {
++                "geometry": pag.Column(
++                    "geometry",
++                    checks=pag.Check(lambda s: s.area >= 2),
++                ),
++                "name": pag.Column(int),
++            }
++        )
++        with pytest.raises(SchemaErrors):
++            schema.validate(sample_gdf(), lazy=True)
++
++    def test_missing_column_raises(self):
++        schema = pag.GeoDataFrameSchema(
++            {
++                "geometry": pag.Column("geometry"),
++                "missing": pag.Column(str),
++            }
++        )
++        with pytest.raises(SchemaError):
++            schema.validate(sample_gdf())
++
++    def test_schema_callable_returns_geodataframe(self):
++        schema = pag.GeoDataFrameSchema({"geometry": pag.Column("geometry")})
++        assert isinstance(schema(sample_gdf()), gpd.GeoDataFrame)
++
++
++class TestGeoDataFrameModel:
++    """Class-based API."""
++
++    def test_model_validate_returns_geodataframe(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++            name: Series[str] = pag.Field(isin=["a", "b"])
++
++        validated = Schema.validate(sample_gdf())
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert validated.crs == "EPSG:4326"
++        assert validated.geometry.name == "geometry"
++
++    def test_model_to_schema_is_geo_schema(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++
++        assert isinstance(Schema.to_schema(), pag.GeoDataFrameSchema)
++
++    def test_model_custom_check(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++
++            @pag.check("geometry")
++            @classmethod
++            def area_check(cls, geo_series: GeoSeries) -> Series[bool]:
++                return geo_series.area >= 2
++
++        with pytest.raises(SchemaError):
++            Schema.validate(sample_gdf())
++
++        valid = gpd.GeoDataFrame({"geometry": gpd.GeoSeries([BIG_SQUARE])})
++        assert isinstance(Schema.validate(valid), gpd.GeoDataFrame)
++
++    def test_model_config_coerce_upgrades_plain_dataframe(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++
++            class Config:
++                coerce = True
++
++        df = pd.DataFrame({"geometry": ["POINT (0 0)"]})
++        validated = Schema.validate(df)
++        assert isinstance(validated, gpd.GeoDataFrame)
++
++    def test_model_field_failure(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++            name: Series[str] = pag.Field(isin=["z"])
++
++        with pytest.raises(SchemaError):
++            Schema.validate(sample_gdf())
++
++
++class TestSerialization:
++    """Schemas survive io round-trips as first-class geo schemas."""
++
++    def test_json_roundtrip(self):
++        schema = pag.GeoDataFrameSchema(
++            {
++                "geometry": pag.Column("geometry"),
++                "name": pag.Column(str),
++            },
++            coerce=True,
++        )
++        loaded = pag.GeoDataFrameSchema.from_json(schema.to_json())
++        assert isinstance(loaded, pag.GeoDataFrameSchema)
++        validated = loaded.validate(sample_gdf())
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert validated.crs == "EPSG:4326"
++
++    def test_yaml_roundtrip(self):
++        schema = pag.GeoDataFrameSchema(
++            {"geometry": pag.Column("geometry")},
++        )
++        loaded = pag.GeoDataFrameSchema.from_yaml(schema.to_yaml())
++        assert isinstance(loaded, pag.GeoDataFrameSchema)
++        assert isinstance(loaded.validate(sample_gdf()), gpd.GeoDataFrame)
++
++    def test_model_json_roundtrip(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++            name: Series[str]
++
++        loaded = Schema.from_json(Schema.to_schema().to_json())
++        assert isinstance(loaded, pag.GeoDataFrameSchema)
++        assert isinstance(loaded.validate(sample_gdf()), gpd.GeoDataFrame)
++
++
++class TestInference:
++    def test_infer_schema_validates_geodataframe(self):
++        gdf = sample_gdf()
++        schema = pag.infer_schema(gdf)
++        assert isinstance(schema, pag.GeoDataFrameSchema)
++        validated = schema.validate(gdf)
++        assert isinstance(validated, gpd.GeoDataFrame)
++        assert validated.crs == "EPSG:4326"
++
++
++class TestPydantic:
++    def test_geo_model_as_pydantic_field(self):
++        class Schema(pag.GeoDataFrameModel):
++            geometry: GeoSeries
++            name: Series[str] = pag.Field(isin=["a", "b"])
++
++        class Model(BaseModel):
++            data: GeoDataFrame[Schema]
++
++        obj = Model(data=sample_gdf())
++        assert isinstance(obj.data, gpd.GeoDataFrame)
++        assert obj.data.geometry.name == "geometry"
++
++        bad = sample_gdf()
++        bad["name"] = ["x", "y"]
++        with pytest.raises(ValidationError):
++            Model(data=bad)

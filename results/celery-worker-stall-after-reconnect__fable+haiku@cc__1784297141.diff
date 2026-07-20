@@ -1,0 +1,100 @@
+# reconstructed from transcript Edit/Write calls (run predates diff archiving)
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/celery/concurrency/asynpool.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-w3f93yxx/celery/concurrency/asynpool.py
+--- /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/celery/concurrency/asynpool.py	2026-07-09 21:58:20
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-w3f93yxx/celery/concurrency/asynpool.py	2026-07-17 16:49:25
+@@ -1081,6 +1081,18 @@
+             self._active_writers.clear()
+             self._active_writes.clear()
+             self._busy_workers.clear()
++            # Workers still executing an in-flight job (e.g. a long-running
++            # task kept alive across a broker reconnect when
++            # worker_cancel_long_running_tasks_on_connection_loss is
++            # disabled) must stay marked as busy: with the fair scheduling
++            # strategy a cleared busy set lets the next incoming job be
++            # written to the inqueue of a process that is still executing,
++            # where it sits unread until that task completes even though
++            # other pool processes are idle.
++            for job in self._cache.values():
++                proc = job._write_to
++                if proc is not None and proc._is_alive():
++                    self._busy_workers.add(proc.inqW_fd)
+ 
+     def _flush_writer(self, proc, writer):
+         fds = {proc.inq._writer}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/t/unit/concurrency/test_prefork.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-w3f93yxx/t/unit/concurrency/test_prefork.py
+--- /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/t/unit/concurrency/test_prefork.py	2026-07-09 21:58:20
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-w3f93yxx/t/unit/concurrency/test_prefork.py	2026-07-17 16:49:25
+@@ -735,6 +735,73 @@
+         job.discard.assert_called_once()
+         assert gen not in pool._active_writers
+ 
++    @t.skip.if_pypy
++    @patch('billiard.pool.Pool._create_worker_process')
++    def test_flush_keeps_busy_marker_for_inflight_jobs(
++            self, _create_worker_process):
++        """flush() must keep workers with in-flight jobs marked as busy.
++
++        Regression test: flush() runs from Consumer.on_close on every
++        connection-loss restart. With
++        worker_cancel_long_running_tasks_on_connection_loss disabled, a pool
++        process may still be executing a task while flush() runs. Clearing
++        _busy_workers for that process makes the fair scheduler consider it
++        free after reconnect, so the next incoming task can be written to its
++        inqueue where it sits unread until the long task completes — even
++        though other pool processes are idle.
++        """
++        pool = asynpool.AsynPool(processes=2, synack=False, threads=False)
++        pool._state = asynpool.RUN
++        pool.maintain_pool = Mock(name='maintain_pool')
++
++        busy_proc = Mock(name='busy_proc', inqW_fd=8)
++        busy_proc._is_alive.return_value = True
++
++        # An accepted job currently executing on busy_proc.
++        job = Mock(name='job')
++        job._accepted = True
++        job._write_to = busy_proc
++        job._writer.return_value = None
++
++        pool._cache = {1: job}
++        pool.outbound_buffer.clear()
++        pool._active_writers.clear()
++        pool._busy_workers.clear()
++        pool._busy_workers.add(busy_proc.inqW_fd)
++
++        pool.flush()
++
++        assert busy_proc.inqW_fd in pool._busy_workers, (
++            'flush() must not mark a worker running an in-flight task as free'
++        )
++
++    @t.skip.if_pypy
++    @patch('billiard.pool.Pool._create_worker_process')
++    def test_flush_clears_busy_marker_for_dead_process(
++            self, _create_worker_process):
++        """flush() must not keep busy markers for exited processes."""
++        pool = asynpool.AsynPool(processes=2, synack=False, threads=False)
++        pool._state = asynpool.RUN
++        pool.maintain_pool = Mock(name='maintain_pool')
++
++        dead_proc = Mock(name='dead_proc', inqW_fd=8)
++        dead_proc._is_alive.return_value = False
++
++        job = Mock(name='job')
++        job._accepted = True
++        job._write_to = dead_proc
++        job._writer.return_value = None
++
++        pool._cache = {1: job}
++        pool.outbound_buffer.clear()
++        pool._active_writers.clear()
++        pool._busy_workers.clear()
++        pool._busy_workers.add(dead_proc.inqW_fd)
++
++        pool.flush()
++
++        assert dead_proc.inqW_fd not in pool._busy_workers
++
+     def test_process_result(self):
+         x = asynpool.ResultHandler(
+             Mock(), Mock(), {}, Mock(),

@@ -1,0 +1,1929 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/audit_log.jsonl b/exports/audit_log.jsonl
+--- a/exports/audit_log.jsonl	1969-12-31 16:00:00
++++ b/exports/audit_log.jsonl	2026-07-20 13:29:18
+@@ -0,0 +1,167 @@
++{"amount_cents":1603,"charged_at":"2026-04-01","hash":"f97f8652b5b69799e30716605fb6e15e0098f53066591debe146e11e205c5fc1","kind":"charge","order_id":"ORD-4011","party":"","prev_hash":"0000000000000000000000000000000000000000000000000000000000000000","seq":0}
++{"amount_cents":230,"charged_at":"2026-04-01","hash":"354b88266f3417aab698f7204798d45231577feb73a60f5969185199ebec00bc","kind":"payout_line","order_id":"ORD-4011","party":"atlaswares","prev_hash":"f97f8652b5b69799e30716605fb6e15e0098f53066591debe146e11e205c5fc1","seq":1}
++{"amount_cents":1333,"charged_at":"2026-04-01","hash":"2d22ee06f73f0f860d0a84cf874df372d4b8dabcae3ec8e42c09e473ad92572a","kind":"payout_line","order_id":"ORD-4011","party":"northmill","prev_hash":"354b88266f3417aab698f7204798d45231577feb73a60f5969185199ebec00bc","seq":2}
++{"amount_cents":40,"charged_at":"2026-04-01","hash":"12adc939b2880ce6a9a69902edad47945193d5f80c80f283c6233b8bb60ffc0f","kind":"payout_line","order_id":"ORD-4011","party":"platform","prev_hash":"2d22ee06f73f0f860d0a84cf874df372d4b8dabcae3ec8e42c09e473ad92572a","seq":3}
++{"amount_cents":1000,"charged_at":"2026-04-03","hash":"8139217f6aa3095f7c3c0222a02b57546f6e29f725aa8ab35247340e0959bc86","kind":"charge","order_id":"ORD-4001","party":"","prev_hash":"12adc939b2880ce6a9a69902edad47945193d5f80c80f283c6233b8bb60ffc0f","seq":4}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"18d69dcb33fd2f136721c40eeaac262aa5c832e9ad2764a592b722f1f6a3662a","kind":"payout_line","order_id":"ORD-4001","party":"atlaswares","prev_hash":"8139217f6aa3095f7c3c0222a02b57546f6e29f725aa8ab35247340e0959bc86","seq":5}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"85f96ded8f4869db240604a06f03cebdce81406266838eeb8011bd626f7aefc6","kind":"payout_line","order_id":"ORD-4001","party":"fernco","prev_hash":"18d69dcb33fd2f136721c40eeaac262aa5c832e9ad2764a592b722f1f6a3662a","seq":6}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"16cb09eb93234339cfbfc379e32ae324baa5257e09c3bea8ef99097c511f380a","kind":"payout_line","order_id":"ORD-4001","party":"northmill","prev_hash":"85f96ded8f4869db240604a06f03cebdce81406266838eeb8011bd626f7aefc6","seq":7}
++{"amount_cents":25,"charged_at":"2026-04-03","hash":"34f7dfb1ebfbce9cad4461eca904a225eede6738d41faf945168ad67c3baa0b0","kind":"payout_line","order_id":"ORD-4001","party":"platform","prev_hash":"16cb09eb93234339cfbfc379e32ae324baa5257e09c3bea8ef99097c511f380a","seq":8}
++{"amount_cents":549,"charged_at":"2026-04-03","hash":"190364fe2e121c5fed0cbd8a45f418bb33ad7c13596df397f60052eb3ddc9361","kind":"charge","order_id":"ORD-4013","party":"","prev_hash":"34f7dfb1ebfbce9cad4461eca904a225eede6738d41faf945168ad67c3baa0b0","seq":9}
++{"amount_cents":549,"charged_at":"2026-04-03","hash":"ec1d4843f5ffe6192bc217857a8eff48409ae8b7cf958687d5ba07b4b5f3a1b2","kind":"refund_line","order_id":"ORD-4013","party":"CANDLE-3OZ","prev_hash":"190364fe2e121c5fed0cbd8a45f418bb33ad7c13596df397f60052eb3ddc9361","seq":10}
++{"amount_cents":1999,"charged_at":"2026-04-05","hash":"bd85110384610a62dbd8476f7099369345703cdc4e4eba0b8363b5a343202197","kind":"charge","order_id":"ORD-4002","party":"","prev_hash":"ec1d4843f5ffe6192bc217857a8eff48409ae8b7cf958687d5ba07b4b5f3a1b2","seq":11}
++{"amount_cents":1722,"charged_at":"2026-04-05","hash":"fb49f0dd2c6c6b2b7c78ef94a5b5c6265f08db6a3d08b43303d9546bf32f1134","kind":"payout_line","order_id":"ORD-4002","party":"atlaswares","prev_hash":"bd85110384610a62dbd8476f7099369345703cdc4e4eba0b8363b5a343202197","seq":12}
++{"amount_cents":227,"charged_at":"2026-04-05","hash":"18cc2e85f5b32eec9999ddbc2ca38e34c9c05c371f5e929debb33810daa5bf25","kind":"payout_line","order_id":"ORD-4002","party":"northmill","prev_hash":"fb49f0dd2c6c6b2b7c78ef94a5b5c6265f08db6a3d08b43303d9546bf32f1134","seq":13}
++{"amount_cents":50,"charged_at":"2026-04-05","hash":"a1ff7f5d7d460ed9c6dc92bfa5ddcf941f4e6bbce38fc96d138049f637cc0ffd","kind":"payout_line","order_id":"ORD-4002","party":"platform","prev_hash":"18cc2e85f5b32eec9999ddbc2ca38e34c9c05c371f5e929debb33810daa5bf25","seq":14}
++{"amount_cents":251,"charged_at":"2026-04-07","hash":"1aefaf5108f0f590bb24e355534f4cede53f7f0f21e3f01df235e6316c1b8855","kind":"charge","order_id":"ORD-4010","party":"","prev_hash":"a1ff7f5d7d460ed9c6dc92bfa5ddcf941f4e6bbce38fc96d138049f637cc0ffd","seq":15}
++{"amount_cents":245,"charged_at":"2026-04-07","hash":"af71fe059554a2b80e73a05ec2695d949cc517c1d11d19de0028880f3c795901","kind":"payout_line","order_id":"ORD-4010","party":"brightloom","prev_hash":"1aefaf5108f0f590bb24e355534f4cede53f7f0f21e3f01df235e6316c1b8855","seq":16}
++{"amount_cents":6,"charged_at":"2026-04-07","hash":"2c275d2e2e5ec44d1bcbc560731f7df497da08befb59428f5763c33b2ac0e560","kind":"payout_line","order_id":"ORD-4010","party":"platform","prev_hash":"af71fe059554a2b80e73a05ec2695d949cc517c1d11d19de0028880f3c795901","seq":17}
++{"amount_cents":7098,"charged_at":"2026-04-07","hash":"b9600470d500bac9da9eba5c28bb438695d9e43feee521ec746cc9eb0712cfff","kind":"charge","order_id":"ORD-4012","party":"","prev_hash":"2c275d2e2e5ec44d1bcbc560731f7df497da08befb59428f5763c33b2ac0e560","seq":18}
++{"amount_cents":6853,"charged_at":"2026-04-07","hash":"04dea9ded28c7a5f29e56e2dfd740c1176d17dcb30f6194111ece40fece4c67d","kind":"refund_line","order_id":"ORD-4012","party":"BOWL-GRANITE","prev_hash":"b9600470d500bac9da9eba5c28bb438695d9e43feee521ec746cc9eb0712cfff","seq":19}
++{"amount_cents":245,"charged_at":"2026-04-07","hash":"76a4cf0dea83c8b708a46db315bf1e646188728fe72f33e2ec87ffd33fbf204e","kind":"refund_line","order_id":"ORD-4012","party":"COASTER-ELM","prev_hash":"04dea9ded28c7a5f29e56e2dfd740c1176d17dcb30f6194111ece40fece4c67d","seq":20}
++{"amount_cents":1000,"charged_at":"2026-04-09","hash":"6b4cce8b7a379235aa03f9ce4dac4c8d560e2478deedabc63945eb6e6e038a74","kind":"charge","order_id":"ORD-4003","party":"","prev_hash":"76a4cf0dea83c8b708a46db315bf1e646188728fe72f33e2ec87ffd33fbf204e","seq":21}
++{"amount_cents":333,"charged_at":"2026-04-09","hash":"38c7aca8a3e2b5479787c2184c38e7b43aa0d34d898e388cfc0c3882a7d4b076","kind":"refund_line","order_id":"ORD-4003","party":"MUG-CAMP","prev_hash":"6b4cce8b7a379235aa03f9ce4dac4c8d560e2478deedabc63945eb6e6e038a74","seq":22}
++{"amount_cents":334,"charged_at":"2026-04-09","hash":"fd5f66211afc47d200a2bb19ee97203ad31cb837abb4bcf3ce3319a80d3600f4","kind":"refund_line","order_id":"ORD-4003","party":"MUG-CLASSIC","prev_hash":"38c7aca8a3e2b5479787c2184c38e7b43aa0d34d898e388cfc0c3882a7d4b076","seq":23}
++{"amount_cents":333,"charged_at":"2026-04-09","hash":"b77cd433b5eacac963f64fc0cc14ad1d1b4ea09b822e0462e708a7622aaf64da","kind":"refund_line","order_id":"ORD-4003","party":"MUG-DINER","prev_hash":"fd5f66211afc47d200a2bb19ee97203ad31cb837abb4bcf3ce3319a80d3600f4","seq":24}
++{"amount_cents":2201,"charged_at":"2026-04-11","hash":"73b98b9be36bbb6ce424bb0c091fa1fca2501d458bf7743284d4c58767e0bbd4","kind":"charge","order_id":"ORD-4004","party":"","prev_hash":"b77cd433b5eacac963f64fc0cc14ad1d1b4ea09b822e0462e708a7622aaf64da","seq":25}
++{"amount_cents":55,"charged_at":"2026-04-11","hash":"65ccde8f30da1081db6b98a8a1141f8408b02a97296b6339e17b2abb8c5ab3cc","kind":"payout_line","order_id":"ORD-4004","party":"platform","prev_hash":"73b98b9be36bbb6ce424bb0c091fa1fca2501d458bf7743284d4c58767e0bbd4","seq":26}
++{"amount_cents":2146,"charged_at":"2026-04-11","hash":"5abcf9461cbf1ddb23b0969fc64444ca76f1557788018234aa43b2a9930460b1","kind":"payout_line","order_id":"ORD-4004","party":"quarryfield","prev_hash":"65ccde8f30da1081db6b98a8a1141f8408b02a97296b6339e17b2abb8c5ab3cc","seq":27}
++{"amount_cents":1748,"charged_at":"2026-04-12","hash":"bf701205e44a0fcb7efba2fa3fda6e71e6359d135cfb3d5a8ee0f9e136faffcc","kind":"charge","order_id":"ORD-4005","party":"","prev_hash":"5abcf9461cbf1ddb23b0969fc64444ca76f1557788018234aa43b2a9930460b1","seq":28}
++{"amount_cents":379,"charged_at":"2026-04-12","hash":"4473e33a6514765ff733f374f0c80f4f7f7bb942a67b589105b16be9bf4e6553","kind":"payout_line","order_id":"ORD-4005","party":"atlaswares","prev_hash":"bf701205e44a0fcb7efba2fa3fda6e71e6359d135cfb3d5a8ee0f9e136faffcc","seq":29}
++{"amount_cents":44,"charged_at":"2026-04-12","hash":"d2bf3a7d7e76fb703bff80a9165b85f240da8b873909eec238a68c9b4d438316","kind":"payout_line","order_id":"ORD-4005","party":"platform","prev_hash":"4473e33a6514765ff733f374f0c80f4f7f7bb942a67b589105b16be9bf4e6553","seq":30}
++{"amount_cents":1325,"charged_at":"2026-04-12","hash":"e720a0639860c202014beade217270750b4ec86ca460c8309bb2f86b4f568801","kind":"payout_line","order_id":"ORD-4005","party":"quarryfield","prev_hash":"d2bf3a7d7e76fb703bff80a9165b85f240da8b873909eec238a68c9b4d438316","seq":31}
++{"amount_cents":1897,"charged_at":"2026-04-12","hash":"c68b33abad8cd5ca48e0dcec74ab4b79ef1975fc7c1e145d65972f0eeca14aa8","kind":"charge","order_id":"ORD-4009","party":"","prev_hash":"e720a0639860c202014beade217270750b4ec86ca460c8309bb2f86b4f568801","seq":32}
++{"amount_cents":1098,"charged_at":"2026-04-12","hash":"3e8f4049c4408585095855057a2e27db77c17df931435ff63e5ea04282f14eda","kind":"refund_line","order_id":"ORD-4009","party":"CANDLE-3OZ","prev_hash":"c68b33abad8cd5ca48e0dcec74ab4b79ef1975fc7c1e145d65972f0eeca14aa8","seq":33}
++{"amount_cents":799,"charged_at":"2026-04-12","hash":"fb6f22ce9ad9d082f4115b2f8c5d4e47f3cb0ad32fb5615fdd3dda3c1bad0a51","kind":"refund_line","order_id":"ORD-4009","party":"PLANTER-4IN","prev_hash":"3e8f4049c4408585095855057a2e27db77c17df931435ff63e5ea04282f14eda","seq":34}
++{"amount_cents":1949,"charged_at":"2026-04-13","hash":"f4462157ffba68a112636e3764ef70118d45bb28373cbf1deda5c22e92784eec","kind":"charge","order_id":"ORD-4017","party":"","prev_hash":"fb6f22ce9ad9d082f4115b2f8c5d4e47f3cb0ad32fb5615fdd3dda3c1bad0a51","seq":35}
++{"amount_cents":971,"charged_at":"2026-04-13","hash":"83b01fc0734b4ab09566a0fcd53e42bb081fc896265db27e7b492022f9ff412c","kind":"payout_line","order_id":"ORD-4017","party":"brightloom","prev_hash":"f4462157ffba68a112636e3764ef70118d45bb28373cbf1deda5c22e92784eec","seq":36}
++{"amount_cents":708,"charged_at":"2026-04-13","hash":"c7926b763fd0b76a8e9400efb94d618bbc36816c5adbcbc59661dc610b831a3a","kind":"payout_line","order_id":"ORD-4017","party":"fernco","prev_hash":"83b01fc0734b4ab09566a0fcd53e42bb081fc896265db27e7b492022f9ff412c","seq":37}
++{"amount_cents":221,"charged_at":"2026-04-13","hash":"c92bb6f695ca0425b050428974b9cf56ef2875e72f165807e50b5ac9670bb5a4","kind":"payout_line","order_id":"ORD-4017","party":"northmill","prev_hash":"c7926b763fd0b76a8e9400efb94d618bbc36816c5adbcbc59661dc610b831a3a","seq":38}
++{"amount_cents":49,"charged_at":"2026-04-13","hash":"b71ddaf856e0eb9aa6f9cab659194056fa22c824c25d99558058a678b97fd83e","kind":"payout_line","order_id":"ORD-4017","party":"platform","prev_hash":"c92bb6f695ca0425b050428974b9cf56ef2875e72f165807e50b5ac9670bb5a4","seq":39}
++{"amount_cents":1149,"charged_at":"2026-04-17","hash":"beba58754c595514fe70c0349688614cc75baa83c6fa227baa9c33808406e40c","kind":"charge","order_id":"ORD-4007","party":"","prev_hash":"b71ddaf856e0eb9aa6f9cab659194056fa22c824c25d99558058a678b97fd83e","seq":40}
++{"amount_cents":1120,"charged_at":"2026-04-17","hash":"e797cdc5ec53b29af85208f8f2a72e46db70b8683ef1731b41fe7ec843bbaaf5","kind":"payout_line","order_id":"ORD-4007","party":"brightloom","prev_hash":"beba58754c595514fe70c0349688614cc75baa83c6fa227baa9c33808406e40c","seq":41}
++{"amount_cents":29,"charged_at":"2026-04-17","hash":"60101e765e00bafe30cab4358fec082e8a04bb3b3153ccd49b579b74c063873b","kind":"payout_line","order_id":"ORD-4007","party":"platform","prev_hash":"e797cdc5ec53b29af85208f8f2a72e46db70b8683ef1731b41fe7ec843bbaaf5","seq":42}
++{"amount_cents":1899,"charged_at":"2026-04-18","hash":"979e908642c4523e966b123dccab04f275738641d1c634e7e1796c1523cc3656","kind":"charge","order_id":"ORD-4008","party":"","prev_hash":"60101e765e00bafe30cab4358fec082e8a04bb3b3153ccd49b579b74c063873b","seq":43}
++{"amount_cents":1852,"charged_at":"2026-04-18","hash":"2d716cb1fe58f0be857cde1ce955605010ef0713d95f2799614bcad6b0858ba8","kind":"payout_line","order_id":"ORD-4008","party":"atlaswares","prev_hash":"979e908642c4523e966b123dccab04f275738641d1c634e7e1796c1523cc3656","seq":44}
++{"amount_cents":47,"charged_at":"2026-04-18","hash":"ed44d780b3c4e421b927a2e893a5488d5031d5f43cabf61f574b72d417ae9cd3","kind":"payout_line","order_id":"ORD-4008","party":"platform","prev_hash":"2d716cb1fe58f0be857cde1ce955605010ef0713d95f2799614bcad6b0858ba8","seq":45}
++{"amount_cents":1199,"charged_at":"2026-04-18","hash":"9c86e24b99b21724a98aae2ca4d15f4fc91d727510a0b09b9a6ac92477d231ff","kind":"charge","order_id":"ORD-4014","party":"","prev_hash":"ed44d780b3c4e421b927a2e893a5488d5031d5f43cabf61f574b72d417ae9cd3","seq":46}
++{"amount_cents":1169,"charged_at":"2026-04-18","hash":"6869e662ae5a1468e25249d9d1d059e92248b0389e755407794c6f442f1f1fad","kind":"payout_line","order_id":"ORD-4014","party":"brightloom","prev_hash":"9c86e24b99b21724a98aae2ca4d15f4fc91d727510a0b09b9a6ac92477d231ff","seq":47}
++{"amount_cents":30,"charged_at":"2026-04-18","hash":"4404e10bd5ccc60d5554c299dd5fa2cb5488853e83edd92fc16c5a18eeb80246","kind":"payout_line","order_id":"ORD-4014","party":"platform","prev_hash":"6869e662ae5a1468e25249d9d1d059e92248b0389e755407794c6f442f1f1fad","seq":48}
++{"amount_cents":3402,"charged_at":"2026-04-18","hash":"116d2d3ac0737aa7c15d4ee58845b5bfcf5eb7e32288c541531ff5a4026c3988","kind":"charge","order_id":"ORD-4015","party":"","prev_hash":"4404e10bd5ccc60d5554c299dd5fa2cb5488853e83edd92fc16c5a18eeb80246","seq":49}
++{"amount_cents":85,"charged_at":"2026-04-18","hash":"e3a72c351f0658bf7b67b169feddee044f81737ec2eca8f436c7067fcb64c96a","kind":"payout_line","order_id":"ORD-4015","party":"platform","prev_hash":"116d2d3ac0737aa7c15d4ee58845b5bfcf5eb7e32288c541531ff5a4026c3988","seq":50}
++{"amount_cents":3317,"charged_at":"2026-04-18","hash":"04ca70fd2683fe2aeb67af3d1e52ffe1638a1812ea48e7d106b0c4545dfc16d2","kind":"payout_line","order_id":"ORD-4015","party":"quarryfield","prev_hash":"e3a72c351f0658bf7b67b169feddee044f81737ec2eca8f436c7067fcb64c96a","seq":51}
++{"amount_cents":250,"charged_at":"2026-04-20","hash":"d63f6909a5e4f04962b80a9fd938a1b91255e8444ad3758c07f064048869b434","kind":"charge","order_id":"ORD-4006","party":"","prev_hash":"04ca70fd2683fe2aeb67af3d1e52ffe1638a1812ea48e7d106b0c4545dfc16d2","seq":52}
++{"amount_cents":244,"charged_at":"2026-04-20","hash":"d48bb81e6569a6bd1bb5389d7e1c389d01a14c0401025ecf95d4f05af51b9f2f","kind":"payout_line","order_id":"ORD-4006","party":"northmill","prev_hash":"d63f6909a5e4f04962b80a9fd938a1b91255e8444ad3758c07f064048869b434","seq":53}
++{"amount_cents":6,"charged_at":"2026-04-20","hash":"24f730a02ee933fd6b72565cb57d3f18c4b1a1e37bdd1fa0ac86d29cd68266dd","kind":"payout_line","order_id":"ORD-4006","party":"platform","prev_hash":"d48bb81e6569a6bd1bb5389d7e1c389d01a14c0401025ecf95d4f05af51b9f2f","seq":54}
++{"amount_cents":5401,"charged_at":"2026-04-22","hash":"b63ad01cf36e8cef926b915a133cebe0166aec9867587c6717e9fabfac8c97e8","kind":"charge","order_id":"ORD-4016","party":"","prev_hash":"24f730a02ee933fd6b72565cb57d3f18c4b1a1e37bdd1fa0ac86d29cd68266dd","seq":55}
++{"amount_cents":293,"charged_at":"2026-04-22","hash":"0adb7097ba0e9e3caf306f81d9aeb8bbefea73d696f748b0af469d56c254ddf2","kind":"payout_line","order_id":"ORD-4016","party":"brightloom","prev_hash":"b63ad01cf36e8cef926b915a133cebe0166aec9867587c6717e9fabfac8c97e8","seq":56}
++{"amount_cents":1561,"charged_at":"2026-04-22","hash":"17ff1f8a1f6777d30fc60a995f17211e4058aed25c686f0edc6e2e6ce9f2a2a1","kind":"payout_line","order_id":"ORD-4016","party":"fernco","prev_hash":"0adb7097ba0e9e3caf306f81d9aeb8bbefea73d696f748b0af469d56c254ddf2","seq":57}
++{"amount_cents":135,"charged_at":"2026-04-22","hash":"319fac526d1e7f90096efab77201c9073eb5838f94175c37cae4dbb42d30bab0","kind":"payout_line","order_id":"ORD-4016","party":"platform","prev_hash":"17ff1f8a1f6777d30fc60a995f17211e4058aed25c686f0edc6e2e6ce9f2a2a1","seq":58}
++{"amount_cents":3412,"charged_at":"2026-04-22","hash":"e16e39534032e9f715d0b9edbd01e107244cc31f36dedfe558b9a1d228690ff2","kind":"payout_line","order_id":"ORD-4016","party":"quarryfield","prev_hash":"319fac526d1e7f90096efab77201c9073eb5838f94175c37cae4dbb42d30bab0","seq":59}
++{"amount_cents":1899,"charged_at":"2026-05-03","hash":"45ba9b219a3742e94690edba76e5ceed4817234fe120ee6e63bdd35a46838f88","kind":"charge","order_id":"ORD-5007","party":"","prev_hash":"e16e39534032e9f715d0b9edbd01e107244cc31f36dedfe558b9a1d228690ff2","seq":60}
++{"amount_cents":1852,"charged_at":"2026-05-03","hash":"eb534dc72e403de21021179b96462a67a5fe4bd954b731cb4a65d302a992d892","kind":"payout_line","order_id":"ORD-5007","party":"atlaswares","prev_hash":"45ba9b219a3742e94690edba76e5ceed4817234fe120ee6e63bdd35a46838f88","seq":61}
++{"amount_cents":47,"charged_at":"2026-05-03","hash":"9d247c87c71556c6b28fe546cd972104529f0a1d7fcbe4523f0fc3e4b29f31e0","kind":"payout_line","order_id":"ORD-5007","party":"platform","prev_hash":"eb534dc72e403de21021179b96462a67a5fe4bd954b731cb4a65d302a992d892","seq":62}
++{"amount_cents":2151,"charged_at":"2026-05-03","hash":"b0132a0c47e4d16fc39ec70d0e7741102e6200b6c5ef636a5abeff138d571b52","kind":"charge","order_id":"ORD-5010","party":"","prev_hash":"9d247c87c71556c6b28fe546cd972104529f0a1d7fcbe4523f0fc3e4b29f31e0","seq":63}
++{"amount_cents":54,"charged_at":"2026-05-03","hash":"6455a5c14a16b37c4bfd3d45e104b72e5320f765fa79749074c8c9a9f743bc57","kind":"payout_line","order_id":"ORD-5010","party":"platform","prev_hash":"b0132a0c47e4d16fc39ec70d0e7741102e6200b6c5ef636a5abeff138d571b52","seq":64}
++{"amount_cents":2097,"charged_at":"2026-05-03","hash":"6b796843096087e6486f406e6b36af708133d4b5adb0680eaf2d751ecde2d0c5","kind":"payout_line","order_id":"ORD-5010","party":"quarryfield","prev_hash":"6455a5c14a16b37c4bfd3d45e104b72e5320f765fa79749074c8c9a9f743bc57","seq":65}
++{"amount_cents":1803,"charged_at":"2026-05-06","hash":"dfc044a1728795d108491cd2332f6f7a70c906f59476ae6e691b52264133912b","kind":"charge","order_id":"ORD-5001","party":"","prev_hash":"6b796843096087e6486f406e6b36af708133d4b5adb0680eaf2d751ecde2d0c5","seq":66}
++{"amount_cents":694,"charged_at":"2026-05-06","hash":"2646373c7fd47f475cda27cbd56b98775419af252f59abbff86cf8ae8b9d5429","kind":"payout_line","order_id":"ORD-5001","party":"atlaswares","prev_hash":"dfc044a1728795d108491cd2332f6f7a70c906f59476ae6e691b52264133912b","seq":67}
++{"amount_cents":370,"charged_at":"2026-05-06","hash":"7e9d147bfc3479f759117efab5ed6593c79811d24c422b9d50bd34b05f30192d","kind":"payout_line","order_id":"ORD-5001","party":"fernco","prev_hash":"2646373c7fd47f475cda27cbd56b98775419af252f59abbff86cf8ae8b9d5429","seq":68}
++{"amount_cents":694,"charged_at":"2026-05-06","hash":"da96cb8c2f89098238197e057677427ce6a71f027a8ef3b5d8d7c338a3280259","kind":"payout_line","order_id":"ORD-5001","party":"northmill","prev_hash":"7e9d147bfc3479f759117efab5ed6593c79811d24c422b9d50bd34b05f30192d","seq":69}
++{"amount_cents":45,"charged_at":"2026-05-06","hash":"f7942cb11e665564971d7c71c824b4f182ea3364700f00ecbbadca41b3fd2ef8","kind":"payout_line","order_id":"ORD-5001","party":"platform","prev_hash":"da96cb8c2f89098238197e057677427ce6a71f027a8ef3b5d8d7c338a3280259","seq":70}
++{"amount_cents":750,"charged_at":"2026-05-07","hash":"f99bad12ad5b91a96ac2dc3cc59152547c56d85b292f1b217a261c0fb3ee07d8","kind":"charge","order_id":"ORD-5005","party":"","prev_hash":"f7942cb11e665564971d7c71c824b4f182ea3364700f00ecbbadca41b3fd2ef8","seq":71}
++{"amount_cents":731,"charged_at":"2026-05-07","hash":"388c3c57b4628639c1fcd64349e272d468130ac80f2d6c02fac3d8a610692c45","kind":"payout_line","order_id":"ORD-5005","party":"atlaswares","prev_hash":"f99bad12ad5b91a96ac2dc3cc59152547c56d85b292f1b217a261c0fb3ee07d8","seq":72}
++{"amount_cents":19,"charged_at":"2026-05-07","hash":"2e2e324e010be9f82cf28b6147ddcf427191e964b1422bbce399074f77a223ae","kind":"payout_line","order_id":"ORD-5005","party":"platform","prev_hash":"388c3c57b4628639c1fcd64349e272d468130ac80f2d6c02fac3d8a610692c45","seq":73}
++{"amount_cents":2348,"charged_at":"2026-05-08","hash":"0ac2b43e75e11be92a08016f5ec609edd7eadac842f29b671bc5c405d76e3ec0","kind":"charge","order_id":"ORD-5013","party":"","prev_hash":"2e2e324e010be9f82cf28b6147ddcf427191e964b1422bbce399074f77a223ae","seq":74}
++{"amount_cents":487,"charged_at":"2026-05-08","hash":"22a65817121f0acea99e8c56f0b9e3e8fafacb2af39b7085a5afc9878f6c8ab4","kind":"payout_line","order_id":"ORD-5013","party":"atlaswares","prev_hash":"0ac2b43e75e11be92a08016f5ec609edd7eadac842f29b671bc5c405d76e3ec0","seq":75}
++{"amount_cents":1558,"charged_at":"2026-05-08","hash":"8ca7d84c7c048510c73056b933362dee90cb33f86fec7a0e076e4e3f60f598a1","kind":"payout_line","order_id":"ORD-5013","party":"fernco","prev_hash":"22a65817121f0acea99e8c56f0b9e3e8fafacb2af39b7085a5afc9878f6c8ab4","seq":76}
++{"amount_cents":244,"charged_at":"2026-05-08","hash":"62e357238c0bfdfc3ad5c84383f8b1868dd103f1ae97b835f633867ff81d0d10","kind":"payout_line","order_id":"ORD-5013","party":"northmill","prev_hash":"8ca7d84c7c048510c73056b933362dee90cb33f86fec7a0e076e4e3f60f598a1","seq":77}
++{"amount_cents":59,"charged_at":"2026-05-08","hash":"1aa4845462cad79055813c9164505cf15b825f66cb1fb9ef28e5c8693ad93df9","kind":"payout_line","order_id":"ORD-5013","party":"platform","prev_hash":"62e357238c0bfdfc3ad5c84383f8b1868dd103f1ae97b835f633867ff81d0d10","seq":78}
++{"amount_cents":3749,"charged_at":"2026-05-08","hash":"88fa9376c6652b62500b8dabba2604d4697c1936bbfb5dedc18b216176ce6ba0","kind":"charge","order_id":"ORD-5014","party":"","prev_hash":"1aa4845462cad79055813c9164505cf15b825f66cb1fb9ef28e5c8693ad93df9","seq":79}
++{"amount_cents":244,"charged_at":"2026-05-08","hash":"b763fb326812e5e51f12c9e7c299fe090342f1433827f05e96b532096500b312","kind":"payout_line","order_id":"ORD-5014","party":"northmill","prev_hash":"88fa9376c6652b62500b8dabba2604d4697c1936bbfb5dedc18b216176ce6ba0","seq":80}
++{"amount_cents":94,"charged_at":"2026-05-08","hash":"bb5af07de030ba51aa64dfb455f13433a8fd159c79cb0197c7882d49adf8817d","kind":"payout_line","order_id":"ORD-5014","party":"platform","prev_hash":"b763fb326812e5e51f12c9e7c299fe090342f1433827f05e96b532096500b312","seq":81}
++{"amount_cents":3411,"charged_at":"2026-05-08","hash":"3f6696abbfdf3c05e3e9e88a023c997993e72410436d0feb6d0bdf946962f821","kind":"payout_line","order_id":"ORD-5014","party":"quarryfield","prev_hash":"bb5af07de030ba51aa64dfb455f13433a8fd159c79cb0197c7882d49adf8817d","seq":82}
++{"amount_cents":2299,"charged_at":"2026-05-09","hash":"980e2dc4995e756b2db1381e489373666fcaf546111b6ee26e8dac0ea878c999","kind":"charge","order_id":"ORD-5008","party":"","prev_hash":"3f6696abbfdf3c05e3e9e88a023c997993e72410436d0feb6d0bdf946962f821","seq":83}
++{"amount_cents":1852,"charged_at":"2026-05-09","hash":"3e5480e4f84d94d1c2dd538f15c25572fdabf0dd73600fa89a4a85a08b2e68de","kind":"payout_line","order_id":"ORD-5008","party":"atlaswares","prev_hash":"980e2dc4995e756b2db1381e489373666fcaf546111b6ee26e8dac0ea878c999","seq":84}
++{"amount_cents":390,"charged_at":"2026-05-09","hash":"5a60d736c236a5137353cb113b7ea697cf3f5a8d6d65351ff19ae20a37fc8ca6","kind":"payout_line","order_id":"ORD-5008","party":"northmill","prev_hash":"3e5480e4f84d94d1c2dd538f15c25572fdabf0dd73600fa89a4a85a08b2e68de","seq":85}
++{"amount_cents":57,"charged_at":"2026-05-09","hash":"0d5f7cfc8b9ae038f9a55aaa634b87dbbcf58b596c6ed2af9e54c1cffdc4cba5","kind":"payout_line","order_id":"ORD-5008","party":"platform","prev_hash":"5a60d736c236a5137353cb113b7ea697cf3f5a8d6d65351ff19ae20a37fc8ca6","seq":86}
++{"amount_cents":303,"charged_at":"2026-05-10","hash":"92d5d9b951635e0133b8e35b7573feaf1e7bc77c5505c074059e7a7a82457300","kind":"charge","order_id":"ORD-5006","party":"","prev_hash":"0d5f7cfc8b9ae038f9a55aaa634b87dbbcf58b596c6ed2af9e54c1cffdc4cba5","seq":87}
++{"amount_cents":295,"charged_at":"2026-05-10","hash":"e79b31cab5919ab43b6886cffa87046c2238d86e9e1a1bf74c5f8c5ae28d5641","kind":"payout_line","order_id":"ORD-5006","party":"northmill","prev_hash":"92d5d9b951635e0133b8e35b7573feaf1e7bc77c5505c074059e7a7a82457300","seq":88}
++{"amount_cents":8,"charged_at":"2026-05-10","hash":"2f574f299b2395b78a44abb40afe34f1861f82aab79bae922c9c05337a4298da","kind":"payout_line","order_id":"ORD-5006","party":"platform","prev_hash":"e79b31cab5919ab43b6886cffa87046c2238d86e9e1a1bf74c5f8c5ae28d5641","seq":89}
++{"amount_cents":3499,"charged_at":"2026-05-11","hash":"878cef7cf2b70e2948aa3adfdb78f0b75429e2d707d820966c98e098a519fd64","kind":"charge","order_id":"ORD-5004","party":"","prev_hash":"2f574f299b2395b78a44abb40afe34f1861f82aab79bae922c9c05337a4298da","seq":90}
++{"amount_cents":87,"charged_at":"2026-05-11","hash":"ab8017ba59143c9bc7b4f35f5cc7793126d58c29a254b2e2bba14903fd5c48e6","kind":"payout_line","order_id":"ORD-5004","party":"platform","prev_hash":"878cef7cf2b70e2948aa3adfdb78f0b75429e2d707d820966c98e098a519fd64","seq":91}
++{"amount_cents":3412,"charged_at":"2026-05-11","hash":"9a9e67113edb4a6768caf8764bd9555ebb7da95d471c84f9b1c4cec27ec84548","kind":"payout_line","order_id":"ORD-5004","party":"quarryfield","prev_hash":"ab8017ba59143c9bc7b4f35f5cc7793126d58c29a254b2e2bba14903fd5c48e6","seq":92}
++{"amount_cents":1450,"charged_at":"2026-05-11","hash":"4daf24b3d770cde7d8cc7ef668d22c9015027104a60a90f35496e8df3f76c359","kind":"charge","order_id":"ORD-5017","party":"","prev_hash":"9a9e67113edb4a6768caf8764bd9555ebb7da95d471c84f9b1c4cec27ec84548","seq":93}
++{"amount_cents":1414,"charged_at":"2026-05-11","hash":"bc9f157d86895f7abbcb1ea067fd7613c439b2942081065b8b783257676cc6a2","kind":"payout_line","order_id":"ORD-5017","party":"northmill","prev_hash":"4daf24b3d770cde7d8cc7ef668d22c9015027104a60a90f35496e8df3f76c359","seq":94}
++{"amount_cents":36,"charged_at":"2026-05-11","hash":"6f5758caceaacb266624766322a72d0003628a95fe137342c89a6a74305db51a","kind":"payout_line","order_id":"ORD-5017","party":"platform","prev_hash":"bc9f157d86895f7abbcb1ea067fd7613c439b2942081065b8b783257676cc6a2","seq":95}
++{"amount_cents":1548,"charged_at":"2026-05-12","hash":"06e8232f8e30c7bbe118758f24598f6bb5201bb973fb17bca334a5f28ab7de2f","kind":"charge","order_id":"ORD-5012","party":"","prev_hash":"6f5758caceaacb266624766322a72d0003628a95fe137342c89a6a74305db51a","seq":96}
++{"amount_cents":1548,"charged_at":"2026-05-12","hash":"5fec092bd8a092455e758d2a2afbc8856dc41a84ef3d21bc13e1ed63a8ea4611","kind":"refund_line","order_id":"ORD-5012","party":"PLANTER-4IN","prev_hash":"06e8232f8e30c7bbe118758f24598f6bb5201bb973fb17bca334a5f28ab7de2f","seq":97}
++{"amount_cents":999,"charged_at":"2026-05-14","hash":"086ce466497f47e10d5e817045116f3e357f9ee78c0d37f704b6e80840474f96","kind":"charge","order_id":"ORD-5002","party":"","prev_hash":"5fec092bd8a092455e758d2a2afbc8856dc41a84ef3d21bc13e1ed63a8ea4611","seq":98}
++{"amount_cents":364,"charged_at":"2026-05-14","hash":"df1721a39698bd5822ac437c3f94c00c68ee07831df0dbf8df353c4416c7c566","kind":"refund_line","order_id":"ORD-5002","party":"MUG-CLASSIC","prev_hash":"086ce466497f47e10d5e817045116f3e357f9ee78c0d37f704b6e80840474f96","seq":99}
++{"amount_cents":635,"charged_at":"2026-05-14","hash":"ad94ad32a836005b1020f8e0c40479d83e6fd11d4ccce6ab138aa0e27c92381d","kind":"refund_line","order_id":"ORD-5002","party":"PEBBLE-SET","prev_hash":"df1721a39698bd5822ac437c3f94c00c68ee07831df0dbf8df353c4416c7c566","seq":100}
++{"amount_cents":799,"charged_at":"2026-05-14","hash":"353bf08328b53abfc6d66082aa8dfe7b05a84983d498f528ded77b34cc17afab","kind":"charge","order_id":"ORD-5009","party":"","prev_hash":"ad94ad32a836005b1020f8e0c40479d83e6fd11d4ccce6ab138aa0e27c92381d","seq":101}
++{"amount_cents":779,"charged_at":"2026-05-14","hash":"ecef161d356d12422650dcae863a0285b8c4c1706d20e48a4023bc036ac08707","kind":"payout_line","order_id":"ORD-5009","party":"fernco","prev_hash":"353bf08328b53abfc6d66082aa8dfe7b05a84983d498f528ded77b34cc17afab","seq":102}
++{"amount_cents":20,"charged_at":"2026-05-14","hash":"935878c7540bacc131646dbcf82d21ec9cddb4835ea2732fbde53d327b94803b","kind":"payout_line","order_id":"ORD-5009","party":"platform","prev_hash":"ecef161d356d12422650dcae863a0285b8c4c1706d20e48a4023bc036ac08707","seq":103}
++{"amount_cents":3003,"charged_at":"2026-05-21","hash":"52ec1c9c8b9b24d8beaba3a73cdd128df4b9db2918936db15dd8204a805870f2","kind":"charge","order_id":"ORD-5011","party":"","prev_hash":"935878c7540bacc131646dbcf82d21ec9cddb4835ea2732fbde53d327b94803b","seq":104}
++{"amount_cents":2928,"charged_at":"2026-05-21","hash":"56880d98b3645a7c98a2422332a3d1a4d81369feb499330de8ef4bc5a2c96600","kind":"payout_line","order_id":"ORD-5011","party":"fernco","prev_hash":"52ec1c9c8b9b24d8beaba3a73cdd128df4b9db2918936db15dd8204a805870f2","seq":105}
++{"amount_cents":75,"charged_at":"2026-05-21","hash":"074c333e6df03ea4a054a624d36124d462cf4538fef390b0ddcc39029d787469","kind":"payout_line","order_id":"ORD-5011","party":"platform","prev_hash":"56880d98b3645a7c98a2422332a3d1a4d81369feb499330de8ef4bc5a2c96600","seq":106}
++{"amount_cents":1700,"charged_at":"2026-05-22","hash":"f55623eb10c374d5a892fe2c1b72ddabb63516f90f63ea8a0688639e91c17471","kind":"charge","order_id":"ORD-5016","party":"","prev_hash":"074c333e6df03ea4a054a624d36124d462cf4538fef390b0ddcc39029d787469","seq":107}
++{"amount_cents":1658,"charged_at":"2026-05-22","hash":"12edf1fea584fc18326633274a4c5161972f0cf91cde80bd8d817a7de9575faa","kind":"payout_line","order_id":"ORD-5016","party":"atlaswares","prev_hash":"f55623eb10c374d5a892fe2c1b72ddabb63516f90f63ea8a0688639e91c17471","seq":108}
++{"amount_cents":42,"charged_at":"2026-05-22","hash":"edb3121f672b86a626e102d58206f9d5fff3c3575b9108418b4b780c391c13b2","kind":"payout_line","order_id":"ORD-5016","party":"platform","prev_hash":"12edf1fea584fc18326633274a4c5161972f0cf91cde80bd8d817a7de9575faa","seq":109}
++{"amount_cents":3899,"charged_at":"2026-05-24","hash":"476b64c71c2a76948f110f8e3c1587073826c59d8dee95db4ea1ce24bc7c6dfa","kind":"charge","order_id":"ORD-5015","party":"","prev_hash":"edb3121f672b86a626e102d58206f9d5fff3c3575b9108418b4b780c391c13b2","seq":110}
++{"amount_cents":390,"charged_at":"2026-05-24","hash":"9950b4c9d6e1bd646a1eee77a0ffd7ac26f3e7844c2e84b8cb68e34e38bc7db5","kind":"payout_line","order_id":"ORD-5015","party":"fernco","prev_hash":"476b64c71c2a76948f110f8e3c1587073826c59d8dee95db4ea1ce24bc7c6dfa","seq":111}
++{"amount_cents":97,"charged_at":"2026-05-24","hash":"89f8ad59265b179dc2bc90d0ff5452c51c15a2d3ab3e6770c80100f646aa8b11","kind":"payout_line","order_id":"ORD-5015","party":"platform","prev_hash":"9950b4c9d6e1bd646a1eee77a0ffd7ac26f3e7844c2e84b8cb68e34e38bc7db5","seq":112}
++{"amount_cents":3412,"charged_at":"2026-05-24","hash":"032997176c2677818aba71fa3b16d55f92460afbac356f64e37f8e44f2361f66","kind":"payout_line","order_id":"ORD-5015","party":"quarryfield","prev_hash":"89f8ad59265b179dc2bc90d0ff5452c51c15a2d3ab3e6770c80100f646aa8b11","seq":113}
++{"amount_cents":3202,"charged_at":"2026-06-03","hash":"277ac82bcbaccc7400186ad61db64ed7a20cc04de8f3b7ee4174079f2dbb0601","kind":"charge","order_id":"ORD-6012","party":"","prev_hash":"032997176c2677818aba71fa3b16d55f92460afbac356f64e37f8e44f2361f66","seq":114}
++{"amount_cents":3122,"charged_at":"2026-06-03","hash":"2b9fd6e5e64c910095dd8f164295ba65d5dbcfa573a13aa6c3878041e2a03ab2","kind":"payout_line","order_id":"ORD-6012","party":"fernco","prev_hash":"277ac82bcbaccc7400186ad61db64ed7a20cc04de8f3b7ee4174079f2dbb0601","seq":115}
++{"amount_cents":80,"charged_at":"2026-06-03","hash":"6b13dfc62a505ff73d7ef8ac77a2ac22f4b0fe0209a97d5a8ca9bc899890bb2b","kind":"payout_line","order_id":"ORD-6012","party":"platform","prev_hash":"2b9fd6e5e64c910095dd8f164295ba65d5dbcfa573a13aa6c3878041e2a03ab2","seq":116}
++{"amount_cents":3999,"charged_at":"2026-06-04","hash":"74adbbc4d60d984f22ff21babcdc01cac50b391cab872b87ea5bd6a20d9c0d43","kind":"charge","order_id":"ORD-6001","party":"","prev_hash":"6b13dfc62a505ff73d7ef8ac77a2ac22f4b0fe0209a97d5a8ca9bc899890bb2b","seq":117}
++{"amount_cents":290,"charged_at":"2026-06-04","hash":"ce49080ba75feabb9dafee2b573868b06b68b62f3e538028119846541edc78bf","kind":"payout_line","order_id":"ORD-6001","party":"brightloom","prev_hash":"74adbbc4d60d984f22ff21babcdc01cac50b391cab872b87ea5bd6a20d9c0d43","seq":118}
++{"amount_cents":241,"charged_at":"2026-06-04","hash":"25f643e493ec2a452284bd83857deef8597d7d671a17baf25fc2e2c3b9956c06","kind":"payout_line","order_id":"ORD-6001","party":"northmill","prev_hash":"ce49080ba75feabb9dafee2b573868b06b68b62f3e538028119846541edc78bf","seq":119}
++{"amount_cents":100,"charged_at":"2026-06-04","hash":"d0da9a9bf9e33971d15a968bc12e9d257e4c6b6431247da0f79f907476e40eea","kind":"payout_line","order_id":"ORD-6001","party":"platform","prev_hash":"25f643e493ec2a452284bd83857deef8597d7d671a17baf25fc2e2c3b9956c06","seq":120}
++{"amount_cents":3368,"charged_at":"2026-06-04","hash":"9228b41a2a19a13a61724f87f07564ceed0541cbaf1d4ab0ad8af7dfd18450cb","kind":"payout_line","order_id":"ORD-6001","party":"quarryfield","prev_hash":"d0da9a9bf9e33971d15a968bc12e9d257e4c6b6431247da0f79f907476e40eea","seq":121}
++{"amount_cents":1049,"charged_at":"2026-06-05","hash":"36d844408e5978460851baf7c57fd2860b008b7fab38808ed2e04700429548ff","kind":"charge","order_id":"ORD-6008","party":"","prev_hash":"9228b41a2a19a13a61724f87f07564ceed0541cbaf1d4ab0ad8af7dfd18450cb","seq":122}
++{"amount_cents":461,"charged_at":"2026-06-05","hash":"c7126b749e91143959e3acecf528b4e97b089a3c35f6bca14870921353f9937d","kind":"refund_line","order_id":"ORD-6008","party":"CANDLE-3OZ","prev_hash":"36d844408e5978460851baf7c57fd2860b008b7fab38808ed2e04700429548ff","seq":123}
++{"amount_cents":588,"charged_at":"2026-06-05","hash":"d9f665ad9900f65364242ab966d68e8100c12e5c9d2e5c4d46a645128d1dd3b8","kind":"refund_line","order_id":"ORD-6008","party":"PEBBLE-SET","prev_hash":"c7126b749e91143959e3acecf528b4e97b089a3c35f6bca14870921353f9937d","seq":124}
++{"amount_cents":2151,"charged_at":"2026-06-07","hash":"3bb78affab3d006c1c50e29dc3ecac9145988b4676fa3674e01c08ed013c5291","kind":"charge","order_id":"ORD-6006","party":"","prev_hash":"d9f665ad9900f65364242ab966d68e8100c12e5c9d2e5c4d46a645128d1dd3b8","seq":125}
++{"amount_cents":54,"charged_at":"2026-06-07","hash":"1bf87e2a4a8c11cf322f8263133970ceebd30ab99423f16eba0b3a66a32a0edd","kind":"payout_line","order_id":"ORD-6006","party":"platform","prev_hash":"3bb78affab3d006c1c50e29dc3ecac9145988b4676fa3674e01c08ed013c5291","seq":126}
++{"amount_cents":2097,"charged_at":"2026-06-07","hash":"220daeeca9dfc8efd07a2c516ce0ad8959eb3c88a62918c2b9513c4886240729","kind":"payout_line","order_id":"ORD-6006","party":"quarryfield","prev_hash":"1bf87e2a4a8c11cf322f8263133970ceebd30ab99423f16eba0b3a66a32a0edd","seq":127}
++{"amount_cents":1802,"charged_at":"2026-06-07","hash":"45874e66e55b5ce8f25a2443612119ee3da75c9f17f277c086face6c14c9aaa5","kind":"charge","order_id":"ORD-6017","party":"","prev_hash":"220daeeca9dfc8efd07a2c516ce0ad8959eb3c88a62918c2b9513c4886240729","seq":128}
++{"amount_cents":1802,"charged_at":"2026-06-07","hash":"3c6b8d87462b53af6839fe0f344cf4d2cf561a40501211fe25e414b4f5f9642c","kind":"refund_line","order_id":"ORD-6017","party":"CARAFE-GLASS","prev_hash":"45874e66e55b5ce8f25a2443612119ee3da75c9f17f277c086face6c14c9aaa5","seq":129}
++{"amount_cents":1601,"charged_at":"2026-06-11","hash":"f8163aaf95934c89f10a2e9077bcf44b4e963fe2cb9917bb42f3f0c82c9f5ede","kind":"charge","order_id":"ORD-6004","party":"","prev_hash":"3c6b8d87462b53af6839fe0f344cf4d2cf561a40501211fe25e414b4f5f9642c","seq":130}
++{"amount_cents":1561,"charged_at":"2026-06-11","hash":"fe018e30f5076937903e1bdbf4a1dab04c270134e19a1db1a5b59d61b7f9a834","kind":"payout_line","order_id":"ORD-6004","party":"fernco","prev_hash":"f8163aaf95934c89f10a2e9077bcf44b4e963fe2cb9917bb42f3f0c82c9f5ede","seq":131}
++{"amount_cents":40,"charged_at":"2026-06-11","hash":"528f314be1ca6366f30ae196da8cf41b7c7d32610bd159e760b9ec599a730778","kind":"payout_line","order_id":"ORD-6004","party":"platform","prev_hash":"fe018e30f5076937903e1bdbf4a1dab04c270134e19a1db1a5b59d61b7f9a834","seq":132}
++{"amount_cents":1450,"charged_at":"2026-06-15","hash":"c1b2b3c99153b2e05e96d5f2127bf7f3ddcbfca99afb916bf2d90f23b3d0bba6","kind":"charge","order_id":"ORD-6013","party":"","prev_hash":"528f314be1ca6366f30ae196da8cf41b7c7d32610bd159e760b9ec599a730778","seq":133}
++{"amount_cents":1414,"charged_at":"2026-06-15","hash":"fbc48ffae8b7296a3faaf932ae02f0241f1d6a5f9b0af0a96611488dee6942b2","kind":"payout_line","order_id":"ORD-6013","party":"northmill","prev_hash":"c1b2b3c99153b2e05e96d5f2127bf7f3ddcbfca99afb916bf2d90f23b3d0bba6","seq":134}
++{"amount_cents":36,"charged_at":"2026-06-15","hash":"001cf3d0e333ce65949f62f8f5d5dd44ab4030a654419a53768d6fc6e9a567bf","kind":"payout_line","order_id":"ORD-6013","party":"platform","prev_hash":"fbc48ffae8b7296a3faaf932ae02f0241f1d6a5f9b0af0a96611488dee6942b2","seq":135}
++{"amount_cents":7399,"charged_at":"2026-06-16","hash":"c960dfb8d6c5dbd35885230c1095d930a6e581dc1937b350e8f121f933db4dc2","kind":"charge","order_id":"ORD-6009","party":"","prev_hash":"001cf3d0e333ce65949f62f8f5d5dd44ab4030a654419a53768d6fc6e9a567bf","seq":136}
++{"amount_cents":2186,"charged_at":"2026-06-16","hash":"8f84dde0407c35fea4c294c5379c5992c3f925896ed91b0385f4e460b041aaef","kind":"refund_line","order_id":"ORD-6009","party":"BOARD-SLATE","prev_hash":"c960dfb8d6c5dbd35885230c1095d930a6e581dc1937b350e8f121f933db4dc2","seq":137}
++{"amount_cents":3773,"charged_at":"2026-06-16","hash":"b1c949e58583e0093baf2feeb48ffa49a6d0649c69c81ac3a0017a28aca6f335","kind":"refund_line","order_id":"ORD-6009","party":"CARAFE-GLASS","prev_hash":"8f84dde0407c35fea4c294c5379c5992c3f925896ed91b0385f4e460b041aaef","seq":138}
++{"amount_cents":1440,"charged_at":"2026-06-16","hash":"1a16b3dde090fa36d093da2d38f0ff6c2b935b466d4487aa8a7e73d389d40882","kind":"refund_line","order_id":"ORD-6009","party":"TRAY-WALNUT","prev_hash":"b1c949e58583e0093baf2feeb48ffa49a6d0649c69c81ac3a0017a28aca6f335","seq":139}
++{"amount_cents":1099,"charged_at":"2026-06-17","hash":"e0c5cc2e525b6a910d76ec8023d4b36e8aa079661e531ee0e7c7c1cdb73fc7ed","kind":"charge","order_id":"ORD-6015","party":"","prev_hash":"1a16b3dde090fa36d093da2d38f0ff6c2b935b466d4487aa8a7e73d389d40882","seq":140}
++{"amount_cents":390,"charged_at":"2026-06-17","hash":"0b61acf1c2f168f8dc7e40908a8761e944ce5f7ec74fcc45743d049b4c510ef4","kind":"payout_line","order_id":"ORD-6015","party":"fernco","prev_hash":"e0c5cc2e525b6a910d76ec8023d4b36e8aa079661e531ee0e7c7c1cdb73fc7ed","seq":141}
++{"amount_cents":27,"charged_at":"2026-06-17","hash":"f5ef10596a61a073896449bc0d7321c1cd8fca553cf6d9ed8152a7e4b098de01","kind":"payout_line","order_id":"ORD-6015","party":"platform","prev_hash":"0b61acf1c2f168f8dc7e40908a8761e944ce5f7ec74fcc45743d049b4c510ef4","seq":142}
++{"amount_cents":682,"charged_at":"2026-06-17","hash":"bccd8e0885aae80ef1585665bd861649f5fcc5c42a1196e36339dd22c3e4192b","kind":"payout_line","order_id":"ORD-6015","party":"quarryfield","prev_hash":"f5ef10596a61a073896449bc0d7321c1cd8fca553cf6d9ed8152a7e4b098de01","seq":143}
++{"amount_cents":1100,"charged_at":"2026-06-18","hash":"052a8b6441f64e26dac8d9ee5e26e4bf362d4466b0c80844f4be5407efd19e0e","kind":"charge","order_id":"ORD-6014","party":"","prev_hash":"bccd8e0885aae80ef1585665bd861649f5fcc5c42a1196e36339dd22c3e4192b","seq":144}
++{"amount_cents":294,"charged_at":"2026-06-18","hash":"48270f6c5caa2b8b218ed3e25842bfbed0810ab0e1d87abaf620c6ed11000a3b","kind":"payout_line","order_id":"ORD-6014","party":"brightloom","prev_hash":"052a8b6441f64e26dac8d9ee5e26e4bf362d4466b0c80844f4be5407efd19e0e","seq":145}
++{"amount_cents":779,"charged_at":"2026-06-18","hash":"9d7cd08e22c528e5b0c519b9ad68c962ef1a0dcee7a6af27201e088371abcc4a","kind":"payout_line","order_id":"ORD-6014","party":"fernco","prev_hash":"48270f6c5caa2b8b218ed3e25842bfbed0810ab0e1d87abaf620c6ed11000a3b","seq":146}
++{"amount_cents":27,"charged_at":"2026-06-18","hash":"3c778bc59304aaab048068ddda3501a63404e1d16d0ec744aff35e4529d303a8","kind":"payout_line","order_id":"ORD-6014","party":"platform","prev_hash":"9d7cd08e22c528e5b0c519b9ad68c962ef1a0dcee7a6af27201e088371abcc4a","seq":147}
++{"amount_cents":800,"charged_at":"2026-06-19","hash":"16d07044910241cec7c5733a1bdef46c8392dc5133cb4d2f0863ea6afedc5eee","kind":"charge","order_id":"ORD-6005","party":"","prev_hash":"3c778bc59304aaab048068ddda3501a63404e1d16d0ec744aff35e4529d303a8","seq":148}
++{"amount_cents":780,"charged_at":"2026-06-19","hash":"2b98a107b4cde98f6f813841c4e4297801e5b53586cd98ded09940548fe26f8e","kind":"payout_line","order_id":"ORD-6005","party":"atlaswares","prev_hash":"16d07044910241cec7c5733a1bdef46c8392dc5133cb4d2f0863ea6afedc5eee","seq":149}
++{"amount_cents":20,"charged_at":"2026-06-19","hash":"80f51916611b52dfdefaa0af4a5823ad64f18f965899277f9b57fe0320eea09c","kind":"payout_line","order_id":"ORD-6005","party":"platform","prev_hash":"2b98a107b4cde98f6f813841c4e4297801e5b53586cd98ded09940548fe26f8e","seq":150}
++{"amount_cents":2148,"charged_at":"2026-06-19","hash":"ef63df16b3b829a0f9eb19f8839d214285ed4db7ba849e74ede2a5ef9c76f65a","kind":"charge","order_id":"ORD-6007","party":"","prev_hash":"80f51916611b52dfdefaa0af4a5823ad64f18f965899277f9b57fe0320eea09c","seq":151}
++{"amount_cents":1121,"charged_at":"2026-06-19","hash":"3c32ca364d9591b2ef54f666f0be9c37e853ea9ccaa327fdbd2b819972972033","kind":"refund_line","order_id":"ORD-6007","party":"CANDLE-8OZ","prev_hash":"ef63df16b3b829a0f9eb19f8839d214285ed4db7ba849e74ede2a5ef9c76f65a","seq":152}
++{"amount_cents":374,"charged_at":"2026-06-19","hash":"74eeb101c3782d06b1e2833b22ff78747643d4c1bf1735caced41e75badcd95b","kind":"refund_line","order_id":"ORD-6007","party":"MUG-DINER","prev_hash":"3c32ca364d9591b2ef54f666f0be9c37e853ea9ccaa327fdbd2b819972972033","seq":153}
++{"amount_cents":653,"charged_at":"2026-06-19","hash":"86c04ce38140d14c7af97c24eada0dc19bbb447b4a2b05ab32c9d57960635b83","kind":"refund_line","order_id":"ORD-6007","party":"PEBBLE-SET","prev_hash":"74eeb101c3782d06b1e2833b22ff78747643d4c1bf1735caced41e75badcd95b","seq":154}
++{"amount_cents":2150,"charged_at":"2026-06-20","hash":"1c3c5407e59767b6b024349e8453dc5b8fe3654802ff7935772d66c94a28623f","kind":"charge","order_id":"ORD-6016","party":"","prev_hash":"86c04ce38140d14c7af97c24eada0dc19bbb447b4a2b05ab32c9d57960635b83","seq":155}
++{"amount_cents":535,"charged_at":"2026-06-20","hash":"caf65b7aac65cdd560ce0a42fe63b5caceb53e60180429b4c99422faae2fc608","kind":"payout_line","order_id":"ORD-6016","party":"brightloom","prev_hash":"1c3c5407e59767b6b024349e8453dc5b8fe3654802ff7935772d66c94a28623f","seq":156}
++{"amount_cents":1561,"charged_at":"2026-06-20","hash":"2f55e1563534f378b403a28efdc8d2626aaf25de22339dc6ca984b9724abb931","kind":"payout_line","order_id":"ORD-6016","party":"fernco","prev_hash":"caf65b7aac65cdd560ce0a42fe63b5caceb53e60180429b4c99422faae2fc608","seq":157}
++{"amount_cents":54,"charged_at":"2026-06-20","hash":"f2b023e23e7042c6912abca5e1893f779a1122fa4d5b108310ccdc339a0201a4","kind":"payout_line","order_id":"ORD-6016","party":"platform","prev_hash":"2f55e1563534f378b403a28efdc8d2626aaf25de22339dc6ca984b9724abb931","seq":158}
++{"amount_cents":3853,"charged_at":"2026-06-21","hash":"3c7c80850d1668ebe0f39d9aa5053995500659b6d221ac296cf45f77b2887425","kind":"charge","order_id":"ORD-6011","party":"","prev_hash":"f2b023e23e7042c6912abca5e1893f779a1122fa4d5b108310ccdc339a0201a4","seq":159}
++{"amount_cents":1484,"charged_at":"2026-06-21","hash":"d23c6acf6e3be2b0e125738bd82f46a73b729f69b9af00b33eac9a863268b45f","kind":"payout_line","order_id":"ORD-6011","party":"fernco","prev_hash":"3c7c80850d1668ebe0f39d9aa5053995500659b6d221ac296cf45f77b2887425","seq":160}
++{"amount_cents":232,"charged_at":"2026-06-21","hash":"8ea8fa3a19f4aaf6ef8b2f8f9e89effd0c76f8fe32f2471103cea68cf95a2aa7","kind":"payout_line","order_id":"ORD-6011","party":"northmill","prev_hash":"d23c6acf6e3be2b0e125738bd82f46a73b729f69b9af00b33eac9a863268b45f","seq":161}
++{"amount_cents":96,"charged_at":"2026-06-21","hash":"6e2c5058ef03bc8afa616ce0b220e5f5d9e87f8785ab38556a7ba9e8a4b13752","kind":"payout_line","order_id":"ORD-6011","party":"platform","prev_hash":"8ea8fa3a19f4aaf6ef8b2f8f9e89effd0c76f8fe32f2471103cea68cf95a2aa7","seq":162}
++{"amount_cents":2041,"charged_at":"2026-06-21","hash":"38266ead5ba3d0fe01dcac0d7327e33d0d73a9835e73b09be1111f5f97e50267","kind":"payout_line","order_id":"ORD-6011","party":"quarryfield","prev_hash":"6e2c5058ef03bc8afa616ce0b220e5f5d9e87f8785ab38556a7ba9e8a4b13752","seq":163}
++{"amount_cents":3349,"charged_at":"2026-06-25","hash":"5b2598a7fdd464a10f9832ef7a9ee1fee84230dded43990395a6900f62f315a2","kind":"charge","order_id":"ORD-6010","party":"","prev_hash":"38266ead5ba3d0fe01dcac0d7327e33d0d73a9835e73b09be1111f5f97e50267","seq":164}
++{"amount_cents":84,"charged_at":"2026-06-25","hash":"3938e244df12c601800ce5bceadf6a0007c614ef16a4892e33eb74e4acf2cfb9","kind":"payout_line","order_id":"ORD-6010","party":"platform","prev_hash":"5b2598a7fdd464a10f9832ef7a9ee1fee84230dded43990395a6900f62f315a2","seq":165}
++{"amount_cents":3265,"charged_at":"2026-06-25","hash":"eb865c49e6d5609ea6386030f9753ff8d86afdaff2e8f8af442045728f749d9e","kind":"payout_line","order_id":"ORD-6010","party":"quarryfield","prev_hash":"3938e244df12c601800ce5bceadf6a0007c614ef16a4892e33eb74e4acf2cfb9","seq":166}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/vendor_statements/2026-04.csv b/exports/vendor_statements/2026-04.csv
+--- a/exports/vendor_statements/2026-04.csv	1969-12-31 16:00:00
++++ b/exports/vendor_statements/2026-04.csv	2026-07-20 13:29:17
+@@ -0,0 +1,6 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-04,4624,578,116,4508
++brightloom,2026-04,3896,1647,98,3798
++fernco,2026-04,2660,1132,66,2594
++northmill,2026-04,2410,334,60,2350
++quarryfield,2026-04,10461,6853,261,10200
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/vendor_statements/2026-05.csv b/exports/vendor_statements/2026-05.csv
+--- a/exports/vendor_statements/2026-05.csv	1969-12-31 16:00:00
++++ b/exports/vendor_statements/2026-05.csv	2026-07-20 13:29:17
+@@ -0,0 +1,5 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-05,7460,0,186,7274
++fernco,2026-05,6179,1548,154,6025
++northmill,2026-05,3365,364,84,3281
++quarryfield,2026-05,12648,635,316,12332
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/vendor_statements/2026-06.csv b/exports/vendor_statements/2026-06.csv
+--- a/exports/vendor_statements/2026-06.csv	1969-12-31 16:00:00
++++ b/exports/vendor_statements/2026-06.csv	2026-07-20 13:29:17
+@@ -0,0 +1,6 @@
++vendor,month,charged_share_cents,refund_cents,fee_cents,net_payout_cents
++atlaswares,2026-06,800,5949,20,780
++brightloom,2026-06,1147,1582,28,1119
++fernco,2026-06,9125,0,228,8897
++northmill,2026-06,1935,1440,48,1887
++quarryfield,2026-06,11747,3427,294,11453
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/webhook_outbox/finance-hub.jsonl b/exports/webhook_outbox/finance-hub.jsonl
+--- a/exports/webhook_outbox/finance-hub.jsonl	1969-12-31 16:00:00
++++ b/exports/webhook_outbox/finance-hub.jsonl	2026-07-20 13:29:18
+@@ -0,0 +1,157 @@
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-01","charged_cents":1603,"order_id":"ORD-4011"},"signature":"60cdcadbb8a960d7064e4473a236792a8e718bcabc43110088d369db06d311f8"}
++{"event":"payout.recorded","payload":{"amount_cents":230,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"atlaswares"},"signature":"0611d65f57d57436e58bd1eae54092b463d0e0e3291e0a97b020677fa3160be9"}
++{"event":"payout.recorded","payload":{"amount_cents":1333,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"northmill"},"signature":"5fa49c12d7d9405f60a854735dda77cbb60197385d7fc248332d4aece0bcb00c"}
++{"event":"payout.recorded","payload":{"amount_cents":40,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"platform"},"signature":"9d44a384b999a4b0a2fe23e031c39a8572280dd27789748f0fddc5b99a5e8747"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-03","charged_cents":1000,"order_id":"ORD-4001"},"signature":"36613c853288f1c9f78469e94df1cab044d84981eba46dadfeaddf64b51f75c2"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"atlaswares"},"signature":"be8b455c86e65d400df307e50a6f62f80744b627f53f0cc13c392eec2af8672d"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"fernco"},"signature":"84742a265c5660ff050132f6630abeca9905b10094fd92f03006f100cd1d32c7"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"northmill"},"signature":"1b85908448306e92dfecf3c8b61b7685013f69ffea03d0233981586dbc669e8a"}
++{"event":"payout.recorded","payload":{"amount_cents":25,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"platform"},"signature":"9d24c2918297ab80a8b6c54e9a4beffe18484d7e8b85ada18bd42a56d3706197"}
++{"event":"refund.recorded","payload":{"amount_cents":549,"charged_at":"2026-04-03","order_id":"ORD-4013","sku":"CANDLE-3OZ"},"signature":"7525f087e0ddda5e14910f7489060855ef552c55b0d31b46d3b46d8a117bc43e"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-05","charged_cents":1999,"order_id":"ORD-4002"},"signature":"bc4ff3b5565c9e1ef958fea85bbbd2ae4f275a09e425461cceccff3750fa0bfa"}
++{"event":"payout.recorded","payload":{"amount_cents":1722,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"atlaswares"},"signature":"218921c7fbcac5367e24447c2d0e9fb3503912ac45eb858f7fd047f57e20dc62"}
++{"event":"payout.recorded","payload":{"amount_cents":227,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"northmill"},"signature":"f0221c0099a5c4f6e7ef46a452b7b353c7ffeceb005e87decc1cf19b563c4b75"}
++{"event":"payout.recorded","payload":{"amount_cents":50,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"platform"},"signature":"8252aaa6d58c17241b8f47d448542f108bdf881043d773a864257960db9451d6"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-07","charged_cents":251,"order_id":"ORD-4010"},"signature":"6d333c354ab848f1e657191c3958333054588ed5b800cf7ea8beee02d84c2fc4"}
++{"event":"payout.recorded","payload":{"amount_cents":245,"charged_at":"2026-04-07","order_id":"ORD-4010","payee":"brightloom"},"signature":"3ef7cc84d86d4a562b338909f7b900139c2ac9f1f9d7f49035da027f12a327b3"}
++{"event":"payout.recorded","payload":{"amount_cents":6,"charged_at":"2026-04-07","order_id":"ORD-4010","payee":"platform"},"signature":"db875754477cb1433e4d0247d811f199584df1f986d3dc1ce05d209269be15ca"}
++{"event":"refund.recorded","payload":{"amount_cents":6853,"charged_at":"2026-04-07","order_id":"ORD-4012","sku":"BOWL-GRANITE"},"signature":"4f05f180bd573f94f7bc9edce720470f1cad488a8e052cf85766478d99ba2e51"}
++{"event":"refund.recorded","payload":{"amount_cents":245,"charged_at":"2026-04-07","order_id":"ORD-4012","sku":"COASTER-ELM"},"signature":"22e623e2491b98b492ffc5693109bf3cb3e6d5fe6b83f442849e00d75fc8b4e2"}
++{"event":"refund.recorded","payload":{"amount_cents":333,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-CAMP"},"signature":"d4f33af33f9d5cfbc9b48c170d9ddf41dfa933da83b67f98b4092cdcc6f55cd1"}
++{"event":"refund.recorded","payload":{"amount_cents":334,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-CLASSIC"},"signature":"27af740e38655fb1ea9234f8ee1fe12ecb54cc135c8bc140e21ac12ae623579c"}
++{"event":"refund.recorded","payload":{"amount_cents":333,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-DINER"},"signature":"039b6fdd1a035d5b4ba2b14a24e2e1811b07bda5796f36c8085c2ca2c6e3cac3"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-11","charged_cents":2201,"order_id":"ORD-4004"},"signature":"a38b7a07e51163f25ecf94bda7a96abb4f557834af2c26ec04d2f3ce3d4457f6"}
++{"event":"payout.recorded","payload":{"amount_cents":55,"charged_at":"2026-04-11","order_id":"ORD-4004","payee":"platform"},"signature":"2f6fcb5ecc02cee21dc881858bdb4b540c07470c15b601f69e591e02235b9961"}
++{"event":"payout.recorded","payload":{"amount_cents":2146,"charged_at":"2026-04-11","order_id":"ORD-4004","payee":"quarryfield"},"signature":"3745c37a7541921831788592fbd9d4553d51b2792f3d10b9569af09edc3294c0"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-12","charged_cents":1748,"order_id":"ORD-4005"},"signature":"82d54b3dd43bdf0929385d6924b9817110703e5b77c895a87bc96ddce7b7b957"}
++{"event":"payout.recorded","payload":{"amount_cents":379,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"atlaswares"},"signature":"bbcbd17d57f2fe770db2fca653e8d04cf01de461315a28c7ab2b2bfdd61e3486"}
++{"event":"payout.recorded","payload":{"amount_cents":44,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"platform"},"signature":"32a4c88d92d6f9f29a76a13085c29df18108040a6fb59c5039e63fb5de5b9d43"}
++{"event":"payout.recorded","payload":{"amount_cents":1325,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"quarryfield"},"signature":"48d7dca76d2a1726a752d57475727edad5fe5638de236f8f33352e1c144706a6"}
++{"event":"refund.recorded","payload":{"amount_cents":1098,"charged_at":"2026-04-12","order_id":"ORD-4009","sku":"CANDLE-3OZ"},"signature":"636dde9b3866a2d6affc498487b6a3c02228c5eef7bc6343c65d8ce088c947f3"}
++{"event":"refund.recorded","payload":{"amount_cents":799,"charged_at":"2026-04-12","order_id":"ORD-4009","sku":"PLANTER-4IN"},"signature":"a6254e2083aef6409b4da4a55290c7e74dd145e8486dd3d67d27580d6cdbfe7f"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-13","charged_cents":1949,"order_id":"ORD-4017"},"signature":"d47db9d6927cdad8e80b96d4290ae8b77f1ed3fc76245302aadc37c2a23917dd"}
++{"event":"payout.recorded","payload":{"amount_cents":971,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"brightloom"},"signature":"cc585e5dc342f56c515b8a9c15d19f77fa25de235447c30d1b71a0f66d20d76a"}
++{"event":"payout.recorded","payload":{"amount_cents":708,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"fernco"},"signature":"6d8dee2e1cb0a096a33a5189cb9dcdac5a1d75b3fbd8f1e6fbf9dd6d56415aee"}
++{"event":"payout.recorded","payload":{"amount_cents":221,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"northmill"},"signature":"aa8e038874a34a8ea1f341050abc19825c44f51bd0d2dd434ff4c204be477899"}
++{"event":"payout.recorded","payload":{"amount_cents":49,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"platform"},"signature":"0621d1cc0b1a30848d171c2025bb7a4ff53578cf7d6b48950563e04e983ca961"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-17","charged_cents":1149,"order_id":"ORD-4007"},"signature":"0653384140e045c85060361d082b9cb282a591fbb0d43f61378c1286e564671b"}
++{"event":"payout.recorded","payload":{"amount_cents":1120,"charged_at":"2026-04-17","order_id":"ORD-4007","payee":"brightloom"},"signature":"3c05f32fe81e7b7ed59209398472dae68d96885d04cf0092d98393f33de5aaa5"}
++{"event":"payout.recorded","payload":{"amount_cents":29,"charged_at":"2026-04-17","order_id":"ORD-4007","payee":"platform"},"signature":"9eacaabdc70136c91d393105546b27ac0c22811a62176a7578f4f9576aef46dd"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-18","charged_cents":1899,"order_id":"ORD-4008"},"signature":"06851bb68e6bc24d32598594a2e6d6af25f8168fd968de1430456b6e0453614d"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-04-18","order_id":"ORD-4008","payee":"atlaswares"},"signature":"ddaa408a15bcc568036ca66f48a21ee383d6887f270ce8964aa1d6d56899b300"}
++{"event":"payout.recorded","payload":{"amount_cents":47,"charged_at":"2026-04-18","order_id":"ORD-4008","payee":"platform"},"signature":"9ba1b6c115c274acae308fcde3f1c930acd6a1ed7d3ad9390218ba1bb69b4366"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-18","charged_cents":1199,"order_id":"ORD-4014"},"signature":"aaeabb6e96cf1a2dcc62ff41831fbfe825d3295c424d83f7edd9c7d6d0917125"}
++{"event":"payout.recorded","payload":{"amount_cents":1169,"charged_at":"2026-04-18","order_id":"ORD-4014","payee":"brightloom"},"signature":"fa128cfcb07c1839751387d8c32e7231a637c90f627938af615ee49ca6b2d7ff"}
++{"event":"payout.recorded","payload":{"amount_cents":30,"charged_at":"2026-04-18","order_id":"ORD-4014","payee":"platform"},"signature":"bf5c754b8dda07d3d25d949edbcdc031ac0345908d16e7caca458f4c9cdbc130"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-18","charged_cents":3402,"order_id":"ORD-4015"},"signature":"a0d69056f8dc71331bc76fd88b8a29c2d3bdbee742a0792ad4006ba0ed84e7e9"}
++{"event":"payout.recorded","payload":{"amount_cents":85,"charged_at":"2026-04-18","order_id":"ORD-4015","payee":"platform"},"signature":"adebeacc03209fe7c13d3c227bba262a3d8ed9a2458f7d75621a168f9f93d330"}
++{"event":"payout.recorded","payload":{"amount_cents":3317,"charged_at":"2026-04-18","order_id":"ORD-4015","payee":"quarryfield"},"signature":"6f6aea8ba8c7dc6319fa597a52a15e77355ad53106f82c6d410197c1c33ba9c8"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-20","charged_cents":250,"order_id":"ORD-4006"},"signature":"02401a5f56e82f9b8320742dbf2e7a8fafd64222c2c2790491a060c3cf7ccbb4"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-04-20","order_id":"ORD-4006","payee":"northmill"},"signature":"aea59a3e3ff00c54efebbfde2dfbca04d4e877864b668c118348be4d9d8c905a"}
++{"event":"payout.recorded","payload":{"amount_cents":6,"charged_at":"2026-04-20","order_id":"ORD-4006","payee":"platform"},"signature":"17ff9ddab9f5c031adc215ecebda8c0878d63dd07fdafbcff4d9d59fa5f531d7"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-04-22","charged_cents":5401,"order_id":"ORD-4016"},"signature":"950c832a97f4b30bcda490fa29facf4111009f9e20d46aa8a48c6da7f002d515"}
++{"event":"payout.recorded","payload":{"amount_cents":293,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"brightloom"},"signature":"d93b841c57a1c00778e8fbc822af53be4c3b071e5740dd1dd1e749d9f8e26e00"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"fernco"},"signature":"fddc8e4ac6eb6e1d17bb89c8d7244c4090036b8b8a5fd3d1a44ef5f7a93d8a38"}
++{"event":"payout.recorded","payload":{"amount_cents":135,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"platform"},"signature":"05b9e020033f57077c4509e0f57a43d264eb821c1a72fabfde8717cfdc80e984"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"quarryfield"},"signature":"eb34caf628940162e0e45c160a7921c041b53318a38fd995a6bea41589453486"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-03","charged_cents":1899,"order_id":"ORD-5007"},"signature":"1c71437efdd2cbb8421d62624fe18c2d03f00030669f4e9b40b78620b2760c6e"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-05-03","order_id":"ORD-5007","payee":"atlaswares"},"signature":"4dbd8b99f4b641c5ec8badf81143b76667be3cb5accfdf428c166880e4fc76a0"}
++{"event":"payout.recorded","payload":{"amount_cents":47,"charged_at":"2026-05-03","order_id":"ORD-5007","payee":"platform"},"signature":"5c1b2580f1711a69b52d06f5218c15de4053effce7c93724e10567b0e14fc627"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-03","charged_cents":2151,"order_id":"ORD-5010"},"signature":"370bebd1a488a6af9cb4871b0c884a1a55c2c57eac5f7e565cb062484916e7c1"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-05-03","order_id":"ORD-5010","payee":"platform"},"signature":"9a2325a1cc26e61725b5cd482916a75fb1a37971fc90b3b00bcca0cbc436305b"}
++{"event":"payout.recorded","payload":{"amount_cents":2097,"charged_at":"2026-05-03","order_id":"ORD-5010","payee":"quarryfield"},"signature":"eb4c1b510eced1272950aa71d40cfed129b21920368c07377c8a943f0299a0c3"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-06","charged_cents":1803,"order_id":"ORD-5001"},"signature":"3a21b277046717eb6347fb206919cd3ffc9480157ab55ce2a415b1e4bf75c44a"}
++{"event":"payout.recorded","payload":{"amount_cents":694,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"atlaswares"},"signature":"51ec7dd2cdc33890d8b043fe806a490193853edfbbbbf1988dad6951eddc993c"}
++{"event":"payout.recorded","payload":{"amount_cents":370,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"fernco"},"signature":"d3ca24f93102d308dcfd6e5be0f1f43a614c923531416920078658759039865b"}
++{"event":"payout.recorded","payload":{"amount_cents":694,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"northmill"},"signature":"ec024be062c26fe8bf31e4eae779ace9ec935975d8c6e63f68a6c93d17bc731c"}
++{"event":"payout.recorded","payload":{"amount_cents":45,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"platform"},"signature":"e083c1e5f2eb193236283fdb07784f094ffaf54a4e8f5d8a4f196b494f80a212"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-07","charged_cents":750,"order_id":"ORD-5005"},"signature":"6bcd12e63ebfc9204271ee3f954e10db75dd900032e3febfa1a650ff1d89890e"}
++{"event":"payout.recorded","payload":{"amount_cents":731,"charged_at":"2026-05-07","order_id":"ORD-5005","payee":"atlaswares"},"signature":"0eddd6259a9cd8a63b3c65d63141c14b22d99a8e43ab726b200c2f55d79babac"}
++{"event":"payout.recorded","payload":{"amount_cents":19,"charged_at":"2026-05-07","order_id":"ORD-5005","payee":"platform"},"signature":"8bd3df0aa110cdc696de9f786345b25a4fc7b5d6651d5f1d1669e691166080d3"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-08","charged_cents":2348,"order_id":"ORD-5013"},"signature":"0a70af610516685321c5edaa09de444d8cb6f871ea8b4954bbcba4a1abae68a3"}
++{"event":"payout.recorded","payload":{"amount_cents":487,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"atlaswares"},"signature":"6405b69b88db649ae07d46ba8720b539468d3dfc8d5533858c0bebf556bde647"}
++{"event":"payout.recorded","payload":{"amount_cents":1558,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"fernco"},"signature":"0881b00ca7a162785c4d48fc2fe07ad6b5859a810c951c2db7437f5a5be24e63"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"northmill"},"signature":"73890cb9a612ab139b5ce2c9c8a23299a58d27302c85d1c1f5cf189bcc6bcba4"}
++{"event":"payout.recorded","payload":{"amount_cents":59,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"platform"},"signature":"4444e343713109728c13d4869f56f06caf77cbb99c4461f4af8ef0db2979be7d"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-08","charged_cents":3749,"order_id":"ORD-5014"},"signature":"d10f9ad71ca84ef811df5b56c4100122b24f31a8a82e54a743fe25cf400ed7b7"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"northmill"},"signature":"ddea40261dce6a2989a6ba381a7f89be8db81320cb6f651fef3a687590c3ed93"}
++{"event":"payout.recorded","payload":{"amount_cents":94,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"platform"},"signature":"a78bc4a692736a5b49e183e2c0dfca70b4322cdd6a80ae8707610d8ce15bdaa5"}
++{"event":"payout.recorded","payload":{"amount_cents":3411,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"quarryfield"},"signature":"38a043d11c072ee3ebc2b7494c92602b6039959ea3585143e41812b91847b866"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-09","charged_cents":2299,"order_id":"ORD-5008"},"signature":"2f6d42f03b1862d6962c625e6cd05e8441b2aa130db61d8e332f5e320c8e3f0f"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"atlaswares"},"signature":"854cf88d2959b286a4ac0b873138c1f95bd278c6ce17f56dea9f35e14283419a"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"northmill"},"signature":"cbba4a37842ab108ba3daca4d5c9497b60e545c249febd7f4bc91b38d5defc66"}
++{"event":"payout.recorded","payload":{"amount_cents":57,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"platform"},"signature":"8425a03d41a566d5c0b5ea981078ebc1193cfe272c1c31b915ffe13f9f829bbd"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-10","charged_cents":303,"order_id":"ORD-5006"},"signature":"52d4ecd52d00d56d50fea9557b6d00cd394054d2132bc91951f433fe047ccdbf"}
++{"event":"payout.recorded","payload":{"amount_cents":295,"charged_at":"2026-05-10","order_id":"ORD-5006","payee":"northmill"},"signature":"f5cd576ee4bb588bac7f0fc171d5c4f608a9ca0b25b51c0bfbca59164484e325"}
++{"event":"payout.recorded","payload":{"amount_cents":8,"charged_at":"2026-05-10","order_id":"ORD-5006","payee":"platform"},"signature":"65984ad796f4f71b0d25f6befa8b05a72cbd79d77c0ed4e78ad9e452588e07fe"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-11","charged_cents":3499,"order_id":"ORD-5004"},"signature":"94dc9fa9ed5f36b170e03b40a94706c81b267bd3d718e2bf89713eb08ace1ca8"}
++{"event":"payout.recorded","payload":{"amount_cents":87,"charged_at":"2026-05-11","order_id":"ORD-5004","payee":"platform"},"signature":"2e3574c129f1ef3cee044d93019117ef62b33a82c2e4e08dc7b490a76ec990ed"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-05-11","order_id":"ORD-5004","payee":"quarryfield"},"signature":"465dc7a91bc08ecd7759a49e8206a4d4402f1cc0d0c433089e0bc06463fc651f"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-11","charged_cents":1450,"order_id":"ORD-5017"},"signature":"3acfdfc8a8fb1f4c3b2d8281ab78c52e9a25c2ad4fb51556ee4e5887ad276bff"}
++{"event":"payout.recorded","payload":{"amount_cents":1414,"charged_at":"2026-05-11","order_id":"ORD-5017","payee":"northmill"},"signature":"3ad8689a2fe1a8ce3ce112765d255b577ca29168371ed7948b9c589f17196440"}
++{"event":"payout.recorded","payload":{"amount_cents":36,"charged_at":"2026-05-11","order_id":"ORD-5017","payee":"platform"},"signature":"111c2c845966cf090c12cd0424bb8861f0557c82af975ba1b68f92376b314adf"}
++{"event":"refund.recorded","payload":{"amount_cents":1548,"charged_at":"2026-05-12","order_id":"ORD-5012","sku":"PLANTER-4IN"},"signature":"396494efb27453a430c88d84b97a16d6c0cc1044801547b468c5db8ee9edffd2"}
++{"event":"refund.recorded","payload":{"amount_cents":364,"charged_at":"2026-05-14","order_id":"ORD-5002","sku":"MUG-CLASSIC"},"signature":"62ef7234a4e1f0c7571995bef556b56aa44fcb26e75ff7119cfa2e10aebf0d77"}
++{"event":"refund.recorded","payload":{"amount_cents":635,"charged_at":"2026-05-14","order_id":"ORD-5002","sku":"PEBBLE-SET"},"signature":"b284a3e3423897ba1d28475df177ccdd492980c55f3cff20c2e5afd73c74c285"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-14","charged_cents":799,"order_id":"ORD-5009"},"signature":"7de1cd4e2b3a4df1caf3a582d7691a08bcaa1c80d34ffd1534a892150fb2650b"}
++{"event":"payout.recorded","payload":{"amount_cents":779,"charged_at":"2026-05-14","order_id":"ORD-5009","payee":"fernco"},"signature":"8a1d04c2004babcfe210b68c8c755d11e2885118f48193de512f389e4a5d5cc9"}
++{"event":"payout.recorded","payload":{"amount_cents":20,"charged_at":"2026-05-14","order_id":"ORD-5009","payee":"platform"},"signature":"0e6eb7b86ea72772be0d99c72675f79d2618ce155a25a5e87379d78b635bc37d"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-21","charged_cents":3003,"order_id":"ORD-5011"},"signature":"0f4f95a64a4451558de0bbfa01da2e1f29ee7255296eaf8d566abd7aaf884fc6"}
++{"event":"payout.recorded","payload":{"amount_cents":2928,"charged_at":"2026-05-21","order_id":"ORD-5011","payee":"fernco"},"signature":"225c1750c6bf1a988be8ee7e6b3b840ec22b289f7983067f0a9fdce1fb2d4007"}
++{"event":"payout.recorded","payload":{"amount_cents":75,"charged_at":"2026-05-21","order_id":"ORD-5011","payee":"platform"},"signature":"b1d6a4b62ecc895a262f07338f5aaaf9b0aea27844e48d73aeb8387cafe6a9fa"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-22","charged_cents":1700,"order_id":"ORD-5016"},"signature":"9364ca829877f3c04155f23b2453e8f2034301512c99249733926ecf4a89bc2f"}
++{"event":"payout.recorded","payload":{"amount_cents":1658,"charged_at":"2026-05-22","order_id":"ORD-5016","payee":"atlaswares"},"signature":"f5b6ed2002d4399fdff26ae20aa0d8ae32fc7be5a0bddf6b8df15479fb024730"}
++{"event":"payout.recorded","payload":{"amount_cents":42,"charged_at":"2026-05-22","order_id":"ORD-5016","payee":"platform"},"signature":"61ea8b9606b8a6fb3788de69a01fd89ab7aeba4de17246e09629e0981a22ce34"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-05-24","charged_cents":3899,"order_id":"ORD-5015"},"signature":"4efea860a6fbc213c320a778251ed466bde75476aef2add4e26421228693193b"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"fernco"},"signature":"29cda940f015d086c1e1558a59e8ccd18cb136b148935a4885b70418a577e3c4"}
++{"event":"payout.recorded","payload":{"amount_cents":97,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"platform"},"signature":"c751eb0f0e722041658fefa64086ffec52c3b58f8f3864e9ee863738aaa94cc8"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"quarryfield"},"signature":"f38f586a9d8d203b8fb7f38f9f434671e569313aff3c23dcd7d166f133e56c10"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-03","charged_cents":3202,"order_id":"ORD-6012"},"signature":"2c62d9637bb31b2d9693136d80041826717c45d821d1ffbc06c03d01dbd3d0ef"}
++{"event":"payout.recorded","payload":{"amount_cents":3122,"charged_at":"2026-06-03","order_id":"ORD-6012","payee":"fernco"},"signature":"397361ea580d8c5bfd4112cd8265bfcc1663121d2355cb6ed857fdb13b08601a"}
++{"event":"payout.recorded","payload":{"amount_cents":80,"charged_at":"2026-06-03","order_id":"ORD-6012","payee":"platform"},"signature":"7270d41ccd1b431de04c44f6c4de2231ab7938acbd48c44f7f183e30a1571faf"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-04","charged_cents":3999,"order_id":"ORD-6001"},"signature":"2e63139ef2c8205a07488148e0319de010e9d22d2badd3a662914824f8216a4d"}
++{"event":"payout.recorded","payload":{"amount_cents":290,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"brightloom"},"signature":"6b7466f5e611e9bde9c0d32023858f0bd70894a8a67a36e51a0c78cd67cc97c3"}
++{"event":"payout.recorded","payload":{"amount_cents":241,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"northmill"},"signature":"e550a4382d292e22e6923e427ac12ca9ed240650f72c6e49b5a94f8ba56df36f"}
++{"event":"payout.recorded","payload":{"amount_cents":100,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"platform"},"signature":"e542228a20adf80376881d9fdb5e7dd3a56debdc06d7336ab9eac50209e24d15"}
++{"event":"payout.recorded","payload":{"amount_cents":3368,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"quarryfield"},"signature":"b3ac3002d2ddaf816364367f101091c20c2c0507c36e165adcb48613a53df573"}
++{"event":"refund.recorded","payload":{"amount_cents":461,"charged_at":"2026-06-05","order_id":"ORD-6008","sku":"CANDLE-3OZ"},"signature":"032474aaaa506995ae76b85c2bb8aacb6e8350c6af2ffb65fa14a1168d2c86f3"}
++{"event":"refund.recorded","payload":{"amount_cents":588,"charged_at":"2026-06-05","order_id":"ORD-6008","sku":"PEBBLE-SET"},"signature":"834fe7491faf2f45b3bc853c07609e8982fb7bc0e4dc1564e2f758cb8a9fcde5"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-07","charged_cents":2151,"order_id":"ORD-6006"},"signature":"7d34dac23833367f3588f94973335d4be62e7eb0f69e99499690105bb0db434c"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-06-07","order_id":"ORD-6006","payee":"platform"},"signature":"a0f515530391f3ee42eae57779080ce6e0361954ccfdbaec65eece3c28526121"}
++{"event":"payout.recorded","payload":{"amount_cents":2097,"charged_at":"2026-06-07","order_id":"ORD-6006","payee":"quarryfield"},"signature":"f1bc1dfff1888bcf2733059cbe6c1ed801947c8eff31d0cba60fa4f03186f7d3"}
++{"event":"refund.recorded","payload":{"amount_cents":1802,"charged_at":"2026-06-07","order_id":"ORD-6017","sku":"CARAFE-GLASS"},"signature":"816e35d2b8ac0adca15f6db72a36e723627e27197baf8d229260e96ef3beebfa"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-11","charged_cents":1601,"order_id":"ORD-6004"},"signature":"22b08fefa5fd0947137de2af965e01ae9f1d663e2c1002a41c6344b2c2bbf0b3"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-06-11","order_id":"ORD-6004","payee":"fernco"},"signature":"921eacea2ac8c33a59d8b286af73b3bf03d444fb5962af6fb58fc87ca49c0f05"}
++{"event":"payout.recorded","payload":{"amount_cents":40,"charged_at":"2026-06-11","order_id":"ORD-6004","payee":"platform"},"signature":"02247a994953c5e86f09a5eac4bc1e57bde384372f82252e15c18b23a6d337c0"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-15","charged_cents":1450,"order_id":"ORD-6013"},"signature":"deefc760706ca914a8fc7eaf995f3e219d0959b5173934f0eab40dd2e1aa0b1a"}
++{"event":"payout.recorded","payload":{"amount_cents":1414,"charged_at":"2026-06-15","order_id":"ORD-6013","payee":"northmill"},"signature":"434c669688ca23996ce071680e6ca1744f459a5fb1cf060dfd7a3dfd9930c106"}
++{"event":"payout.recorded","payload":{"amount_cents":36,"charged_at":"2026-06-15","order_id":"ORD-6013","payee":"platform"},"signature":"2a0c8e3eea3e60125eea7aa0714c30a89f9d1c4d6006408141a360e75ff7cd0c"}
++{"event":"refund.recorded","payload":{"amount_cents":2186,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"BOARD-SLATE"},"signature":"0ccb9d1e88e3d3e6ef82c194e3b280f582d8deb2279dfe81269e32b1f0c4a6e1"}
++{"event":"refund.recorded","payload":{"amount_cents":3773,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"CARAFE-GLASS"},"signature":"1d43ad2dff0481c4bb0673390973d2d014585ea52f9e988f1b5f7244e98de76a"}
++{"event":"refund.recorded","payload":{"amount_cents":1440,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"TRAY-WALNUT"},"signature":"2a3fb6979a4cd13d6445199540ea888b7bbd1db258bf6e92b2c148125f27afcc"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-17","charged_cents":1099,"order_id":"ORD-6015"},"signature":"d29ad19730109ce98f9df0c8fbadc0c9b85ee0399bc8c17943028cbe278d32b0"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"fernco"},"signature":"b64bd462351895217eb27fe7c2526b5a27dac17d96a51d6fb62cb7b0d8219ee7"}
++{"event":"payout.recorded","payload":{"amount_cents":27,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"platform"},"signature":"3b7b43fef3df5310b2e76c0a15054fb83535265323701e7426b0ebea04b7ca01"}
++{"event":"payout.recorded","payload":{"amount_cents":682,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"quarryfield"},"signature":"b4b0dad125a4427c83c8d2b24a6a14bf938bb45be5afa693366f7bc5145663d5"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-18","charged_cents":1100,"order_id":"ORD-6014"},"signature":"6e012a7281ce8f87081ce30bda458ccc33bfd2e07f7e269306b3d0ff4b033a66"}
++{"event":"payout.recorded","payload":{"amount_cents":294,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"brightloom"},"signature":"4601c9ff95d37811e026677d657747bac137ce5ca5a213523cfeb6e6c664552f"}
++{"event":"payout.recorded","payload":{"amount_cents":779,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"fernco"},"signature":"a82d37c9ac83c0d79ad274e9dccdd583976e7c5c6660a39ab6340f7e82a398b5"}
++{"event":"payout.recorded","payload":{"amount_cents":27,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"platform"},"signature":"a04e92565ce61a06beef89013482007bd365d031f8a151f26eed105aa2f49d92"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-19","charged_cents":800,"order_id":"ORD-6005"},"signature":"6c03dc1cc41bfd0360c785d8351adfeba0131d8fbb54dfbc97e66c8ed1f3b79c"}
++{"event":"payout.recorded","payload":{"amount_cents":780,"charged_at":"2026-06-19","order_id":"ORD-6005","payee":"atlaswares"},"signature":"fd298b5cc0daacb5eb52c3babcb150b9fe308583c00debe8a3708ef95033f487"}
++{"event":"payout.recorded","payload":{"amount_cents":20,"charged_at":"2026-06-19","order_id":"ORD-6005","payee":"platform"},"signature":"af51bdf3601f36865a5725d52a36881333c47b4d7d52307fa60f7b51973a8f88"}
++{"event":"refund.recorded","payload":{"amount_cents":1121,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"CANDLE-8OZ"},"signature":"dc18738ce89da25c414e19bddec367c50b0abd4d6e8dddb6c9673ae49a94f509"}
++{"event":"refund.recorded","payload":{"amount_cents":374,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"MUG-DINER"},"signature":"38fd5083d46358710f00df9efb08633d088d632117deb71bac100762e5df14a3"}
++{"event":"refund.recorded","payload":{"amount_cents":653,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"PEBBLE-SET"},"signature":"2132559bc8229a0beb66457f7a9dff1c020e04a4e9085b5962c59b0ed5e3a687"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-20","charged_cents":2150,"order_id":"ORD-6016"},"signature":"9d2b365a7028d76edaaa55d77bacebaeb70e53531ba5299ec792d996f7f9baa8"}
++{"event":"payout.recorded","payload":{"amount_cents":535,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"brightloom"},"signature":"3ff68f57f1d76a0c4814ecfb50858550cf8cef725a176ca83b3532fe0bd79988"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"fernco"},"signature":"31815cd9134283abb881569854966b10604c0bd46be687a3eff2b8207a45f77e"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"platform"},"signature":"667934f81b5f22ef500e6fc875e2a434c8ec1d087223ea91d98c58937b20869e"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-21","charged_cents":3853,"order_id":"ORD-6011"},"signature":"625c615edb0ce45fa069fd7dda95f412db82697b593260785e36f2af2c3a90e5"}
++{"event":"payout.recorded","payload":{"amount_cents":1484,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"fernco"},"signature":"eeb900caff41c9bd12d9924d662e486636f19016da6bfd06a8b1d19647473d49"}
++{"event":"payout.recorded","payload":{"amount_cents":232,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"northmill"},"signature":"b70abb06883744d2a2523c92ddee4120c3175839b566aa74b06f650b0a4cde63"}
++{"event":"payout.recorded","payload":{"amount_cents":96,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"platform"},"signature":"b97c87432b43ee75e2b164ddceba03235c8c9adef344636becf3d62d104677a3"}
++{"event":"payout.recorded","payload":{"amount_cents":2041,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"quarryfield"},"signature":"576b61bd9fec49ac1a9d56d185a7eb927caf372f3c667550bf02f194de8cd308"}
++{"event":"order.fulfilled","payload":{"charged_at":"2026-06-25","charged_cents":3349,"order_id":"ORD-6010"},"signature":"b91b93c880e1c5c10a54993243bcef6e8afa08458cff1f3402f735f96513424e"}
++{"event":"payout.recorded","payload":{"amount_cents":84,"charged_at":"2026-06-25","order_id":"ORD-6010","payee":"platform"},"signature":"930994654641ad630b3b7e7628c466ea407e8181b4c9f08bae48b93de8f1ebc6"}
++{"event":"payout.recorded","payload":{"amount_cents":3265,"charged_at":"2026-06-25","order_id":"ORD-6010","payee":"quarryfield"},"signature":"f9eba7b65bf6fa1851697b17ba01edbb3a4caf9c124be3a6492c2e518576586a"}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/webhook_outbox/ops-pager.jsonl b/exports/webhook_outbox/ops-pager.jsonl
+--- a/exports/webhook_outbox/ops-pager.jsonl	1969-12-31 16:00:00
++++ b/exports/webhook_outbox/ops-pager.jsonl	2026-07-20 13:29:18
+@@ -0,0 +1,10 @@
++{"event":"order.cancelled","payload":{"charged_at":"2026-04-03","charged_cents":549,"order_id":"ORD-4013"},"signature":"e5c378bf37cc26ccce68b550098795592918d9c8a8c52e538117de2ff7921ead"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-04-07","charged_cents":7098,"order_id":"ORD-4012"},"signature":"9e1e9bdb091512c829f3bf6ac1ecb98ba10661a36d2c91e6d4d4b4824b8efa15"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-04-09","charged_cents":1000,"order_id":"ORD-4003"},"signature":"e4e163a69f9649e9962e1cba31ba84eb6cf5961156f672236b1bfc320ba67ba9"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-04-12","charged_cents":1897,"order_id":"ORD-4009"},"signature":"8819bcb3a2ed08eac0b493e884bbc6e207d940a70bd5a3d980a95f6bc6eebbd8"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-05-12","charged_cents":1548,"order_id":"ORD-5012"},"signature":"535f70e749d8634e995a8687b1ab23adfffcdee265df3097a8eb6113c84171c8"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-05-14","charged_cents":999,"order_id":"ORD-5002"},"signature":"ecdf83b454b5d4cfd295da8388780729db311e9dc77b0550a46bf1946f192af2"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-06-05","charged_cents":1049,"order_id":"ORD-6008"},"signature":"f8c73dfdf8cef266da73133d0dd469198db39f7a2149dffe62a08c2d7a90af55"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-06-07","charged_cents":1802,"order_id":"ORD-6017"},"signature":"6f02f82453cb92f1e6c36e8c425bd6a243a6ad2aa0a9a0585fc92cf75f252080"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-06-16","charged_cents":7399,"order_id":"ORD-6009"},"signature":"bb35cd0b0d6bfaeb0fc216426aed0ecbc193a2497a4010078bad2deacc53d492"}
++{"event":"order.cancelled","payload":{"charged_at":"2026-06-19","charged_cents":2148,"order_id":"ORD-6007"},"signature":"be796e26f624e3ce69b9c0b17b4a291a6bee16e93039cba488791804ad943cf6"}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/webhook_outbox/vendor-portal.jsonl b/exports/webhook_outbox/vendor-portal.jsonl
+--- a/exports/webhook_outbox/vendor-portal.jsonl	1969-12-31 16:00:00
++++ b/exports/webhook_outbox/vendor-portal.jsonl	2026-07-20 13:29:18
+@@ -0,0 +1,119 @@
++{"event":"payout.recorded","payload":{"amount_cents":230,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"atlaswares"},"signature":"a4e98d7dcaf04d7af621345f9b02c2ce6474aaf9b6017042e33ca68cd390a438"}
++{"event":"payout.recorded","payload":{"amount_cents":1333,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"northmill"},"signature":"0d7ffc97b33e61ec12ee54be2af3239fde64eee8f3f140a9599b00c6661c802f"}
++{"event":"payout.recorded","payload":{"amount_cents":40,"charged_at":"2026-04-01","order_id":"ORD-4011","payee":"platform"},"signature":"d3397316dae0ecad2290dff4759f98c19b8d6fa73c09bf1f30541c5ad214d41e"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"atlaswares"},"signature":"1741d306ff028094d114452630177d883eb3b393032ec1fafcf549ad50ff013e"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"fernco"},"signature":"d2bc8e78513e8252a307d26e0e68a689ca779594d18d307c52ea2237837e59ed"}
++{"event":"payout.recorded","payload":{"amount_cents":325,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"northmill"},"signature":"b08d9bcb823b8d5ba2ac8d8cd534cba4c08344abd1e91a78cddca11f31670d43"}
++{"event":"payout.recorded","payload":{"amount_cents":25,"charged_at":"2026-04-03","order_id":"ORD-4001","payee":"platform"},"signature":"e71ea321802df099048d8f8c4733279501d1fb339762effcf24ea5d7d0a28f6a"}
++{"event":"refund.recorded","payload":{"amount_cents":549,"charged_at":"2026-04-03","order_id":"ORD-4013","sku":"CANDLE-3OZ"},"signature":"ea1dee5c912051d17d5c6911056a06304118e98dc8d620591e2884a5efc2a61e"}
++{"event":"payout.recorded","payload":{"amount_cents":1722,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"atlaswares"},"signature":"c239e1c6ba61e6cad4b88f29c5b431ea935c0334b1458cbb9c5c216733bac823"}
++{"event":"payout.recorded","payload":{"amount_cents":227,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"northmill"},"signature":"1134655dfd93ee12246febda51724ee99e537a02f69c132fa5dd5b84923737ca"}
++{"event":"payout.recorded","payload":{"amount_cents":50,"charged_at":"2026-04-05","order_id":"ORD-4002","payee":"platform"},"signature":"5c1ad87d02f3871251ed30bad7e60a0214e18284bd722881d3af85654fdb26dd"}
++{"event":"payout.recorded","payload":{"amount_cents":245,"charged_at":"2026-04-07","order_id":"ORD-4010","payee":"brightloom"},"signature":"194b6d265e373385e6c16194647218377a5ae6c7e19cda5a7f0a6c38d05dc13e"}
++{"event":"payout.recorded","payload":{"amount_cents":6,"charged_at":"2026-04-07","order_id":"ORD-4010","payee":"platform"},"signature":"ffdfa3977f78ebaf89b40c47c8db8644ac959b2ce20a58efafe2ddffa6e4f734"}
++{"event":"refund.recorded","payload":{"amount_cents":6853,"charged_at":"2026-04-07","order_id":"ORD-4012","sku":"BOWL-GRANITE"},"signature":"bb0c03c949080c16539c2a621a0078f43fc26018753ee358f5bc9d5475fb3efb"}
++{"event":"refund.recorded","payload":{"amount_cents":245,"charged_at":"2026-04-07","order_id":"ORD-4012","sku":"COASTER-ELM"},"signature":"0954323c0c0b32c0ea41d395e24fbe1d02de90c940327f9fbc659c0cd68ab3ba"}
++{"event":"refund.recorded","payload":{"amount_cents":333,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-CAMP"},"signature":"12bb58416dc3ad7ecda8323b6ce3fb60c90eb4327a1e8e8af110811eeeb3a466"}
++{"event":"refund.recorded","payload":{"amount_cents":334,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-CLASSIC"},"signature":"13f94f25e93b64bcbbb75e37ed22beed60d5a7a7960f7754a6679a22f886a81d"}
++{"event":"refund.recorded","payload":{"amount_cents":333,"charged_at":"2026-04-09","order_id":"ORD-4003","sku":"MUG-DINER"},"signature":"e89ab8a6964e60b394940ba088db4a44ab40a9396f984240bbabaddfd0969faf"}
++{"event":"payout.recorded","payload":{"amount_cents":55,"charged_at":"2026-04-11","order_id":"ORD-4004","payee":"platform"},"signature":"a65feba91b911b5e1343df489b460c05102631a74e670a2b5387002547836806"}
++{"event":"payout.recorded","payload":{"amount_cents":2146,"charged_at":"2026-04-11","order_id":"ORD-4004","payee":"quarryfield"},"signature":"3bfc5503843b430960abaeb81e3536fe48e69cac5d5fa953de56f4e4c98fc3ef"}
++{"event":"payout.recorded","payload":{"amount_cents":379,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"atlaswares"},"signature":"cff4810f79b189b0e2878934427355cbd690aaa33c71698814d755a8327e311b"}
++{"event":"payout.recorded","payload":{"amount_cents":44,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"platform"},"signature":"b39bf14a77da4b48731f8da67d60f079b5c6ac9a3ca4d26ab330c1e1eaa9746f"}
++{"event":"payout.recorded","payload":{"amount_cents":1325,"charged_at":"2026-04-12","order_id":"ORD-4005","payee":"quarryfield"},"signature":"2e413bea9ce785557e6f7f78bf90876105fe63d0f200fd673c8fbf2384657cd6"}
++{"event":"refund.recorded","payload":{"amount_cents":1098,"charged_at":"2026-04-12","order_id":"ORD-4009","sku":"CANDLE-3OZ"},"signature":"1a1273cf602b8170a49203594e039e0c828e67e65b7d31f88bcd52ced09ef307"}
++{"event":"refund.recorded","payload":{"amount_cents":799,"charged_at":"2026-04-12","order_id":"ORD-4009","sku":"PLANTER-4IN"},"signature":"ecc89488141697ed797f5c637141a2c804a955338f31639463a622912ea495a5"}
++{"event":"payout.recorded","payload":{"amount_cents":971,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"brightloom"},"signature":"1f29f7de862eedc52e5d6e27558c4d7db10afdb3a8b974f5fd0960346a0bd358"}
++{"event":"payout.recorded","payload":{"amount_cents":708,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"fernco"},"signature":"b2b484d0461665b25764ed3043bf14d8520053b0879fb4151757a7d387fab922"}
++{"event":"payout.recorded","payload":{"amount_cents":221,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"northmill"},"signature":"d51f1895dd8f5286a158e76ebfe2eee5bde381a039b5e708ffe3fe062c329d92"}
++{"event":"payout.recorded","payload":{"amount_cents":49,"charged_at":"2026-04-13","order_id":"ORD-4017","payee":"platform"},"signature":"b6603603244f41b427204a34e081fd0b372d7a5ef95ffeae13fc5f2c89b0a8ee"}
++{"event":"payout.recorded","payload":{"amount_cents":1120,"charged_at":"2026-04-17","order_id":"ORD-4007","payee":"brightloom"},"signature":"280487086faf1c3dc6022864f0937a54eeb8e430ac37948cfe147637ec3a9b5c"}
++{"event":"payout.recorded","payload":{"amount_cents":29,"charged_at":"2026-04-17","order_id":"ORD-4007","payee":"platform"},"signature":"5adf46acb96a04aab01739b4fdf2030cbe97050db3a8f4d8c83a24850e22a271"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-04-18","order_id":"ORD-4008","payee":"atlaswares"},"signature":"425e366849eec0cbd5d28a7b08c6abde6a3ff487e3fafd1588319eeabf200c1c"}
++{"event":"payout.recorded","payload":{"amount_cents":47,"charged_at":"2026-04-18","order_id":"ORD-4008","payee":"platform"},"signature":"4b25ac855c2d1b61494371ea322e7cd4677f1f6e50ee8869c0bf2a65d32ee59e"}
++{"event":"payout.recorded","payload":{"amount_cents":1169,"charged_at":"2026-04-18","order_id":"ORD-4014","payee":"brightloom"},"signature":"194caf788ac1e60acc9fa20eed8eb639069f6a2d8998ceec0189e93467420221"}
++{"event":"payout.recorded","payload":{"amount_cents":30,"charged_at":"2026-04-18","order_id":"ORD-4014","payee":"platform"},"signature":"c7030aba953129787fb357b097b2a50f016d756895cdf5fe25d2600b8bd079a4"}
++{"event":"payout.recorded","payload":{"amount_cents":85,"charged_at":"2026-04-18","order_id":"ORD-4015","payee":"platform"},"signature":"98839cf5465971f68022e429253ebbaeecc9218c7355fc9f06a0e2d6fbe7f9a9"}
++{"event":"payout.recorded","payload":{"amount_cents":3317,"charged_at":"2026-04-18","order_id":"ORD-4015","payee":"quarryfield"},"signature":"bf8e2d16eec6504847e73c18cd53c08f0f254c9229ba6d4bcf87b42dcd3486ff"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-04-20","order_id":"ORD-4006","payee":"northmill"},"signature":"9c85bc8dd9dba04d3f5bfd3fca8d868ad084fc7705643e2148a978ca124d0eab"}
++{"event":"payout.recorded","payload":{"amount_cents":6,"charged_at":"2026-04-20","order_id":"ORD-4006","payee":"platform"},"signature":"20c0689a1fa4790680901ebdbd69252bf4e2bf07e675f4e086257465dbeedf7d"}
++{"event":"payout.recorded","payload":{"amount_cents":293,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"brightloom"},"signature":"8ca9cd68d07f015128da653499d4c38f0cd36623b21fc091f0afbd6eeaad7911"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"fernco"},"signature":"687fcfec85a089934525000601e4a65d30a2d1c3d709c52b14b1175201f026ee"}
++{"event":"payout.recorded","payload":{"amount_cents":135,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"platform"},"signature":"da6434a54d7add45c4f7feb8944c127a8671cfe8694ff45ea2b98b42a4882a87"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-04-22","order_id":"ORD-4016","payee":"quarryfield"},"signature":"750c40408cbe22baba5b9deba5f7fc91e1e62c15bb3ed82d54fdd779d5f8cb15"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-05-03","order_id":"ORD-5007","payee":"atlaswares"},"signature":"5b552c1d9d9a0a7328d4aba9675907d0396cce35e62433e4bd41a2fc402610f7"}
++{"event":"payout.recorded","payload":{"amount_cents":47,"charged_at":"2026-05-03","order_id":"ORD-5007","payee":"platform"},"signature":"37fa5c259117ab2954a286ce3af662c453eedcc365c47a1b2a1434ea2e0c9f16"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-05-03","order_id":"ORD-5010","payee":"platform"},"signature":"abc4a02282a7840956c7ced07227512e5cc41388c58fc38a8a0bdfe71acc92df"}
++{"event":"payout.recorded","payload":{"amount_cents":2097,"charged_at":"2026-05-03","order_id":"ORD-5010","payee":"quarryfield"},"signature":"47199770d4f2640fe8ea529329943e387bc88c2d6fc9d9351a6f04e6fc7f16f4"}
++{"event":"payout.recorded","payload":{"amount_cents":694,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"atlaswares"},"signature":"afb198a7e3cf6240063162f0f0dfa6d76373d8f8aaac8766cf804c6ce3f3d59b"}
++{"event":"payout.recorded","payload":{"amount_cents":370,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"fernco"},"signature":"a4c82c9dd009de4c82c050d30683eb8f456ebfe3e08893e0bc71544e5fc07456"}
++{"event":"payout.recorded","payload":{"amount_cents":694,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"northmill"},"signature":"a9a049f88e9235bb04accc265b19ef74b8ba2ef8b992cac91ed4a414184be041"}
++{"event":"payout.recorded","payload":{"amount_cents":45,"charged_at":"2026-05-06","order_id":"ORD-5001","payee":"platform"},"signature":"dd8adb909f8ada846ea921c52c4dfc47686e1b7b4ad6a22530fe86183953a786"}
++{"event":"payout.recorded","payload":{"amount_cents":731,"charged_at":"2026-05-07","order_id":"ORD-5005","payee":"atlaswares"},"signature":"d418f52d0e7f577c6c2c5afc9d2176f078178cfc9498a17e6e432f5cf7adbf8d"}
++{"event":"payout.recorded","payload":{"amount_cents":19,"charged_at":"2026-05-07","order_id":"ORD-5005","payee":"platform"},"signature":"c44beaf90bbfa60cca71ba8e8fef592b40ff5be8af414a2b4a1612954977f5f7"}
++{"event":"payout.recorded","payload":{"amount_cents":487,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"atlaswares"},"signature":"2fd350cef6700b30479e678e7507dedc99e28d2b96f6c1e10450f3e74421b861"}
++{"event":"payout.recorded","payload":{"amount_cents":1558,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"fernco"},"signature":"0ad87d6245b530d1cdf4d1ef452a9f4848e1dc17f39ae46a0ef019131f3dde16"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"northmill"},"signature":"b135a3132b1aa4befc14812f0941739443d0b04553922d73be542978dc843791"}
++{"event":"payout.recorded","payload":{"amount_cents":59,"charged_at":"2026-05-08","order_id":"ORD-5013","payee":"platform"},"signature":"91db4888e44a7c6665fa14cdbdf0053a7a1c2811cbf47ebb0795df202a6bc7b9"}
++{"event":"payout.recorded","payload":{"amount_cents":244,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"northmill"},"signature":"54ea58ebd18b12180f13004f08bec9a433cecf641e52be300d08ba31f67091b5"}
++{"event":"payout.recorded","payload":{"amount_cents":94,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"platform"},"signature":"00c8be603f5e81945199bd1fe751ce5d8400cd7570c521776184ee5eff70b507"}
++{"event":"payout.recorded","payload":{"amount_cents":3411,"charged_at":"2026-05-08","order_id":"ORD-5014","payee":"quarryfield"},"signature":"3cb68484336a4a660f0e665674beafcc5cb0b61c966b049b0ecf4251532d915f"}
++{"event":"payout.recorded","payload":{"amount_cents":1852,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"atlaswares"},"signature":"3bf4af323c0a5d0cd0b40661ab9a925da94aa20cbcb8ad4956c5aad64fd18d3b"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"northmill"},"signature":"9caab7e1aa335a61986f7213b88471b8e9407c95e36823e9b304f106d73510c4"}
++{"event":"payout.recorded","payload":{"amount_cents":57,"charged_at":"2026-05-09","order_id":"ORD-5008","payee":"platform"},"signature":"f70be7cd3e7f5dca54d526cff968064497f34538b94acb2e7cdbd0016724bf39"}
++{"event":"payout.recorded","payload":{"amount_cents":295,"charged_at":"2026-05-10","order_id":"ORD-5006","payee":"northmill"},"signature":"2a5c3b146d6bf5d2ad6d435ab99c0cc51c7b6d1c3493d6215f6b964cc89d1ba4"}
++{"event":"payout.recorded","payload":{"amount_cents":8,"charged_at":"2026-05-10","order_id":"ORD-5006","payee":"platform"},"signature":"7596dddf639976a3e7c2104c8eee65822bb0de1f991e411c28f12411b596369e"}
++{"event":"payout.recorded","payload":{"amount_cents":87,"charged_at":"2026-05-11","order_id":"ORD-5004","payee":"platform"},"signature":"02fefa7c797c18207b5a79a46f8fd439710079eda35a58e82de0a0536afb5947"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-05-11","order_id":"ORD-5004","payee":"quarryfield"},"signature":"ad9eb9218dab5e00ec20725800ccb7d51fb353d29e969fb54ac158f9628aae68"}
++{"event":"payout.recorded","payload":{"amount_cents":1414,"charged_at":"2026-05-11","order_id":"ORD-5017","payee":"northmill"},"signature":"bdc3178f92596eb867dc24c36404d01b045e5dad83504f14329f3a411b9072ed"}
++{"event":"payout.recorded","payload":{"amount_cents":36,"charged_at":"2026-05-11","order_id":"ORD-5017","payee":"platform"},"signature":"40422484771771357fa1c564c9aa0bf081d7630fe67ce8c2ae10b775a44bcf4e"}
++{"event":"refund.recorded","payload":{"amount_cents":1548,"charged_at":"2026-05-12","order_id":"ORD-5012","sku":"PLANTER-4IN"},"signature":"be23afc6fbd46c324584426006035edaf2de0ab4d4da12bb661e9cfdd7943962"}
++{"event":"refund.recorded","payload":{"amount_cents":364,"charged_at":"2026-05-14","order_id":"ORD-5002","sku":"MUG-CLASSIC"},"signature":"afe3d666f8cace47318505adf9bd0e4e5b2464e97011aa202161a20225c50c3e"}
++{"event":"refund.recorded","payload":{"amount_cents":635,"charged_at":"2026-05-14","order_id":"ORD-5002","sku":"PEBBLE-SET"},"signature":"d7f1effee34f91e0eac3193cfa6016cff94b3481e269374a523a06a1ecc43bb2"}
++{"event":"payout.recorded","payload":{"amount_cents":779,"charged_at":"2026-05-14","order_id":"ORD-5009","payee":"fernco"},"signature":"37cb234bf3c7782a88d55df244d38139d80cf26b3e34530cb9a87a0f8e441b43"}
++{"event":"payout.recorded","payload":{"amount_cents":20,"charged_at":"2026-05-14","order_id":"ORD-5009","payee":"platform"},"signature":"57288027d933e9f56aecd6d4508b516d11528ad6129fc75fdca65cce878b9b4a"}
++{"event":"payout.recorded","payload":{"amount_cents":2928,"charged_at":"2026-05-21","order_id":"ORD-5011","payee":"fernco"},"signature":"a348dc1169a15a5bb7a43b5b07b8782203393b1aa693abf1f9cd84c56ac22e45"}
++{"event":"payout.recorded","payload":{"amount_cents":75,"charged_at":"2026-05-21","order_id":"ORD-5011","payee":"platform"},"signature":"8594439a233146509ce4efef5bdcea914f7242bb6388b1d3fdc369ec2462e272"}
++{"event":"payout.recorded","payload":{"amount_cents":1658,"charged_at":"2026-05-22","order_id":"ORD-5016","payee":"atlaswares"},"signature":"9e060db98e3b04f53e587f31fdd017adbaeae13520bb1e1b890a93ada2e83386"}
++{"event":"payout.recorded","payload":{"amount_cents":42,"charged_at":"2026-05-22","order_id":"ORD-5016","payee":"platform"},"signature":"4c989948a1ed5f5e6570d46999b6d3b2d35c104c111570a3ad5a0951851d6eb0"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"fernco"},"signature":"d7d2c138e1be6e086bc418fdeae8f87cd3214d2011853aa8bbaa95e91c6d3a07"}
++{"event":"payout.recorded","payload":{"amount_cents":97,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"platform"},"signature":"a8b5924b79a07cacb916defe10d91b155bb1312918e1fa6b0d961fb83ab12e48"}
++{"event":"payout.recorded","payload":{"amount_cents":3412,"charged_at":"2026-05-24","order_id":"ORD-5015","payee":"quarryfield"},"signature":"13d89edccf14bacaf71d535695cba112f14bc1167afd5dc4d0c46eb2784331da"}
++{"event":"payout.recorded","payload":{"amount_cents":3122,"charged_at":"2026-06-03","order_id":"ORD-6012","payee":"fernco"},"signature":"1dc927a40d052e46b5567527288f9830a620e4ff23c279bd5db11ca2ae3530fd"}
++{"event":"payout.recorded","payload":{"amount_cents":80,"charged_at":"2026-06-03","order_id":"ORD-6012","payee":"platform"},"signature":"219457bbb5088d78441f65a00c6c1fb70964449db58c308768824565f9812749"}
++{"event":"payout.recorded","payload":{"amount_cents":290,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"brightloom"},"signature":"174d98093fcee31bc7869f27a024c220026ecea2ee73f2f7214eb047aec89350"}
++{"event":"payout.recorded","payload":{"amount_cents":241,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"northmill"},"signature":"17bc9c5b7d03553233e2593527cfa0a2e6ba6f8c411386cf8d9e4a6843e76435"}
++{"event":"payout.recorded","payload":{"amount_cents":100,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"platform"},"signature":"0d03ee645b89d41c99a2b05336dd36779f25d9b06b35273a2b29a9b29241d80e"}
++{"event":"payout.recorded","payload":{"amount_cents":3368,"charged_at":"2026-06-04","order_id":"ORD-6001","payee":"quarryfield"},"signature":"df7ea95cf76036b91e87618a5ea29ad02869f146759ec27d4f3f63194a8a6e91"}
++{"event":"refund.recorded","payload":{"amount_cents":461,"charged_at":"2026-06-05","order_id":"ORD-6008","sku":"CANDLE-3OZ"},"signature":"cd5ae5f4c1fc9b74cd72cc617838fd19dc23b8ce64d45cdf9e3cd613ba981aba"}
++{"event":"refund.recorded","payload":{"amount_cents":588,"charged_at":"2026-06-05","order_id":"ORD-6008","sku":"PEBBLE-SET"},"signature":"dc7d5283dfc35a0b595a118693a7d07dd7588f75e5288f04dc36f348549fadba"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-06-07","order_id":"ORD-6006","payee":"platform"},"signature":"b0d94ea27135a22fe224b7b6e169deb2b5266446c5ab7e4dfeba18800d49fca9"}
++{"event":"payout.recorded","payload":{"amount_cents":2097,"charged_at":"2026-06-07","order_id":"ORD-6006","payee":"quarryfield"},"signature":"7bc47b8261ecfba9b0f67e1b67205a1413a4cc6c01f7b6d0d9d11d89e9c96300"}
++{"event":"refund.recorded","payload":{"amount_cents":1802,"charged_at":"2026-06-07","order_id":"ORD-6017","sku":"CARAFE-GLASS"},"signature":"e166ca66d799c3a115b12c08550ebcfa04578ae6ae31a7908438d0c95a59f1a1"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-06-11","order_id":"ORD-6004","payee":"fernco"},"signature":"b6531857ec86759c6f8fb50003045aedecd4f81e3d230f35bd92cd48e7fba35f"}
++{"event":"payout.recorded","payload":{"amount_cents":40,"charged_at":"2026-06-11","order_id":"ORD-6004","payee":"platform"},"signature":"63251a74658c8ad4012e490e5e5ec6e5f0851f678bd346b28008af3b87f30f38"}
++{"event":"payout.recorded","payload":{"amount_cents":1414,"charged_at":"2026-06-15","order_id":"ORD-6013","payee":"northmill"},"signature":"4696af28eb780716010277161442757b36bba5965364e6830c1e59ef7dfdf94e"}
++{"event":"payout.recorded","payload":{"amount_cents":36,"charged_at":"2026-06-15","order_id":"ORD-6013","payee":"platform"},"signature":"d1d2433fc5fff899326108ee4b98e729a065691f2ba09d4a868cfc3dcc2b3b27"}
++{"event":"refund.recorded","payload":{"amount_cents":2186,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"BOARD-SLATE"},"signature":"a0ef03050aaa6d0a6e5f4a8e9acd7449b8af7c751b9c740a8227dbd65bb3d97f"}
++{"event":"refund.recorded","payload":{"amount_cents":3773,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"CARAFE-GLASS"},"signature":"49d7e96e12210d19d7272a51abfdec496d24d720c5b95a33baab13468818e216"}
++{"event":"refund.recorded","payload":{"amount_cents":1440,"charged_at":"2026-06-16","order_id":"ORD-6009","sku":"TRAY-WALNUT"},"signature":"d930ca6d6fe496ca61cf4975da51fe2c0ed0db62e716e0fa3dccbf9d1192f512"}
++{"event":"payout.recorded","payload":{"amount_cents":390,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"fernco"},"signature":"4b8aa71d1ba2319dfbace9f9393afb4183bc4551e09b00bc2938c7397516eaf1"}
++{"event":"payout.recorded","payload":{"amount_cents":27,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"platform"},"signature":"5651449039e0524541a452b5aaa69f51e44e4d715d73aad104f243088fd59226"}
++{"event":"payout.recorded","payload":{"amount_cents":682,"charged_at":"2026-06-17","order_id":"ORD-6015","payee":"quarryfield"},"signature":"0216df3fb261c6f9358ca526ca8d94373e02aa1be048cd21a661ce1c3c79c281"}
++{"event":"payout.recorded","payload":{"amount_cents":294,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"brightloom"},"signature":"14e907b89ec3242aaf3d96e3f9e9af68dfd15a2e0560d499bc7039add6ee42c0"}
++{"event":"payout.recorded","payload":{"amount_cents":779,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"fernco"},"signature":"9c6718a0ae76b0db6156dd7f29b4fe8ea9d827c334486fa1687e699c1017de4d"}
++{"event":"payout.recorded","payload":{"amount_cents":27,"charged_at":"2026-06-18","order_id":"ORD-6014","payee":"platform"},"signature":"0cb860ba842391687448cfdf6c16ddc12e162daa5c36c6bc16dbd2490cd0e231"}
++{"event":"payout.recorded","payload":{"amount_cents":780,"charged_at":"2026-06-19","order_id":"ORD-6005","payee":"atlaswares"},"signature":"aa9441fbd2fe0dd2aaeae6c662e81483d484ce9c70de1023e8cae5c1660fdb1a"}
++{"event":"payout.recorded","payload":{"amount_cents":20,"charged_at":"2026-06-19","order_id":"ORD-6005","payee":"platform"},"signature":"6f51174d8666f13be192145a4611507245840c30c542ca0c367ab7a61e551425"}
++{"event":"refund.recorded","payload":{"amount_cents":1121,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"CANDLE-8OZ"},"signature":"182267e68f25774d3fde620b4e8b4cec919fb09d5c78dcaf5d9304da583da70b"}
++{"event":"refund.recorded","payload":{"amount_cents":374,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"MUG-DINER"},"signature":"805e666255eeb2272fd58b7fa5608244c6801882f03582afe3de7851bae043a0"}
++{"event":"refund.recorded","payload":{"amount_cents":653,"charged_at":"2026-06-19","order_id":"ORD-6007","sku":"PEBBLE-SET"},"signature":"85a08d1bc27b34a348f373ead9a75f464ab2b283df01cb8d8c2d2f47af41422f"}
++{"event":"payout.recorded","payload":{"amount_cents":535,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"brightloom"},"signature":"b130a8942d24b1dc2fdddebd8e5c4393844aa1b3e72998f2bdb64c1326e0275e"}
++{"event":"payout.recorded","payload":{"amount_cents":1561,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"fernco"},"signature":"a570ce577d2a0d772b25dae4c37401e24f237efb2e67d68b1ac741603facf3ec"}
++{"event":"payout.recorded","payload":{"amount_cents":54,"charged_at":"2026-06-20","order_id":"ORD-6016","payee":"platform"},"signature":"6687a2ef10b23be9b99b9d7607496445c6dc61466f44b87f2f277c2e28a8c4d3"}
++{"event":"payout.recorded","payload":{"amount_cents":1484,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"fernco"},"signature":"5da198dc438eab6fc83d5df3e1005d19e0d764347def25da9f8c0dd56648b638"}
++{"event":"payout.recorded","payload":{"amount_cents":232,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"northmill"},"signature":"210f2c475569fd6a19b517d6bb0fd0c44eb9e55d5a0f6c6051d21f1092544e66"}
++{"event":"payout.recorded","payload":{"amount_cents":96,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"platform"},"signature":"91e22879e0bd59c0f08968de30cad808583de803c552998da15999d3099c1fb2"}
++{"event":"payout.recorded","payload":{"amount_cents":2041,"charged_at":"2026-06-21","order_id":"ORD-6011","payee":"quarryfield"},"signature":"af5cdf08db043b236f100488aaf16dea4044d2df0af4155042079649cd42d7d7"}
++{"event":"payout.recorded","payload":{"amount_cents":84,"charged_at":"2026-06-25","order_id":"ORD-6010","payee":"platform"},"signature":"8345735b727bce068e615dd8bffc435951144c7321be951c3d8ebaa1880162f8"}
++{"event":"payout.recorded","payload":{"amount_cents":3265,"charged_at":"2026-06-25","order_id":"ORD-6010","payee":"quarryfield"},"signature":"ac6bcf8d95b6a36b4763a69daab3a600e9b4d2a67cedaa60bae7f43548fb7d7f"}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/build_audit_log.py b/scripts/build_audit_log.py
+--- a/scripts/build_audit_log.py	1969-12-31 16:00:00
++++ b/scripts/build_audit_log.py	2026-07-20 13:26:38
+@@ -0,0 +1,46 @@
++#!/usr/bin/env python3
++"""Build the tamper-evident audit log for a month range.
++
++Writes exports/audit_log.jsonl — the nightly publish location for this
++artifact (see docs/accounting.md / CLAUDE.md: exports/ is otherwise
++read-only). Thin wrapper around services.audit.write_audit_log.
++
++Usage:
++    python scripts/build_audit_log.py --from 2026-04 --to 2026-06
++"""
++from __future__ import annotations
++
++import argparse
++import sys
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
++
++from services.audit import GENESIS_HASH, write_audit_log  # noqa: E402
++
++OUT_PATH = ROOT / "exports" / "audit_log.jsonl"
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description="Build the tamper-evident audit log.")
++    parser.add_argument(
++        "--from", dest="from_month", required=True, metavar="YYYY-MM",
++        help="first month (inclusive) of recorded charge dates to include",
++    )
++    parser.add_argument(
++        "--to", dest="to_month", required=True, metavar="YYYY-MM",
++        help="last month (inclusive) of recorded charge dates to include",
++    )
++    args = parser.parse_args()
++
++    records = write_audit_log(args.from_month, args.to_month, OUT_PATH)
++    final_hash = records[-1]["hash"] if records else GENESIS_HASH
++    print(f"{len(records)} records written to {OUT_PATH}")
++    print(f"final hash: {final_hash}")
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/dispatch_notifications.py b/scripts/dispatch_notifications.py
+--- a/scripts/dispatch_notifications.py	1969-12-31 16:00:00
++++ b/scripts/dispatch_notifications.py	2026-07-20 13:27:11
+@@ -0,0 +1,46 @@
++#!/usr/bin/env python3
++"""Dispatch the signed webhook outbox for a month range (no live HTTP).
++
++Thin wrapper around `services.notifications.write_outbox` — writes each
++subscriber's signed, newline-delimited JSON file to `exports/webhook_outbox/`
++(or `--out-dir` if given), fully rewriting each file from the recorded lines
++in `[--from, --to]` inclusive.
++"""
++from __future__ import annotations
++
++import argparse
++import sys
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
++
++from services.notifications import DEFAULT_OUT_DIR, write_outbox  # noqa: E402
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument(
++        "--from", dest="from_month", required=True, metavar="YYYY-MM", help="start month, inclusive"
++    )
++    parser.add_argument(
++        "--to", dest="to_month", required=True, metavar="YYYY-MM", help="end month, inclusive"
++    )
++    parser.add_argument(
++        "--out-dir",
++        type=Path,
++        default=DEFAULT_OUT_DIR,
++        help="output directory (default: exports/webhook_outbox/)",
++    )
++    args = parser.parse_args()
++
++    counts = write_outbox(args.from_month, args.to_month, args.out_dir)
++    total = sum(counts.values())
++    for subscriber_id, count in counts.items():
++        print(f"wrote {count} events to {args.out_dir / (subscriber_id + '.jsonl')}")
++    print(f"total: {total} events across {len(counts)} subscriber file(s) in {args.out_dir}/")
++
++
++if __name__ == "__main__":
++    main()
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/generate_statements.py b/scripts/generate_statements.py
+--- a/scripts/generate_statements.py	1969-12-31 16:00:00
++++ b/scripts/generate_statements.py	2026-07-20 13:26:21
+@@ -0,0 +1,34 @@
++#!/usr/bin/env python3
++"""Generate vendor monthly statement CSVs into exports/vendor_statements/.
++
++Usage:
++    python scripts/generate_statements.py --from 2026-04 --to 2026-06
++"""
++from __future__ import annotations
++
++import argparse
++import sys
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++sys.path.insert(0, str(ROOT))
++
++from services.statements.vendor_statements import write_statements  # noqa: E402
++
++OUT_DIR = ROOT / "exports" / "vendor_statements"
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--from", dest="from_month", required=True, help="YYYY-MM, inclusive")
++    parser.add_argument("--to", dest="to_month", required=True, help="YYYY-MM, inclusive")
++    args = parser.parse_args()
++
++    written = write_statements(args.from_month, args.to_month, OUT_DIR)
++    for path in written:
++        print(f"wrote {path}")
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/services/audit/__init__.py b/services/audit/__init__.py
+--- a/services/audit/__init__.py	1969-12-31 16:00:00
++++ b/services/audit/__init__.py	2026-07-20 13:26:30
+@@ -0,0 +1,180 @@
++"""Tamper-evident audit log over recorded money lines.
++
++Builds a hash-chained ledger, one record per recorded money line (the
++charge, each payout line, each refund line), for every order whose recorded
++charge month falls in a given ``[from, to]`` range. Per docs/accounting.md,
++recorded lines (``services.recorded``) are authoritative — amounts here are
++carried through unchanged from those lines, exactly once each. This module
++performs no money arithmetic; ``.to_cents()`` is used only at the I/O
++boundary when building each record.
++
++Hash chain
++----------
++
++Records are emitted in sorted order (see :func:`build_audit_records`). Each
++record has a ``seq`` (0-based position in that order), a ``prev_hash`` (the
++previous record's ``hash``, or ``"0" * 64`` for the first record), and a
++``hash``. The ``hash`` is the SHA-256 hex digest of::
++
++    prev_hash + json.dumps(record_without_hash, sort_keys=True, separators=(",", ":"))
++
++encoded as utf-8, where ``record_without_hash`` is every field except
++``hash`` (so it includes ``prev_hash`` itself as a JSON field, in addition
++to being prepended as a raw string). This means altering any field of any
++record — or the order of records, or dropping one — changes that record's
++recomputed hash and breaks the chain from that point on, which
++:func:`verify_audit_log` detects.
++"""
++from __future__ import annotations
++
++import hashlib
++import json
++from pathlib import Path
++from typing import Iterable, Iterator, Union
++
++from services.recorded import load_recorded_lines, months_in_range
++
++GENESIS_HASH = "0" * 64
++
++# Fields hashed/serialized for each record, in the exact set the spec calls
++# for (order doesn't matter for hashing since json.dumps sorts keys, but
++# this is also the field set written to disk).
++_RECORD_FIELDS = ("seq", "charged_at", "kind", "order_id", "party", "amount_cents", "prev_hash")
++
++
++class AuditChainError(ValueError):
++    """Raised by :func:`verify_audit_log` when the hash chain doesn't validate."""
++
++
++def _compute_hash(record_without_hash: dict) -> str:
++    prev_hash = record_without_hash["prev_hash"]
++    blob = json.dumps(record_without_hash, sort_keys=True, separators=(",", ":"))
++    return hashlib.sha256((prev_hash + blob).encode("utf-8")).hexdigest()
++
++
++def _collect_entries(from_month: str, to_month: str) -> list[tuple[str, str, str, str, int]]:
++    """Return unsorted (charged_at, order_id, kind, party, amount_cents) tuples."""
++    recorded = load_recorded_lines()
++    months = set(months_in_range(from_month, to_month))
++
++    charges_in_range = {c.order_id: c for c in recorded.charges if c.month in months}
++    in_range_ids = set(charges_in_range)
++
++    entries: list[tuple[str, str, str, str, int]] = []
++    for charge in recorded.charges:
++        if charge.order_id in in_range_ids:
++            entries.append(
++                (charge.charged_at, charge.order_id, "charge", "", charge.amount.to_cents())
++            )
++    for payout in recorded.payout_lines:
++        if payout.order_id in in_range_ids:
++            charged_at = charges_in_range[payout.order_id].charged_at
++            entries.append(
++                (charged_at, payout.order_id, "payout_line", payout.payee, payout.amount.to_cents())
++            )
++    for refund in recorded.refund_lines:
++        if refund.order_id in in_range_ids:
++            charged_at = charges_in_range[refund.order_id].charged_at
++            entries.append(
++                (charged_at, refund.order_id, "refund_line", refund.sku, refund.amount.to_cents())
++            )
++    return entries
++
++
++def build_audit_records(from_month: str, to_month: str) -> list[dict]:
++    """Build the full, sorted, hash-chained list of audit records.
++
++    Sort key: (charged_at, order_id, kind, party) — "charge" < "payout_line"
++    < "refund_line" lexicographically, and party ascending.
++    """
++    entries = _collect_entries(from_month, to_month)
++    entries.sort(key=lambda e: (e[0], e[1], e[2], e[3]))
++
++    records: list[dict] = []
++    prev_hash = GENESIS_HASH
++    for seq, (charged_at, order_id, kind, party, amount_cents) in enumerate(entries):
++        record = {
++            "seq": seq,
++            "charged_at": charged_at,
++            "kind": kind,
++            "order_id": order_id,
++            "party": party,
++            "amount_cents": amount_cents,
++            "prev_hash": prev_hash,
++        }
++        record_hash = _compute_hash(record)
++        record["hash"] = record_hash
++        records.append(record)
++        prev_hash = record_hash
++    return records
++
++
++def write_audit_log(from_month: str, to_month: str, path: Union[str, Path]) -> list[dict]:
++    """Write the audit log for ``[from_month, to_month]`` to ``path``.
++
++    One compact, sorted-key JSON record per line, newline-terminated.
++    Byte-identical on rerun for the same inputs. Returns the list of record
++    dicts that were written, for convenience.
++    """
++    records = build_audit_records(from_month, to_month)
++    out_path = Path(path)
++    out_path.parent.mkdir(parents=True, exist_ok=True)
++    with out_path.open("w") as f:
++        for record in records:
++            f.write(json.dumps(record, sort_keys=True, separators=(",", ":")))
++            f.write("\n")
++    return records
++
++
++def _coerce_record(item) -> dict:
++    if isinstance(item, dict):
++        return item
++    if isinstance(item, bytes):
++        item = item.decode("utf-8")
++    if isinstance(item, str):
++        text = item.strip()
++        return json.loads(text)
++    raise TypeError(f"cannot interpret audit record of type {type(item).__name__}")
++
++
++def _iter_source_records(source: Union[str, Path, Iterable]) -> Iterator[dict]:
++    if isinstance(source, (str, Path)):
++        with Path(source).open() as f:
++            for line in f:
++                line = line.strip()
++                if not line:
++                    continue
++                yield json.loads(line)
++    else:
++        for item in source:
++            yield _coerce_record(item)
++
++
++def verify_audit_log(source: Union[str, Path, Iterable]) -> bool:
++    """Verify the hash chain of an audit log.
++
++    ``source`` may be a file path (str/Path) or an iterable of records
++    (each either an already-parsed dict or a JSON line string) — e.g. lines
++    read from a file and then tampered with in memory.
++
++    Checks, for every record in order: ``seq`` matches its 0-based position,
++    ``prev_hash`` equals the previous record's ``hash`` (or the genesis hash
++    for the first record), and ``hash`` equals the recomputed SHA-256 over
++    the record's other fields. Returns True if the whole chain validates;
++    raises :class:`AuditChainError` at the first record that doesn't.
++    """
++    prev_hash = GENESIS_HASH
++    for expected_seq, record in enumerate(_iter_source_records(source)):
++        if record.get("seq") != expected_seq:
++            raise AuditChainError(
++                f"seq mismatch at position {expected_seq}: record has seq={record.get('seq')!r}"
++            )
++        if record.get("prev_hash") != prev_hash:
++            raise AuditChainError(f"prev_hash mismatch at seq {expected_seq}")
++        record_without_hash = {k: v for k, v in record.items() if k != "hash"}
++        expected_hash = _compute_hash(record_without_hash)
++        actual_hash = record.get("hash")
++        if actual_hash != expected_hash:
++            raise AuditChainError(f"hash mismatch at seq {expected_seq}")
++        prev_hash = actual_hash
++    return True
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/services/notifications/__init__.py b/services/notifications/__init__.py
+--- a/services/notifications/__init__.py	1969-12-31 16:00:00
++++ b/services/notifications/__init__.py	2026-07-20 13:26:23
+@@ -0,0 +1,155 @@
++"""Signed webhook outbox — recorded-lines-driven notifications, no live HTTP.
++
++Builds `order.fulfilled` / `order.cancelled` / `refund.recorded` /
++`payout.recorded` events from the recorded money lines (`services.recorded`
++— the same authoritative source `services.statements` reads from) and writes
++each subscriber a signed, newline-delimited JSON file under
++`exports/webhook_outbox/`.
++
++Per docs/accounting.md, recorded lines are authoritative — this module never
++recomputes amounts, it only reads and reshapes `services.recorded` output.
++"""
++from __future__ import annotations
++
++import hashlib
++import hmac
++import json
++from dataclasses import dataclass
++from pathlib import Path
++from typing import Any
++
++from services.recorded import load_recorded_lines, months_in_range
++
++SUBSCRIPTIONS_PATH = (
++    Path(__file__).resolve().parent.parent / "orders" / "data" / "webhook_subscriptions.json"
++)
++DEFAULT_OUT_DIR = Path(__file__).resolve().parent.parent.parent / "exports" / "webhook_outbox"
++
++_JSON_KW: dict[str, Any] = {"sort_keys": True, "separators": (",", ":")}
++
++# Events sort ascending lexicographically: order.cancelled < order.fulfilled
++# < payout.recorded < refund.recorded — plain string comparison already
++# yields this order, so no explicit rank table is needed.
++
++
++@dataclass(frozen=True)
++class Subscription:
++    id: str
++    secret: str
++    events: tuple[str, ...]
++
++
++@dataclass(frozen=True)
++class WebhookEvent:
++    event: str
++    payload: dict[str, Any]
++
++
++def load_subscriptions(path: Path = SUBSCRIPTIONS_PATH) -> list[Subscription]:
++    """Read webhook subscriptions from the orders data file (read-only)."""
++    raw = json.loads(path.read_text())
++    return [Subscription(id=s["id"], secret=s["secret"], events=tuple(s["events"])) for s in raw]
++
++
++def build_events(from_month: str, to_month: str) -> list[WebhookEvent]:
++    """Build the deterministic, globally-ordered event list for a month range.
++
++    Restricted to orders whose recorded charge month falls in
++    ``[from_month, to_month]`` inclusive. Sort key: (charged_at, order_id,
++    event_type, tiebreak) where tiebreak is payee for payout events, sku for
++    refund events, and "" for order events.
++    """
++    recorded = load_recorded_lines()
++    valid_months = set(months_in_range(from_month, to_month))
++
++    in_range_charges = {c.order_id: c for c in recorded.charges if c.month in valid_months}
++
++    rows: list[tuple[str, str, str, str, WebhookEvent]] = []
++
++    for charge in in_range_charges.values():
++        event_type = "order.fulfilled" if charge.status == "fulfilled" else "order.cancelled"
++        payload = {
++            "order_id": charge.order_id,
++            "charged_at": charge.charged_at,
++            "charged_cents": charge.amount.to_cents(),
++        }
++        rows.append(
++            (charge.charged_at, charge.order_id, event_type, "", WebhookEvent(event_type, payload))
++        )
++
++    for refund in recorded.refund_lines:
++        charge = in_range_charges.get(refund.order_id)
++        if charge is None:
++            continue
++        payload = {
++            "order_id": refund.order_id,
++            "charged_at": charge.charged_at,
++            "sku": refund.sku,
++            "amount_cents": refund.amount.to_cents(),
++        }
++        rows.append(
++            (
++                charge.charged_at,
++                refund.order_id,
++                "refund.recorded",
++                refund.sku,
++                WebhookEvent("refund.recorded", payload),
++            )
++        )
++
++    for payout in recorded.payout_lines:
++        charge = in_range_charges.get(payout.order_id)
++        if charge is None:
++            continue
++        payload = {
++            "order_id": payout.order_id,
++            "charged_at": charge.charged_at,
++            "payee": payout.payee,
++            "amount_cents": payout.amount.to_cents(),
++        }
++        rows.append(
++            (
++                charge.charged_at,
++                payout.order_id,
++                "payout.recorded",
++                payout.payee,
++                WebhookEvent("payout.recorded", payload),
++            )
++        )
++
++    rows.sort(key=lambda r: r[:4])
++    return [r[4] for r in rows]
++
++
++def _sign(payload: dict[str, Any], secret: str) -> str:
++    message = json.dumps(payload, **_JSON_KW).encode("utf-8")
++    return hmac.new(secret.encode("utf-8"), message, hashlib.sha256).hexdigest()
++
++
++def _serialize_line(event: WebhookEvent, secret: str) -> str:
++    line = {"event": event.event, "payload": event.payload, "signature": _sign(event.payload, secret)}
++    return json.dumps(line, **_JSON_KW)
++
++
++def write_outbox(
++    from_month: str, to_month: str, out_dir: Path = DEFAULT_OUT_DIR
++) -> dict[str, int]:
++    """Write each subscriber's signed, newline-delimited outbox file.
++
++    Fully rewrites every subscriber file on each call (no append). Returns a
++    mapping of subscriber id -> number of lines written.
++    """
++    out_dir = Path(out_dir)
++    out_dir.mkdir(parents=True, exist_ok=True)
++
++    events = build_events(from_month, to_month)
++    subscriptions = load_subscriptions()
++
++    counts: dict[str, int] = {}
++    for sub in subscriptions:
++        subscribed = set(sub.events)
++        lines = [_serialize_line(e, sub.secret) for e in events if e.event in subscribed]
++        content = "".join(line + "\n" for line in lines)
++        (out_dir / f"{sub.id}.jsonl").write_text(content)
++        counts[sub.id] = len(lines)
++    return counts
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/services/orders/api.py b/services/orders/api.py
+--- a/services/orders/api.py	2026-07-20 13:14:48
++++ b/services/orders/api.py	2026-07-20 13:26:31
+@@ -1,6 +1,8 @@
+ """Storefront API (minimal, in-memory; seeded from data/orders.json)."""
+ from __future__ import annotations
+ 
++import re
++
+ from fastapi import FastAPI, HTTPException
+ 
+ from libs.money import Money
+@@ -9,7 +11,10 @@
+ from services.orders.payouts import platform_split, vendor_payouts
+ from services.orders.pricing import fee_preview
+ from services.orders.refunds import refund_for_cancellation
++from services.statements.vendor_statements import known_vendors, vendor_statement
+ 
++MONTH_RE = re.compile(r"^\d{4}-\d{2}$")
++
+ app = FastAPI(title="storefront")
+ 
+ ORDERS: dict[str, Order] = {o.id: o for o in load_orders()}
+@@ -65,3 +70,16 @@
+ def get_fee_preview(amount_cents: int) -> dict:
+     preview = fee_preview(Money.from_cents(amount_cents))
+     return {"amount_cents": amount_cents, "fee_preview_cents": preview.to_cents()}
++
++
++@app.get("/vendors/{vendor}/statements/{month}")
++def get_vendor_statement(vendor: str, month: str) -> dict:
++    # Note: fee_cents here is the recorded-line-derived figure from the
++    # vendor statements module, not services.orders.pricing.fee_preview —
++    # previews are rounded-down estimates, not ledger lines (see
++    # docs/accounting.md).
++    if vendor not in known_vendors():
++        raise HTTPException(status_code=404, detail="vendor not found")
++    if not MONTH_RE.match(month):
++        raise HTTPException(status_code=404, detail="month must be YYYY-MM")
++    return vendor_statement(vendor, month)
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/services/recorded/__init__.py b/services/recorded/__init__.py
+--- a/services/recorded/__init__.py	1969-12-31 16:00:00
++++ b/services/recorded/__init__.py	2026-07-20 13:23:07
+@@ -0,0 +1,99 @@
++"""Read access to the recorded money lines (nightly artifacts in exports/).
++
++Per docs/accounting.md the recorded lines are authoritative for statements,
++notifications, and audit — consumers read them from here rather than
++recomputing from order data. This module is read-only: it never writes to
++exports/ or touches the order store.
++"""
++from __future__ import annotations
++
++import csv
++from dataclasses import dataclass
++from pathlib import Path
++
++from libs.money import Money
++
++EXPORTS_DIR = Path(__file__).resolve().parent.parent.parent / "exports"
++
++
++@dataclass(frozen=True)
++class RecordedCharge:
++    order_id: str
++    charged_at: str  # ISO date, e.g. "2026-04-17"
++    status: str  # "fulfilled" | "cancelled"
++    amount: Money
++
++    @property
++    def month(self) -> str:
++        return self.charged_at[:7]
++
++
++@dataclass(frozen=True)
++class RecordedRefundLine:
++    order_id: str
++    sku: str
++    amount: Money
++
++
++@dataclass(frozen=True)
++class RecordedPayoutLine:
++    order_id: str
++    payee: str  # vendor id, or "platform" for the fee line
++    amount: Money
++
++
++@dataclass(frozen=True)
++class RecordedLines:
++    charges: list[RecordedCharge]
++    refund_lines: list[RecordedRefundLine]
++    payout_lines: list[RecordedPayoutLine]
++
++
++def _read(exports_dir: Path, name: str) -> list[dict]:
++    with (exports_dir / name).open(newline="") as f:
++        return list(csv.DictReader(f))
++
++
++def load_recorded_lines(exports_dir: Path = EXPORTS_DIR) -> RecordedLines:
++    charges = [
++        RecordedCharge(
++            order_id=r["order_id"],
++            charged_at=r["charged_at"],
++            status=r["status"],
++            amount=Money.from_cents(int(r["charged_cents"])),
++        )
++        for r in _read(exports_dir, "charges.csv")
++    ]
++    refund_lines = [
++        RecordedRefundLine(
++            order_id=r["order_id"],
++            sku=r["sku"],
++            amount=Money.from_cents(int(r["amount_cents"])),
++        )
++        for r in _read(exports_dir, "refund_lines.csv")
++    ]
++    payout_lines = [
++        RecordedPayoutLine(
++            order_id=r["order_id"],
++            payee=r["payee"],
++            amount=Money.from_cents(int(r["amount_cents"])),
++        )
++        for r in _read(exports_dir, "payout_lines.csv")
++    ]
++    return RecordedLines(charges=charges, refund_lines=refund_lines, payout_lines=payout_lines)
++
++
++def months_in_range(from_month: str, to_month: str) -> list[str]:
++    """Inclusive list of YYYY-MM months from ``from_month`` to ``to_month``."""
++    fy, fm = int(from_month[:4]), int(from_month[5:7])
++    ty, tm = int(to_month[:4]), int(to_month[5:7])
++    if (fy, fm) > (ty, tm):
++        raise ValueError(f"empty month range: {from_month}..{to_month}")
++    months = []
++    y, m = fy, fm
++    while (y, m) <= (ty, tm):
++        months.append(f"{y:04d}-{m:02d}")
++        m += 1
++        if m == 13:
++            y, m = y + 1, 1
++    return months
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/services/statements/vendor_statements.py b/services/statements/vendor_statements.py
+--- a/services/statements/vendor_statements.py	1969-12-31 16:00:00
++++ b/services/statements/vendor_statements.py	2026-07-20 13:26:16
+@@ -0,0 +1,179 @@
++"""Vendor monthly statements.
++
++Per docs/accounting.md, recorded lines (``services.recorded``) are
++authoritative — every figure here is either a recorded line or an exact
++allocation of one. Nothing is recomputed from order pricing directly; order
++data is only used for its *weights* (relative vendor shares) and for mapping
++skus/vendors, never as a source of dollar amounts.
++
++For a month (orders charged that calendar month, ``charged_at[:7]``), each
++vendor with any activity gets one row with four figures:
++
++- ``charged_share_cents``: for each fulfilled order, the recorded charge
++  amount allocated across the order's vendors in proportion to the value of
++  their goods (``Money.allocate`` — see the existing precedent in
++  ``services/orders/payouts.py``). Cancelled orders contribute nothing here.
++- ``net_payout_cents``: recorded payout lines for the vendor, summed across
++  the month's orders.
++- ``fee_cents``: per fulfilled order, the vendor's charged share minus its
++  recorded payout for that order, summed over the month. Because both
++  quantities derive from the same conserved allocation, ``charged_share -
++  fee == net_payout`` holds exactly per vendor, and vendor fees for a given
++  order sum to that order's recorded platform fee line.
++- ``refund_cents``: for cancelled orders charged that month, recorded refund
++  lines attributed to the vendor via the order's sku -> vendor mapping.
++"""
++from __future__ import annotations
++
++import csv
++from pathlib import Path
++
++from libs.money import Money
++from services.orders.models import Order
++from services.orders.repository import load_orders
++from services.recorded import RecordedLines, load_recorded_lines, months_in_range
++
++FIELDNAMES = [
++    "vendor",
++    "month",
++    "charged_share_cents",
++    "refund_cents",
++    "fee_cents",
++    "net_payout_cents",
++]
++
++
++def known_vendors() -> set[str]:
++    """Every vendor id that appears in any order's items."""
++    vendors: set[str] = set()
++    for order in load_orders():
++        for item in order.items:
++            vendors.add(item.vendor)
++    return vendors
++
++
++def _month_data(month: str) -> tuple[
++    set[str], dict[str, Money], dict[str, Money], dict[str, Money], dict[str, Money]
++]:
++    """Compute per-vendor aggregates for ``month``.
++
++    Returns (vendors_with_activity, charged_share, fee, net_payout, refund).
++    """
++    recorded: RecordedLines = load_recorded_lines()
++    orders_by_id: dict[str, Order] = {o.id: o for o in load_orders()}
++
++    charges_this_month = [c for c in recorded.charges if c.month == month]
++    order_ids_this_month = {c.order_id for c in charges_this_month}
++
++    vendors_with_activity: set[str] = set()
++    for charge in charges_this_month:
++        order = orders_by_id[charge.order_id]
++        for item in order.items:
++            vendors_with_activity.add(item.vendor)
++
++    payout_by_order_vendor: dict[tuple[str, str], Money] = {}
++    for line in recorded.payout_lines:
++        if line.order_id in order_ids_this_month:
++            key = (line.order_id, line.payee)
++            payout_by_order_vendor[key] = payout_by_order_vendor.get(key, Money(0)) + line.amount
++
++    charged_share: dict[str, Money] = {}
++    fee: dict[str, Money] = {}
++    for charge in charges_this_month:
++        if charge.status != "fulfilled":
++            continue
++        order = orders_by_id[charge.order_id]
++        vendor_weights: dict[str, int] = {}
++        for item in order.items:
++            current = vendor_weights.get(item.vendor, 0)
++            vendor_weights[item.vendor] = current + item.line_total.to_cents()
++        vendors = sorted(vendor_weights)
++        weights = [vendor_weights[v] for v in vendors]
++        shares = charge.amount.allocate(weights)
++        for vendor, share in zip(vendors, shares):
++            charged_share[vendor] = charged_share.get(vendor, Money(0)) + share
++            payout = payout_by_order_vendor.get((charge.order_id, vendor), Money(0))
++            fee[vendor] = fee.get(vendor, Money(0)) + (share - payout)
++
++    net_payout: dict[str, Money] = {}
++    for (order_id, payee), amount in payout_by_order_vendor.items():
++        if payee == "platform":
++            continue
++        net_payout[payee] = net_payout.get(payee, Money(0)) + amount
++
++    refund: dict[str, Money] = {}
++    for charge in charges_this_month:
++        if charge.status != "cancelled":
++            continue
++        order = orders_by_id[charge.order_id]
++        sku_to_vendor = {item.sku: item.vendor for item in order.items}
++        for line in recorded.refund_lines:
++            if line.order_id != charge.order_id:
++                continue
++            vendor = sku_to_vendor.get(line.sku)
++            if vendor is None:
++                continue
++            refund[vendor] = refund.get(vendor, Money(0)) + line.amount
++
++    return vendors_with_activity, charged_share, fee, net_payout, refund
++
++
++def statement_rows(month: str) -> list[dict]:
++    """One row per vendor with any activity in ``month``, sorted by vendor."""
++    vendors_with_activity, charged_share, fee, net_payout, refund = _month_data(month)
++    rows = []
++    for vendor in sorted(vendors_with_activity):
++        rows.append(
++            {
++                "vendor": vendor,
++                "month": month,
++                "charged_share_cents": charged_share.get(vendor, Money(0)).to_cents(),
++                "refund_cents": refund.get(vendor, Money(0)).to_cents(),
++                "fee_cents": fee.get(vendor, Money(0)).to_cents(),
++                "net_payout_cents": net_payout.get(vendor, Money(0)).to_cents(),
++            }
++        )
++    return rows
++
++
++def vendor_statement(vendor: str, month: str) -> dict:
++    """The four figures for a single vendor/month (zeros when no activity)."""
++    vendors_with_activity, charged_share, fee, net_payout, refund = _month_data(month)
++    if vendor not in vendors_with_activity:
++        return {
++            "vendor": vendor,
++            "month": month,
++            "charged_share_cents": 0,
++            "refund_cents": 0,
++            "fee_cents": 0,
++            "net_payout_cents": 0,
++        }
++    return {
++        "vendor": vendor,
++        "month": month,
++        "charged_share_cents": charged_share.get(vendor, Money(0)).to_cents(),
++        "refund_cents": refund.get(vendor, Money(0)).to_cents(),
++        "fee_cents": fee.get(vendor, Money(0)).to_cents(),
++        "net_payout_cents": net_payout.get(vendor, Money(0)).to_cents(),
++    }
++
++
++def write_statements(from_month: str, to_month: str, out_dir: Path) -> list[Path]:
++    """Write one CSV per month in [from_month, to_month] to ``out_dir``.
++
++    Every month in the range gets a file, even if it has no activity (in
++    which case the file has only the header). Deterministic and
++    byte-identical on rerun.
++    """
++    out_dir = Path(out_dir)
++    out_dir.mkdir(parents=True, exist_ok=True)
++    written = []
++    for month in months_in_range(from_month, to_month):
++        rows = statement_rows(month)
++        path = out_dir / f"{month}.csv"
++        with path.open("w", newline="") as f:
++            writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
++            writer.writeheader()
++            writer.writerows(rows)
++        written.append(path)
++    return written
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_audit_log.py b/tests/test_audit_log.py
+--- a/tests/test_audit_log.py	1969-12-31 16:00:00
++++ b/tests/test_audit_log.py	2026-07-20 13:27:07
+@@ -0,0 +1,236 @@
++import json
++from pathlib import Path
++
++import pytest
++
++from services.audit import (
++    GENESIS_HASH,
++    AuditChainError,
++    build_audit_records,
++    verify_audit_log,
++    write_audit_log,
++)
++from services.recorded import EXPORTS_DIR, load_recorded_lines, months_in_range
++
++FROM_MONTH = "2026-04"
++TO_MONTH = "2026-06"
++
++
++def _in_range_order_ids():
++    recorded = load_recorded_lines()
++    months = set(months_in_range(FROM_MONTH, TO_MONTH))
++    return {c.order_id for c in recorded.charges if c.month in months}
++
++
++def _read_jsonl(path: Path) -> list[dict]:
++    with path.open() as f:
++        return [json.loads(line) for line in f if line.strip()]
++
++
++# --- Coverage -----------------------------------------------------------
++
++
++def test_record_count_matches_recorded_lines_for_in_range_orders():
++    recorded = load_recorded_lines()
++    in_range = _in_range_order_ids()
++
++    expected_charges = sum(1 for c in recorded.charges if c.order_id in in_range)
++    expected_payouts = sum(1 for p in recorded.payout_lines if p.order_id in in_range)
++    expected_refunds = sum(1 for r in recorded.refund_lines if r.order_id in in_range)
++
++    records = build_audit_records(FROM_MONTH, TO_MONTH)
++
++    assert len(records) == expected_charges + expected_payouts + expected_refunds
++    assert sum(1 for r in records if r["kind"] == "charge") == expected_charges
++    assert sum(1 for r in records if r["kind"] == "payout_line") == expected_payouts
++    assert sum(1 for r in records if r["kind"] == "refund_line") == expected_refunds
++
++
++def test_each_recorded_line_appears_exactly_once_with_exact_amount():
++    recorded = load_recorded_lines()
++    in_range = _in_range_order_ids()
++    records = build_audit_records(FROM_MONTH, TO_MONTH)
++
++    charge_records = [r for r in records if r["kind"] == "charge"]
++    payout_records = [r for r in records if r["kind"] == "payout_line"]
++    refund_records = [r for r in records if r["kind"] == "refund_line"]
++
++    # Sum equality per kind against the recorded lines (in range).
++    expected_charge_sum = sum(
++        c.amount.to_cents() for c in recorded.charges if c.order_id in in_range
++    )
++    expected_payout_sum = sum(
++        p.amount.to_cents() for p in recorded.payout_lines if p.order_id in in_range
++    )
++    expected_refund_sum = sum(
++        r.amount.to_cents() for r in recorded.refund_lines if r.order_id in in_range
++    )
++    assert sum(r["amount_cents"] for r in charge_records) == expected_charge_sum
++    assert sum(r["amount_cents"] for r in payout_records) == expected_payout_sum
++    assert sum(r["amount_cents"] for r in refund_records) == expected_refund_sum
++
++    # Exactly one audit record per recorded charge (by order_id).
++    charge_order_ids = [r["order_id"] for r in charge_records]
++    assert sorted(charge_order_ids) == sorted(
++        c.order_id for c in recorded.charges if c.order_id in in_range
++    )
++    assert len(charge_order_ids) == len(set(charge_order_ids))
++
++    # Exactly one audit record per recorded payout line (order_id, payee).
++    payout_keys = [(r["order_id"], r["party"]) for r in payout_records]
++    expected_payout_keys = [
++        (p.order_id, p.payee) for p in recorded.payout_lines if p.order_id in in_range
++    ]
++    assert sorted(payout_keys) == sorted(expected_payout_keys)
++    assert len(payout_keys) == len(set(payout_keys))
++
++    # Exactly one audit record per recorded refund line (order_id, sku).
++    refund_keys = [(r["order_id"], r["party"]) for r in refund_records]
++    expected_refund_keys = [
++        (r.order_id, r.sku) for r in recorded.refund_lines if r.order_id in in_range
++    ]
++    assert sorted(refund_keys) == sorted(expected_refund_keys)
++    assert len(refund_keys) == len(set(refund_keys))
++
++    # Spot check: first recorded charge/payout/refund line in the range,
++    # by fixed order_id, has the exact recorded amount and correct party.
++    spot_charge = next(c for c in recorded.charges if c.order_id in in_range)
++    matching = [r for r in charge_records if r["order_id"] == spot_charge.order_id]
++    assert len(matching) == 1
++    assert matching[0]["amount_cents"] == spot_charge.amount.to_cents()
++    assert matching[0]["party"] == ""
++    assert matching[0]["charged_at"] == spot_charge.charged_at
++
++    spot_payout = next(p for p in recorded.payout_lines if p.order_id in in_range)
++    matching = [
++        r
++        for r in payout_records
++        if r["order_id"] == spot_payout.order_id and r["party"] == spot_payout.payee
++    ]
++    assert len(matching) == 1
++    assert matching[0]["amount_cents"] == spot_payout.amount.to_cents()
++
++    spot_refund = next(r for r in recorded.refund_lines if r.order_id in in_range)
++    matching = [
++        r
++        for r in refund_records
++        if r["order_id"] == spot_refund.order_id and r["party"] == spot_refund.sku
++    ]
++    assert len(matching) == 1
++    assert matching[0]["amount_cents"] == spot_refund.amount.to_cents()
++
++
++def test_charged_at_equals_orders_recorded_charge_date_on_every_record():
++    recorded = load_recorded_lines()
++    charge_by_order = {c.order_id: c for c in recorded.charges}
++    records = build_audit_records(FROM_MONTH, TO_MONTH)
++    for r in records:
++        assert r["charged_at"] == charge_by_order[r["order_id"]].charged_at
++
++
++# --- Ordering -------------------------------------------------------------
++
++
++def test_seq_is_0_to_n_minus_1_in_file_order():
++    records = build_audit_records(FROM_MONTH, TO_MONTH)
++    assert [r["seq"] for r in records] == list(range(len(records)))
++
++
++def test_sort_order_matches_spec():
++    records = build_audit_records(FROM_MONTH, TO_MONTH)
++    keys = [(r["charged_at"], r["order_id"], r["kind"], r["party"]) for r in records]
++    assert keys == sorted(keys)
++    # kind lexicographic ordering sanity check baked into the sort itself
++    assert "charge" < "payout_line" < "refund_line"
++
++
++# --- Chain ------------------------------------------------------------
++
++
++def test_verify_passes_on_fresh_build(tmp_path):
++    out_path = tmp_path / "audit_log.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    assert verify_audit_log(out_path) is True
++
++
++def test_first_prev_hash_is_genesis_and_chain_links(tmp_path):
++    out_path = tmp_path / "audit_log.jsonl"
++    records = write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    assert records[0]["prev_hash"] == GENESIS_HASH
++    assert GENESIS_HASH == "0" * 64
++    for prev, cur in zip(records, records[1:]):
++        assert cur["prev_hash"] == prev["hash"]
++
++
++# --- Tamper-evidence -----------------------------------------------------
++
++
++def test_tamper_amount_cents_detected(tmp_path):
++    out_path = tmp_path / "audit_log.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    records = _read_jsonl(out_path)
++    assert len(records) > 2
++
++    tampered = [dict(r) for r in records]
++    tampered[1]["amount_cents"] += 1
++    with pytest.raises(AuditChainError):
++        verify_audit_log(tampered)
++
++
++def test_tamper_delete_middle_record_detected(tmp_path):
++    out_path = tmp_path / "audit_log.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    records = _read_jsonl(out_path)
++    assert len(records) > 3
++
++    mid = len(records) // 2
++    tampered = records[:mid] + records[mid + 1 :]
++    with pytest.raises(AuditChainError):
++        verify_audit_log(tampered)
++
++
++def test_tamper_party_field_detected(tmp_path):
++    out_path = tmp_path / "audit_log.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    records = _read_jsonl(out_path)
++
++    idx = next(i for i, r in enumerate(records) if r["kind"] == "payout_line")
++    tampered = [dict(r) for r in records]
++    tampered[idx]["party"] = tampered[idx]["party"] + "-tampered"
++    with pytest.raises(AuditChainError):
++        verify_audit_log(tampered)
++
++
++def test_valid_prefix_still_verifies_up_to_tamper_point(tmp_path):
++    # Sanity: everything strictly before the tampered record is untouched
++    # and still forms a valid chain on its own.
++    out_path = tmp_path / "audit_log.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, out_path)
++    records = _read_jsonl(out_path)
++    assert len(records) > 4
++
++    tamper_idx = 3
++    prefix = records[:tamper_idx]
++    assert verify_audit_log(prefix) is True
++
++
++# --- Determinism -----------------------------------------------------------
++
++
++def test_building_twice_is_byte_identical(tmp_path):
++    path_a = tmp_path / "a.jsonl"
++    path_b = tmp_path / "b.jsonl"
++    write_audit_log(FROM_MONTH, TO_MONTH, path_a)
++    write_audit_log(FROM_MONTH, TO_MONTH, path_b)
++    assert path_a.read_bytes() == path_b.read_bytes()
++
++
++def test_building_to_tmp_path_does_not_modify_exports_csvs(tmp_path):
++    csv_paths = sorted(EXPORTS_DIR.glob("*.csv"))
++    assert csv_paths
++    before = {p: p.read_bytes() for p in csv_paths}
++
++    write_audit_log(FROM_MONTH, TO_MONTH, tmp_path / "audit_log.jsonl")
++
++    after = {p: p.read_bytes() for p in csv_paths}
++    assert before == after
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_vendor_statements.py b/tests/test_vendor_statements.py
+--- a/tests/test_vendor_statements.py	1969-12-31 16:00:00
++++ b/tests/test_vendor_statements.py	2026-07-20 13:27:09
+@@ -0,0 +1,206 @@
++import csv
++
++from fastapi.testclient import TestClient
++
++from services.orders.api import app
++from services.orders.repository import load_orders
++from services.recorded import load_recorded_lines, months_in_range
++from services.statements.vendor_statements import (
++    FIELDNAMES,
++    known_vendors,
++    statement_rows,
++    vendor_statement,
++    write_statements,
++)
++
++FROM_MONTH = "2026-04"
++TO_MONTH = "2026-06"
++
++
++def test_rows_sorted_by_vendor_and_exact_columns():
++    for month in months_in_range(FROM_MONTH, TO_MONTH):
++        rows = statement_rows(month)
++        assert rows, f"expected activity in {month}"
++        vendors = [r["vendor"] for r in rows]
++        assert vendors == sorted(vendors)
++        for row in rows:
++            assert set(row) == {
++                "vendor",
++                "month",
++                "charged_share_cents",
++                "refund_cents",
++                "fee_cents",
++                "net_payout_cents",
++            }
++            assert row["month"] == month
++
++
++def test_share_minus_fee_equals_net_payout():
++    for month in months_in_range(FROM_MONTH, TO_MONTH):
++        for row in statement_rows(month):
++            assert (
++                row["charged_share_cents"] - row["fee_cents"] == row["net_payout_cents"]
++            ), row
++
++
++def test_month_charged_share_matches_recorded_fulfilled_charges():
++    recorded = load_recorded_lines()
++    for month in months_in_range(FROM_MONTH, TO_MONTH):
++        rows = statement_rows(month)
++        total_share = sum(r["charged_share_cents"] for r in rows)
++        fulfilled_total = sum(
++            c.amount.to_cents()
++            for c in recorded.charges
++            if c.month == month and c.status == "fulfilled"
++        )
++        assert total_share == fulfilled_total, month
++
++
++def test_month_refund_matches_recorded_refund_lines_for_cancelled_orders():
++    recorded = load_recorded_lines()
++    for month in months_in_range(FROM_MONTH, TO_MONTH):
++        rows = statement_rows(month)
++        total_refund = sum(r["refund_cents"] for r in rows)
++        cancelled_ids = {
++            c.order_id
++            for c in recorded.charges
++            if c.month == month and c.status == "cancelled"
++        }
++        recorded_refund_total = sum(
++            l.amount.to_cents() for l in recorded.refund_lines if l.order_id in cancelled_ids
++        )
++        assert total_refund == recorded_refund_total, month
++
++
++def test_per_fulfilled_order_vendor_fees_sum_to_platform_line():
++    recorded = load_recorded_lines()
++    orders_by_id = {o.id: o for o in load_orders()}
++    from libs.money import Money
++
++    for charge in recorded.charges:
++        if charge.status != "fulfilled":
++            continue
++        order = orders_by_id[charge.order_id]
++        vendor_weights: dict[str, int] = {}
++        for item in order.items:
++            vendor_weights[item.vendor] = vendor_weights.get(item.vendor, 0) + (
++                item.price * item.qty
++            ).to_cents()
++        vendors = sorted(vendor_weights)
++        weights = [vendor_weights[v] for v in vendors]
++        shares = charge.amount.allocate(weights)
++        payout_lines = {
++            (l.order_id, l.payee): l.amount
++            for l in recorded.payout_lines
++            if l.order_id == charge.order_id
++        }
++        fee_sum = Money(0)
++        for vendor, share in zip(vendors, shares):
++            payout = payout_lines.get((charge.order_id, vendor), Money(0))
++            fee_sum = fee_sum + (share - payout)
++        platform_line = payout_lines.get((charge.order_id, "platform"), Money(0))
++        assert fee_sum.to_cents() == platform_line.to_cents(), charge.order_id
++
++
++def test_writer_idempotent_and_byte_identical(tmp_path):
++    out_a = tmp_path / "a"
++    out_b = tmp_path / "b"
++    write_statements(FROM_MONTH, TO_MONTH, out_a)
++    write_statements(FROM_MONTH, TO_MONTH, out_b)
++
++    months = months_in_range(FROM_MONTH, TO_MONTH)
++    for month in months:
++        file_a = out_a / f"{month}.csv"
++        file_b = out_b / f"{month}.csv"
++        assert file_a.read_bytes() == file_b.read_bytes()
++
++
++def test_writer_produces_one_file_per_month_with_expected_header(tmp_path):
++    out_dir = tmp_path / "statements"
++    written = write_statements(FROM_MONTH, TO_MONTH, out_dir)
++    months = months_in_range(FROM_MONTH, TO_MONTH)
++    assert len(written) == len(months)
++    for month in months:
++        path = out_dir / f"{month}.csv"
++        assert path in written
++        with path.open(newline="") as f:
++            reader = csv.reader(f)
++            header = next(reader)
++            assert header == FIELDNAMES
++
++
++def test_writer_does_not_touch_published_exports(tmp_path):
++    from services.recorded import EXPORTS_DIR
++
++    before = {
++        name: (EXPORTS_DIR / name).read_bytes()
++        for name in ("charges.csv", "refund_lines.csv", "payout_lines.csv")
++    }
++    write_statements(FROM_MONTH, TO_MONTH, tmp_path / "out")
++    after = {
++        name: (EXPORTS_DIR / name).read_bytes()
++        for name in ("charges.csv", "refund_lines.csv", "payout_lines.csv")
++    }
++    assert before == after
++
++
++def test_known_vendors_matches_order_items():
++    orders = load_orders()
++    expected = {item.vendor for order in orders for item in order.items}
++    assert known_vendors() == expected
++
++
++def test_vendor_statement_matches_statement_rows():
++    for month in months_in_range(FROM_MONTH, TO_MONTH):
++        rows_by_vendor = {r["vendor"]: r for r in statement_rows(month)}
++        for vendor in known_vendors():
++            expected = rows_by_vendor.get(
++                vendor,
++                {
++                    "vendor": vendor,
++                    "month": month,
++                    "charged_share_cents": 0,
++                    "refund_cents": 0,
++                    "fee_cents": 0,
++                    "net_payout_cents": 0,
++                },
++            )
++            assert vendor_statement(vendor, month) == expected
++
++
++def test_api_unknown_vendor_404():
++    client = TestClient(app)
++    resp = client.get("/vendors/not-a-real-vendor/statements/2026-04")
++    assert resp.status_code == 404
++
++
++def test_api_malformed_month_404():
++    client = TestClient(app)
++    vendor = sorted(known_vendors())[0]
++    for bad_month in ("2026", "2026-4", "not-a-month", "2026/04"):
++        resp = client.get(f"/vendors/{vendor}/statements/{bad_month}")
++        assert resp.status_code == 404, bad_month
++
++
++def test_api_known_vendor_quiet_month_returns_zeros():
++    client = TestClient(app)
++    vendor = sorted(known_vendors())[0]
++    resp = client.get(f"/vendors/{vendor}/statements/2026-01")
++    assert resp.status_code == 200
++    body = resp.json()
++    assert body == {
++        "vendor": vendor,
++        "month": "2026-01",
++        "charged_share_cents": 0,
++        "refund_cents": 0,
++        "fee_cents": 0,
++        "net_payout_cents": 0,
++    }
++
++
++def test_api_known_vendor_active_month_matches_module():
++    client = TestClient(app)
++    vendor = sorted(known_vendors())[0]
++    resp = client.get(f"/vendors/{vendor}/statements/{FROM_MONTH}")
++    assert resp.status_code == 200
++    assert resp.json() == vendor_statement(vendor, FROM_MONTH)
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_webhook_outbox.py b/tests/test_webhook_outbox.py
+--- a/tests/test_webhook_outbox.py	1969-12-31 16:00:00
++++ b/tests/test_webhook_outbox.py	2026-07-20 13:26:48
+@@ -0,0 +1,170 @@
++import hashlib
++import hmac
++import json
++from pathlib import Path
++
++from services.notifications import build_events, load_subscriptions, write_outbox
++from services.recorded import load_recorded_lines, months_in_range
++
++EXPORTS_DIR = Path(__file__).resolve().parent.parent / "exports"
++
++ORDER_EVENT_TYPES = {"order.fulfilled", "order.cancelled"}
++
++
++def _sha256(path: Path) -> str:
++    return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def _read_lines(path: Path) -> list[dict]:
++    text = path.read_text()
++    if not text:
++        return []
++    return [json.loads(line) for line in text.splitlines()]
++
++
++def test_signatures_verify_with_subscriber_secret(tmp_path):
++    write_outbox("2026-04", "2026-06", tmp_path)
++    subs = {s.id: s for s in load_subscriptions()}
++
++    checked = 0
++    for sub_id, sub in subs.items():
++        for obj in _read_lines(tmp_path / f"{sub_id}.jsonl"):
++            expected = hmac.new(
++                sub.secret.encode("utf-8"),
++                json.dumps(obj["payload"], sort_keys=True, separators=(",", ":")).encode("utf-8"),
++                hashlib.sha256,
++            ).hexdigest()
++            assert obj["signature"] == expected
++            checked += 1
++    assert checked > 0
++
++
++def test_filtering_matches_each_subscribers_event_list(tmp_path):
++    write_outbox("2026-04", "2026-06", tmp_path)
++    for sub in load_subscriptions():
++        events = {obj["event"] for obj in _read_lines(tmp_path / f"{sub.id}.jsonl")}
++        assert events <= set(sub.events)
++
++
++def test_ops_pager_only_gets_order_cancelled(tmp_path):
++    write_outbox("2026-04", "2026-06", tmp_path)
++    events = [obj["event"] for obj in _read_lines(tmp_path / "ops-pager.jsonl")]
++    assert events
++    assert set(events) == {"order.cancelled"}
++
++
++def test_event_counts_tie_to_recorded_lines():
++    events = build_events("2026-04", "2026-06")
++    recorded = load_recorded_lines()
++    valid_months = set(months_in_range("2026-04", "2026-06"))
++    in_range_order_ids = {c.order_id for c in recorded.charges if c.month in valid_months}
++
++    order_events = [e for e in events if e.event in ORDER_EVENT_TYPES]
++    assert len(order_events) == len(in_range_order_ids)
++
++    expected_refunds = [r for r in recorded.refund_lines if r.order_id in in_range_order_ids]
++    refund_events = [e for e in events if e.event == "refund.recorded"]
++    assert len(refund_events) == len(expected_refunds)
++
++    expected_payouts = [p for p in recorded.payout_lines if p.order_id in in_range_order_ids]
++    payout_events = [e for e in events if e.event == "payout.recorded"]
++    assert len(payout_events) == len(expected_payouts)
++
++
++def test_amounts_match_recorded_lines():
++    events = build_events("2026-04", "2026-06")
++    recorded = load_recorded_lines()
++    charge_by_order = {c.order_id: c for c in recorded.charges}
++
++    order_events = [e for e in events if e.event in ORDER_EVENT_TYPES]
++    in_range_order_ids = {e.payload["order_id"] for e in order_events}
++
++    # Spot-check: every order event's charged_cents equals its recorded charge.
++    for e in order_events:
++        charge = charge_by_order[e.payload["order_id"]]
++        assert e.payload["charged_cents"] == charge.amount.to_cents()
++        assert e.payload["charged_at"] == charge.charged_at
++
++    # Aggregate: total charged across order events equals recorded total for
++    # those same orders.
++    assert sum(e.payload["charged_cents"] for e in order_events) == sum(
++        charge_by_order[oid].amount.to_cents() for oid in in_range_order_ids
++    )
++
++    refund_events = [e for e in events if e.event == "refund.recorded"]
++    expected_refund_total = sum(
++        r.amount.to_cents() for r in recorded.refund_lines if r.order_id in in_range_order_ids
++    )
++    assert sum(e.payload["amount_cents"] for e in refund_events) == expected_refund_total
++
++    payout_events = [e for e in events if e.event == "payout.recorded"]
++    expected_payout_total = sum(
++        p.amount.to_cents() for p in recorded.payout_lines if p.order_id in in_range_order_ids
++    )
++    assert sum(e.payload["amount_cents"] for e in payout_events) == expected_payout_total
++
++
++def test_ordering_is_sorted_by_spec():
++    events = build_events("2026-04", "2026-06")
++
++    def sort_key(e):
++        if e.event == "payout.recorded":
++            tiebreak = e.payload["payee"]
++        elif e.event == "refund.recorded":
++            tiebreak = e.payload["sku"]
++        else:
++            tiebreak = ""
++        return (e.payload["charged_at"], e.payload["order_id"], e.event, tiebreak)
++
++    keys = [sort_key(e) for e in events]
++    assert keys == sorted(keys)
++
++
++def test_writing_twice_is_byte_identical(tmp_path):
++    dir_a = tmp_path / "a"
++    dir_b = tmp_path / "b"
++    write_outbox("2026-04", "2026-06", dir_a)
++    write_outbox("2026-04", "2026-06", dir_b)
++
++    for sub in load_subscriptions():
++        assert (dir_a / f"{sub.id}.jsonl").read_bytes() == (dir_b / f"{sub.id}.jsonl").read_bytes()
++
++
++def test_subset_range_yields_exact_subset_of_full_range():
++    full_events = build_events("2026-04", "2026-06")
++    april_events = build_events("2026-04", "2026-04")
++
++    recorded = load_recorded_lines()
++    april_order_ids = {c.order_id for c in recorded.charges if c.month == "2026-04"}
++    assert april_order_ids  # sanity: April has data
++
++    def key(e):
++        return (e.event, json.dumps(e.payload, sort_keys=True))
++
++    full_april_only = [e for e in full_events if e.payload["order_id"] in april_order_ids]
++
++    assert {key(e) for e in april_events} == {key(e) for e in full_april_only}
++    assert len(april_events) == len(full_april_only)
++    # And nothing outside April leaked in.
++    assert all(e.payload["order_id"] in april_order_ids for e in april_events)
++
++
++def test_empty_range_subscriber_files_are_empty(tmp_path):
++    # No recorded charges exist for this month, so every subscriber file
++    # should exist but be empty.
++    write_outbox("2020-01", "2020-01", tmp_path)
++    for sub in load_subscriptions():
++        path = tmp_path / f"{sub.id}.jsonl"
++        assert path.exists()
++        assert path.read_text() == ""
++
++
++def test_writer_does_not_modify_existing_exports(tmp_path):
++    csv_files = sorted(EXPORTS_DIR.glob("*.csv"))
++    assert csv_files
++    before = {p: _sha256(p) for p in csv_files}
++
++    write_outbox("2026-04", "2026-06", tmp_path)
++
++    after = {p: _sha256(p) for p in csv_files}
++    assert before == after

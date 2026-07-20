@@ -1,0 +1,135 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/celery/concurrency/asynpool.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-taw_4j8k/celery/concurrency/asynpool.py
+--- /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/celery/concurrency/asynpool.py	2026-07-09 21:58:20
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-taw_4j8k/celery/concurrency/asynpool.py	2026-07-17 07:44:34
+@@ -1081,6 +1081,17 @@
+             self._active_writers.clear()
+             self._active_writes.clear()
+             self._busy_workers.clear()
++            # Busy markers for jobs that are still executing (e.g. a
++            # long-running task surviving a broker reconnect) must survive
++            # the clear() above, or fair scheduling will believe the process
++            # is idle and route the next task to it once we come back from
++            # flush, queuing it behind the still-running job even though
++            # another process is actually free. on_job_ready() is
++            # responsible for clearing the marker once the job completes.
++            for job in self._cache.values():
++                if job._accepted and job._write_to is not None and \
++                        job._write_to._is_alive():
++                    self._busy_workers.add(job._write_to.inqW_fd)
+ 
+     def _flush_writer(self, proc, writer):
+         fds = {proc.inq._writer}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/t/unit/concurrency/test_prefork.py /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-taw_4j8k/t/unit/concurrency/test_prefork.py
+--- /Users/brianendo/Projects/rl-environments/tasks/celery-worker-stall-after-reconnect/world/t/unit/concurrency/test_prefork.py	2026-07-09 21:58:20
++++ /var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/sidekick-celery-worker-stall-after-reconnect-taw_4j8k/t/unit/concurrency/test_prefork.py	2026-07-17 07:42:20
+@@ -735,6 +735,110 @@
+         job.discard.assert_called_once()
+         assert gen not in pool._active_writers
+ 
++    @t.skip.if_pypy
++    @patch('billiard.pool.Pool._create_worker_process')
++    def test_flush_keeps_busy_marker_for_running_job(self, _create_worker_process):
++        """flush() must not erase the busy marker of a process still running a job.
++
++        Previously, flush()'s finally block unconditionally cleared
++        _busy_workers. If a broker reconnect triggered flush() while a
++        process was still executing an accepted (e.g. long-running) job,
++        the fair scheduler would then believe that process was idle and
++        route the next task to it, queuing behind the still-running job
++        even though another process was actually free.
++        """
++        pool = asynpool.AsynPool(processes=1, synack=False, threads=False)
++        pool._state = asynpool.RUN
++        pool.maintain_pool = Mock(name='maintain_pool')
++
++        running_proc = Mock(name='running_proc')
++        running_proc.inqW_fd = 7
++        running_proc._is_alive.return_value = True
++
++        running_job = Mock(name='running_job')
++        running_job._accepted = True
++        running_job._write_to = running_proc
++        running_job._writer.return_value = None
++
++        pool._cache = {1: running_job}
++        # 99 simulates a stale marker left over from a write that was
++        # discarded/aborted during flush, whose on_job_ready() will never
++        # fire, so it must not survive the flush.
++        pool._busy_workers = {7, 99}
++        pool.outbound_buffer.clear()
++        pool._active_writers.clear()
++
++        pool.flush()
++
++        assert 7 in pool._busy_workers
++        assert 99 not in pool._busy_workers
++
++    @t.skip.if_pypy
++    @patch('billiard.pool.Pool._create_worker_process')
++    def test_schedule_writes_after_flush_avoids_busy_worker(self, _create_worker_process):
++        """After flush(), fair scheduling must not write a new job to a
++        process that is still executing an accepted job.
++
++        This is the user-visible symptom of the bug fixed by
++        test_flush_keeps_busy_marker_for_running_job: without the fix, the
++        newly arriving job gets written to the still-busy process (fd 2)
++        instead of the idle one (fd 4), even though fd 4 was ready first
++        in line but not picked because schedule_writes cycles ready_fds
++        starting from index 0.
++        """
++        pool = asynpool.AsynPool(threads=False)
++        assert pool.sched_strategy == asynpool.SCHED_STRATEGY_FAIR
++        pool._state = asynpool.RUN
++        pool.maintain_pool = Mock(name='maintain_pool')
++
++        hub = self._get_hub()
++
++        busy_worker = Mock(name='busy_worker')
++        busy_worker.inqW_fd = 2
++        busy_worker.send_job_offset = Mock(side_effect=lambda header, HW: 5)
++
++        idle_worker = Mock(name='idle_worker')
++        idle_worker.inqW_fd = 4
++        idle_worker.send_job_offset = Mock(side_effect=lambda header, HW: 5)
++
++        hub.add_writer(2, Mock(name='writer2'), 2)
++        hub.add_writer(4, Mock(name='writer4'), 4)
++
++        pool._all_inqueues = {2, 4}
++        pool._fileno_to_inq[2] = busy_worker
++        pool._fileno_to_inq[4] = idle_worker
++
++        # A job still running on the "busy" process, surviving the flush
++        # (e.g. a long-running task with
++        # worker_cancel_long_running_tasks_on_connection_loss=False).
++        running_job = Mock(name='running_job')
++        running_job._accepted = True
++        running_job._write_to = busy_worker
++        running_job._writer.return_value = None
++
++        pool._cache = {1: running_job}
++        pool._busy_workers = {2}
++        pool.outbound_buffer.clear()
++        pool._active_writers.clear()
++
++        # Simulate the broker reconnect that triggers Consumer.on_close ->
++        # AsynPool.flush() while the job above is still executing.
++        pool.flush()
++
++        pool._create_write_handlers(hub)
++
++        new_job = ApplyResult({}, lambda x: True)
++        new_job._payload = [None, None, -1]
++        pool.outbound_buffer.appendleft(new_job)
++
++        # The busy fd (2) is ready first, matching schedule_writes'
++        # write-count-modulo cycling which tries ready_fds[0] first.
++        hub.consolidate_callback(ready_fds=[2, 4])
++
++        idle_worker.send_job_offset.assert_called()
++        busy_worker.send_job_offset.assert_not_called()
++        assert new_job._scheduled_for is idle_worker
++
+     def test_process_result(self):
+         x = asynpool.ResultHandler(
+             Mock(), Mock(), {}, Mock(),

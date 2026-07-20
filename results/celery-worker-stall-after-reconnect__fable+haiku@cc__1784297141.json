@@ -1,0 +1,51 @@
+{
+  "task": "celery-worker-stall-after-reconnect",
+  "config": "fable+haiku@cc",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": "claude-haiku-4-5",
+  "score": {
+    "score": 0.5,
+    "passed": 3,
+    "total": 4,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "f2p_contract": false,
+      "repro_test": true,
+      "self_consistent": true,
+      "tests_untampered": true
+    },
+    "modified_guarded_files": []
+  },
+  "wall_seconds": 1036.7,
+  "error": null,
+  "lead_summary": "All remaining failures are pre-existing environment gaps \u2014 missing optional test dependencies (`greenlet`, `pytest-celery`'s CLI fixtures, backend SDKs like `azure`/`google`/`boto`), none touching the changed code. The change is complete. Final state of the work:\n\n## Summary\n\n**Root cause.** On every broker connection loss, `Consumer.on_close` calls `AsynPool.flush()` (`celery/worker/consumer/consumer.py:538`). `flush()` ended with an unconditional `self._busy_workers.clear()` (`celery/concurrency/asynpool.py:1083`). With `worker_cancel_long_running_tasks_on_connection_loss=false`, a pool process can still be executing an in-flight task while that runs \u2014 so after reconnect, the prefork fair scheduler (`schedule_writes`, which skips fds in `_busy_workers`) believes *every* process is free. Its round-robin then writes the next incoming task into the **still-busy** process's inqueue pipe, where the child won't read it until the long task finishes \u2014 while the other process sits idle. That's exactly the reported half-dead state; `worker_disable_prefetch` was a red herring (its gate on `reserved_requests` behaves correctly).\n\nI confirmed this empirically with a live prefork worker against a local Redis: after the blip the short task was received and `TaskPool: Apply` fired, but pool-state instrumentation showed `busy_workers` had been wiped during the blip and the job was written to the long task's fd (`busy=[8]`, idle fd 4 untouched, `outbound=0`).\n\n**Fix** (`celery/concurrency/asynpool.py`, `flush()` finally-block): after clearing write-tracking state, re-mark as busy the inqueue fd of any process that still owns a job in `Pool._cache` (written to a live process). Undelivered/unwritten jobs are still discarded and the outbound buffer still cleared, so broker redelivery of in-flight-but-undelivered messages is untouched.\n\n**Regression test** \u2014 `t/unit/concurrency/test_prefork.py`:\n- `test_flush_keeps_busy_marker_for_inflight_jobs` \u2014 reproduces the bug; **fails on the unfixed code** (verified by temporarily reverting the fix) and passes with it.\n- `test_flush_clears_busy_marker_for_dead_process` \u2014 guards that exited processes don't retain stale busy markers.\n\n**Verification.**\n- Live end-to-end repro (long task \u2192 redis restart \u2192 reconnect \u2192 short task): stalled before the fix, runs immediately (`POST-BLIP SHORT: OK`) after; pre-blip interleaving and recovery behavior unchanged.\n- `t/unit/concurrency/` + `t/unit/worker/`: 694 passed; only failure is `test_gevent.py::test_make_killable_target` (`ModuleNotFoundError: greenlet`, pre-existing).\n- Full `t/unit` sweep: 3066 passed; the 2 failures/41 errors are all missing optional-dependency artifacts present before this change.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/celery-worker-stall-after-reconnect__fable+haiku@cc__1784297141.transcript.jsonl",
+  "cost_usd": 8.4423,
+  "tokens": {
+    "input": 100,
+    "output": 43032,
+    "cache_write": 120343,
+    "cache_read": 4785458
+  },
+  "lead_turns": 53,
+  "sidekick_turns": 0,
+  "lead_code_edits": 6,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 100,
+      "output_tokens": 43032,
+      "cache_write_tokens": 120343,
+      "cache_read_tokens": 4785458,
+      "cost_usd": 8.4423
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 9.344917999999998,
+  "agent_exit_code": 0
+}

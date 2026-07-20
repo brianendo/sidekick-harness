@@ -1,0 +1,30 @@
+{
+  "task": "lru_cache",
+  "config": "sonnet+haiku",
+  "lead_model": "claude-sonnet-5",
+  "sidekick_model": "claude-haiku-4-5",
+  "score": {
+    "score": 0.0,
+    "passed": 0,
+    "total": 1,
+    "detail": "1 error in 0.16s"
+  },
+  "wall_seconds": 0.3,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cd726GEVjE3SaC36SpVhL'}",
+  "lead_summary": "",
+  "cost_usd": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_write": 0,
+    "cache_read": 0
+  },
+  "lead_turns": 0,
+  "sidekick_turns": 0,
+  "lead_code_edits": 0,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {}
+}
