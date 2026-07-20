@@ -1,5 +1,10 @@
 # sidekick-harness
 
+> **Results live in [FINDINGS.md](FINDINGS.md)** — delegation-count ablation,
+> the unit-depth-vs-shared-context economics law, fable-vs-opus leads, and
+> how the graders' QA discipline held up. Raw evidence for every number is in
+> `results/` (per-run JSON + full transcript + diff).
+
 A minimal, open replication of the lead/sidekick delegation architecture from
 Cognition's ["Making Fable cheaper than Opus"](https://cognition.com/blog/making-fable-cheaper-than-opus):
 an expensive frontier model **leads** a coding session — plans, delegates,
