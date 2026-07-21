@@ -1,0 +1,112 @@
+{
+  "task": "marketplace-quarter-close",
+  "config": "fable-solo@cc",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": null,
+  "score": {
+    "score": 1.0,
+    "passed": 13,
+    "total": 13,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "fee_rows": true,
+      "fee_cli": true,
+      "recon_rows": true,
+      "recon_summary": true,
+      "recon_cli": true,
+      "chain_records": true,
+      "chain_verify_cli": true,
+      "chain_cli": true,
+      "conservation": true,
+      "money_contract": true,
+      "visible_tests": true,
+      "conventions": true,
+      "guarded_files_untouched": true
+    },
+    "modified_guarded_files": [],
+    "blockers": {
+      "conservation": true,
+      "money_contract": true,
+      "guarded_files_untouched": true
+    },
+    "grader_pass": true,
+    "tails": {
+      "fee_cli": [
+        "ok"
+      ],
+      "recon_cli": [
+        "ok"
+      ],
+      "chain_cli": [
+        "ok"
+      ],
+      "chain_verify_cli": [
+        "ok"
+      ],
+      "fee_rows": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "recon_rows": [
+        ".                                                                        [100%]",
+        "1 passed in 0.02s"
+      ],
+      "recon_summary": [
+        ".                                                                        [100%]",
+        "1 passed in 0.01s"
+      ],
+      "chain_records": [
+        "...                                                                      [100%]",
+        "3 passed in 0.03s"
+      ],
+      "conservation": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "money_contract": [
+        "....                                                                     [100%]",
+        "4 passed in 0.02s"
+      ],
+      "visible_tests": [
+        ".................                                                        [100%]",
+        "17 passed in 0.06s"
+      ],
+      "conventions": [
+        "Conventions OK."
+      ]
+    }
+  },
+  "wall_seconds": 620.6,
+  "error": null,
+  "lead_summary": "All three deliverables are built, tested, and verified. The full Q2 close package now sits in `exports/`, produced by three new scripts, with the existing suites and convention check green (55 passed).\n\n## What was built\n\n**1. Fee-rules review** \u2014 `scripts/fee_review.py` \u2192 `exports/fee_review/{2026-04,2026-05,2026-06}.csv`. Fees are based on the recorded charge from `exports/charges.csv` (never recomputed from items); splits go through `Money.allocate` with goods-value weights in vendor first-appearance order. I added a small `Money.clamp(min, max)` method to `libs/money` (with CHANGELOG 1.3.0 entry, README note, and its own tests) so fee floors/caps stay inside the money package per conventions. Spot checks confirmed by hand: ORD-4011 wins R-050 (fee 80 \u2192 68 northmill / 12 atlaswares), ORD-6011 wins R-810 capped at 90 and split 36/5/49, ORD-6016 gets R-500's flat 35 per vendor.\n\n**2. Bank reconciliation** \u2014 `scripts/reconcile_bank.py` \u2192 `exports/reconciliation/<month>.csv` + `summary.json`. Bank amounts are parsed digit-by-digit into integer cents (no floats anywhere). Findings the controllers will care about: three amount mismatches (ORD-4004 \u22127\u00a2, ORD-5008 +100\u00a2, ORD-6014 \u22121\u00a2), two late settlements (ORD-4014, ORD-6005), two charges with no bank row (ORD-4006, ORD-5009), two unknown refs (T-9112, T-9121), and two duplicate settlements (ORD-5013's extra T-9123 at the wrong amount, ORD-6016's repeat T-9148). The July-settled unknown ref T-9151 is correctly outside the Q2 range.\n\n**3. Ledger chain** \u2014 `scripts/ledger_chain.py build/verify` \u2192 `exports/ledger_chain.jsonl`: 167 money lines + 3 month closes = 170 records. `verify` prints `OK 170 records` (exit 0) and needs only the file itself. Month-close totals match sums recomputed independently from the raw exports. Tamper tests confirm: editing any field breaks at that seq, re-hashing an edited record breaks at the next seq, deleting a record breaks at its position.\n\n## Verification\n\n- `python scripts/check_conventions.py` \u2014 clean; `python -m pytest tests libs/money/tests -q` \u2014 **55 passed** (30 new tests across three suites, including hand-computed fee expectations and a hand-derived reconciliation summary).\n- **Idempotency**: reran every command and diffed \u2014 byte-identical outputs.\n- **Range correctness**: `--from 2026-05 --to 2026-05` produces exactly the May file(s), byte-identical to the May file from the full-quarter run, and excludes bank rows belonging to April/June charges.\n- **Inputs untouched**: checksums of `exports/*.csv` nightly artifacts and everything under `services/orders/data/` are unchanged before vs. after all runs (also enforced by a test in each suite).\n\nOne judgment call to flag: for `per_vendor` rules with no `vendors` scope key (R-500, R-820), every vendor of the order is fee'd individually, exactly as the spec words it \u2014 so ORD-6016's non-candle vendor also gets the candle-servicing fee. If pricing intended \"vendors selling matching SKUs only,\" that's a one-line change.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/marketplace-quarter-close__fable-solo@cc__1784593291.transcript.jsonl",
+  "contamination_hits": [],
+  "cost_usd": 5.2111,
+  "tokens": {
+    "input": 48,
+    "output": 52707,
+    "cache_write": 81102,
+    "cache_read": 1561544
+  },
+  "lead_turns": 26,
+  "sidekick_turns": 0,
+  "lead_code_edits": 10,
+  "delegations": 0,
+  "first_delegation_turn": null,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 48,
+      "output_tokens": 52707,
+      "cache_write_tokens": 81102,
+      "cache_read_tokens": 1561544,
+      "cost_usd": 5.2111
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 5.819414,
+  "agent_exit_code": 0
+}

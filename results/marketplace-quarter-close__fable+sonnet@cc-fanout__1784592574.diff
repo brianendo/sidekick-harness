@@ -1,0 +1,2299 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/fee_review/2026-04.csv b/exports/fee_review/2026-04.csv
+--- a/exports/fee_review/2026-04.csv	1969-12-31 16:00:00
++++ b/exports/fee_review/2026-04.csv	2026-07-20 17:19:15
+@@ -0,0 +1,18 @@
++order_id,rule_id,vendor,fee_cents
++ORD-4001,R-101,atlaswares,8
++ORD-4001,R-101,fernco,8
++ORD-4001,R-101,northmill,9
++ORD-4002,R-101,atlaswares,43
++ORD-4002,R-101,northmill,6
++ORD-4004,R-205,quarryfield,79
++ORD-4005,R-315,quarryfield,40
++ORD-4006,R-101,northmill,25
++ORD-4007,R-310,brightloom,55
++ORD-4008,R-101,atlaswares,47
++ORD-4010,R-310,brightloom,20
++ORD-4011,R-050,atlaswares,12
++ORD-4011,R-050,northmill,68
++ORD-4014,R-310,brightloom,57
++ORD-4015,R-315,quarryfield,102
++ORD-4016,R-310,brightloom,22
++ORD-4017,R-310,brightloom,49
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/fee_review/2026-05.csv b/exports/fee_review/2026-05.csv
+--- a/exports/fee_review/2026-05.csv	1969-12-31 16:00:00
++++ b/exports/fee_review/2026-05.csv	2026-07-20 17:19:15
+@@ -0,0 +1,20 @@
++order_id,rule_id,vendor,fee_cents
++ORD-5001,R-810,atlaswares,22
++ORD-5001,R-810,fernco,12
++ORD-5001,R-810,northmill,23
++ORD-5004,R-315,quarryfield,104
++ORD-5005,R-101,atlaswares,25
++ORD-5006,R-101,northmill,25
++ORD-5007,R-101,atlaswares,47
++ORD-5008,R-205,atlaswares,67
++ORD-5008,R-205,northmill,14
++ORD-5009,R-810,fernco,25
++ORD-5010,R-101,quarryfield,53
++ORD-5011,R-810,fernco,90
++ORD-5013,R-810,atlaswares,16
++ORD-5013,R-810,fernco,51
++ORD-5013,R-810,northmill,8
++ORD-5014,R-315,quarryfield,104
++ORD-5015,R-315,quarryfield,104
++ORD-5016,R-101,atlaswares,42
++ORD-5017,R-101,northmill,36
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/fee_review/2026-06.csv b/exports/fee_review/2026-06.csv
+--- a/exports/fee_review/2026-06.csv	1969-12-31 16:00:00
++++ b/exports/fee_review/2026-06.csv	2026-07-20 17:19:15
+@@ -0,0 +1,16 @@
++order_id,rule_id,vendor,fee_cents
++ORD-6001,R-315,quarryfield,103
++ORD-6004,R-810,fernco,51
++ORD-6005,R-101,atlaswares,25
++ORD-6006,R-101,quarryfield,53
++ORD-6010,R-315,quarryfield,100
++ORD-6011,R-810,fernco,36
++ORD-6011,R-810,northmill,5
++ORD-6011,R-810,quarryfield,49
++ORD-6012,R-810,fernco,90
++ORD-6013,R-101,northmill,36
++ORD-6014,R-810,brightloom,10
++ORD-6014,R-810,fernco,25
++ORD-6015,R-315,quarryfield,20
++ORD-6016,R-500,brightloom,35
++ORD-6016,R-500,fernco,35
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/ledger_chain.jsonl b/exports/ledger_chain.jsonl
+--- a/exports/ledger_chain.jsonl	1969-12-31 16:00:00
++++ b/exports/ledger_chain.jsonl	2026-07-20 17:19:16
+@@ -0,0 +1,170 @@
++{"amount_cents":1603,"charged_at":"2026-04-01","hash":"f97f8652b5b69799e30716605fb6e15e0098f53066591debe146e11e205c5fc1","kind":"charge","order_id":"ORD-4011","party":"","prev_hash":"0000000000000000000000000000000000000000000000000000000000000000","seq":0}
++{"amount_cents":230,"charged_at":"2026-04-01","hash":"354b88266f3417aab698f7204798d45231577feb73a60f5969185199ebec00bc","kind":"payout_line","order_id":"ORD-4011","party":"atlaswares","prev_hash":"f97f8652b5b69799e30716605fb6e15e0098f53066591debe146e11e205c5fc1","seq":1}
++{"amount_cents":1333,"charged_at":"2026-04-01","hash":"2d22ee06f73f0f860d0a84cf874df372d4b8dabcae3ec8e42c09e473ad92572a","kind":"payout_line","order_id":"ORD-4011","party":"northmill","prev_hash":"354b88266f3417aab698f7204798d45231577feb73a60f5969185199ebec00bc","seq":2}
++{"amount_cents":40,"charged_at":"2026-04-01","hash":"12adc939b2880ce6a9a69902edad47945193d5f80c80f283c6233b8bb60ffc0f","kind":"payout_line","order_id":"ORD-4011","party":"platform","prev_hash":"2d22ee06f73f0f860d0a84cf874df372d4b8dabcae3ec8e42c09e473ad92572a","seq":3}
++{"amount_cents":1000,"charged_at":"2026-04-03","hash":"8139217f6aa3095f7c3c0222a02b57546f6e29f725aa8ab35247340e0959bc86","kind":"charge","order_id":"ORD-4001","party":"","prev_hash":"12adc939b2880ce6a9a69902edad47945193d5f80c80f283c6233b8bb60ffc0f","seq":4}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"18d69dcb33fd2f136721c40eeaac262aa5c832e9ad2764a592b722f1f6a3662a","kind":"payout_line","order_id":"ORD-4001","party":"atlaswares","prev_hash":"8139217f6aa3095f7c3c0222a02b57546f6e29f725aa8ab35247340e0959bc86","seq":5}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"85f96ded8f4869db240604a06f03cebdce81406266838eeb8011bd626f7aefc6","kind":"payout_line","order_id":"ORD-4001","party":"fernco","prev_hash":"18d69dcb33fd2f136721c40eeaac262aa5c832e9ad2764a592b722f1f6a3662a","seq":6}
++{"amount_cents":325,"charged_at":"2026-04-03","hash":"16cb09eb93234339cfbfc379e32ae324baa5257e09c3bea8ef99097c511f380a","kind":"payout_line","order_id":"ORD-4001","party":"northmill","prev_hash":"85f96ded8f4869db240604a06f03cebdce81406266838eeb8011bd626f7aefc6","seq":7}
++{"amount_cents":25,"charged_at":"2026-04-03","hash":"34f7dfb1ebfbce9cad4461eca904a225eede6738d41faf945168ad67c3baa0b0","kind":"payout_line","order_id":"ORD-4001","party":"platform","prev_hash":"16cb09eb93234339cfbfc379e32ae324baa5257e09c3bea8ef99097c511f380a","seq":8}
++{"amount_cents":549,"charged_at":"2026-04-03","hash":"190364fe2e121c5fed0cbd8a45f418bb33ad7c13596df397f60052eb3ddc9361","kind":"charge","order_id":"ORD-4013","party":"","prev_hash":"34f7dfb1ebfbce9cad4461eca904a225eede6738d41faf945168ad67c3baa0b0","seq":9}
++{"amount_cents":549,"charged_at":"2026-04-03","hash":"ec1d4843f5ffe6192bc217857a8eff48409ae8b7cf958687d5ba07b4b5f3a1b2","kind":"refund_line","order_id":"ORD-4013","party":"CANDLE-3OZ","prev_hash":"190364fe2e121c5fed0cbd8a45f418bb33ad7c13596df397f60052eb3ddc9361","seq":10}
++{"amount_cents":1999,"charged_at":"2026-04-05","hash":"bd85110384610a62dbd8476f7099369345703cdc4e4eba0b8363b5a343202197","kind":"charge","order_id":"ORD-4002","party":"","prev_hash":"ec1d4843f5ffe6192bc217857a8eff48409ae8b7cf958687d5ba07b4b5f3a1b2","seq":11}
++{"amount_cents":1722,"charged_at":"2026-04-05","hash":"fb49f0dd2c6c6b2b7c78ef94a5b5c6265f08db6a3d08b43303d9546bf32f1134","kind":"payout_line","order_id":"ORD-4002","party":"atlaswares","prev_hash":"bd85110384610a62dbd8476f7099369345703cdc4e4eba0b8363b5a343202197","seq":12}
++{"amount_cents":227,"charged_at":"2026-04-05","hash":"18cc2e85f5b32eec9999ddbc2ca38e34c9c05c371f5e929debb33810daa5bf25","kind":"payout_line","order_id":"ORD-4002","party":"northmill","prev_hash":"fb49f0dd2c6c6b2b7c78ef94a5b5c6265f08db6a3d08b43303d9546bf32f1134","seq":13}
++{"amount_cents":50,"charged_at":"2026-04-05","hash":"a1ff7f5d7d460ed9c6dc92bfa5ddcf941f4e6bbce38fc96d138049f637cc0ffd","kind":"payout_line","order_id":"ORD-4002","party":"platform","prev_hash":"18cc2e85f5b32eec9999ddbc2ca38e34c9c05c371f5e929debb33810daa5bf25","seq":14}
++{"amount_cents":251,"charged_at":"2026-04-07","hash":"1aefaf5108f0f590bb24e355534f4cede53f7f0f21e3f01df235e6316c1b8855","kind":"charge","order_id":"ORD-4010","party":"","prev_hash":"a1ff7f5d7d460ed9c6dc92bfa5ddcf941f4e6bbce38fc96d138049f637cc0ffd","seq":15}
++{"amount_cents":245,"charged_at":"2026-04-07","hash":"af71fe059554a2b80e73a05ec2695d949cc517c1d11d19de0028880f3c795901","kind":"payout_line","order_id":"ORD-4010","party":"brightloom","prev_hash":"1aefaf5108f0f590bb24e355534f4cede53f7f0f21e3f01df235e6316c1b8855","seq":16}
++{"amount_cents":6,"charged_at":"2026-04-07","hash":"2c275d2e2e5ec44d1bcbc560731f7df497da08befb59428f5763c33b2ac0e560","kind":"payout_line","order_id":"ORD-4010","party":"platform","prev_hash":"af71fe059554a2b80e73a05ec2695d949cc517c1d11d19de0028880f3c795901","seq":17}
++{"amount_cents":7098,"charged_at":"2026-04-07","hash":"b9600470d500bac9da9eba5c28bb438695d9e43feee521ec746cc9eb0712cfff","kind":"charge","order_id":"ORD-4012","party":"","prev_hash":"2c275d2e2e5ec44d1bcbc560731f7df497da08befb59428f5763c33b2ac0e560","seq":18}
++{"amount_cents":6853,"charged_at":"2026-04-07","hash":"04dea9ded28c7a5f29e56e2dfd740c1176d17dcb30f6194111ece40fece4c67d","kind":"refund_line","order_id":"ORD-4012","party":"BOWL-GRANITE","prev_hash":"b9600470d500bac9da9eba5c28bb438695d9e43feee521ec746cc9eb0712cfff","seq":19}
++{"amount_cents":245,"charged_at":"2026-04-07","hash":"76a4cf0dea83c8b708a46db315bf1e646188728fe72f33e2ec87ffd33fbf204e","kind":"refund_line","order_id":"ORD-4012","party":"COASTER-ELM","prev_hash":"04dea9ded28c7a5f29e56e2dfd740c1176d17dcb30f6194111ece40fece4c67d","seq":20}
++{"amount_cents":1000,"charged_at":"2026-04-09","hash":"6b4cce8b7a379235aa03f9ce4dac4c8d560e2478deedabc63945eb6e6e038a74","kind":"charge","order_id":"ORD-4003","party":"","prev_hash":"76a4cf0dea83c8b708a46db315bf1e646188728fe72f33e2ec87ffd33fbf204e","seq":21}
++{"amount_cents":333,"charged_at":"2026-04-09","hash":"38c7aca8a3e2b5479787c2184c38e7b43aa0d34d898e388cfc0c3882a7d4b076","kind":"refund_line","order_id":"ORD-4003","party":"MUG-CAMP","prev_hash":"6b4cce8b7a379235aa03f9ce4dac4c8d560e2478deedabc63945eb6e6e038a74","seq":22}
++{"amount_cents":334,"charged_at":"2026-04-09","hash":"fd5f66211afc47d200a2bb19ee97203ad31cb837abb4bcf3ce3319a80d3600f4","kind":"refund_line","order_id":"ORD-4003","party":"MUG-CLASSIC","prev_hash":"38c7aca8a3e2b5479787c2184c38e7b43aa0d34d898e388cfc0c3882a7d4b076","seq":23}
++{"amount_cents":333,"charged_at":"2026-04-09","hash":"b77cd433b5eacac963f64fc0cc14ad1d1b4ea09b822e0462e708a7622aaf64da","kind":"refund_line","order_id":"ORD-4003","party":"MUG-DINER","prev_hash":"fd5f66211afc47d200a2bb19ee97203ad31cb837abb4bcf3ce3319a80d3600f4","seq":24}
++{"amount_cents":2201,"charged_at":"2026-04-11","hash":"73b98b9be36bbb6ce424bb0c091fa1fca2501d458bf7743284d4c58767e0bbd4","kind":"charge","order_id":"ORD-4004","party":"","prev_hash":"b77cd433b5eacac963f64fc0cc14ad1d1b4ea09b822e0462e708a7622aaf64da","seq":25}
++{"amount_cents":55,"charged_at":"2026-04-11","hash":"65ccde8f30da1081db6b98a8a1141f8408b02a97296b6339e17b2abb8c5ab3cc","kind":"payout_line","order_id":"ORD-4004","party":"platform","prev_hash":"73b98b9be36bbb6ce424bb0c091fa1fca2501d458bf7743284d4c58767e0bbd4","seq":26}
++{"amount_cents":2146,"charged_at":"2026-04-11","hash":"5abcf9461cbf1ddb23b0969fc64444ca76f1557788018234aa43b2a9930460b1","kind":"payout_line","order_id":"ORD-4004","party":"quarryfield","prev_hash":"65ccde8f30da1081db6b98a8a1141f8408b02a97296b6339e17b2abb8c5ab3cc","seq":27}
++{"amount_cents":1748,"charged_at":"2026-04-12","hash":"bf701205e44a0fcb7efba2fa3fda6e71e6359d135cfb3d5a8ee0f9e136faffcc","kind":"charge","order_id":"ORD-4005","party":"","prev_hash":"5abcf9461cbf1ddb23b0969fc64444ca76f1557788018234aa43b2a9930460b1","seq":28}
++{"amount_cents":379,"charged_at":"2026-04-12","hash":"4473e33a6514765ff733f374f0c80f4f7f7bb942a67b589105b16be9bf4e6553","kind":"payout_line","order_id":"ORD-4005","party":"atlaswares","prev_hash":"bf701205e44a0fcb7efba2fa3fda6e71e6359d135cfb3d5a8ee0f9e136faffcc","seq":29}
++{"amount_cents":44,"charged_at":"2026-04-12","hash":"d2bf3a7d7e76fb703bff80a9165b85f240da8b873909eec238a68c9b4d438316","kind":"payout_line","order_id":"ORD-4005","party":"platform","prev_hash":"4473e33a6514765ff733f374f0c80f4f7f7bb942a67b589105b16be9bf4e6553","seq":30}
++{"amount_cents":1325,"charged_at":"2026-04-12","hash":"e720a0639860c202014beade217270750b4ec86ca460c8309bb2f86b4f568801","kind":"payout_line","order_id":"ORD-4005","party":"quarryfield","prev_hash":"d2bf3a7d7e76fb703bff80a9165b85f240da8b873909eec238a68c9b4d438316","seq":31}
++{"amount_cents":1897,"charged_at":"2026-04-12","hash":"c68b33abad8cd5ca48e0dcec74ab4b79ef1975fc7c1e145d65972f0eeca14aa8","kind":"charge","order_id":"ORD-4009","party":"","prev_hash":"e720a0639860c202014beade217270750b4ec86ca460c8309bb2f86b4f568801","seq":32}
++{"amount_cents":1098,"charged_at":"2026-04-12","hash":"3e8f4049c4408585095855057a2e27db77c17df931435ff63e5ea04282f14eda","kind":"refund_line","order_id":"ORD-4009","party":"CANDLE-3OZ","prev_hash":"c68b33abad8cd5ca48e0dcec74ab4b79ef1975fc7c1e145d65972f0eeca14aa8","seq":33}
++{"amount_cents":799,"charged_at":"2026-04-12","hash":"fb6f22ce9ad9d082f4115b2f8c5d4e47f3cb0ad32fb5615fdd3dda3c1bad0a51","kind":"refund_line","order_id":"ORD-4009","party":"PLANTER-4IN","prev_hash":"3e8f4049c4408585095855057a2e27db77c17df931435ff63e5ea04282f14eda","seq":34}
++{"amount_cents":1949,"charged_at":"2026-04-13","hash":"f4462157ffba68a112636e3764ef70118d45bb28373cbf1deda5c22e92784eec","kind":"charge","order_id":"ORD-4017","party":"","prev_hash":"fb6f22ce9ad9d082f4115b2f8c5d4e47f3cb0ad32fb5615fdd3dda3c1bad0a51","seq":35}
++{"amount_cents":971,"charged_at":"2026-04-13","hash":"83b01fc0734b4ab09566a0fcd53e42bb081fc896265db27e7b492022f9ff412c","kind":"payout_line","order_id":"ORD-4017","party":"brightloom","prev_hash":"f4462157ffba68a112636e3764ef70118d45bb28373cbf1deda5c22e92784eec","seq":36}
++{"amount_cents":708,"charged_at":"2026-04-13","hash":"c7926b763fd0b76a8e9400efb94d618bbc36816c5adbcbc59661dc610b831a3a","kind":"payout_line","order_id":"ORD-4017","party":"fernco","prev_hash":"83b01fc0734b4ab09566a0fcd53e42bb081fc896265db27e7b492022f9ff412c","seq":37}
++{"amount_cents":221,"charged_at":"2026-04-13","hash":"c92bb6f695ca0425b050428974b9cf56ef2875e72f165807e50b5ac9670bb5a4","kind":"payout_line","order_id":"ORD-4017","party":"northmill","prev_hash":"c7926b763fd0b76a8e9400efb94d618bbc36816c5adbcbc59661dc610b831a3a","seq":38}
++{"amount_cents":49,"charged_at":"2026-04-13","hash":"b71ddaf856e0eb9aa6f9cab659194056fa22c824c25d99558058a678b97fd83e","kind":"payout_line","order_id":"ORD-4017","party":"platform","prev_hash":"c92bb6f695ca0425b050428974b9cf56ef2875e72f165807e50b5ac9670bb5a4","seq":39}
++{"amount_cents":1149,"charged_at":"2026-04-17","hash":"beba58754c595514fe70c0349688614cc75baa83c6fa227baa9c33808406e40c","kind":"charge","order_id":"ORD-4007","party":"","prev_hash":"b71ddaf856e0eb9aa6f9cab659194056fa22c824c25d99558058a678b97fd83e","seq":40}
++{"amount_cents":1120,"charged_at":"2026-04-17","hash":"e797cdc5ec53b29af85208f8f2a72e46db70b8683ef1731b41fe7ec843bbaaf5","kind":"payout_line","order_id":"ORD-4007","party":"brightloom","prev_hash":"beba58754c595514fe70c0349688614cc75baa83c6fa227baa9c33808406e40c","seq":41}
++{"amount_cents":29,"charged_at":"2026-04-17","hash":"60101e765e00bafe30cab4358fec082e8a04bb3b3153ccd49b579b74c063873b","kind":"payout_line","order_id":"ORD-4007","party":"platform","prev_hash":"e797cdc5ec53b29af85208f8f2a72e46db70b8683ef1731b41fe7ec843bbaaf5","seq":42}
++{"amount_cents":1899,"charged_at":"2026-04-18","hash":"979e908642c4523e966b123dccab04f275738641d1c634e7e1796c1523cc3656","kind":"charge","order_id":"ORD-4008","party":"","prev_hash":"60101e765e00bafe30cab4358fec082e8a04bb3b3153ccd49b579b74c063873b","seq":43}
++{"amount_cents":1852,"charged_at":"2026-04-18","hash":"2d716cb1fe58f0be857cde1ce955605010ef0713d95f2799614bcad6b0858ba8","kind":"payout_line","order_id":"ORD-4008","party":"atlaswares","prev_hash":"979e908642c4523e966b123dccab04f275738641d1c634e7e1796c1523cc3656","seq":44}
++{"amount_cents":47,"charged_at":"2026-04-18","hash":"ed44d780b3c4e421b927a2e893a5488d5031d5f43cabf61f574b72d417ae9cd3","kind":"payout_line","order_id":"ORD-4008","party":"platform","prev_hash":"2d716cb1fe58f0be857cde1ce955605010ef0713d95f2799614bcad6b0858ba8","seq":45}
++{"amount_cents":1199,"charged_at":"2026-04-18","hash":"9c86e24b99b21724a98aae2ca4d15f4fc91d727510a0b09b9a6ac92477d231ff","kind":"charge","order_id":"ORD-4014","party":"","prev_hash":"ed44d780b3c4e421b927a2e893a5488d5031d5f43cabf61f574b72d417ae9cd3","seq":46}
++{"amount_cents":1169,"charged_at":"2026-04-18","hash":"6869e662ae5a1468e25249d9d1d059e92248b0389e755407794c6f442f1f1fad","kind":"payout_line","order_id":"ORD-4014","party":"brightloom","prev_hash":"9c86e24b99b21724a98aae2ca4d15f4fc91d727510a0b09b9a6ac92477d231ff","seq":47}
++{"amount_cents":30,"charged_at":"2026-04-18","hash":"4404e10bd5ccc60d5554c299dd5fa2cb5488853e83edd92fc16c5a18eeb80246","kind":"payout_line","order_id":"ORD-4014","party":"platform","prev_hash":"6869e662ae5a1468e25249d9d1d059e92248b0389e755407794c6f442f1f1fad","seq":48}
++{"amount_cents":3402,"charged_at":"2026-04-18","hash":"116d2d3ac0737aa7c15d4ee58845b5bfcf5eb7e32288c541531ff5a4026c3988","kind":"charge","order_id":"ORD-4015","party":"","prev_hash":"4404e10bd5ccc60d5554c299dd5fa2cb5488853e83edd92fc16c5a18eeb80246","seq":49}
++{"amount_cents":85,"charged_at":"2026-04-18","hash":"e3a72c351f0658bf7b67b169feddee044f81737ec2eca8f436c7067fcb64c96a","kind":"payout_line","order_id":"ORD-4015","party":"platform","prev_hash":"116d2d3ac0737aa7c15d4ee58845b5bfcf5eb7e32288c541531ff5a4026c3988","seq":50}
++{"amount_cents":3317,"charged_at":"2026-04-18","hash":"04ca70fd2683fe2aeb67af3d1e52ffe1638a1812ea48e7d106b0c4545dfc16d2","kind":"payout_line","order_id":"ORD-4015","party":"quarryfield","prev_hash":"e3a72c351f0658bf7b67b169feddee044f81737ec2eca8f436c7067fcb64c96a","seq":51}
++{"amount_cents":250,"charged_at":"2026-04-20","hash":"d63f6909a5e4f04962b80a9fd938a1b91255e8444ad3758c07f064048869b434","kind":"charge","order_id":"ORD-4006","party":"","prev_hash":"04ca70fd2683fe2aeb67af3d1e52ffe1638a1812ea48e7d106b0c4545dfc16d2","seq":52}
++{"amount_cents":244,"charged_at":"2026-04-20","hash":"d48bb81e6569a6bd1bb5389d7e1c389d01a14c0401025ecf95d4f05af51b9f2f","kind":"payout_line","order_id":"ORD-4006","party":"northmill","prev_hash":"d63f6909a5e4f04962b80a9fd938a1b91255e8444ad3758c07f064048869b434","seq":53}
++{"amount_cents":6,"charged_at":"2026-04-20","hash":"24f730a02ee933fd6b72565cb57d3f18c4b1a1e37bdd1fa0ac86d29cd68266dd","kind":"payout_line","order_id":"ORD-4006","party":"platform","prev_hash":"d48bb81e6569a6bd1bb5389d7e1c389d01a14c0401025ecf95d4f05af51b9f2f","seq":54}
++{"amount_cents":5401,"charged_at":"2026-04-22","hash":"b63ad01cf36e8cef926b915a133cebe0166aec9867587c6717e9fabfac8c97e8","kind":"charge","order_id":"ORD-4016","party":"","prev_hash":"24f730a02ee933fd6b72565cb57d3f18c4b1a1e37bdd1fa0ac86d29cd68266dd","seq":55}
++{"amount_cents":293,"charged_at":"2026-04-22","hash":"0adb7097ba0e9e3caf306f81d9aeb8bbefea73d696f748b0af469d56c254ddf2","kind":"payout_line","order_id":"ORD-4016","party":"brightloom","prev_hash":"b63ad01cf36e8cef926b915a133cebe0166aec9867587c6717e9fabfac8c97e8","seq":56}
++{"amount_cents":1561,"charged_at":"2026-04-22","hash":"17ff1f8a1f6777d30fc60a995f17211e4058aed25c686f0edc6e2e6ce9f2a2a1","kind":"payout_line","order_id":"ORD-4016","party":"fernco","prev_hash":"0adb7097ba0e9e3caf306f81d9aeb8bbefea73d696f748b0af469d56c254ddf2","seq":57}
++{"amount_cents":135,"charged_at":"2026-04-22","hash":"319fac526d1e7f90096efab77201c9073eb5838f94175c37cae4dbb42d30bab0","kind":"payout_line","order_id":"ORD-4016","party":"platform","prev_hash":"17ff1f8a1f6777d30fc60a995f17211e4058aed25c686f0edc6e2e6ce9f2a2a1","seq":58}
++{"amount_cents":3412,"charged_at":"2026-04-22","hash":"e16e39534032e9f715d0b9edbd01e107244cc31f36dedfe558b9a1d228690ff2","kind":"payout_line","order_id":"ORD-4016","party":"quarryfield","prev_hash":"319fac526d1e7f90096efab77201c9073eb5838f94175c37cae4dbb42d30bab0","seq":59}
++{"charge_cents":34595,"hash":"33322872bd5a45631e37f348a7d51701bbcb54f3e03f01a2b7080afc90103baf","kind":"month_close","line_count":60,"month":"2026-04","payout_cents":24051,"prev_hash":"e16e39534032e9f715d0b9edbd01e107244cc31f36dedfe558b9a1d228690ff2","refund_cents":10544,"seq":60}
++{"amount_cents":1899,"charged_at":"2026-05-03","hash":"5bf515239ccd5095653280e5e4821767cad6e8183573e71c102200b172760fde","kind":"charge","order_id":"ORD-5007","party":"","prev_hash":"33322872bd5a45631e37f348a7d51701bbcb54f3e03f01a2b7080afc90103baf","seq":61}
++{"amount_cents":1852,"charged_at":"2026-05-03","hash":"8e7e313a86814eea1c3372c5f20f7db428bef63d4eccd64c591b8a63bf411fdc","kind":"payout_line","order_id":"ORD-5007","party":"atlaswares","prev_hash":"5bf515239ccd5095653280e5e4821767cad6e8183573e71c102200b172760fde","seq":62}
++{"amount_cents":47,"charged_at":"2026-05-03","hash":"196f461c0b8d7458c250d3303561bd678372184cad29eab7857d2d586b528290","kind":"payout_line","order_id":"ORD-5007","party":"platform","prev_hash":"8e7e313a86814eea1c3372c5f20f7db428bef63d4eccd64c591b8a63bf411fdc","seq":63}
++{"amount_cents":2151,"charged_at":"2026-05-03","hash":"07d251a2a9333d38661341acc0737715b282b0239500eb9af6dfa0e054bbb3a7","kind":"charge","order_id":"ORD-5010","party":"","prev_hash":"196f461c0b8d7458c250d3303561bd678372184cad29eab7857d2d586b528290","seq":64}
++{"amount_cents":54,"charged_at":"2026-05-03","hash":"363e4ff7af82d96c70b17b7527a80e8253b40d24c536f4dfce8262de84e4f00e","kind":"payout_line","order_id":"ORD-5010","party":"platform","prev_hash":"07d251a2a9333d38661341acc0737715b282b0239500eb9af6dfa0e054bbb3a7","seq":65}
++{"amount_cents":2097,"charged_at":"2026-05-03","hash":"f47f16c967775de1e6b8f24c27fbb8ee8ea9a0ebed0e9f0f32ae70ef81493fae","kind":"payout_line","order_id":"ORD-5010","party":"quarryfield","prev_hash":"363e4ff7af82d96c70b17b7527a80e8253b40d24c536f4dfce8262de84e4f00e","seq":66}
++{"amount_cents":1803,"charged_at":"2026-05-06","hash":"55efc61cd2699569112aeead5e2b49202ec2397efa29396f998f5cc37688c8e0","kind":"charge","order_id":"ORD-5001","party":"","prev_hash":"f47f16c967775de1e6b8f24c27fbb8ee8ea9a0ebed0e9f0f32ae70ef81493fae","seq":67}
++{"amount_cents":694,"charged_at":"2026-05-06","hash":"d668cb4bdd21d47f90e975f0d1fdbed18223e8ecf42d2c6665c7d3e21aad8b7b","kind":"payout_line","order_id":"ORD-5001","party":"atlaswares","prev_hash":"55efc61cd2699569112aeead5e2b49202ec2397efa29396f998f5cc37688c8e0","seq":68}
++{"amount_cents":370,"charged_at":"2026-05-06","hash":"8f12cf2b917b1e195e1833e22ee92ec6f53461313eeef49657d0216f6c458fc3","kind":"payout_line","order_id":"ORD-5001","party":"fernco","prev_hash":"d668cb4bdd21d47f90e975f0d1fdbed18223e8ecf42d2c6665c7d3e21aad8b7b","seq":69}
++{"amount_cents":694,"charged_at":"2026-05-06","hash":"5079693e26f107a418860cee39007c9e06224b472555955bf159cef8e0a28b31","kind":"payout_line","order_id":"ORD-5001","party":"northmill","prev_hash":"8f12cf2b917b1e195e1833e22ee92ec6f53461313eeef49657d0216f6c458fc3","seq":70}
++{"amount_cents":45,"charged_at":"2026-05-06","hash":"32a74f98dce79c61545f760ef46a4afdc3be334d998e3b908d8cc649554e0886","kind":"payout_line","order_id":"ORD-5001","party":"platform","prev_hash":"5079693e26f107a418860cee39007c9e06224b472555955bf159cef8e0a28b31","seq":71}
++{"amount_cents":750,"charged_at":"2026-05-07","hash":"6bb6602b436accc406f557a985138d5573bfb19c30aeb34935af88882f6b2e49","kind":"charge","order_id":"ORD-5005","party":"","prev_hash":"32a74f98dce79c61545f760ef46a4afdc3be334d998e3b908d8cc649554e0886","seq":72}
++{"amount_cents":731,"charged_at":"2026-05-07","hash":"90514f1a030e4777ed17d6ee1d0df2feabfa330380ae8198a4f786b78355a01c","kind":"payout_line","order_id":"ORD-5005","party":"atlaswares","prev_hash":"6bb6602b436accc406f557a985138d5573bfb19c30aeb34935af88882f6b2e49","seq":73}
++{"amount_cents":19,"charged_at":"2026-05-07","hash":"c85c8c4d23eab8097087d8770d47acd2ccbd856d841843006e8beba48487d17c","kind":"payout_line","order_id":"ORD-5005","party":"platform","prev_hash":"90514f1a030e4777ed17d6ee1d0df2feabfa330380ae8198a4f786b78355a01c","seq":74}
++{"amount_cents":2348,"charged_at":"2026-05-08","hash":"4bd80602716a93b49e49f1e19da2e1947be3d87621bab9b7d55d74677dd9b855","kind":"charge","order_id":"ORD-5013","party":"","prev_hash":"c85c8c4d23eab8097087d8770d47acd2ccbd856d841843006e8beba48487d17c","seq":75}
++{"amount_cents":487,"charged_at":"2026-05-08","hash":"aaf9a520be45464df134029c5991e61c73b7a8648d66857cb8beb56c7a53c37f","kind":"payout_line","order_id":"ORD-5013","party":"atlaswares","prev_hash":"4bd80602716a93b49e49f1e19da2e1947be3d87621bab9b7d55d74677dd9b855","seq":76}
++{"amount_cents":1558,"charged_at":"2026-05-08","hash":"6f1b98d6ffbfcfe12c5a90856ac45719fac43c8519b476670cec6bfbb65b8746","kind":"payout_line","order_id":"ORD-5013","party":"fernco","prev_hash":"aaf9a520be45464df134029c5991e61c73b7a8648d66857cb8beb56c7a53c37f","seq":77}
++{"amount_cents":244,"charged_at":"2026-05-08","hash":"8d97a153ca44c46fb99ce42e5adf55c2afb6ae4f500c9f57db24d6b37198d2ae","kind":"payout_line","order_id":"ORD-5013","party":"northmill","prev_hash":"6f1b98d6ffbfcfe12c5a90856ac45719fac43c8519b476670cec6bfbb65b8746","seq":78}
++{"amount_cents":59,"charged_at":"2026-05-08","hash":"a25772d8debe7f3789532e0cc0af668e3f0c38c26ff39e3d3c2868c3c1f6f9ae","kind":"payout_line","order_id":"ORD-5013","party":"platform","prev_hash":"8d97a153ca44c46fb99ce42e5adf55c2afb6ae4f500c9f57db24d6b37198d2ae","seq":79}
++{"amount_cents":3749,"charged_at":"2026-05-08","hash":"2f92171596910d5eeb480407eaa8a7bedc0d699ac3885abc4e5664d132715af6","kind":"charge","order_id":"ORD-5014","party":"","prev_hash":"a25772d8debe7f3789532e0cc0af668e3f0c38c26ff39e3d3c2868c3c1f6f9ae","seq":80}
++{"amount_cents":244,"charged_at":"2026-05-08","hash":"2058443236938b69b5608cdee601554075a2e779bbec8b15ee563d9a6e70dc00","kind":"payout_line","order_id":"ORD-5014","party":"northmill","prev_hash":"2f92171596910d5eeb480407eaa8a7bedc0d699ac3885abc4e5664d132715af6","seq":81}
++{"amount_cents":94,"charged_at":"2026-05-08","hash":"51295d678cecb1237924f55f2142376ffc0a5794d9f4680392a3fc4cd6dfc202","kind":"payout_line","order_id":"ORD-5014","party":"platform","prev_hash":"2058443236938b69b5608cdee601554075a2e779bbec8b15ee563d9a6e70dc00","seq":82}
++{"amount_cents":3411,"charged_at":"2026-05-08","hash":"36771f8183753ef3978ee965dbd0e505e88a3760123689ca5cd800bc8cf0831b","kind":"payout_line","order_id":"ORD-5014","party":"quarryfield","prev_hash":"51295d678cecb1237924f55f2142376ffc0a5794d9f4680392a3fc4cd6dfc202","seq":83}
++{"amount_cents":2299,"charged_at":"2026-05-09","hash":"0037db768faf3ff033be4e2a208b3b8676e9db22a25030172577471086bbda69","kind":"charge","order_id":"ORD-5008","party":"","prev_hash":"36771f8183753ef3978ee965dbd0e505e88a3760123689ca5cd800bc8cf0831b","seq":84}
++{"amount_cents":1852,"charged_at":"2026-05-09","hash":"8802084124d3cb81cc6dea046fe53c447412d6f94fac8a9bdaf1733957911596","kind":"payout_line","order_id":"ORD-5008","party":"atlaswares","prev_hash":"0037db768faf3ff033be4e2a208b3b8676e9db22a25030172577471086bbda69","seq":85}
++{"amount_cents":390,"charged_at":"2026-05-09","hash":"a93d76bf879c0957471989210af6e6891b8abe4757a25bf96e7915c6d2ad1b4e","kind":"payout_line","order_id":"ORD-5008","party":"northmill","prev_hash":"8802084124d3cb81cc6dea046fe53c447412d6f94fac8a9bdaf1733957911596","seq":86}
++{"amount_cents":57,"charged_at":"2026-05-09","hash":"9f5066ca90dd4fbf953721ef4ca1633b6dca1809bc5e7e2d95ce90e9719b529d","kind":"payout_line","order_id":"ORD-5008","party":"platform","prev_hash":"a93d76bf879c0957471989210af6e6891b8abe4757a25bf96e7915c6d2ad1b4e","seq":87}
++{"amount_cents":303,"charged_at":"2026-05-10","hash":"a61e1ee7c38ce3a9b4be9662d9c094808229b3352c2dc179b4c54488056290de","kind":"charge","order_id":"ORD-5006","party":"","prev_hash":"9f5066ca90dd4fbf953721ef4ca1633b6dca1809bc5e7e2d95ce90e9719b529d","seq":88}
++{"amount_cents":295,"charged_at":"2026-05-10","hash":"42760577c384b3744dd1793157ddc890822f19ca4f5e4cb9215012e9cce7c06e","kind":"payout_line","order_id":"ORD-5006","party":"northmill","prev_hash":"a61e1ee7c38ce3a9b4be9662d9c094808229b3352c2dc179b4c54488056290de","seq":89}
++{"amount_cents":8,"charged_at":"2026-05-10","hash":"90b41600fd1ce3853f9938d05855a591eecefc6f423f82aac980f239648d448a","kind":"payout_line","order_id":"ORD-5006","party":"platform","prev_hash":"42760577c384b3744dd1793157ddc890822f19ca4f5e4cb9215012e9cce7c06e","seq":90}
++{"amount_cents":3499,"charged_at":"2026-05-11","hash":"d789b277a1662ed742fecbaf703cce979f77423f62a588be28cca7d288e18f29","kind":"charge","order_id":"ORD-5004","party":"","prev_hash":"90b41600fd1ce3853f9938d05855a591eecefc6f423f82aac980f239648d448a","seq":91}
++{"amount_cents":87,"charged_at":"2026-05-11","hash":"e909cb2377e00536fcd2cbe70287dafe27282a30c6ccf1c9860be689c6cd1345","kind":"payout_line","order_id":"ORD-5004","party":"platform","prev_hash":"d789b277a1662ed742fecbaf703cce979f77423f62a588be28cca7d288e18f29","seq":92}
++{"amount_cents":3412,"charged_at":"2026-05-11","hash":"b0306b52f41f9252e160cea127258eaaab4026b95b304e432d38d3855cc0aae6","kind":"payout_line","order_id":"ORD-5004","party":"quarryfield","prev_hash":"e909cb2377e00536fcd2cbe70287dafe27282a30c6ccf1c9860be689c6cd1345","seq":93}
++{"amount_cents":1450,"charged_at":"2026-05-11","hash":"94a7132684e5687e8c942c2f3c79c8738e4601e2b590d10f8d99ad52196ddec4","kind":"charge","order_id":"ORD-5017","party":"","prev_hash":"b0306b52f41f9252e160cea127258eaaab4026b95b304e432d38d3855cc0aae6","seq":94}
++{"amount_cents":1414,"charged_at":"2026-05-11","hash":"aee27cde76609e59704c041a9f60229d36cbc69bbdaaef6764e90d78838aeb95","kind":"payout_line","order_id":"ORD-5017","party":"northmill","prev_hash":"94a7132684e5687e8c942c2f3c79c8738e4601e2b590d10f8d99ad52196ddec4","seq":95}
++{"amount_cents":36,"charged_at":"2026-05-11","hash":"901b1044ce821f8ce1a0077e42e3c4fb899782ee322610a29f05145fdd9ec802","kind":"payout_line","order_id":"ORD-5017","party":"platform","prev_hash":"aee27cde76609e59704c041a9f60229d36cbc69bbdaaef6764e90d78838aeb95","seq":96}
++{"amount_cents":1548,"charged_at":"2026-05-12","hash":"91305ddd8149e3f278425b452f84c10e8218f37c86a4d1254ec35ca96472a09a","kind":"charge","order_id":"ORD-5012","party":"","prev_hash":"901b1044ce821f8ce1a0077e42e3c4fb899782ee322610a29f05145fdd9ec802","seq":97}
++{"amount_cents":1548,"charged_at":"2026-05-12","hash":"d1546d362e6d8c0c304b1ddeb355d058a5bbbce1405afe0d421bc944cb94a7ac","kind":"refund_line","order_id":"ORD-5012","party":"PLANTER-4IN","prev_hash":"91305ddd8149e3f278425b452f84c10e8218f37c86a4d1254ec35ca96472a09a","seq":98}
++{"amount_cents":999,"charged_at":"2026-05-14","hash":"debbed6b6a79a2c26dad431985cc2fae84a5993b66abf4c60048f51418d5e33c","kind":"charge","order_id":"ORD-5002","party":"","prev_hash":"d1546d362e6d8c0c304b1ddeb355d058a5bbbce1405afe0d421bc944cb94a7ac","seq":99}
++{"amount_cents":364,"charged_at":"2026-05-14","hash":"1ad8db27886fc8c4da3ba6d82c4bc75b0cecf81e0bb4bec011025056cae6ab82","kind":"refund_line","order_id":"ORD-5002","party":"MUG-CLASSIC","prev_hash":"debbed6b6a79a2c26dad431985cc2fae84a5993b66abf4c60048f51418d5e33c","seq":100}
++{"amount_cents":635,"charged_at":"2026-05-14","hash":"0f5a5f5f090c87580cca4dc55bf17bfdc94b8819a41b0149b155da47173b9dd8","kind":"refund_line","order_id":"ORD-5002","party":"PEBBLE-SET","prev_hash":"1ad8db27886fc8c4da3ba6d82c4bc75b0cecf81e0bb4bec011025056cae6ab82","seq":101}
++{"amount_cents":799,"charged_at":"2026-05-14","hash":"c4fa7631f8ec0bf96ff9d4bda134a196463a7ed2eb2c915ea71389b9bff1e720","kind":"charge","order_id":"ORD-5009","party":"","prev_hash":"0f5a5f5f090c87580cca4dc55bf17bfdc94b8819a41b0149b155da47173b9dd8","seq":102}
++{"amount_cents":779,"charged_at":"2026-05-14","hash":"2189684ad4f72e334873706495ae9cfed7e086fdbade1dbd564e8429fc35ac5e","kind":"payout_line","order_id":"ORD-5009","party":"fernco","prev_hash":"c4fa7631f8ec0bf96ff9d4bda134a196463a7ed2eb2c915ea71389b9bff1e720","seq":103}
++{"amount_cents":20,"charged_at":"2026-05-14","hash":"2a625aa1576a8f61e86e6a6e16f166553fc7cd3bf1f3b56da3d11e649ea89806","kind":"payout_line","order_id":"ORD-5009","party":"platform","prev_hash":"2189684ad4f72e334873706495ae9cfed7e086fdbade1dbd564e8429fc35ac5e","seq":104}
++{"amount_cents":3003,"charged_at":"2026-05-21","hash":"49c78578616b9ebe04ff20d3806e09727d887f9bb7598773f3cc61e4bf00d163","kind":"charge","order_id":"ORD-5011","party":"","prev_hash":"2a625aa1576a8f61e86e6a6e16f166553fc7cd3bf1f3b56da3d11e649ea89806","seq":105}
++{"amount_cents":2928,"charged_at":"2026-05-21","hash":"b8d471ebbb02bfb24a2614594ecfba0ba46f0825758f29e97557a5a3325c4163","kind":"payout_line","order_id":"ORD-5011","party":"fernco","prev_hash":"49c78578616b9ebe04ff20d3806e09727d887f9bb7598773f3cc61e4bf00d163","seq":106}
++{"amount_cents":75,"charged_at":"2026-05-21","hash":"02bca4c4825074bc60608316c126c434937ade58034e2c6b5cea8c9040d98806","kind":"payout_line","order_id":"ORD-5011","party":"platform","prev_hash":"b8d471ebbb02bfb24a2614594ecfba0ba46f0825758f29e97557a5a3325c4163","seq":107}
++{"amount_cents":1700,"charged_at":"2026-05-22","hash":"424e808eb056a2083617a42201ac53072829986e06af030b3c3116addfdcd01f","kind":"charge","order_id":"ORD-5016","party":"","prev_hash":"02bca4c4825074bc60608316c126c434937ade58034e2c6b5cea8c9040d98806","seq":108}
++{"amount_cents":1658,"charged_at":"2026-05-22","hash":"a25c50474180a3c2932fb49364e01aa7ff7c07f09d17b5fef8824ab1873b9a1d","kind":"payout_line","order_id":"ORD-5016","party":"atlaswares","prev_hash":"424e808eb056a2083617a42201ac53072829986e06af030b3c3116addfdcd01f","seq":109}
++{"amount_cents":42,"charged_at":"2026-05-22","hash":"6eaf219f4bbc75953b05fa4bee57b22e8129a0618f35ef723c781afaf38c305f","kind":"payout_line","order_id":"ORD-5016","party":"platform","prev_hash":"a25c50474180a3c2932fb49364e01aa7ff7c07f09d17b5fef8824ab1873b9a1d","seq":110}
++{"amount_cents":3899,"charged_at":"2026-05-24","hash":"2015a587fc1515ada8ab413b80ea23e1063868b22bfeb68fe3903827ec68b4e3","kind":"charge","order_id":"ORD-5015","party":"","prev_hash":"6eaf219f4bbc75953b05fa4bee57b22e8129a0618f35ef723c781afaf38c305f","seq":111}
++{"amount_cents":390,"charged_at":"2026-05-24","hash":"7fe5821bdbe9b497a86ff01e6a2e350d96eb33d432e6806b4ccd5aea3790fd56","kind":"payout_line","order_id":"ORD-5015","party":"fernco","prev_hash":"2015a587fc1515ada8ab413b80ea23e1063868b22bfeb68fe3903827ec68b4e3","seq":112}
++{"amount_cents":97,"charged_at":"2026-05-24","hash":"e39f8d12d2c20c9866c8bfea3ed8fee3c8992b5abb275cff47ce7ef89f2aaa84","kind":"payout_line","order_id":"ORD-5015","party":"platform","prev_hash":"7fe5821bdbe9b497a86ff01e6a2e350d96eb33d432e6806b4ccd5aea3790fd56","seq":113}
++{"amount_cents":3412,"charged_at":"2026-05-24","hash":"2080a3cb35178c378252de5bbf3423ffff7929c52d9aaac375a1162ddd35f679","kind":"payout_line","order_id":"ORD-5015","party":"quarryfield","prev_hash":"e39f8d12d2c20c9866c8bfea3ed8fee3c8992b5abb275cff47ce7ef89f2aaa84","seq":114}
++{"charge_cents":32199,"hash":"be429b4b6fdfa480a95dfff17067f7e4a29d8df369cde612f626eda7a7cec138","kind":"month_close","line_count":54,"month":"2026-05","payout_cents":29652,"prev_hash":"2080a3cb35178c378252de5bbf3423ffff7929c52d9aaac375a1162ddd35f679","refund_cents":2547,"seq":115}
++{"amount_cents":3202,"charged_at":"2026-06-03","hash":"020c25f32cc2e3dbd4bdc5e5cf1d1a8e7b4bc324e3401bca0e60870697d94a36","kind":"charge","order_id":"ORD-6012","party":"","prev_hash":"be429b4b6fdfa480a95dfff17067f7e4a29d8df369cde612f626eda7a7cec138","seq":116}
++{"amount_cents":3122,"charged_at":"2026-06-03","hash":"ff391dd73070cb47e9ef0476dd428809ecd2c7f0cb1b8cdbaace24859e626673","kind":"payout_line","order_id":"ORD-6012","party":"fernco","prev_hash":"020c25f32cc2e3dbd4bdc5e5cf1d1a8e7b4bc324e3401bca0e60870697d94a36","seq":117}
++{"amount_cents":80,"charged_at":"2026-06-03","hash":"d938ab30afe837b4041848dbe022a69f300181ac08eb746420dbfcd9dcc13f0e","kind":"payout_line","order_id":"ORD-6012","party":"platform","prev_hash":"ff391dd73070cb47e9ef0476dd428809ecd2c7f0cb1b8cdbaace24859e626673","seq":118}
++{"amount_cents":3999,"charged_at":"2026-06-04","hash":"b232a91e6791d42d3330fc47ac0594323c8d9530dc927cd3f45f0274324087b2","kind":"charge","order_id":"ORD-6001","party":"","prev_hash":"d938ab30afe837b4041848dbe022a69f300181ac08eb746420dbfcd9dcc13f0e","seq":119}
++{"amount_cents":290,"charged_at":"2026-06-04","hash":"8b59c40b2999012b422e6181f57db0bf7097ac06f89c3d731557273c405efe70","kind":"payout_line","order_id":"ORD-6001","party":"brightloom","prev_hash":"b232a91e6791d42d3330fc47ac0594323c8d9530dc927cd3f45f0274324087b2","seq":120}
++{"amount_cents":241,"charged_at":"2026-06-04","hash":"ac25681e9dcac89a78ccbfcaa9a2248f9a02f17e414a1492865d848fcd46d660","kind":"payout_line","order_id":"ORD-6001","party":"northmill","prev_hash":"8b59c40b2999012b422e6181f57db0bf7097ac06f89c3d731557273c405efe70","seq":121}
++{"amount_cents":100,"charged_at":"2026-06-04","hash":"24f629a17b570e3c18f09c04eef7365a7835e03e3c13b8d3cfafd4eed45dad48","kind":"payout_line","order_id":"ORD-6001","party":"platform","prev_hash":"ac25681e9dcac89a78ccbfcaa9a2248f9a02f17e414a1492865d848fcd46d660","seq":122}
++{"amount_cents":3368,"charged_at":"2026-06-04","hash":"e226d9710c0e48b3ec03aafce2286bfeeb4f857ab0596e6829421ab235b4dca9","kind":"payout_line","order_id":"ORD-6001","party":"quarryfield","prev_hash":"24f629a17b570e3c18f09c04eef7365a7835e03e3c13b8d3cfafd4eed45dad48","seq":123}
++{"amount_cents":1049,"charged_at":"2026-06-05","hash":"85065edb527eb4ff7875ff0ebf4f672cab60de9ec51552f1faf9b5eafcd5d412","kind":"charge","order_id":"ORD-6008","party":"","prev_hash":"e226d9710c0e48b3ec03aafce2286bfeeb4f857ab0596e6829421ab235b4dca9","seq":124}
++{"amount_cents":461,"charged_at":"2026-06-05","hash":"ca02904c893cf68e7ef893a0e83aecdbd40d792a1e7fe3d0d2b23bc1610764c3","kind":"refund_line","order_id":"ORD-6008","party":"CANDLE-3OZ","prev_hash":"85065edb527eb4ff7875ff0ebf4f672cab60de9ec51552f1faf9b5eafcd5d412","seq":125}
++{"amount_cents":588,"charged_at":"2026-06-05","hash":"137d416aae8221a2d219920c8b9f85865ac77a0d69a6bbdfe7a77cc0567b38c3","kind":"refund_line","order_id":"ORD-6008","party":"PEBBLE-SET","prev_hash":"ca02904c893cf68e7ef893a0e83aecdbd40d792a1e7fe3d0d2b23bc1610764c3","seq":126}
++{"amount_cents":2151,"charged_at":"2026-06-07","hash":"588dafa1dd2c41c3e8ed0cdbbbc67c1c1c0a209175ed1c985b821d97dea0a36b","kind":"charge","order_id":"ORD-6006","party":"","prev_hash":"137d416aae8221a2d219920c8b9f85865ac77a0d69a6bbdfe7a77cc0567b38c3","seq":127}
++{"amount_cents":54,"charged_at":"2026-06-07","hash":"e4e55a2f0d35c3dfbdf39ba9746a30b15bd2e5b3650c1815a4be44240e914e9a","kind":"payout_line","order_id":"ORD-6006","party":"platform","prev_hash":"588dafa1dd2c41c3e8ed0cdbbbc67c1c1c0a209175ed1c985b821d97dea0a36b","seq":128}
++{"amount_cents":2097,"charged_at":"2026-06-07","hash":"0a0cfd2903abc2148c7f563a9d7c628cf2caf02b1525d4ae3c055ff96b1cf372","kind":"payout_line","order_id":"ORD-6006","party":"quarryfield","prev_hash":"e4e55a2f0d35c3dfbdf39ba9746a30b15bd2e5b3650c1815a4be44240e914e9a","seq":129}
++{"amount_cents":1802,"charged_at":"2026-06-07","hash":"602515cdc15e49e22545c398445285af5265a6eccb70f23d5c49965e1a0086ef","kind":"charge","order_id":"ORD-6017","party":"","prev_hash":"0a0cfd2903abc2148c7f563a9d7c628cf2caf02b1525d4ae3c055ff96b1cf372","seq":130}
++{"amount_cents":1802,"charged_at":"2026-06-07","hash":"8d0307cb8fc2ef3a27e5648df49a5a0b65d1c832ccb48c714aace597b5c37183","kind":"refund_line","order_id":"ORD-6017","party":"CARAFE-GLASS","prev_hash":"602515cdc15e49e22545c398445285af5265a6eccb70f23d5c49965e1a0086ef","seq":131}
++{"amount_cents":1601,"charged_at":"2026-06-11","hash":"a3acccbd0641b4fc18ea4b6079c787475e750e47c21e31b9f9cc5fffdfb2c25a","kind":"charge","order_id":"ORD-6004","party":"","prev_hash":"8d0307cb8fc2ef3a27e5648df49a5a0b65d1c832ccb48c714aace597b5c37183","seq":132}
++{"amount_cents":1561,"charged_at":"2026-06-11","hash":"51660c29c090370d81ba27e28b6579d7b4200b9ef56c0789e5ac7236a26171f9","kind":"payout_line","order_id":"ORD-6004","party":"fernco","prev_hash":"a3acccbd0641b4fc18ea4b6079c787475e750e47c21e31b9f9cc5fffdfb2c25a","seq":133}
++{"amount_cents":40,"charged_at":"2026-06-11","hash":"d43d56f62235e4cfdca00e35993ba5a2a807ec7e25e56694bd95613b5236e891","kind":"payout_line","order_id":"ORD-6004","party":"platform","prev_hash":"51660c29c090370d81ba27e28b6579d7b4200b9ef56c0789e5ac7236a26171f9","seq":134}
++{"amount_cents":1450,"charged_at":"2026-06-15","hash":"36f06730cf14ec4feecb0dabab08be4724f924ec508726696b54ac1d88e69b22","kind":"charge","order_id":"ORD-6013","party":"","prev_hash":"d43d56f62235e4cfdca00e35993ba5a2a807ec7e25e56694bd95613b5236e891","seq":135}
++{"amount_cents":1414,"charged_at":"2026-06-15","hash":"409da3d3d471ed4536431f16df0f21aa3e48b93a0a66ce5c6cf788208c7f9721","kind":"payout_line","order_id":"ORD-6013","party":"northmill","prev_hash":"36f06730cf14ec4feecb0dabab08be4724f924ec508726696b54ac1d88e69b22","seq":136}
++{"amount_cents":36,"charged_at":"2026-06-15","hash":"3622dc7cf820d3427c1bd18a4a4ceb3e49ee17393437b6cc8eda53945be54c06","kind":"payout_line","order_id":"ORD-6013","party":"platform","prev_hash":"409da3d3d471ed4536431f16df0f21aa3e48b93a0a66ce5c6cf788208c7f9721","seq":137}
++{"amount_cents":7399,"charged_at":"2026-06-16","hash":"09c7c1429a9fc84e40cafad7d2e77c4f500f5eac50f6ffdf350ea04aa1b4435d","kind":"charge","order_id":"ORD-6009","party":"","prev_hash":"3622dc7cf820d3427c1bd18a4a4ceb3e49ee17393437b6cc8eda53945be54c06","seq":138}
++{"amount_cents":2186,"charged_at":"2026-06-16","hash":"58419e64fa05cde24347ea7908e3e60f8c85acb4e49b6e748131685071b600f5","kind":"refund_line","order_id":"ORD-6009","party":"BOARD-SLATE","prev_hash":"09c7c1429a9fc84e40cafad7d2e77c4f500f5eac50f6ffdf350ea04aa1b4435d","seq":139}
++{"amount_cents":3773,"charged_at":"2026-06-16","hash":"e687e08e02824c27953fb8ab8c525acd37fb1578d2458740880a59431e1c58b2","kind":"refund_line","order_id":"ORD-6009","party":"CARAFE-GLASS","prev_hash":"58419e64fa05cde24347ea7908e3e60f8c85acb4e49b6e748131685071b600f5","seq":140}
++{"amount_cents":1440,"charged_at":"2026-06-16","hash":"ae352fa3da1db9586d86c9b943e1f661814f6514a2d482f574275410fdd76b4f","kind":"refund_line","order_id":"ORD-6009","party":"TRAY-WALNUT","prev_hash":"e687e08e02824c27953fb8ab8c525acd37fb1578d2458740880a59431e1c58b2","seq":141}
++{"amount_cents":1099,"charged_at":"2026-06-17","hash":"c844634226475075037c8a0e3bb3da717fe8e3faa6d4f6d4e82dfd21f38a4d6f","kind":"charge","order_id":"ORD-6015","party":"","prev_hash":"ae352fa3da1db9586d86c9b943e1f661814f6514a2d482f574275410fdd76b4f","seq":142}
++{"amount_cents":390,"charged_at":"2026-06-17","hash":"c68623d8d24a43bcced5413f0614ce2473d686af98743b0f7bd0e458a6926e0e","kind":"payout_line","order_id":"ORD-6015","party":"fernco","prev_hash":"c844634226475075037c8a0e3bb3da717fe8e3faa6d4f6d4e82dfd21f38a4d6f","seq":143}
++{"amount_cents":27,"charged_at":"2026-06-17","hash":"056c9b3a7a6c880b525e7db1538abfe19ec12d9ddac28a67135c4d7d625143e0","kind":"payout_line","order_id":"ORD-6015","party":"platform","prev_hash":"c68623d8d24a43bcced5413f0614ce2473d686af98743b0f7bd0e458a6926e0e","seq":144}
++{"amount_cents":682,"charged_at":"2026-06-17","hash":"62a90a3f4db77ad1ac07f3aea71f553d83d839119607a61423acdd09632cdb2f","kind":"payout_line","order_id":"ORD-6015","party":"quarryfield","prev_hash":"056c9b3a7a6c880b525e7db1538abfe19ec12d9ddac28a67135c4d7d625143e0","seq":145}
++{"amount_cents":1100,"charged_at":"2026-06-18","hash":"ee936d4c35d0f9c3f538e534e25d3e8d3c303b0d545b5ef85104a9ecafbc8d33","kind":"charge","order_id":"ORD-6014","party":"","prev_hash":"62a90a3f4db77ad1ac07f3aea71f553d83d839119607a61423acdd09632cdb2f","seq":146}
++{"amount_cents":294,"charged_at":"2026-06-18","hash":"119fdc26e369f8bf0dbdb7b944eb2336e893e69164597008c8200cc563d2f891","kind":"payout_line","order_id":"ORD-6014","party":"brightloom","prev_hash":"ee936d4c35d0f9c3f538e534e25d3e8d3c303b0d545b5ef85104a9ecafbc8d33","seq":147}
++{"amount_cents":779,"charged_at":"2026-06-18","hash":"c8a20eb16dd726290aef8819d1f69c94f42f3e02a3720d09ba9a4a8d330e23da","kind":"payout_line","order_id":"ORD-6014","party":"fernco","prev_hash":"119fdc26e369f8bf0dbdb7b944eb2336e893e69164597008c8200cc563d2f891","seq":148}
++{"amount_cents":27,"charged_at":"2026-06-18","hash":"819ccf8b745ac480f617a4a7a05f7d075846fad5a6c32a18949992bd7d1089d2","kind":"payout_line","order_id":"ORD-6014","party":"platform","prev_hash":"c8a20eb16dd726290aef8819d1f69c94f42f3e02a3720d09ba9a4a8d330e23da","seq":149}
++{"amount_cents":800,"charged_at":"2026-06-19","hash":"79ae56eefd9b612d50906a6135cc43125ad188f82ce5a819ed1a6bc1bb53e8f1","kind":"charge","order_id":"ORD-6005","party":"","prev_hash":"819ccf8b745ac480f617a4a7a05f7d075846fad5a6c32a18949992bd7d1089d2","seq":150}
++{"amount_cents":780,"charged_at":"2026-06-19","hash":"24bfdd616bec1e4578bc14826e15ecde78aa4aa3d427edaa80061da542917829","kind":"payout_line","order_id":"ORD-6005","party":"atlaswares","prev_hash":"79ae56eefd9b612d50906a6135cc43125ad188f82ce5a819ed1a6bc1bb53e8f1","seq":151}
++{"amount_cents":20,"charged_at":"2026-06-19","hash":"e867e1de96294b7be2afbe5b3317df5db627711fb1cd1fc1686934388633cbed","kind":"payout_line","order_id":"ORD-6005","party":"platform","prev_hash":"24bfdd616bec1e4578bc14826e15ecde78aa4aa3d427edaa80061da542917829","seq":152}
++{"amount_cents":2148,"charged_at":"2026-06-19","hash":"e6877bb01ca1e46474c642ad579f2ca9b64fdc4335080d940d3fc04f981c67b8","kind":"charge","order_id":"ORD-6007","party":"","prev_hash":"e867e1de96294b7be2afbe5b3317df5db627711fb1cd1fc1686934388633cbed","seq":153}
++{"amount_cents":1121,"charged_at":"2026-06-19","hash":"28f3959da03c280eec105dbfffc61eaf2c65406848fddf2ed1f2537e25a78b59","kind":"refund_line","order_id":"ORD-6007","party":"CANDLE-8OZ","prev_hash":"e6877bb01ca1e46474c642ad579f2ca9b64fdc4335080d940d3fc04f981c67b8","seq":154}
++{"amount_cents":374,"charged_at":"2026-06-19","hash":"41dc3d811863a27289eae4fed07a93efd531b0d262f33e6dee686956ebebdb9d","kind":"refund_line","order_id":"ORD-6007","party":"MUG-DINER","prev_hash":"28f3959da03c280eec105dbfffc61eaf2c65406848fddf2ed1f2537e25a78b59","seq":155}
++{"amount_cents":653,"charged_at":"2026-06-19","hash":"f0b0a035cb9840f6603b6d1fc4ded161fb2fb1b332fc44408e72ae521c15cbdd","kind":"refund_line","order_id":"ORD-6007","party":"PEBBLE-SET","prev_hash":"41dc3d811863a27289eae4fed07a93efd531b0d262f33e6dee686956ebebdb9d","seq":156}
++{"amount_cents":2150,"charged_at":"2026-06-20","hash":"d4c404c6cf8457d00018ad3a1f84d62202b133af23dd0c6d06eced7598af8ffc","kind":"charge","order_id":"ORD-6016","party":"","prev_hash":"f0b0a035cb9840f6603b6d1fc4ded161fb2fb1b332fc44408e72ae521c15cbdd","seq":157}
++{"amount_cents":535,"charged_at":"2026-06-20","hash":"ce7b13e0c64339b3bca9cdca14a63f7dab23ecbec89e6d6cb5df8e46f9d7aecc","kind":"payout_line","order_id":"ORD-6016","party":"brightloom","prev_hash":"d4c404c6cf8457d00018ad3a1f84d62202b133af23dd0c6d06eced7598af8ffc","seq":158}
++{"amount_cents":1561,"charged_at":"2026-06-20","hash":"56b07b2e8987c1d15b4d6b06d491e82d0fe64f96d14e4c44bc3ff74d9a4915a3","kind":"payout_line","order_id":"ORD-6016","party":"fernco","prev_hash":"ce7b13e0c64339b3bca9cdca14a63f7dab23ecbec89e6d6cb5df8e46f9d7aecc","seq":159}
++{"amount_cents":54,"charged_at":"2026-06-20","hash":"473c196d70926d56cb2b4199158c34bec1f1a1e2628f7a4027de6d88d488edf7","kind":"payout_line","order_id":"ORD-6016","party":"platform","prev_hash":"56b07b2e8987c1d15b4d6b06d491e82d0fe64f96d14e4c44bc3ff74d9a4915a3","seq":160}
++{"amount_cents":3853,"charged_at":"2026-06-21","hash":"f4da78fbb7464c41b3ad13aac5d2d5fa192f7a8d41939112231db70b25c843ab","kind":"charge","order_id":"ORD-6011","party":"","prev_hash":"473c196d70926d56cb2b4199158c34bec1f1a1e2628f7a4027de6d88d488edf7","seq":161}
++{"amount_cents":1484,"charged_at":"2026-06-21","hash":"ca362ad6aa908bae670779d86334bb10bcebacf4dfee317346179e797f08a41d","kind":"payout_line","order_id":"ORD-6011","party":"fernco","prev_hash":"f4da78fbb7464c41b3ad13aac5d2d5fa192f7a8d41939112231db70b25c843ab","seq":162}
++{"amount_cents":232,"charged_at":"2026-06-21","hash":"5c985cd23a8b43ca78e2e725ef5775375463cd8c839d727ade228d8ed9ecf686","kind":"payout_line","order_id":"ORD-6011","party":"northmill","prev_hash":"ca362ad6aa908bae670779d86334bb10bcebacf4dfee317346179e797f08a41d","seq":163}
++{"amount_cents":96,"charged_at":"2026-06-21","hash":"cdfb3bb69568ecd4923f567f5405516f8b0fb39e1fc2ec921c1242b9067c6275","kind":"payout_line","order_id":"ORD-6011","party":"platform","prev_hash":"5c985cd23a8b43ca78e2e725ef5775375463cd8c839d727ade228d8ed9ecf686","seq":164}
++{"amount_cents":2041,"charged_at":"2026-06-21","hash":"f7a9b47a60b5dc4c03397ef38f56932156415ccb22df09047a745ae82ec46cec","kind":"payout_line","order_id":"ORD-6011","party":"quarryfield","prev_hash":"cdfb3bb69568ecd4923f567f5405516f8b0fb39e1fc2ec921c1242b9067c6275","seq":165}
++{"amount_cents":3349,"charged_at":"2026-06-25","hash":"3fdfeb37461c9d5261012dc36df4b91ef6c07d59d8b649fb87a44fe8fa27a764","kind":"charge","order_id":"ORD-6010","party":"","prev_hash":"f7a9b47a60b5dc4c03397ef38f56932156415ccb22df09047a745ae82ec46cec","seq":166}
++{"amount_cents":84,"charged_at":"2026-06-25","hash":"f04068560d3f78f5949ec331edec0c4a72d8e2222a4d78a4e10808ca9bcff271","kind":"payout_line","order_id":"ORD-6010","party":"platform","prev_hash":"3fdfeb37461c9d5261012dc36df4b91ef6c07d59d8b649fb87a44fe8fa27a764","seq":167}
++{"amount_cents":3265,"charged_at":"2026-06-25","hash":"54ba83cb761cd383c17c83973b843ab85cadd078b855ceb8cd2908f8f682d860","kind":"payout_line","order_id":"ORD-6010","party":"quarryfield","prev_hash":"f04068560d3f78f5949ec331edec0c4a72d8e2222a4d78a4e10808ca9bcff271","seq":168}
++{"charge_cents":37152,"hash":"270c7fec1e51fd54467071a85552438a54fb1b7b10d51a0a1a837e8a6cfed924","kind":"month_close","line_count":53,"month":"2026-06","payout_cents":24754,"prev_hash":"54ba83cb761cd383c17c83973b843ab85cadd078b855ceb8cd2908f8f682d860","refund_cents":12398,"seq":169}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/reconciliation/2026-04.csv b/exports/reconciliation/2026-04.csv
+--- a/exports/reconciliation/2026-04.csv	1969-12-31 16:00:00
++++ b/exports/reconciliation/2026-04.csv	2026-07-20 17:19:15
+@@ -0,0 +1,19 @@
++order_id,txn_id,status,internal_cents,bank_cents,delta_cents
++ORD-4001,T-9102,matched,1000,1000,0
++ORD-4002,T-9103,matched,1999,1999,0
++ORD-4003,T-9107,matched,1000,1000,0
++ORD-4004,T-9108,amount_mismatch,2201,2208,-7
++ORD-4005,T-9109,matched,1748,1748,0
++ORD-4006,,missing_bank,250,,
++ORD-4007,T-9113,matched,1149,1149,0
++ORD-4008,T-9115,matched,1899,1899,0
++ORD-4009,T-9110,matched,1897,1897,0
++ORD-4010,T-9105,matched,251,251,0
++ORD-4011,T-9101,matched,1603,1603,0
++ORD-4012,T-9106,matched,7098,7098,0
++ORD-4013,T-9104,matched,549,549,0
++ORD-4014,T-9116,late_settlement,1199,1199,0
++ORD-4015,T-9114,matched,3402,3402,0
++ORD-4016,T-9117,matched,5401,5401,0
++ORD-4017,T-9111,matched,1949,1949,0
++,T-9112,unknown_ref,,2350,
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/reconciliation/2026-05.csv b/exports/reconciliation/2026-05.csv
+--- a/exports/reconciliation/2026-05.csv	1969-12-31 16:00:00
++++ b/exports/reconciliation/2026-05.csv	2026-07-20 17:19:15
+@@ -0,0 +1,19 @@
++order_id,txn_id,status,internal_cents,bank_cents,delta_cents
++ORD-5001,T-9122,matched,1803,1803,0
++ORD-5002,T-9130,matched,999,999,0
++ORD-5004,T-9128,matched,3499,3499,0
++ORD-5005,T-9120,matched,750,750,0
++ORD-5006,T-9124,matched,303,303,0
++ORD-5007,T-9118,matched,1899,1899,0
++ORD-5008,T-9125,amount_mismatch,2299,2199,100
++ORD-5009,,missing_bank,799,,
++ORD-5010,T-9119,matched,2151,2151,0
++ORD-5011,T-9132,matched,3003,3003,0
++ORD-5012,T-9129,matched,1548,1548,0
++ORD-5013,T-9123,duplicate,2348,2448,-100
++ORD-5013,T-9126,matched,2348,2348,0
++ORD-5014,T-9127,matched,3749,3749,0
++ORD-5015,T-9134,matched,3899,3899,0
++ORD-5016,T-9133,matched,1700,1700,0
++ORD-5017,T-9131,matched,1450,1450,0
++,T-9121,unknown_ref,,1210,
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/reconciliation/2026-06.csv b/exports/reconciliation/2026-06.csv
+--- a/exports/reconciliation/2026-06.csv	1969-12-31 16:00:00
++++ b/exports/reconciliation/2026-06.csv	2026-07-20 17:19:15
+@@ -0,0 +1,17 @@
++order_id,txn_id,status,internal_cents,bank_cents,delta_cents
++ORD-6001,T-9135,matched,3999,3999,0
++ORD-6004,T-9140,matched,1601,1601,0
++ORD-6005,T-9150,late_settlement,800,800,0
++ORD-6006,T-9138,matched,2151,2151,0
++ORD-6007,T-9145,matched,2148,2148,0
++ORD-6008,T-9139,matched,1049,1049,0
++ORD-6009,T-9142,matched,7399,7399,0
++ORD-6010,T-9149,matched,3349,3349,0
++ORD-6011,T-9147,matched,3853,3853,0
++ORD-6012,T-9136,matched,3202,3202,0
++ORD-6013,T-9141,matched,1450,1450,0
++ORD-6014,T-9143,amount_mismatch,1100,1101,-1
++ORD-6015,T-9144,matched,1099,1099,0
++ORD-6016,T-9146,matched,2150,2150,0
++ORD-6016,T-9148,duplicate,2150,2150,0
++ORD-6017,T-9137,matched,1802,1802,0
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/exports/reconciliation/summary.json b/exports/reconciliation/summary.json
+--- a/exports/reconciliation/summary.json	1969-12-31 16:00:00
++++ b/exports/reconciliation/summary.json	2026-07-20 17:19:15
+@@ -0,0 +1,31 @@
++{
++  "months": {
++    "2026-04": {
++      "amount_mismatch": 1,
++      "duplicate": 0,
++      "late_settlement": 1,
++      "matched": 14,
++      "missing_bank": 1,
++      "net_delta_cents": -7,
++      "unknown_ref": 1
++    },
++    "2026-05": {
++      "amount_mismatch": 1,
++      "duplicate": 1,
++      "late_settlement": 0,
++      "matched": 14,
++      "missing_bank": 1,
++      "net_delta_cents": 0,
++      "unknown_ref": 1
++    },
++    "2026-06": {
++      "amount_mismatch": 1,
++      "duplicate": 1,
++      "late_settlement": 1,
++      "matched": 13,
++      "missing_bank": 0,
++      "net_delta_cents": -1,
++      "unknown_ref": 0
++    }
++  }
++}
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/fee_review.py b/scripts/fee_review.py
+--- a/scripts/fee_review.py	1969-12-31 16:00:00
++++ b/scripts/fee_review.py	2026-07-20 17:15:35
+@@ -0,0 +1,257 @@
++"""Q2 fee-rules review for the marketplace close package.
++
++Joins fulfilled orders (services/orders/data/orders.json) against the
++authoritative recorded charges (exports/charges.csv) and evaluates the
++proposed fee rules (services/orders/data/fee_rules.json) against them,
++writing one review CSV per month to exports/fee_review/<YYYY-MM>.csv.
++
++Usage:
++    python scripts/fee_review.py --from 2026-04 --to 2026-06
++
++The recorded ``charged_cents``/``charged_at`` from charges.csv are
++authoritative and are never recomputed from order items (an order-level
++discount means item sums do not equal the charge).
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import sys
++from pathlib import Path
++
++sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
++
++from libs.money import Money
++from services.orders.models import Order
++from services.orders.repository import load_orders
++
++ROOT = Path(__file__).resolve().parent.parent
++CHARGES_PATH = ROOT / "exports" / "charges.csv"
++RULES_PATH = ROOT / "services" / "orders" / "data" / "fee_rules.json"
++DEFAULT_OUT_DIR = ROOT / "exports" / "fee_review"
++
++FIELDNAMES = ["order_id", "rule_id", "vendor", "fee_cents"]
++
++
++# ---------------------------------------------------------------------------
++# Loading
++# ---------------------------------------------------------------------------
++
++
++def load_charges(path: Path) -> dict[str, dict]:
++    """Load exports/charges.csv keyed by order_id."""
++    charges: dict[str, dict] = {}
++    with open(path, newline="") as f:
++        reader = csv.DictReader(f)
++        for row in reader:
++            charges[row["order_id"]] = row
++    return charges
++
++
++def load_rules(path: Path) -> list[dict]:
++    import json
++
++    return json.loads(path.read_text())
++
++
++# ---------------------------------------------------------------------------
++# Pure logic
++# ---------------------------------------------------------------------------
++
++
++def month_range(from_month: str, to_month: str) -> list[str]:
++    """Inclusive list of 'YYYY-MM' strings from from_month to to_month."""
++    start_y, start_m = (int(x) for x in from_month.split("-"))
++    end_y, end_m = (int(x) for x in to_month.split("-"))
++    months = []
++    y, m = start_y, start_m
++    while (y, m) <= (end_y, end_m):
++        months.append(f"{y:04d}-{m:02d}")
++        m += 1
++        if m > 12:
++            m = 1
++            y += 1
++    return months
++
++
++def vendor_goods_weights(order: Order) -> dict[str, int]:
++    """Per-vendor goods value (sum of price x qty), keyed in first-appearance order."""
++    totals: dict[str, Money] = {}
++    for item in order.items:
++        totals[item.vendor] = totals.get(item.vendor, Money(0)) + item.line_total
++    return {vendor: total.to_cents() for vendor, total in totals.items()}
++
++
++def rule_applies(rule: dict, order: Order, charged_at: str, charged_cents: int) -> bool:
++    """Whether every scope condition of ``rule`` holds for this order/charge."""
++    if not (rule["effective_from"] <= charged_at <= rule["effective_to"]):
++        return False
++
++    scope = rule.get("scope", {})
++
++    vendors = scope.get("vendors")
++    if vendors is not None:
++        order_vendors = {item.vendor for item in order.items}
++        if not order_vendors & set(vendors):
++            return False
++
++    sku_prefixes = scope.get("sku_prefixes")
++    if sku_prefixes is not None:
++        if not any(
++            item.sku.startswith(prefix) for item in order.items for prefix in sku_prefixes
++        ):
++            return False
++
++    min_order_cents = scope.get("min_order_cents")
++    if min_order_cents is not None:
++        if charged_cents < min_order_cents:
++            return False
++
++    return True
++
++
++def pick_winning_rule(rules: list[dict], order: Order, charged_at: str, charged_cents: int) -> dict | None:
++    """Highest priority applicable rule; ties broken by lexicographically smallest id."""
++    applicable = [r for r in rules if rule_applies(r, order, charged_at, charged_cents)]
++    if not applicable:
++        return None
++    return min(applicable, key=lambda r: (-r["priority"], r["id"]))
++
++
++def clamp_money(fee: Money, min_cents: int | None, max_cents: int | None) -> Money:
++    """Clamp fee into [min_cents, max_cents]; apply the upper bound then the lower bound."""
++    cents = fee.to_cents()
++    if max_cents is not None:
++        cents = min(cents, max_cents)
++    if min_cents is not None:
++        cents = max(cents, min_cents)
++    return Money.from_cents(cents)
++
++
++def compute_per_order_rows(rule: dict, order: Order, charged_cents: int) -> list[dict]:
++    """per_order mode: one clamped fee for the order, split across vendors by goods value."""
++    base = Money.from_cents(charged_cents)
++    fee = base.percent_of(rule["percent_bps"]) + Money.from_cents(rule.get("fixed_cents", 0))
++    fee = clamp_money(fee, rule.get("min_fee_cents"), rule.get("max_fee_cents"))
++
++    weights_map = vendor_goods_weights(order)
++    vendors = list(weights_map)
++    weights = [weights_map[v] for v in vendors]
++    shares = fee.allocate(weights)
++
++    rows = []
++    for vendor, share in zip(vendors, shares):
++        if share.to_cents() != 0:
++            rows.append(
++                {
++                    "order_id": order.id,
++                    "rule_id": rule["id"],
++                    "vendor": vendor,
++                    "fee_cents": share.to_cents(),
++                }
++            )
++    return rows
++
++
++def compute_per_vendor_rows(rule: dict, order: Order, charged_cents: int) -> list[dict]:
++    """per_vendor mode: attribute the charge to vendors, then fee each in-scope vendor."""
++    weights_map = vendor_goods_weights(order)
++    vendors = list(weights_map)
++    weights = [weights_map[v] for v in vendors]
++    charge_shares = Money.from_cents(charged_cents).allocate(weights)
++    attributed = dict(zip(vendors, charge_shares))
++
++    scope_vendors = rule.get("scope", {}).get("vendors")
++
++    rows = []
++    for vendor in vendors:
++        if scope_vendors is not None and vendor not in scope_vendors:
++            continue
++        share = attributed[vendor]
++        fee = share.percent_of(rule["percent_bps"]) + Money.from_cents(rule.get("fixed_cents", 0))
++        fee = clamp_money(fee, rule.get("min_fee_cents"), rule.get("max_fee_cents"))
++        if fee.to_cents() != 0:
++            rows.append(
++                {
++                    "order_id": order.id,
++                    "rule_id": rule["id"],
++                    "vendor": vendor,
++                    "fee_cents": fee.to_cents(),
++                }
++            )
++    return rows
++
++
++def build_month_rows(
++    orders: list[Order], charges: dict[str, dict], rules: list[dict], month: str
++) -> list[dict]:
++    """Build the fee-review rows for a single 'YYYY-MM' month."""
++    rows: list[dict] = []
++    for order in orders:
++        charge = charges.get(order.id)
++        if charge is None:
++            continue
++        if charge["status"] != "fulfilled":
++            continue
++        charged_at = charge["charged_at"]
++        if charged_at[:7] != month:
++            continue
++        charged_cents = int(charge["charged_cents"])
++
++        winner = pick_winning_rule(rules, order, charged_at, charged_cents)
++        if winner is None:
++            continue
++
++        if winner["mode"] == "per_order":
++            rows.extend(compute_per_order_rows(winner, order, charged_cents))
++        else:
++            rows.extend(compute_per_vendor_rows(winner, order, charged_cents))
++
++    rows.sort(key=lambda r: (r["order_id"], r["vendor"]))
++    return rows
++
++
++# ---------------------------------------------------------------------------
++# I/O
++# ---------------------------------------------------------------------------
++
++
++def write_month_csv(path: Path, rows: list[dict]) -> None:
++    with open(path, "w", newline="") as f:
++        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
++        writer.writeheader()
++        writer.writerows(rows)
++
++
++def run(from_month: str, to_month: str, out_dir: Path) -> None:
++    out_dir.mkdir(parents=True, exist_ok=True)
++    orders = load_orders()
++    charges = load_charges(CHARGES_PATH)
++    rules = load_rules(RULES_PATH)
++    for month in month_range(from_month, to_month):
++        rows = build_month_rows(orders, charges, rules, month)
++        write_month_csv(out_dir / f"{month}.csv", rows)
++
++
++# ---------------------------------------------------------------------------
++# CLI
++# ---------------------------------------------------------------------------
++
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(description="Q2 fee-rules review export")
++    parser.add_argument("--from", dest="from_month", required=True, help="YYYY-MM, inclusive")
++    parser.add_argument("--to", dest="to_month", required=True, help="YYYY-MM, inclusive")
++    parser.add_argument(
++        "--out-dir",
++        dest="out_dir",
++        default=str(DEFAULT_OUT_DIR),
++        help="Directory to write <YYYY-MM>.csv files into (default: exports/fee_review)",
++    )
++    args = parser.parse_args(argv)
++    run(args.from_month, args.to_month, Path(args.out_dir))
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/ledger_chain.py b/scripts/ledger_chain.py
+--- a/scripts/ledger_chain.py	1969-12-31 16:00:00
++++ b/scripts/ledger_chain.py	2026-07-20 17:15:25
+@@ -0,0 +1,342 @@
++#!/usr/bin/env python3
++"""Tamper-evident ledger hash chain for the marketplace quarter close.
++
++``build`` reads the (read-only) finance exports and writes one JSON object
++per line (JSONL): every recorded money line (charge, refund line, payout
++line) for the requested inclusive month range, plus a month-close summary
++record after each month's lines. Every record is chained by SHA-256 hash so
++that any later edit to any field of any record is detectable.
++
++``verify`` checks that chain from the file alone, with no access to the
++underlying order data.
++
++Usage (from repo root)::
++
++    python scripts/ledger_chain.py build --from 2026-04 --to 2026-06
++    python scripts/ledger_chain.py verify --file exports/ledger_chain.jsonl
++
++Money conventions: amounts are integer cents end to end. All monetary
++addition uses ``libs.money.Money``; ``from_cents``/``to_cents`` are used only
++at the CSV/JSON I/O boundary (see CLAUDE.md).
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import hashlib
++import json
++import sys
++from pathlib import Path
++
++sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
++
++from libs.money import Money
++
++GENESIS_PREV_HASH = "0" * 64
++
++# Kind ordering within a (charged_at, order_id) group. Plain string sort
++# already gives "charge" < "payout_line" < "refund_line", but the constant
++# documents the intent.
++_KIND_ORDER = {"charge": 0, "payout_line": 1, "refund_line": 2}
++
++
++def _month_of(charged_at: str) -> str:
++    return charged_at[:7]
++
++
++def _in_range(month: str, from_month: str, to_month: str) -> bool:
++    return from_month <= month <= to_month
++
++
++def load_charge_dates(charge_rows: list[dict]) -> dict:
++    """Map order_id -> charged_at, from raw charge CSV rows."""
++    return {row["order_id"]: row["charged_at"] for row in charge_rows}
++
++
++def build_money_lines(
++    charge_rows: list[dict],
++    refund_rows: list[dict],
++    payout_rows: list[dict],
++    from_month: str,
++    to_month: str,
++) -> list[dict]:
++    """Pure function: raw CSV rows -> sorted, in-range money line dicts.
++
++    Each returned dict has keys: charged_at, kind, order_id, party,
++    amount_cents. Refund/payout lines are joined to their order's
++    charged_at via charge_rows. Lines whose month falls outside
++    [from_month, to_month] are excluded.
++    """
++    charge_dates = load_charge_dates(charge_rows)
++    lines: list[dict] = []
++
++    for row in charge_rows:
++        charged_at = row["charged_at"]
++        month = _month_of(charged_at)
++        if not _in_range(month, from_month, to_month):
++            continue
++        lines.append(
++            {
++                "charged_at": charged_at,
++                "kind": "charge",
++                "order_id": row["order_id"],
++                "party": "",
++                "amount_cents": int(row["charged_cents"]),
++            }
++        )
++
++    for row in refund_rows:
++        order_id = row["order_id"]
++        charged_at = charge_dates[order_id]
++        month = _month_of(charged_at)
++        if not _in_range(month, from_month, to_month):
++            continue
++        lines.append(
++            {
++                "charged_at": charged_at,
++                "kind": "refund_line",
++                "order_id": order_id,
++                "party": row["sku"],
++                "amount_cents": int(row["amount_cents"]),
++            }
++        )
++
++    for row in payout_rows:
++        order_id = row["order_id"]
++        charged_at = charge_dates[order_id]
++        month = _month_of(charged_at)
++        if not _in_range(month, from_month, to_month):
++            continue
++        lines.append(
++            {
++                "charged_at": charged_at,
++                "kind": "payout_line",
++                "order_id": order_id,
++                "party": row["payee"],
++                "amount_cents": int(row["amount_cents"]),
++            }
++        )
++
++    lines.sort(key=lambda ln: (ln["charged_at"], ln["order_id"], ln["kind"], ln["party"]))
++    return lines
++
++
++def _months_in_range(from_month: str, to_month: str) -> list[str]:
++    """Inclusive list of "YYYY-MM" months from from_month to to_month."""
++    y, m = (int(p) for p in from_month.split("-"))
++    ey, em = (int(p) for p in to_month.split("-"))
++    months = []
++    while (y, m) <= (ey, em):
++        months.append(f"{y:04d}-{m:02d}")
++        m += 1
++        if m == 13:
++            m = 1
++            y += 1
++    return months
++
++
++def build_records(money_lines: list[dict], from_month: str, to_month: str) -> list[dict]:
++    """Pure function: sorted money lines -> full record list (unhashed).
++
++    Groups money lines by month (they must already be sorted globally, which
++    keeps each month's slice sorted too), and emits a month_close record
++    after each month's lines. Every month in the inclusive range appears,
++    even if empty. Records do not yet have seq/prev_hash/hash — those are
++    assigned by ``chain_records``.
++    """
++    by_month: dict[str, list[dict]] = {m: [] for m in _months_in_range(from_month, to_month)}
++    for line in money_lines:
++        by_month[_month_of(line["charged_at"])].append(line)
++
++    records: list[dict] = []
++    for month in _months_in_range(from_month, to_month):
++        month_lines = by_month[month]
++        charge_total = Money.from_cents(0)
++        refund_total = Money.from_cents(0)
++        payout_total = Money.from_cents(0)
++        for line in month_lines:
++            records.append(
++                {
++                    "kind": line["kind"],
++                    "order_id": line["order_id"],
++                    "party": line["party"],
++                    "amount_cents": line["amount_cents"],
++                    "charged_at": line["charged_at"],
++                }
++            )
++            amount = Money.from_cents(line["amount_cents"])
++            if line["kind"] == "charge":
++                charge_total = charge_total + amount
++            elif line["kind"] == "refund_line":
++                refund_total = refund_total + amount
++            elif line["kind"] == "payout_line":
++                payout_total = payout_total + amount
++
++        records.append(
++            {
++                "kind": "month_close",
++                "month": month,
++                "charge_cents": charge_total.to_cents(),
++                "refund_cents": refund_total.to_cents(),
++                "payout_cents": payout_total.to_cents(),
++                "line_count": len(month_lines),
++            }
++        )
++
++    return records
++
++
++def _hash_record(prev_hash: str, record_without_hash: dict) -> str:
++    serialized = json.dumps(record_without_hash, sort_keys=True, separators=(",", ":"))
++    return hashlib.sha256((prev_hash + serialized).encode("utf-8")).hexdigest()
++
++
++def chain_records(records: list[dict]) -> list[dict]:
++    """Assign seq/prev_hash/hash to an ordered list of records.
++
++    Money-line records get fields in the order: seq, charged_at, kind,
++    order_id, party, amount_cents, prev_hash, hash. Close records get: seq,
++    kind, month, charge_cents, refund_cents, payout_cents, line_count,
++    prev_hash, hash. Field order does not affect the hash (serialization is
++    sort_keys=True) but is kept explicit for readability.
++    """
++    chained: list[dict] = []
++    prev_hash = GENESIS_PREV_HASH
++    for seq, rec in enumerate(records):
++        if rec["kind"] == "month_close":
++            base = {
++                "seq": seq,
++                "kind": rec["kind"],
++                "month": rec["month"],
++                "charge_cents": rec["charge_cents"],
++                "refund_cents": rec["refund_cents"],
++                "payout_cents": rec["payout_cents"],
++                "line_count": rec["line_count"],
++                "prev_hash": prev_hash,
++            }
++        else:
++            base = {
++                "seq": seq,
++                "charged_at": rec["charged_at"],
++                "kind": rec["kind"],
++                "order_id": rec["order_id"],
++                "party": rec["party"],
++                "amount_cents": rec["amount_cents"],
++                "prev_hash": prev_hash,
++            }
++        h = _hash_record(prev_hash, base)
++        full = dict(base)
++        full["hash"] = h
++        chained.append(full)
++        prev_hash = h
++    return chained
++
++
++def serialize_records(records: list[dict]) -> str:
++    """Compact, sorted, newline-terminated JSONL text for a list of records."""
++    lines = [json.dumps(rec, sort_keys=True, separators=(",", ":")) for rec in records]
++    return "".join(line + "\n" for line in lines)
++
++
++def _read_csv(path: Path) -> list[dict]:
++    with path.open(newline="") as f:
++        return list(csv.DictReader(f))
++
++
++def build(
++    from_month: str,
++    to_month: str,
++    charges_path: Path,
++    refunds_path: Path,
++    payouts_path: Path,
++) -> list[dict]:
++    """Read CSVs and return the fully chained record list."""
++    charge_rows = _read_csv(charges_path)
++    refund_rows = _read_csv(refunds_path)
++    payout_rows = _read_csv(payouts_path)
++    money_lines = build_money_lines(charge_rows, refund_rows, payout_rows, from_month, to_month)
++    records = build_records(money_lines, from_month, to_month)
++    return chain_records(records)
++
++
++def verify_lines(lines: list[str]) -> tuple[bool, int]:
++    """Verify a chain given raw (still newline-free or not, either OK) JSONL lines.
++
++    Returns (ok, n) where n is either the count of good records (ok=True) or
++    the 0-based seq index of the first broken record (ok=False).
++    """
++    prev_hash = GENESIS_PREV_HASH
++    for i, line in enumerate(lines):
++        try:
++            rec = json.loads(line)
++        except (json.JSONDecodeError, TypeError):
++            return False, i
++
++        if not isinstance(rec, dict):
++            return False, i
++        if "hash" not in rec or "seq" not in rec or "prev_hash" not in rec:
++            return False, i
++        if rec.get("seq") != i:
++            return False, i
++        if rec.get("prev_hash") != prev_hash:
++            return False, i
++
++        claimed_hash = rec["hash"]
++        without_hash = {k: v for k, v in rec.items() if k != "hash"}
++        recomputed = _hash_record(prev_hash, without_hash)
++        if recomputed != claimed_hash:
++            return False, i
++
++        prev_hash = claimed_hash
++
++    return True, len(lines)
++
++
++def _cmd_build(args: argparse.Namespace) -> int:
++    repo_root = Path(__file__).resolve().parent.parent
++    out_path = Path(args.out) if args.out else repo_root / "exports" / "ledger_chain.jsonl"
++    charges_path = repo_root / "exports" / "charges.csv"
++    refunds_path = repo_root / "exports" / "refund_lines.csv"
++    payouts_path = repo_root / "exports" / "payout_lines.csv"
++
++    records = build(args.from_month, args.to_month, charges_path, refunds_path, payouts_path)
++    text = serialize_records(records)
++
++    out_path.parent.mkdir(parents=True, exist_ok=True)
++    out_path.write_text(text)
++    print(f"wrote {len(records)} records to {out_path}")
++    return 0
++
++
++def _cmd_verify(args: argparse.Namespace) -> int:
++    path = Path(args.file)
++    text = path.read_text()
++    lines = [ln for ln in text.split("\n") if ln != ""]
++    ok, n = verify_lines(lines)
++    if ok:
++        print(f"OK {n} records")
++        return 0
++    print(f"BROKEN at seq {n}")
++    return 1
++
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(prog="ledger_chain")
++    subparsers = parser.add_subparsers(dest="command", required=True)
++
++    build_parser = subparsers.add_parser("build", help="build the ledger hash chain")
++    build_parser.add_argument("--from", dest="from_month", required=True, metavar="YYYY-MM")
++    build_parser.add_argument("--to", dest="to_month", required=True, metavar="YYYY-MM")
++    build_parser.add_argument("--out", dest="out", default=None)
++    build_parser.set_defaults(func=_cmd_build)
++
++    verify_parser = subparsers.add_parser("verify", help="verify a ledger hash chain file")
++    verify_parser.add_argument("--file", dest="file", required=True)
++    verify_parser.set_defaults(func=_cmd_verify)
++
++    args = parser.parse_args(argv)
++    return args.func(args)
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/scripts/reconcile_bank.py b/scripts/reconcile_bank.py
+--- a/scripts/reconcile_bank.py	1969-12-31 16:00:00
++++ b/scripts/reconcile_bank.py	2026-07-20 17:16:49
+@@ -0,0 +1,321 @@
++"""Q2 bank reconciliation for the marketplace close package.
++
++Compares recorded charges (``exports/charges.csv``) against bank settlement
++transactions (``services/orders/data/bank_settlements_q2.csv``) and writes,
++per requested month, a reconciliation CSV plus a ``summary.json``.
++
++Run as:
++
++    python scripts/reconcile_bank.py --from 2026-04 --to 2026-06
++
++See CLAUDE.md for the money conventions this module follows: amounts are
++integer cents end to end, the bank file's dollar-and-cents strings are
++parsed with string/int operations only (never float), and all cent
++arithmetic goes through ``libs.money.Money``.
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import re
++import sys
++from dataclasses import dataclass
++from datetime import date, timedelta
++from pathlib import Path
++
++# Bootstrap: allow `from libs.money import Money` / `from scripts import ...`
++# when this file is executed directly (python scripts/reconcile_bank.py).
++sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
++
++from libs.money import Money  # noqa: E402
++
++ROOT = Path(__file__).resolve().parent.parent
++CHARGES_PATH = ROOT / "exports" / "charges.csv"
++BANK_PATH = ROOT / "services" / "orders" / "data" / "bank_settlements_q2.csv"
++DEFAULT_OUT_DIR = ROOT / "exports" / "reconciliation"
++
++AMOUNT_RE = re.compile(r"^(\d+)\.(\d{2})$")
++BANK_REF_RE = re.compile(r"^PAYSTREAM-(\d+)$")
++MONTH_RE = re.compile(r"^\d{4}-\d{2}$")
++
++STATUSES = (
++    "matched",
++    "amount_mismatch",
++    "late_settlement",
++    "missing_bank",
++    "unknown_ref",
++    "duplicate",
++)
++
++FIELDNAMES = ["order_id", "txn_id", "status", "internal_cents", "bank_cents", "delta_cents"]
++
++SETTLEMENT_WINDOW_DAYS = 3
++
++
++@dataclass(frozen=True)
++class Charge:
++    order_id: str
++    charged_at: date
++    status: str
++    charged_cents: int
++
++
++@dataclass(frozen=True)
++class BankRow:
++    txn_id: str
++    settled_on: date
++    bank_ref: str
++    amount_cents: int
++
++
++def parse_amount_to_cents(amount: str) -> int:
++    """Parse a bank ``amount`` string ("16.03") into integer cents.
++
++    String/int operations only -- never float() -- per the money
++    conventions in CLAUDE.md.
++    """
++    match = AMOUNT_RE.match(amount.strip())
++    if not match:
++        raise ValueError(f"malformed amount: {amount!r}")
++    dollars, cents = match.group(1), match.group(2)
++    return int(dollars) * 100 + int(cents)
++
++
++def order_id_from_bank_ref(bank_ref: str) -> str | None:
++    """Map a ``PAYSTREAM-<digits>`` bank ref to its ``ORD-<digits>`` order id.
++
++    Returns None if the ref does not have the expected shape.
++    """
++    match = BANK_REF_RE.match(bank_ref.strip())
++    if not match:
++        return None
++    return f"ORD-{match.group(1)}"
++
++
++def month_str(d: date) -> str:
++    return f"{d.year:04d}-{d.month:02d}"
++
++
++def month_range(from_month: str, to_month: str) -> list[str]:
++    """Inclusive list of "YYYY-MM" strings from from_month to to_month."""
++    fy, fm = (int(x) for x in from_month.split("-"))
++    ty, tm = (int(x) for x in to_month.split("-"))
++    months = []
++    y, m = fy, fm
++    while (y, m) <= (ty, tm):
++        months.append(f"{y:04d}-{m:02d}")
++        m += 1
++        if m == 13:
++            m = 1
++            y += 1
++    return months
++
++
++def load_charges(path: Path) -> list[Charge]:
++    charges = []
++    with path.open(newline="") as f:
++        for row in csv.DictReader(f):
++            charges.append(
++                Charge(
++                    order_id=row["order_id"],
++                    charged_at=date.fromisoformat(row["charged_at"]),
++                    status=row["status"],
++                    charged_cents=int(row["charged_cents"]),
++                )
++            )
++    return charges
++
++
++def load_bank_rows(path: Path) -> list[BankRow]:
++    rows = []
++    with path.open(newline="") as f:
++        for row in csv.DictReader(f):
++            rows.append(
++                BankRow(
++                    txn_id=row["txn_id"],
++                    settled_on=date.fromisoformat(row["settled_on"]),
++                    bank_ref=row["bank_ref"],
++                    amount_cents=parse_amount_to_cents(row["amount"]),
++                )
++            )
++    return rows
++
++
++def _settlement_sort_key(charge: Charge, window_end: date):
++    def key(b: BankRow):
++        amount_match = b.amount_cents == charge.charged_cents
++        in_window = charge.charged_at <= b.settled_on <= window_end
++        return (not (amount_match and in_window), not amount_match, not in_window, b.settled_on, b.txn_id)
++
++    return key
++
++
++def reconcile(
++    charges: list[Charge], bank_rows: list[BankRow], from_month: str, to_month: str
++) -> dict[str, list[dict]]:
++    """Pure reconciliation core: returns unsorted-then-sorted rows per month.
++
++    See module docstring / CLAUDE.md-adjacent brief for the full spec:
++    - charges within [from_month, to_month] are reconciled against bank rows
++      whose bank_ref maps to their order id;
++    - bank rows whose ref maps to no charge at all are ``unknown_ref``,
++      reported in the month of their settled_on (dropped if out of range);
++    - bank rows whose ref maps to a charge outside the requested range are
++      dropped entirely (they belong to that charge's own month).
++    """
++    months = month_range(from_month, to_month)
++    month_set = set(months)
++
++    charges_by_order = {c.order_id: c for c in charges}
++
++    candidates_by_order: dict[str, list[BankRow]] = {}
++    unknown_rows_by_month: dict[str, list[BankRow]] = {m: [] for m in months}
++
++    for b in bank_rows:
++        mapped_order = order_id_from_bank_ref(b.bank_ref)
++        charge = charges_by_order.get(mapped_order) if mapped_order else None
++        if charge is None:
++            m = month_str(b.settled_on)
++            if m in month_set:
++                unknown_rows_by_month[m].append(b)
++            continue
++        if month_str(charge.charged_at) not in month_set:
++            # Belongs to a charge outside the requested range entirely.
++            continue
++        candidates_by_order.setdefault(mapped_order, []).append(b)
++
++    rows_by_month: dict[str, list[dict]] = {m: [] for m in months}
++
++    for charge in charges:
++        cm = month_str(charge.charged_at)
++        if cm not in month_set:
++            continue
++
++        candidates = candidates_by_order.get(charge.order_id, [])
++        if not candidates:
++            rows_by_month[cm].append(
++                {
++                    "order_id": charge.order_id,
++                    "txn_id": "",
++                    "status": "missing_bank",
++                    "internal_cents": charge.charged_cents,
++                    "bank_cents": "",
++                    "delta_cents": "",
++                }
++            )
++            continue
++
++        window_end = charge.charged_at + timedelta(days=SETTLEMENT_WINDOW_DAYS)
++        settlement = min(candidates, key=_settlement_sort_key(charge, window_end))
++
++        for b in candidates:
++            amount_match = b.amount_cents == charge.charged_cents
++            in_window = charge.charged_at <= b.settled_on <= window_end
++            delta_cents = (Money.from_cents(charge.charged_cents) - Money.from_cents(b.amount_cents)).to_cents()
++
++            if b is settlement:
++                if not amount_match:
++                    status = "amount_mismatch"
++                elif in_window:
++                    status = "matched"
++                else:
++                    status = "late_settlement"
++            else:
++                status = "duplicate"
++
++            rows_by_month[cm].append(
++                {
++                    "order_id": charge.order_id,
++                    "txn_id": b.txn_id,
++                    "status": status,
++                    "internal_cents": charge.charged_cents,
++                    "bank_cents": b.amount_cents,
++                    "delta_cents": delta_cents,
++                }
++            )
++
++    for m in months:
++        for b in unknown_rows_by_month[m]:
++            rows_by_month[m].append(
++                {
++                    "order_id": "",
++                    "txn_id": b.txn_id,
++                    "status": "unknown_ref",
++                    "internal_cents": "",
++                    "bank_cents": b.amount_cents,
++                    "delta_cents": "",
++                }
++            )
++
++    for m in months:
++        rows_by_month[m].sort(key=lambda r: (r["order_id"] == "", r["order_id"], r["txn_id"]))
++
++    return rows_by_month
++
++
++def build_summary(rows_by_month: dict[str, list[dict]], months: list[str]) -> dict:
++    months_summary = {}
++    for m in months:
++        counts = {status: 0 for status in STATUSES}
++        deltas = []
++        for row in rows_by_month[m]:
++            counts[row["status"]] += 1
++            if row["delta_cents"] != "":
++                deltas.append(Money.from_cents(row["delta_cents"]))
++        net = sum(deltas, Money.from_cents(0)).to_cents()
++        month_summary = dict(counts)
++        month_summary["net_delta_cents"] = net
++        months_summary[m] = month_summary
++    return {"months": months_summary}
++
++
++def write_month_csv(path: Path, rows: list[dict]) -> None:
++    with path.open("w", newline="") as f:
++        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
++        writer.writeheader()
++        writer.writerows(rows)
++
++
++def write_summary(path: Path, summary: dict) -> None:
++    with path.open("w", newline="") as f:
++        f.write(json.dumps(summary, indent=2, sort_keys=True))
++        f.write("\n")
++
++
++def run(from_month: str, to_month: str, out_dir: Path) -> None:
++    charges = load_charges(CHARGES_PATH)
++    bank_rows = load_bank_rows(BANK_PATH)
++    months = month_range(from_month, to_month)
++
++    rows_by_month = reconcile(charges, bank_rows, from_month, to_month)
++    summary = build_summary(rows_by_month, months)
++
++    out_dir.mkdir(parents=True, exist_ok=True)
++    for m in months:
++        write_month_csv(out_dir / f"{m}.csv", rows_by_month[m])
++    write_summary(out_dir / "summary.json", summary)
++
++
++def _month_arg(value: str) -> str:
++    if not MONTH_RE.match(value):
++        raise argparse.ArgumentTypeError(f"expected YYYY-MM, got {value!r}")
++    return value
++
++
++def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
++    parser = argparse.ArgumentParser(description="Q2 bank reconciliation")
++    parser.add_argument("--from", dest="from_month", required=True, type=_month_arg)
++    parser.add_argument("--to", dest="to_month", required=True, type=_month_arg)
++    parser.add_argument("--out-dir", dest="out_dir", default=str(DEFAULT_OUT_DIR))
++    return parser.parse_args(argv)
++
++
++def main(argv: list[str] | None = None) -> int:
++    args = parse_args(argv)
++    run(args.from_month, args.to_month, Path(args.out_dir))
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_fee_review.py b/tests/test_fee_review.py
+--- a/tests/test_fee_review.py	1969-12-31 16:00:00
++++ b/tests/test_fee_review.py	2026-07-20 17:16:41
+@@ -0,0 +1,346 @@
++import csv
++import subprocess
++import sys
++from pathlib import Path
++
++from libs.money import Money
++from scripts import fee_review
++from services.orders.models import LineItem, Order
++
++ROOT = Path(__file__).resolve().parent.parent
++
++
++def make_order(order_id, items, discount_cents=0):
++    return Order(
++        id=order_id,
++        items=items,
++        discount=Money.from_cents(discount_cents),
++    )
++
++
++def rule(
++    id,
++    priority,
++    mode="per_order",
++    effective_from="2026-01-01",
++    effective_to="2026-12-31",
++    scope=None,
++    percent_bps=0,
++    fixed_cents=0,
++    min_fee_cents=None,
++    max_fee_cents=None,
++):
++    r = {
++        "id": id,
++        "priority": priority,
++        "mode": mode,
++        "effective_from": effective_from,
++        "effective_to": effective_to,
++        "scope": scope or {},
++        "percent_bps": percent_bps,
++        "fixed_cents": fixed_cents,
++    }
++    if min_fee_cents is not None:
++        r["min_fee_cents"] = min_fee_cents
++    if max_fee_cents is not None:
++        r["max_fee_cents"] = max_fee_cents
++    return r
++
++
++# ---------------------------------------------------------------------------
++# Pure logic: rule selection (priority / tiebreak / scope conditions)
++# ---------------------------------------------------------------------------
++
++
++def test_priority_wins_over_lower_priority():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    rules = [rule("R-LOW", priority=10), rule("R-HIGH", priority=90)]
++    winner = fee_review.pick_winning_rule(rules, order, "2026-04-15", 1000)
++    assert winner["id"] == "R-HIGH"
++
++
++def test_tiebreak_by_lexicographically_smallest_id():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    rules = [rule("R-999", priority=50), rule("R-001", priority=50)]
++    winner = fee_review.pick_winning_rule(rules, order, "2026-04-15", 1000)
++    assert winner["id"] == "R-001"
++
++
++def test_scope_wildcard_by_omission_matches_anything():
++    order = make_order("O-1", [LineItem(sku="ZZZ", vendor="anyvendor", price=Money.from_cents(1))])
++    r = rule("R-1", priority=1, scope={})
++    assert fee_review.rule_applies(r, order, "2026-04-15", 1)
++
++
++def test_scope_effective_dates_exclude_out_of_range():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, effective_from="2026-05-01", effective_to="2026-05-31")
++    assert not fee_review.rule_applies(r, order, "2026-04-30", 1000)
++    assert not fee_review.rule_applies(r, order, "2026-06-01", 1000)
++    assert fee_review.rule_applies(r, order, "2026-05-01", 1000)
++    assert fee_review.rule_applies(r, order, "2026-05-31", 1000)
++
++
++def test_scope_vendors_requires_matching_item_vendor():
++    order = make_order("O-1", [LineItem(sku="A", vendor="atlaswares", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, scope={"vendors": ["northmill"]})
++    assert not fee_review.rule_applies(r, order, "2026-04-15", 1000)
++
++    order2 = make_order("O-2", [LineItem(sku="A", vendor="northmill", price=Money.from_cents(1000))])
++    assert fee_review.rule_applies(r, order2, "2026-04-15", 1000)
++
++
++def test_scope_sku_prefixes_requires_matching_item_sku():
++    order = make_order("O-1", [LineItem(sku="MUG-CAMP", vendor="v1", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, scope={"sku_prefixes": ["TRAY-"]})
++    assert not fee_review.rule_applies(r, order, "2026-04-15", 1000)
++
++    order2 = make_order("O-2", [LineItem(sku="TRAY-OAK", vendor="v1", price=Money.from_cents(1000))])
++    assert fee_review.rule_applies(r, order2, "2026-04-15", 1000)
++
++
++def test_scope_min_order_cents_uses_recorded_charge_not_item_sum():
++    # Item sum is 5000, but the recorded (authoritative) charge is only 1000
++    # due to a discount -- the scope check must use the recorded charge.
++    order = make_order(
++        "O-1",
++        [LineItem(sku="A", vendor="v1", price=Money.from_cents(5000))],
++        discount_cents=4000,
++    )
++    r = rule("R-1", priority=1, scope={"min_order_cents": 2000})
++    assert not fee_review.rule_applies(r, order, "2026-04-15", 1000)
++    assert fee_review.rule_applies(r, order, "2026-04-15", 2000)
++
++
++def test_no_applicable_rule_returns_none():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, scope={"vendors": ["doesnotmatch"]})
++    assert fee_review.pick_winning_rule([r], order, "2026-04-15", 1000) is None
++
++
++# ---------------------------------------------------------------------------
++# Pure logic: clamp
++# ---------------------------------------------------------------------------
++
++
++def test_clamp_money_applies_max_then_min():
++    assert fee_review.clamp_money(Money.from_cents(500), None, 100) == Money.from_cents(100)
++    assert fee_review.clamp_money(Money.from_cents(5), 20, None) == Money.from_cents(20)
++    assert fee_review.clamp_money(Money.from_cents(50), 20, 100) == Money.from_cents(50)
++    assert fee_review.clamp_money(Money.from_cents(50), None, None) == Money.from_cents(50)
++
++
++# ---------------------------------------------------------------------------
++# Pure logic: per_order mode
++# ---------------------------------------------------------------------------
++
++
++def test_per_order_max_clamp():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(10000))])
++    r = rule("R-1", priority=1, percent_bps=1000, fixed_cents=0, max_fee_cents=50)
++    rows = fee_review.compute_per_order_rows(r, order, 10000)
++    assert rows == [{"order_id": "O-1", "rule_id": "R-1", "vendor": "v1", "fee_cents": 50}]
++
++
++def test_per_order_min_clamp():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(100))])
++    r = rule("R-1", priority=1, percent_bps=100, fixed_cents=0, min_fee_cents=25)
++    rows = fee_review.compute_per_order_rows(r, order, 100)
++    assert rows == [{"order_id": "O-1", "rule_id": "R-1", "vendor": "v1", "fee_cents": 25}]
++
++
++def test_per_order_vendor_split_first_appearance_order_and_nonzero_filter():
++    # v2 appears first in the item list even though v1 comes first alphabetically.
++    order = make_order(
++        "O-1",
++        [
++            LineItem(sku="A", vendor="v2", price=Money.from_cents(9999)),
++            LineItem(sku="B", vendor="v1", price=Money.from_cents(1)),
++        ],
++    )
++    r = rule("R-1", priority=1, percent_bps=0, fixed_cents=1)
++    rows = fee_review.compute_per_order_rows(r, order, 10000)
++    # total fee is 1 cent; weights [9999, 1] -> v2 gets the whole cent, v1 gets 0
++    # and must be filtered out (nonzero-share only).
++    assert rows == [{"order_id": "O-1", "rule_id": "R-1", "vendor": "v2", "fee_cents": 1}]
++
++
++def test_per_order_vendor_split_proportional_conserves_total():
++    order = make_order(
++        "O-1",
++        [
++            LineItem(sku="A", vendor="northmill", price=Money.from_cents(1450)),
++            LineItem(sku="B", vendor="atlaswares", price=Money.from_cents(250)),
++        ],
++    )
++    r = rule("R-1", priority=1, percent_bps=500, fixed_cents=0)
++    rows = fee_review.compute_per_order_rows(r, order, 1603)
++    total = sum(row["fee_cents"] for row in rows)
++    assert total == Money.from_cents(1603).percent_of(500).to_cents()
++    vendors = [row["vendor"] for row in rows]
++    assert vendors == ["northmill", "atlaswares"]  # first-appearance order
++
++
++# ---------------------------------------------------------------------------
++# Pure logic: per_vendor mode
++# ---------------------------------------------------------------------------
++
++
++def test_per_vendor_in_scope_filtering_with_vendors_key():
++    order = make_order(
++        "O-1",
++        [
++            LineItem(sku="A", vendor="brightloom", price=Money.from_cents(1000)),
++            LineItem(sku="B", vendor="atlaswares", price=Money.from_cents(1000)),
++        ],
++    )
++    r = rule("R-1", priority=1, mode="per_vendor", percent_bps=400, fixed_cents=10, scope={"vendors": ["brightloom"]})
++    rows = fee_review.compute_per_vendor_rows(r, order, 2000)
++    assert [row["vendor"] for row in rows] == ["brightloom"]
++
++
++def test_per_vendor_all_vendors_when_no_vendors_key():
++    order = make_order(
++        "O-1",
++        [
++            LineItem(sku="A", vendor="brightloom", price=Money.from_cents(1000)),
++            LineItem(sku="B", vendor="atlaswares", price=Money.from_cents(1000)),
++        ],
++    )
++    r = rule("R-1", priority=1, mode="per_vendor", percent_bps=100, fixed_cents=5, scope={})
++    rows = fee_review.compute_per_vendor_rows(r, order, 2000)
++    assert {row["vendor"] for row in rows} == {"brightloom", "atlaswares"}
++
++
++def test_per_vendor_min_clamp_makes_zero_fee_nonzero():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, mode="per_vendor", percent_bps=0, fixed_cents=0, min_fee_cents=15)
++    rows = fee_review.compute_per_vendor_rows(r, order, 1000)
++    assert rows == [{"order_id": "O-1", "rule_id": "R-1", "vendor": "v1", "fee_cents": 15}]
++
++
++def test_per_vendor_zero_fee_without_clamp_is_excluded():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    r = rule("R-1", priority=1, mode="per_vendor", percent_bps=0, fixed_cents=0)
++    rows = fee_review.compute_per_vendor_rows(r, order, 1000)
++    assert rows == []
++
++
++# ---------------------------------------------------------------------------
++# Pure logic: build_month_rows (cancelled / no-rule / empty-month exclusion)
++# ---------------------------------------------------------------------------
++
++
++def test_cancelled_orders_produce_no_rows():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    charges = {"O-1": {"order_id": "O-1", "charged_at": "2026-04-15", "status": "cancelled", "charged_cents": "1000"}}
++    rules = [rule("R-1", priority=1)]
++    rows = fee_review.build_month_rows([order], charges, rules, "2026-04")
++    assert rows == []
++
++
++def test_orders_with_no_applicable_rule_produce_no_rows():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    charges = {"O-1": {"order_id": "O-1", "charged_at": "2026-04-15", "status": "fulfilled", "charged_cents": "1000"}}
++    rules = [rule("R-1", priority=1, scope={"vendors": ["nomatch"]})]
++    rows = fee_review.build_month_rows([order], charges, rules, "2026-04")
++    assert rows == []
++
++
++def test_empty_month_yields_no_rows():
++    order = make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))])
++    charges = {"O-1": {"order_id": "O-1", "charged_at": "2026-04-15", "status": "fulfilled", "charged_cents": "1000"}}
++    rules = [rule("R-1", priority=1)]
++    rows = fee_review.build_month_rows([order], charges, rules, "2026-05")
++    assert rows == []
++
++
++def test_write_month_csv_header_only_for_empty_rows(tmp_path):
++    path = tmp_path / "2026-05.csv"
++    fee_review.write_month_csv(path, [])
++    content = path.read_bytes()
++    assert content == b"order_id,rule_id,vendor,fee_cents\r\n"
++
++
++def test_month_range_inclusive_across_year_boundary():
++    assert fee_review.month_range("2026-11", "2027-02") == [
++        "2026-11",
++        "2026-12",
++        "2027-01",
++        "2027-02",
++    ]
++
++
++def test_month_range_single_month():
++    assert fee_review.month_range("2026-05", "2026-05") == ["2026-05"]
++
++
++def test_rows_sorted_by_order_id_then_vendor():
++    orders = [
++        make_order(
++            "O-2",
++            [
++                LineItem(sku="A", vendor="zzz", price=Money.from_cents(1000)),
++                LineItem(sku="B", vendor="aaa", price=Money.from_cents(1000)),
++            ],
++        ),
++        make_order("O-1", [LineItem(sku="A", vendor="v1", price=Money.from_cents(1000))]),
++    ]
++    charges = {
++        "O-1": {"order_id": "O-1", "charged_at": "2026-04-01", "status": "fulfilled", "charged_cents": "1000"},
++        "O-2": {"order_id": "O-2", "charged_at": "2026-04-01", "status": "fulfilled", "charged_cents": "2000"},
++    }
++    rules = [rule("R-1", priority=1, mode="per_vendor", percent_bps=1000, fixed_cents=0)]
++    rows = fee_review.build_month_rows(orders, charges, rules, "2026-04")
++    assert [(r["order_id"], r["vendor"]) for r in rows] == [
++        ("O-1", "v1"),
++        ("O-2", "aaa"),
++        ("O-2", "zzz"),
++    ]
++
++
++# ---------------------------------------------------------------------------
++# CLI / integration
++# ---------------------------------------------------------------------------
++
++
++def run_cli(from_month, to_month, out_dir):
++    result = subprocess.run(
++        [sys.executable, str(ROOT / "scripts" / "fee_review.py"), "--from", from_month, "--to", to_month, "--out-dir", str(out_dir)],
++        cwd=str(ROOT),
++        capture_output=True,
++        text=True,
++    )
++    assert result.returncode == 0, result.stderr
++    return result
++
++
++def test_cli_rerun_is_byte_identical(tmp_path):
++    out1 = tmp_path / "run1"
++    out2 = tmp_path / "run2"
++    run_cli("2026-04", "2026-06", out1)
++    run_cli("2026-04", "2026-06", out2)
++
++    files1 = sorted(p.name for p in out1.iterdir())
++    files2 = sorted(p.name for p in out2.iterdir())
++    assert files1 == files2 == ["2026-04.csv", "2026-05.csv", "2026-06.csv"]
++    for name in files1:
++        assert (out1 / name).read_bytes() == (out2 / name).read_bytes()
++
++
++def test_cli_subset_range_produces_only_that_month(tmp_path):
++    out_dir = tmp_path / "subset"
++    run_cli("2026-05", "2026-05", out_dir)
++    assert sorted(p.name for p in out_dir.iterdir()) == ["2026-05.csv"]
++
++
++def test_cli_full_range_produces_all_months_with_header(tmp_path):
++    out_dir = tmp_path / "full"
++    run_cli("2026-04", "2026-06", out_dir)
++    for month in ("2026-04", "2026-05", "2026-06"):
++        path = out_dir / f"{month}.csv"
++        assert path.exists()
++        with open(path, newline="") as f:
++            reader = csv.reader(f)
++            header = next(reader)
++            assert header == ["order_id", "rule_id", "vendor", "fee_cents"]
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_ledger_chain.py b/tests/test_ledger_chain.py
+--- a/tests/test_ledger_chain.py	1969-12-31 16:00:00
++++ b/tests/test_ledger_chain.py	2026-07-20 17:16:27
+@@ -0,0 +1,362 @@
++import hashlib
++import json
++import subprocess
++import sys
++from pathlib import Path
++
++import pytest
++
++from scripts import ledger_chain
++
++REPO_ROOT = Path(__file__).resolve().parent.parent
++
++
++# ---------------------------------------------------------------------------
++# Synthetic fixtures (pure-function tests, no CSV I/O)
++# ---------------------------------------------------------------------------
++
++CHARGE_ROWS = [
++    {"order_id": "ORD-1", "charged_at": "2026-04-01", "status": "fulfilled", "charged_cents": "1000"},
++    {"order_id": "ORD-2", "charged_at": "2026-04-01", "status": "cancelled", "charged_cents": "500"},
++    {"order_id": "ORD-3", "charged_at": "2026-06-15", "status": "fulfilled", "charged_cents": "2000"},
++]
++
++REFUND_ROWS = [
++    {"order_id": "ORD-2", "sku": "SKU-B", "amount_cents": "300"},
++    {"order_id": "ORD-2", "sku": "SKU-A", "amount_cents": "200"},
++]
++
++PAYOUT_ROWS = [
++    {"order_id": "ORD-1", "payee": "platform", "amount_cents": "100"},
++    {"order_id": "ORD-1", "payee": "vendorco", "amount_cents": "900"},
++    {"order_id": "ORD-3", "payee": "platform", "amount_cents": "200"},
++    {"order_id": "ORD-3", "payee": "vendorco", "amount_cents": "1800"},
++]
++
++
++def test_money_line_ordering_within_order():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-04"
++    )
++    # Only ORD-1 (charge+payouts) and ORD-2 (charge+refunds) fall in 2026-04.
++    kinds_in_order = [(ln["order_id"], ln["kind"]) for ln in lines]
++    # ORD-1 charge < payout_line entries; ORD-2 charge < refund_line entries.
++    assert kinds_in_order == [
++        ("ORD-1", "charge"),
++        ("ORD-1", "payout_line"),
++        ("ORD-1", "payout_line"),
++        ("ORD-2", "charge"),
++        ("ORD-2", "refund_line"),
++        ("ORD-2", "refund_line"),
++    ]
++    # party tiebreak within same (charged_at, order_id, kind): platform < vendorco
++    payout_parties = [ln["party"] for ln in lines if ln["order_id"] == "ORD-1" and ln["kind"] == "payout_line"]
++    assert payout_parties == ["platform", "vendorco"]
++    # refund party tiebreak: SKU-A < SKU-B
++    refund_parties = [ln["party"] for ln in lines if ln["order_id"] == "ORD-2" and ln["kind"] == "refund_line"]
++    assert refund_parties == ["SKU-A", "SKU-B"]
++
++
++def test_money_line_ordering_by_date_then_order_id():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    dates_orders = [(ln["charged_at"], ln["order_id"]) for ln in lines]
++    assert dates_orders == sorted(dates_orders)
++
++
++def test_subset_range_excludes_other_months():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-04"
++    )
++    assert all(ln["charged_at"].startswith("2026-04") for ln in lines)
++    assert not any(ln["order_id"] == "ORD-3" for ln in lines)
++
++
++def test_month_close_sums_and_placement():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++
++    # Months in range: 04, 05 (empty), 06.
++    months_seen = [r["month"] for r in records if r["kind"] == "month_close"]
++    assert months_seen == ["2026-04", "2026-05", "2026-06"]
++
++    close_04 = next(r for r in records if r.get("month") == "2026-04")
++    # ORD-1 charge 1000 + ORD-2 charge 500 = 1500
++    assert close_04["charge_cents"] == 1500
++    # ORD-2 refunds: 300 + 200 = 500
++    assert close_04["refund_cents"] == 500
++    # ORD-1 payouts: 100 + 900 = 1000
++    assert close_04["payout_cents"] == 1000
++    # 3 lines for ORD-1 (charge + 2 payouts) + 3 lines for ORD-2 (charge + 2 refunds)
++    assert close_04["line_count"] == 6
++
++    close_05 = next(r for r in records if r.get("month") == "2026-05")
++    assert close_05["charge_cents"] == 0
++    assert close_05["refund_cents"] == 0
++    assert close_05["payout_cents"] == 0
++    assert close_05["line_count"] == 0
++
++    close_06 = next(r for r in records if r.get("month") == "2026-06")
++    assert close_06["charge_cents"] == 2000
++    assert close_06["refund_cents"] == 0
++    assert close_06["payout_cents"] == 2000
++    assert close_06["line_count"] == 3
++
++    # Close comes immediately after that month's lines (no interleaving),
++    # and months are emitted in ascending order.
++    close_indices = [i for i, r in enumerate(records) if r["kind"] == "month_close"]
++    assert close_indices == sorted(close_indices)
++    for idx, month in zip(close_indices, months_seen):
++        # every record before idx (since the previous close) belongs to this month
++        prev_close = close_indices[close_indices.index(idx) - 1] if close_indices.index(idx) > 0 else -1
++        for r in records[prev_close + 1 : idx]:
++            assert r["kind"] != "month_close"
++            assert r["charged_at"].startswith(month)
++
++
++def test_empty_month_in_range_gets_all_zero_close():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-05", "2026-05"
++    )
++    records = ledger_chain.build_records(lines, "2026-05", "2026-05")
++    assert len(records) == 1
++    close = records[0]
++    assert close["kind"] == "month_close"
++    assert close["month"] == "2026-05"
++    assert close["charge_cents"] == 0
++    assert close["refund_cents"] == 0
++    assert close["payout_cents"] == 0
++    assert close["line_count"] == 0
++
++
++def test_seq_contiguous_and_first_prev_hash_is_zeros():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++    chained = ledger_chain.chain_records(records)
++
++    seqs = [r["seq"] for r in chained]
++    assert seqs == list(range(len(chained)))
++    assert chained[0]["prev_hash"] == "0" * 64
++
++
++def test_prev_hash_links_and_hash_recomputes():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++    chained = ledger_chain.chain_records(records)
++
++    prev_hash = "0" * 64
++    for rec in chained:
++        assert rec["prev_hash"] == prev_hash
++        without_hash = {k: v for k, v in rec.items() if k != "hash"}
++        serialized = json.dumps(without_hash, sort_keys=True, separators=(",", ":"))
++        expected = hashlib.sha256((prev_hash + serialized).encode("utf-8")).hexdigest()
++        assert rec["hash"] == expected
++        prev_hash = rec["hash"]
++
++
++def test_money_line_record_fields_exact():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++    chained = ledger_chain.chain_records(records)
++    money_line_records = [r for r in chained if r["kind"] != "month_close"]
++    assert money_line_records
++    expected_fields = {"seq", "charged_at", "kind", "order_id", "party", "amount_cents", "prev_hash", "hash"}
++    for rec in money_line_records:
++        assert set(rec.keys()) == expected_fields
++
++
++def test_month_close_record_fields_exact():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++    chained = ledger_chain.chain_records(records)
++    closes = [r for r in chained if r["kind"] == "month_close"]
++    assert closes
++    expected_fields = {
++        "seq", "kind", "month", "charge_cents", "refund_cents", "payout_cents", "line_count",
++        "prev_hash", "hash",
++    }
++    for rec in closes:
++        assert set(rec.keys()) == expected_fields
++
++
++# ---------------------------------------------------------------------------
++# Verify: tamper detection
++# ---------------------------------------------------------------------------
++
++
++def _build_chained_lines():
++    lines = ledger_chain.build_money_lines(
++        CHARGE_ROWS, REFUND_ROWS, PAYOUT_ROWS, "2026-04", "2026-06"
++    )
++    records = ledger_chain.build_records(lines, "2026-04", "2026-06")
++    return ledger_chain.chain_records(records)
++
++
++def _to_jsonl_strings(records):
++    return [json.dumps(r, sort_keys=True, separators=(",", ":")) for r in records]
++
++
++def test_verify_intact_chain_ok():
++    chained = _build_chained_lines()
++    ok, n = ledger_chain.verify_lines(_to_jsonl_strings(chained))
++    assert ok is True
++    assert n == len(chained)
++
++
++def test_verify_empty_file_ok_zero_records():
++    ok, n = ledger_chain.verify_lines([])
++    assert ok is True
++    assert n == 0
++
++
++def test_verify_detects_amount_tamper():
++    chained = _build_chained_lines()
++    # find a money-line record mid-file to tamper with
++    idx = next(i for i, r in enumerate(chained) if r["kind"] != "month_close" and i > 0)
++    tampered = [dict(r) for r in chained]
++    tampered[idx]["amount_cents"] += 1
++    ok, n = ledger_chain.verify_lines(_to_jsonl_strings(tampered))
++    assert ok is False
++    assert n == idx
++
++
++def test_verify_detects_party_tamper():
++    chained = _build_chained_lines()
++    idx = next(i for i, r in enumerate(chained) if r["kind"] != "month_close")
++    tampered = [dict(r) for r in chained]
++    tampered[idx]["party"] = tampered[idx]["party"] + "-X"
++    ok, n = ledger_chain.verify_lines(_to_jsonl_strings(tampered))
++    assert ok is False
++    assert n == idx
++
++
++def test_verify_detects_swapped_adjacent_lines():
++    chained = _build_chained_lines()
++    # find two adjacent money-line records (not closes) to swap
++    idx = None
++    for i in range(len(chained) - 1):
++        if chained[i]["kind"] != "month_close" and chained[i + 1]["kind"] != "month_close":
++            idx = i
++            break
++    assert idx is not None
++    tampered = [dict(r) for r in chained]
++    tampered[idx], tampered[idx + 1] = tampered[idx + 1], tampered[idx]
++    ok, n = ledger_chain.verify_lines(_to_jsonl_strings(tampered))
++    assert ok is False
++    # the first affected seq is idx: its seq field no longer equals its position
++    # (since we swapped full records, the seq field itself moved) or its
++    # prev_hash/hash will fail to recompute — either way it breaks at idx.
++    assert n == idx
++
++
++def test_verify_detects_truncate_and_forge():
++    chained = _build_chained_lines()
++    truncated = chained[: len(chained) // 2]
++    forged = dict(truncated[-1])
++    forged["seq"] = len(truncated)
++    forged["prev_hash"] = truncated[-1]["hash"]
++    forged["amount_cents"] = 999999
++    # forged hash is wrong (doesn't recompute)
++    forged["hash"] = "f" * 64
++    tampered = truncated + [forged]
++    ok, n = ledger_chain.verify_lines(_to_jsonl_strings(tampered))
++    assert ok is False
++    assert n == len(truncated)
++
++
++# ---------------------------------------------------------------------------
++# CLI / integration tests against the real exports/*.csv files
++# ---------------------------------------------------------------------------
++
++
++def _run_cli(args, cwd=REPO_ROOT):
++    return subprocess.run(
++        [sys.executable, str(REPO_ROOT / "scripts" / "ledger_chain.py")] + args,
++        cwd=cwd,
++        capture_output=True,
++        text=True,
++    )
++
++
++def test_build_is_byte_identical_across_runs(tmp_path):
++    out1 = tmp_path / "chain1.jsonl"
++    out2 = tmp_path / "chain2.jsonl"
++
++    result1 = _run_cli(["build", "--from", "2026-04", "--to", "2026-06", "--out", str(out1)])
++    assert result1.returncode == 0, result1.stderr
++    result2 = _run_cli(["build", "--from", "2026-04", "--to", "2026-06", "--out", str(out2)])
++    assert result2.returncode == 0, result2.stderr
++
++    assert out1.read_bytes() == out2.read_bytes()
++
++
++def test_verify_real_built_file_via_subprocess(tmp_path):
++    out = tmp_path / "chain.jsonl"
++    build_result = _run_cli(["build", "--from", "2026-04", "--to", "2026-06", "--out", str(out)])
++    assert build_result.returncode == 0, build_result.stderr
++
++    verify_result = _run_cli(["verify", "--file", str(out)])
++    assert verify_result.returncode == 0
++    n_lines = len(out.read_text().splitlines())
++    assert verify_result.stdout.strip() == f"OK {n_lines} records"
++
++
++def test_subset_range_cli_contains_only_that_month_and_one_close(tmp_path):
++    out = tmp_path / "chain_may.jsonl"
++    build_result = _run_cli(["build", "--from", "2026-05", "--to", "2026-05", "--out", str(out)])
++    assert build_result.returncode == 0, build_result.stderr
++
++    records = [json.loads(line) for line in out.read_text().splitlines()]
++    closes = [r for r in records if r["kind"] == "month_close"]
++    assert len(closes) == 1
++    assert closes[0]["month"] == "2026-05"
++    for r in records:
++        if r["kind"] != "month_close":
++            assert r["charged_at"].startswith("2026-05")
++
++
++def test_verify_broken_message_format_and_exit_code(tmp_path):
++    out = tmp_path / "chain.jsonl"
++    build_result = _run_cli(["build", "--from", "2026-04", "--to", "2026-04", "--out", str(out)])
++    assert build_result.returncode == 0, build_result.stderr
++
++    lines = out.read_text().splitlines()
++    assert len(lines) > 1
++    rec = json.loads(lines[1])
++    rec["amount_cents" if "amount_cents" in rec else "line_count"] = (
++        rec.get("amount_cents", rec.get("line_count", 0)) + 1
++    )
++    lines[1] = json.dumps(rec, sort_keys=True, separators=(",", ":"))
++    tampered_path = tmp_path / "tampered.jsonl"
++    tampered_path.write_text("\n".join(lines) + "\n")
++
++    verify_result = _run_cli(["verify", "--file", str(tampered_path)])
++    assert verify_result.returncode == 1
++    assert verify_result.stdout.strip() == "BROKEN at seq 1"
++
++
++def test_build_does_not_write_into_exports_when_out_given(tmp_path):
++    out = tmp_path / "chain.jsonl"
++    exports_ledger = REPO_ROOT / "exports" / "ledger_chain.jsonl"
++    existed_before = exports_ledger.exists()
++    before_mtime = exports_ledger.stat().st_mtime if existed_before else None
++
++    result = _run_cli(["build", "--from", "2026-04", "--to", "2026-04", "--out", str(out)])
++    assert result.returncode == 0, result.stderr
++    assert out.exists()
++
++    if existed_before:
++        assert exports_ledger.stat().st_mtime == before_mtime
++    else:
++        assert not exports_ledger.exists()
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_reconcile_bank.py b/tests/test_reconcile_bank.py
+--- a/tests/test_reconcile_bank.py	1969-12-31 16:00:00
++++ b/tests/test_reconcile_bank.py	2026-07-20 17:17:37
+@@ -0,0 +1,305 @@
++import json
++import subprocess
++import sys
++from datetime import date
++from pathlib import Path
++
++import pytest
++
++from scripts.reconcile_bank import (
++    BankRow,
++    Charge,
++    ROOT,
++    build_summary,
++    load_bank_rows,
++    load_charges,
++    month_range,
++    order_id_from_bank_ref,
++    parse_amount_to_cents,
++    reconcile,
++)
++
++
++def _rows(charges, bank_rows, from_month="2026-04", to_month="2026-04"):
++    return reconcile(charges, bank_rows, from_month, to_month)
++
++
++def _row_by_txn(rows, txn_id):
++    return next(r for r in rows if r["txn_id"] == txn_id)
++
++
++# ---------------------------------------------------------------------------
++# Amount parsing
++# ---------------------------------------------------------------------------
++
++
++def test_parse_amount_to_cents():
++    assert parse_amount_to_cents("16.03") == 1603
++    assert parse_amount_to_cents("0.00") == 0
++    assert parse_amount_to_cents("100.00") == 10000
++
++
++@pytest.mark.parametrize("bad", ["16.3", "16", "16.030", "abc", "-1.00", "1,6.03"])
++def test_parse_amount_to_cents_rejects_malformed(bad):
++    with pytest.raises(ValueError):
++        parse_amount_to_cents(bad)
++
++
++def test_order_id_from_bank_ref():
++    assert order_id_from_bank_ref("PAYSTREAM-4011") == "ORD-4011"
++    assert order_id_from_bank_ref("PAYSTREAM-9990") == "ORD-9990"
++    assert order_id_from_bank_ref("SOMETHING-ELSE") is None
++
++
++def test_month_range():
++    assert month_range("2026-04", "2026-06") == ["2026-04", "2026-05", "2026-06"]
++    assert month_range("2026-11", "2027-01") == ["2026-11", "2026-12", "2027-01"]
++    assert month_range("2026-05", "2026-05") == ["2026-05"]
++
++
++# ---------------------------------------------------------------------------
++# Pure reconciliation logic
++# ---------------------------------------------------------------------------
++
++
++def test_matched():
++    charge = Charge("ORD-1001", date(2026, 4, 1), "fulfilled", 1000)
++    bank = BankRow("T-1", date(2026, 4, 2), "PAYSTREAM-1001", 1000)
++    rows = _rows([charge], [bank])["2026-04"]
++    assert len(rows) == 1
++    row = rows[0]
++    assert row["status"] == "matched"
++    assert row["order_id"] == "ORD-1001"
++    assert row["txn_id"] == "T-1"
++    assert row["internal_cents"] == 1000
++    assert row["bank_cents"] == 1000
++    assert row["delta_cents"] == 0
++
++
++def test_late_settlement_amount_matches_settles_after_window():
++    # window is charged_at .. charged_at+3 days = 2026-04-01..2026-04-04
++    charge = Charge("ORD-1002", date(2026, 4, 1), "fulfilled", 500)
++    bank = BankRow("T-2", date(2026, 4, 5), "PAYSTREAM-1002", 500)
++    rows = _rows([charge], [bank])["2026-04"]
++    assert len(rows) == 1
++    assert rows[0]["status"] == "late_settlement"
++    assert rows[0]["delta_cents"] == 0
++
++
++def test_amount_mismatch():
++    charge = Charge("ORD-1003", date(2026, 4, 1), "fulfilled", 500)
++    bank = BankRow("T-3", date(2026, 4, 2), "PAYSTREAM-1003", 450)
++    rows = _rows([charge], [bank])["2026-04"]
++    assert len(rows) == 1
++    row = rows[0]
++    assert row["status"] == "amount_mismatch"
++    assert row["internal_cents"] == 500
++    assert row["bank_cents"] == 450
++    assert row["delta_cents"] == 50
++
++
++def test_missing_bank():
++    charge = Charge("ORD-1004", date(2026, 4, 1), "cancelled", 700)
++    rows = _rows([charge], [])["2026-04"]
++    assert len(rows) == 1
++    row = rows[0]
++    assert row["status"] == "missing_bank"
++    assert row["order_id"] == "ORD-1004"
++    assert row["txn_id"] == ""
++    assert row["internal_cents"] == 700
++    assert row["bank_cents"] == ""
++    assert row["delta_cents"] == ""
++
++
++def test_duplicate_best_candidate_picked_by_preference():
++    charge = Charge("ORD-1005", date(2026, 4, 1), "fulfilled", 1000)
++    # best: amount matches, in window
++    best = BankRow("T-5b", date(2026, 4, 2), "PAYSTREAM-1005", 1000)
++    # other: amount mismatch, in window -> becomes duplicate
++    other = BankRow("T-5a", date(2026, 4, 3), "PAYSTREAM-1005", 900)
++    rows = _rows([charge], [other, best])["2026-04"]
++    assert len(rows) == 2
++    settled = _row_by_txn(rows, "T-5b")
++    dup = _row_by_txn(rows, "T-5a")
++    assert settled["status"] == "matched"
++    assert dup["status"] == "duplicate"
++    assert dup["internal_cents"] == 1000
++    assert dup["bank_cents"] == 900
++    assert dup["delta_cents"] == 100
++
++
++def test_preference_in_window_match_beats_out_of_window_match():
++    charge = Charge("ORD-1006", date(2026, 4, 1), "fulfilled", 1000)
++    in_window_match = BankRow("T-6a", date(2026, 4, 3), "PAYSTREAM-1006", 1000)
++    out_of_window_match = BankRow("T-6b", date(2026, 4, 6), "PAYSTREAM-1006", 1000)
++    rows = _rows([charge], [out_of_window_match, in_window_match])["2026-04"]
++    settled = _row_by_txn(rows, "T-6a")
++    dup = _row_by_txn(rows, "T-6b")
++    assert settled["status"] == "matched"
++    assert dup["status"] == "duplicate"
++
++
++def test_preference_amount_match_beats_in_window_mismatch():
++    charge = Charge("ORD-1007", date(2026, 4, 1), "fulfilled", 1000)
++    out_of_window_match = BankRow("T-7a", date(2026, 4, 6), "PAYSTREAM-1007", 1000)
++    in_window_mismatch = BankRow("T-7b", date(2026, 4, 2), "PAYSTREAM-1007", 900)
++    rows = _rows([charge], [in_window_mismatch, out_of_window_match])["2026-04"]
++    settled = _row_by_txn(rows, "T-7a")
++    dup = _row_by_txn(rows, "T-7b")
++    assert settled["status"] == "late_settlement"
++    assert dup["status"] == "duplicate"
++
++
++def test_window_boundary_exactly_three_days_is_in_window():
++    charge = Charge("ORD-1008", date(2026, 4, 1), "fulfilled", 1000)
++    bank = BankRow("T-8", date(2026, 4, 4), "PAYSTREAM-1008", 1000)
++    rows = _rows([charge], [bank])["2026-04"]
++    assert rows[0]["status"] == "matched"
++
++
++def test_window_boundary_four_days_is_out_of_window():
++    charge = Charge("ORD-1009", date(2026, 4, 1), "fulfilled", 1000)
++    bank = BankRow("T-9", date(2026, 4, 5), "PAYSTREAM-1009", 1000)
++    rows = _rows([charge], [bank])["2026-04"]
++    assert rows[0]["status"] == "late_settlement"
++
++
++def test_unknown_ref_reported_in_range():
++    bank = BankRow("T-10", date(2026, 4, 15), "PAYSTREAM-9871", 2350)
++    rows = _rows([], [bank])["2026-04"]
++    assert len(rows) == 1
++    row = rows[0]
++    assert row["status"] == "unknown_ref"
++    assert row["order_id"] == ""
++    assert row["internal_cents"] == ""
++    assert row["delta_cents"] == ""
++    assert row["bank_cents"] == 2350
++    assert row["txn_id"] == "T-10"
++
++
++def test_unknown_ref_dropped_when_settled_month_out_of_range():
++    bank = BankRow("T-11", date(2026, 7, 1), "PAYSTREAM-9990", 4100)
++    rows_by_month = _rows([], [bank], "2026-04", "2026-06")
++    all_rows = [r for month_rows in rows_by_month.values() for r in month_rows]
++    assert all_rows == []
++
++
++def test_charge_outside_range_excludes_its_bank_rows_entirely():
++    # Charge is in March, requested range is Apr-Jun; its bank row settles
++    # in April (inside the requested range) but must not show up anywhere,
++    # not even as unknown_ref, since its ref does map to a real charge.
++    charge = Charge("ORD-2000", date(2026, 3, 30), "fulfilled", 1234)
++    bank = BankRow("T-12", date(2026, 4, 1), "PAYSTREAM-2000", 1234)
++    rows_by_month = _rows([charge], [bank], "2026-04", "2026-06")
++    all_rows = [r for month_rows in rows_by_month.values() for r in month_rows]
++    assert all_rows == []
++
++
++def test_row_sort_order_unknown_ref_last():
++    charge_b = Charge("ORD-3002", date(2026, 4, 1), "fulfilled", 1000)
++    charge_a = Charge("ORD-3001", date(2026, 4, 1), "fulfilled", 2000)
++    bank_b = BankRow("T-20", date(2026, 4, 2), "PAYSTREAM-3002", 1000)
++    bank_a = BankRow("T-21", date(2026, 4, 2), "PAYSTREAM-3001", 2000)
++    unknown = BankRow("T-01", date(2026, 4, 3), "PAYSTREAM-9999", 100)
++    rows = _rows([charge_b, charge_a], [bank_b, bank_a, unknown])["2026-04"]
++    order_ids = [r["order_id"] for r in rows]
++    assert order_ids == ["ORD-3001", "ORD-3002", ""]
++
++
++def test_summary_counts_and_net_delta():
++    charges = [
++        Charge("ORD-4001", date(2026, 4, 1), "fulfilled", 1000),  # matched
++        Charge("ORD-4002", date(2026, 4, 1), "fulfilled", 500),  # amount_mismatch (delta 50)
++        Charge("ORD-4003", date(2026, 4, 1), "cancelled", 300),  # missing_bank
++    ]
++    bank_rows = [
++        BankRow("T-30", date(2026, 4, 2), "PAYSTREAM-4001", 1000),
++        BankRow("T-31", date(2026, 4, 2), "PAYSTREAM-4002", 450),
++        BankRow("T-32", date(2026, 4, 3), "PAYSTREAM-9871", 700),  # unknown_ref
++    ]
++    rows_by_month = _rows(charges, bank_rows)
++    summary = build_summary(rows_by_month, ["2026-04"])
++    month = summary["months"]["2026-04"]
++    assert month["matched"] == 1
++    assert month["amount_mismatch"] == 1
++    assert month["missing_bank"] == 1
++    assert month["unknown_ref"] == 1
++    assert month["duplicate"] == 0
++    assert month["late_settlement"] == 0
++    # matched delta 0 + mismatch delta 50 (missing_bank/unknown_ref excluded)
++    assert month["net_delta_cents"] == 50
++
++
++def test_summary_includes_every_month_even_if_empty():
++    summary = build_summary({m: [] for m in month_range("2026-04", "2026-06")}, month_range("2026-04", "2026-06"))
++    assert set(summary["months"]) == {"2026-04", "2026-05", "2026-06"}
++    for m in summary["months"].values():
++        assert m["net_delta_cents"] == 0
++        for status in ("matched", "amount_mismatch", "late_settlement", "missing_bank", "unknown_ref", "duplicate"):
++            assert m[status] == 0
++
++
++# ---------------------------------------------------------------------------
++# Real-data sanity checks (read-only against the committed fixtures)
++# ---------------------------------------------------------------------------
++
++
++def test_real_data_known_duplicates():
++    charges = load_charges(ROOT / "exports" / "charges.csv")
++    bank_rows = load_bank_rows(ROOT / "services" / "orders" / "data" / "bank_settlements_q2.csv")
++    rows_by_month = reconcile(charges, bank_rows, "2026-04", "2026-06")
++
++    may_rows = [r for r in rows_by_month["2026-05"] if r["order_id"] == "ORD-5013"]
++    assert {r["status"] for r in may_rows} == {"matched", "duplicate"}
++
++    june_rows = [r for r in rows_by_month["2026-06"] if r["order_id"] == "ORD-6016"]
++    assert {r["status"] for r in june_rows} == {"matched", "duplicate"}
++
++
++# ---------------------------------------------------------------------------
++# CLI / integration
++# ---------------------------------------------------------------------------
++
++
++def _run_cli(args, cwd):
++    return subprocess.run(
++        [sys.executable, str(ROOT / "scripts" / "reconcile_bank.py"), *args],
++        cwd=cwd,
++        capture_output=True,
++        text=True,
++        check=True,
++    )
++
++
++def test_cli_rerun_is_byte_identical(tmp_path):
++    out1 = tmp_path / "run1"
++    out2 = tmp_path / "run2"
++    _run_cli(["--from", "2026-04", "--to", "2026-06", "--out-dir", str(out1)], cwd=ROOT)
++    _run_cli(["--from", "2026-04", "--to", "2026-06", "--out-dir", str(out2)], cwd=ROOT)
++
++    files1 = sorted(p.name for p in out1.iterdir())
++    files2 = sorted(p.name for p in out2.iterdir())
++    assert files1 == files2
++    for name in files1:
++        assert (out1 / name).read_bytes() == (out2 / name).read_bytes()
++
++
++def test_cli_subset_month_produces_only_that_month(tmp_path):
++    out_dir = tmp_path / "subset"
++    _run_cli(["--from", "2026-05", "--to", "2026-05", "--out-dir", str(out_dir)], cwd=ROOT)
++
++    files = sorted(p.name for p in out_dir.iterdir())
++    assert files == ["2026-05.csv", "summary.json"]
++
++    summary = json.loads((out_dir / "summary.json").read_text())
++    assert list(summary["months"]) == ["2026-05"]
++
++
++def test_cli_does_not_touch_exports_dir(tmp_path):
++    # Sanity: the CLI writes wherever --out-dir points; using a tmp dir must
++    # not create or modify anything under the real exports/ directory.
++    charges_before = (ROOT / "exports" / "charges.csv").read_bytes()
++    out_dir = tmp_path / "isolated"
++    _run_cli(["--from", "2026-04", "--to", "2026-06", "--out-dir", str(out_dir)], cwd=ROOT)
++    charges_after = (ROOT / "exports" / "charges.csv").read_bytes()
++    assert charges_before == charges_after

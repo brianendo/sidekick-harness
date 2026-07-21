@@ -37,34 +37,53 @@ correct judgment? A three-cell ablation separated the variables:
 structure makes rational. The low delegation counts were correctness, not
 reluctance.
 
-## 2. Delegation economics: unit depth vs. shared context, not task size
+*Variance note:* on `marketplace-quarter-close` (same 3-independent-epic
+structure, same fanout prompt), the lead again delegated all three epics but
+issued the briefs **sequentially** — one per message — so there was no
+wall-clock win. Whether fan-out parallelizes appears to be run-level
+variance, not a stable property of the task structure (n=1 each way).
 
-All four solo-vs-delegation cost pairs, identical score (1.00 unless noted):
+## 2. Delegation economics: it's where the tokens go, not unit depth
+
+All five solo-vs-delegation cost pairs, identical score (1.00 unless noted):
 
 | Task | Solo | Best delegation | Winner |
 |---|---|---|---|
-| vendor-statements (1 shallow epic) | $2.75 / 5 min | $3.20 @push / 9 min | solo |
-| celery-worker-stall (1 deep fix) | $5.20 / 15 min | $4.94 @push / 12 min | delegation |
-| pandera (1 deep feature) | $12.76 | **$6.44 @fanout / 16 min (−50%)** | delegation |
-| marketplace-q3-milestone (3 shallow epics) | **$4.58 / 8 min** | $5.73 @fanout / 10 min | solo |
+| vendor-statements (1 shallow epic, owned world) | $2.75 / 5 min | $3.20 @push / 9 min | solo |
+| celery-worker-stall (1 deep fix, real repo) | $5.20 / 15 min | $4.94 @push / 12 min | delegation |
+| pandera (1 deep feature, real repo) | $12.76 | **$6.44 @fanout / 16 min (−50%)** | delegation |
+| marketplace-q3-milestone (3 shallow epics, owned world) | **$4.58 / 8 min** | $5.73 @fanout / 10 min | solo |
+| marketplace-quarter-close (3 **deep** epics, owned world) | **$5.21 / 10 min** | $6.35 @fanout / 11 min | solo |
 
-The naive law ("delegation benefit scales with task size") was falsified by
-the milestone row — three features, and solo still won. The law that fits all
-four points: **delegation pays when the delegable unit is deep relative to the
-shared context; it loses when units are shallow and lean on one shared
-understanding.** On pandera the delegated unit was 67+ turns of
-implementation — the sidekick's cheaper rates on that depth dominate. On the
-milestone, three ~100-line scripts hang off one insight (recorded ledger lines
-are authoritative + one canonicalization pattern); a solo lead learns the
-world once and stamps out three implementations with heavy prompt-cache
-reuse, while fan-out pays three context establishments plus brief-writing and
-review. This generalizes the limitation Cognition's blog states for serial
-debugging ("accumulated context *is* the work"): shared context favors a
-single holder, however many units hang off it.
+Two laws died in sequence here. "Delegation benefit scales with task size"
+was falsified by the milestone row. Its replacement — "delegation pays when
+the delegable unit is *deep*" — we then falsified deliberately:
+`marketplace-quarter-close` keeps the milestone's 3-way epic independence but
+makes each epic a spec-heavy mini-project (a rule engine, a reconciliation
+matcher, a hash-chain CLI — the sidekick wrote ~730 lines of implementation
+plus ~800 lines of its own tests, 70k output tokens). Deep units, fully
+delegated (all 3 epics, 1 lead edit) — and solo *still* won by $1.14.
+
+The token decomposition says why, and gives the law that fits all five
+points: **delegation pays exactly when it removes token mass from the lead —
+and code emission against a spec the lead already holds is not removable.**
+On quarter-close, delegating every implementation cut the lead's output only
+53k → 37k (−$0.90): briefing three epics ≈ restating the spec it already
+held, then reviewing and verifying the results. Meanwhile the sidekick spent
+70k output tokens — more than the entire solo run — on the same three
+scripts, and total output *doubled*. What made pandera different: the deep
+unit there was **context acquisition and debug iteration inside a large real
+repo** — exploration and test-fix loops the lead skipped entirely, token
+mass that never touched fable's meter. Spec-transfer depth doesn't delegate
+profitably; discovery depth does. (Cognition's blog gates delegation on
+whether *accumulated context* is the work — this is that rule's economic
+mirror image: delegation profits precisely on the context the lead never has
+to accumulate.)
 
 Delegation retains two wins even where it costs more: **lead code edits**
-(milestone: 18 solo → 1 with fan-out — the lead's attention is often the
-scarcer resource) and wall-clock parallelism on deep independent units.
+(milestone: 18 solo → 1 fan-out; quarter-close: 10 solo → 1) — the lead's
+attention is often the scarcer resource — and wall-clock parallelism, though
+only when the fan-out actually runs in parallel (see §1 note below).
 
 ## 3. Fable vs. Opus as lead (the original blog's axis)
 
@@ -93,8 +112,10 @@ Transcript-level observations, consistent across delegation runs:
   plus architecture constraints. The brief is machine-checkable, not prose —
   arguably stronger than the constraint-brief style the blog describes.
 - **Zero corrective edits.** In every delegation run, the lead never touched
-  the sidekick's implementation code. Its own edits were acceptance tests and
-  docs (a metric split worth making: authoring vs. correcting).
+  the sidekick's implementation code. Its own edits were acceptance tests,
+  docs, and scaffolding (quarter-close: the lead's single "edit" was writing
+  `scripts/__init__.py`) — a metric split worth making: authoring vs.
+  correcting.
 - **Foundation-first fan-out.** On the milestone, the lead built the shared
   foundation before issuing the three parallel briefs — interface-first
   decomposition, unprompted.
@@ -135,19 +156,24 @@ runs audited clean.
   (Claude Code's own figures differ slightly via 1h-cache pricing).
   Consistent within the harness, so comparisons hold.
 - **n=1 everywhere.** Observed run-to-run variance elsewhere (fable 1.00 vs
-  0.50 on the same celery task) means every number above needs repeats
-  before strong claims. The two headline cells to repeat first:
-  milestone@fanout and pandera@fanout.
+  0.50 on the same celery task; parallel vs sequential fan-out on identical
+  structure+prompt) means every number above needs repeats before strong
+  claims. The headline cells to repeat first: pandera@fanout,
+  quarter-close@fanout, milestone@fanout.
+- **The delegation-wins side of the law rests on real-repo tasks** (celery,
+  pandera). The direct next probe: a second pandera-class task — deep
+  real-repo feature where the delegable unit is discovery-heavy — to
+  replicate the −50% result.
 - All runs, transcripts, diffs, and per-checkpoint grader reports are in
   `results/` (aggregate with `python compare.py --task <task>`).
 
 ## Reproduce
 
 ```bash
-python run.py --task marketplace-q3-milestone --config fable+sonnet \
+python run.py --task marketplace-quarter-close --config fable+sonnet \
   --driver cc --delegation-prompt fanout
-python run.py --task marketplace-q3-milestone --config fable-solo --driver cc
-python compare.py --task marketplace-q3-milestone
+python run.py --task marketplace-quarter-close --config fable-solo --driver cc
+python compare.py --task marketplace-quarter-close
 ```
 
 Tasks live in `../rl-environments/tasks/` (auto-discovered). Task-side QA:

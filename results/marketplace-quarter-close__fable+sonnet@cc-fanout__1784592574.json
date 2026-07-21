@@ -1,0 +1,120 @@
+{
+  "task": "marketplace-quarter-close",
+  "config": "fable+sonnet@cc-fanout",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": "claude-sonnet-5",
+  "score": {
+    "score": 1.0,
+    "passed": 13,
+    "total": 13,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "fee_rows": true,
+      "fee_cli": true,
+      "recon_rows": true,
+      "recon_summary": true,
+      "recon_cli": true,
+      "chain_records": true,
+      "chain_verify_cli": true,
+      "chain_cli": true,
+      "conservation": true,
+      "money_contract": true,
+      "visible_tests": true,
+      "conventions": true,
+      "guarded_files_untouched": true
+    },
+    "modified_guarded_files": [],
+    "blockers": {
+      "conservation": true,
+      "money_contract": true,
+      "guarded_files_untouched": true
+    },
+    "grader_pass": true,
+    "tails": {
+      "fee_cli": [
+        "ok"
+      ],
+      "recon_cli": [
+        "ok"
+      ],
+      "chain_cli": [
+        "ok"
+      ],
+      "chain_verify_cli": [
+        "ok"
+      ],
+      "fee_rows": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "recon_rows": [
+        ".                                                                        [100%]",
+        "1 passed in 0.02s"
+      ],
+      "recon_summary": [
+        ".                                                                        [100%]",
+        "1 passed in 0.01s"
+      ],
+      "chain_records": [
+        "...                                                                      [100%]",
+        "3 passed in 0.05s"
+      ],
+      "conservation": [
+        "..                                                                       [100%]",
+        "2 passed in 0.02s"
+      ],
+      "money_contract": [
+        "....                                                                     [100%]",
+        "4 passed in 0.02s"
+      ],
+      "visible_tests": [
+        ".................                                                        [100%]",
+        "17 passed in 0.06s"
+      ],
+      "conventions": [
+        "Conventions OK."
+      ]
+    }
+  },
+  "wall_seconds": 674.2,
+  "error": null,
+  "lead_summary": "All three deliverables are complete, verified, and green. Final state of the close package:\n\n## What was built\n\n**Fee-rules review** \u2014 `scripts/fee_review.py` writes `exports/fee_review/2026-04.csv` (17 rows), `2026-05.csv` (19), `2026-06.csv` (15). Fulfilled orders only, recorded `charged_cents`/`charged_at` taken from `exports/charges.csv` (never recomputed from items), winner by priority with id tiebreak, `per_order` fees split through `Money.allocate` over goods-value weights in vendor first-appearance order, `per_vendor` fees computed on each in-scope vendor's attributed share.\n\n**Bank reconciliation** \u2014 `scripts/reconcile_bank.py` writes the three monthly CSVs plus `summary.json`. Bank amounts are parsed to integer cents with string operations only (no floats anywhere). The quarter reconciles to: April 14 matched, 1 mismatch (ORD-4004, \u22127\u00a2), 1 late, 1 missing, 1 unknown ref; May 14 matched, 1 mismatch (+100\u00a2), 1 duplicate (\u2212100\u00a2, netting to 0), 1 missing, 1 unknown ref; June 13 matched, 1 mismatch (\u22121\u00a2), 1 late, 1 duplicate. The July-settled unknown ref correctly does not appear in a Q2 run.\n\n**Ledger chain** \u2014 `scripts/ledger_chain.py build` writes `exports/ledger_chain.jsonl`: 167 money lines + 3 month closes = 170 SHA-256-chained records; `verify` prints `OK 170 records` and needs only the file itself.\n\n## How it was verified\n\n- **Suites and conventions**: `python -m pytest tests libs/money/tests -q` \u2192 **92 passed** (17 pre-existing + 75 new across three test files); `python scripts/check_conventions.py` \u2192 OK. No existing test, nightly artifact, or `services/orders/data/` file was modified.\n- **Determinism**: every command run twice; all 8 output files byte-identical by checksum (CRLF CSVs matching the existing exports' style).\n- **Range-correctness**: `--from 2026-05 --to 2026-05` produces exactly the May files, byte-identical to the full-range run's May outputs, and a subset ledger with only May lines and one close.\n- **Independent cross-checks I did by hand, not via the new code**: derived the full set of expected reconciliation statuses and deltas straight from the raw bank/charges files before the implementation existed \u2014 the output matches exactly, including the subtle case where T-9126 settles on charged_at+3 (in-window match) so T-9123 becomes the duplicate. Recomputed four fee cases by hand (ORD-4011's 68/12 R-050 split, ORD-4005's per_vendor allocation 389/1360 \u2192 40\u00a2, ORD-4004's R-205 clamp \u2192 79\u00a2, ORD-6016's R-500 flat 35\u00a2 per vendor) \u2014 all match. Recomputed the three month-close sums from the raw CSVs \u2014 all match. Tampered with one `amount_cents` mid-chain in a copy \u2192 exactly `BROKEN at seq 100`, exit 1.\n\nOne implementation note: `verify` re-serializes whatever fields a record has (minus `hash`), so an edit to *any* field \u2014 including `seq` or `prev_hash` \u2014 breaks the chain from that record on, with no dependence on order data.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/marketplace-quarter-close__fable+sonnet@cc-fanout__1784592574.transcript.jsonl",
+  "contamination_hits": [],
+  "cost_usd": 6.3507,
+  "tokens": {
+    "input": 725,
+    "output": 106693,
+    "cache_write": 212514,
+    "cache_read": 3108204
+  },
+  "lead_turns": 23,
+  "sidekick_turns": 48,
+  "lead_code_edits": 1,
+  "delegations": 3,
+  "first_delegation_turn": 9,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 629,
+      "output_tokens": 36680,
+      "cache_write_tokens": 85583,
+      "cache_read_tokens": 1402339,
+      "cost_usd": 4.3124
+    },
+    "sidekick/claude-sonnet-5": {
+      "calls": 1,
+      "input_tokens": 96,
+      "output_tokens": 70013,
+      "cache_write_tokens": 126931,
+      "cache_read_tokens": 1705865,
+      "cost_usd": 2.0382
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 6.992522750000001,
+  "agent_exit_code": 0
+}
