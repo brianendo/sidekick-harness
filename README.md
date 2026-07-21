@@ -21,6 +21,51 @@ makes a single code edit itself.
 This repo reproduces that experimental setup at small scale so the behavioral
 metrics behind the result can be observed directly on any lead/sidekick pair.
 
+## Headline results
+
+All cells are **n=1** (directional, not confirmatory — see
+[FINDINGS.md](FINDINGS.md) for full caveats and transcripts). Tasks are
+investigation-heavy planted-truth worlds from the sibling
+[`rl-environments`](../rl-environments) project; identical score across each
+solo/delegation pair unless noted.
+
+**1. Delegation won on cost in 2 of 6 task pairs — and the preconditions are
+identifiable in advance:**
+
+| Task | Solo | Best delegation | Winner |
+|---|---|---|---|
+| vendor-statements (1 shallow epic) | $2.75 / 5 min | $3.20 / 9 min | solo |
+| celery-worker-stall (1 deep fix, real repo) | $5.20 / 15 min | $4.94 / 12 min | delegation |
+| pandera (1 deep **additive** feature, real repo) | $12.76 | **$6.44 / 16 min (−50%)** | delegation |
+| marketplace-q3-milestone (3 shallow epics) | **$4.58 / 8 min** | $5.73 / 10 min | solo |
+| marketplace-quarter-close (3 **deep** epics) | **$5.21 / 10 min** | $6.35 / 11 min | solo |
+| anyio-start-task-handles (1 deep **invasive** feature) | **$17.95 / 31 min** | $22.06 / 38 min | solo |
+
+The law that fits all six points: **delegation pays exactly when it removes
+token mass from the lead** — discovery/debug-iteration work inside a repo the
+lead never has to explore. Code emission against a spec the lead already
+holds is not removable (quarter-close), and invasive units the lead
+rationally refuses to hand off never get to run the economics (anyio). The
+winning regime: deep, **additive**, briefable-as-a-contract units — pandera
+is the exemplar.
+
+**2. Fable was cheaper than Opus before any sidekick entered** (real-repo
+debugging with hidden contract tests):
+
+| Lead (solo) | Score | Cost | Turns | Corrective edits |
+|---|---|---|---|---|
+| fable-5 | 1.00 | $5.20 | 31 | 2 |
+| opus-4.8 | 0.50 | $10.75 | 103 | 14 |
+
+**3. Delegation count follows task structure, not prompt pressure.** Licensing
+parallel fan-out changed nothing on a task with coupled units (still one
+brief), while a task with 3 independent epics got all three briefs in a
+single message — and on an invasive task the lead delegated only a read-only
+code review at the end, unprompted. Briefs were executable contracts: on
+pandera the lead wrote the failing acceptance test itself and defined done as
+making it pass; in every delegation run the lead made **zero corrective
+edits** to sidekick code.
+
 ## Architecture
 
 ```
