@@ -1,0 +1,100 @@
+{
+  "task": "anyio-start-task-handles",
+  "config": "fable+sonnet@cc-fanout",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": "claude-sonnet-5",
+  "score": {
+    "score": 1.0,
+    "passed": 7,
+    "total": 7,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "handle_start_soon": true,
+      "handle_start": true,
+      "sync_wrapper": true,
+      "error_contract": true,
+      "repro_test": true,
+      "self_consistent": true,
+      "existing_suite_regression": true
+    },
+    "modified_guarded_files": [],
+    "blockers": null,
+    "grader_pass": null,
+    "tails": {
+      "handle_start_soon": [
+        "..........                                                               [100%]",
+        "10 passed in 0.28s"
+      ],
+      "handle_start": [
+        "..........                                                               [100%]",
+        "10 passed in 0.09s"
+      ],
+      "sync_wrapper": [
+        "......                                                                   [100%]",
+        "6 passed in 0.09s"
+      ],
+      "error_contract": [
+        "........                                                                 [100%]",
+        "8 passed in 0.15s"
+      ],
+      "self_consistent": [
+        "SKIPPED [6] tests/test_taskgroups.py:1962: Requires Python 3.14",
+        "SKIPPED [4] tests/test_from_thread.py:715: This test is known to hang often on CI",
+        "740 passed, 14 skipped, 5 xfailed in 22.44s"
+      ],
+      "repro_test": [
+        "failures on pristine=69 vs own tree=0",
+        "69 failed, 671 passed, 14 skipped, 5 xfailed in 23.12s"
+      ],
+      "existing_suite_regression": [
+        "SKIPPED [6] tests/test_taskgroups.py:1950: Requires Python 3.14",
+        "SKIPPED [4] tests/test_from_thread.py:715: This test is known to hang often on CI",
+        "637 passed, 14 skipped, 7 deselected, 5 xfailed in 21.54s"
+      ]
+    }
+  },
+  "wall_seconds": 2277.5,
+  "error": null,
+  "lead_summary": "Full suite is green: **3587 passed, 318 skipped, 5 xfailed** \u2014 zero failures across the entire anyio test suite (baseline was 3584 passing before the ~96 new tests net of updates). The adversarial review agent is still running; I'll report its findings and wrap up once it completes.",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/anyio-start-task-handles__fable+sonnet@cc-fanout__1784596506.transcript.jsonl",
+  "contamination_hits": [
+    "pip\\s+install\\s+(?!-e\\b|\\.\\[|\\\"\\.|'\\.)[a-zA-Z] x2",
+    "pip\\s+download x3"
+  ],
+  "cost_usd": 22.0624,
+  "tokens": {
+    "input": 815,
+    "output": 152005,
+    "cache_write": 287761,
+    "cache_read": 15853904
+  },
+  "lead_turns": 96,
+  "sidekick_turns": 52,
+  "lead_code_edits": 37,
+  "delegations": 1,
+  "first_delegation_turn": 92,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 711,
+      "output_tokens": 105451,
+      "cache_write_tokens": 180398,
+      "cache_read_tokens": 12386274,
+      "cost_usd": 19.9209
+    },
+    "sidekick/claude-sonnet-5": {
+      "calls": 1,
+      "input_tokens": 104,
+      "output_tokens": 46554,
+      "cache_write_tokens": 107363,
+      "cache_read_tokens": 3467630,
+      "cost_usd": 2.1415
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 21.6491565,
+  "agent_exit_code": 0
+}

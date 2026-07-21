@@ -1,0 +1,1029 @@
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.mypy_cache/.gitignore b/.mypy_cache/.gitignore
+--- a/.mypy_cache/.gitignore	1969-12-31 16:00:00
++++ b/.mypy_cache/.gitignore	2026-07-20 18:37:24
+@@ -0,0 +1,2 @@
++# Automatically created by mypy
++*
+Binary files a/.mypy_cache/3.14/cache.0.db and b/.mypy_cache/3.14/cache.0.db differ
+Binary files a/.mypy_cache/3.14/cache.1.db and b/.mypy_cache/3.14/cache.1.db differ
+Binary files a/.mypy_cache/3.14/cache.10.db and b/.mypy_cache/3.14/cache.10.db differ
+Binary files a/.mypy_cache/3.14/cache.11.db and b/.mypy_cache/3.14/cache.11.db differ
+Binary files a/.mypy_cache/3.14/cache.12.db and b/.mypy_cache/3.14/cache.12.db differ
+Binary files a/.mypy_cache/3.14/cache.13.db and b/.mypy_cache/3.14/cache.13.db differ
+Binary files a/.mypy_cache/3.14/cache.14.db and b/.mypy_cache/3.14/cache.14.db differ
+Binary files a/.mypy_cache/3.14/cache.15.db and b/.mypy_cache/3.14/cache.15.db differ
+Binary files a/.mypy_cache/3.14/cache.2.db and b/.mypy_cache/3.14/cache.2.db differ
+Binary files a/.mypy_cache/3.14/cache.3.db and b/.mypy_cache/3.14/cache.3.db differ
+Binary files a/.mypy_cache/3.14/cache.4.db and b/.mypy_cache/3.14/cache.4.db differ
+Binary files a/.mypy_cache/3.14/cache.5.db and b/.mypy_cache/3.14/cache.5.db differ
+Binary files a/.mypy_cache/3.14/cache.6.db and b/.mypy_cache/3.14/cache.6.db differ
+Binary files a/.mypy_cache/3.14/cache.7.db and b/.mypy_cache/3.14/cache.7.db differ
+Binary files a/.mypy_cache/3.14/cache.8.db and b/.mypy_cache/3.14/cache.8.db differ
+Binary files a/.mypy_cache/3.14/cache.9.db and b/.mypy_cache/3.14/cache.9.db differ
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.mypy_cache/CACHEDIR.TAG b/.mypy_cache/CACHEDIR.TAG
+--- a/.mypy_cache/CACHEDIR.TAG	1969-12-31 16:00:00
++++ b/.mypy_cache/CACHEDIR.TAG	2026-07-20 18:37:24
+@@ -0,0 +1,3 @@
++Signature: 8a477f597d28d172789f06886806bc55
++# This file is a cache directory tag automatically created by mypy.
++# For information about cache directory tags see https://bford.info/cachedir/
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.ruff_cache/.gitignore b/.ruff_cache/.gitignore
+--- a/.ruff_cache/.gitignore	1969-12-31 16:00:00
++++ b/.ruff_cache/.gitignore	2026-07-20 18:36:53
+@@ -0,0 +1,2 @@
++# Automatically created by ruff.
++*
+Binary files a/.ruff_cache/0.15.16/10545515895196769166 and b/.ruff_cache/0.15.16/10545515895196769166 differ
+Binary files a/.ruff_cache/0.15.16/11577195041035725829 and b/.ruff_cache/0.15.16/11577195041035725829 differ
+Binary files a/.ruff_cache/0.15.16/14468623766720041109 and b/.ruff_cache/0.15.16/14468623766720041109 differ
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/.ruff_cache/CACHEDIR.TAG b/.ruff_cache/CACHEDIR.TAG
+--- a/.ruff_cache/CACHEDIR.TAG	1969-12-31 16:00:00
++++ b/.ruff_cache/CACHEDIR.TAG	2026-07-20 18:36:53
+@@ -0,0 +1 @@
++Signature: 8a477f597d28d172789f06886806bc55
+\ No newline at end of file
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/docs/tasks.rst b/docs/tasks.rst
+--- a/docs/tasks.rst	2026-07-20 18:02:11
++++ b/docs/tasks.rst	2026-07-20 18:36:12
+@@ -44,8 +44,9 @@
+ Working with task handles
+ -------------------------
+ 
+-As an alternative way to spawn tasks, you can use the :meth:`~.TaskGroup.create_task`
+-method which will return a :class:`~.TaskHandle`. This handle can be used to:
++Both :meth:`~.TaskGroup.start_soon` and :meth:`~.TaskGroup.create_task` (the latter
++being an alternative that takes a ready-made coroutine object) return a
++:class:`~.TaskHandle`. This handle can be used to:
+ 
+ #. Wait for the task to finish before exiting the task group
+ #. Retrieve the task's return value or exception
+@@ -134,6 +135,25 @@
+ that is calling with :meth:`TaskGroup.start() <.abc.TaskGroup.start>` will be blocked
+ until then. If the spawned task never calls it, then the
+ :meth:`TaskGroup.start() <.abc.TaskGroup.start>` call will raise a ``RuntimeError``.
++
++If you need a :class:`~.TaskHandle` for the started task, pass ``return_handle=True``.
++The value passed to ``task_status.started()`` is then available as
++:attr:`~.TaskHandle.start_value` on the returned handle::
++
++    async def main():
++        async with create_task_group() as tg:
++            handle = await tg.start(start_some_service, 5000, return_handle=True)
++            print(handle.start_value)
++
++You can also pass a *synchronous* callable to
++:meth:`TaskGroup.start() <.abc.TaskGroup.start>`, as long as it calls
++``task_status.started()`` before returning the coroutine object to run as the task.
++This is useful for wrappers that need to complete initialization synchronously before
++the task starts running::
++
++    def start_service_sync(port: int, *, task_status: TaskStatus[None]):
++        task_status.started()
++        return run_service(port)
+ 
+ .. note:: Unlike :meth:`~.abc.TaskGroup.start_soon`, :meth:`~.abc.TaskGroup.start` needs
+    an ``await``.
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/docs/versionhistory.rst b/docs/versionhistory.rst
+--- a/docs/versionhistory.rst	2026-07-20 18:02:11
++++ b/docs/versionhistory.rst	2026-07-20 18:40:05
+@@ -15,6 +15,19 @@
+   functions and classes
+ - Added the ``create_task()`` task group method for easier asyncio migration
+   and to allow retrieving task return values more easily
++- Added the ``return_handle`` keyword-only argument to ``TaskGroup.start()`` which
++  makes it return the task's ``TaskHandle`` instead of the value passed to
++  ``task_status.started()``; that value is then available as ``start_value`` on the
++  handle
++- Changed ``TaskGroup.start_soon()`` to return a ``TaskHandle`` for the spawned task
++  (previously returned ``None``)
++- Changed ``TaskGroup.start()`` to also accept a synchronous callable that signals
++  readiness by calling ``task_status.started()`` before returning the coroutine
++  object to run as the task
++- Changed the ``TypeError`` raised when the callable passed to
++  ``TaskGroup.start_soon()`` or ``TaskGroup.start()`` doesn't return a coroutine
++  object to be identical on both backends (previously the Trio backend claimed the
++  function "appears to be synchronous")
+ - Added the ``cancel()`` convenience method to ``TaskGroup`` as a shortcut for
+   cancelling the task group's cancel scope
+ - Improved the error message when a known backend is not installed to suggest the
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/src/anyio/_backends/_asyncio.py b/src/anyio/_backends/_asyncio.py
+--- a/src/anyio/_backends/_asyncio.py	2026-07-20 18:02:11
++++ b/src/anyio/_backends/_asyncio.py	2026-07-20 18:38:10
+@@ -40,7 +40,6 @@
+     CORO_RUNNING,
+     CORO_SUSPENDED,
+     getcoroutinestate,
+-    iscoroutine,
+ )
+ from io import IOBase
+ from os import PathLike
+@@ -92,6 +91,7 @@
+ )
+ from .._core._synchronization import Semaphore as BaseSemaphore
+ from .._core._tasks import CancelScope as BaseCancelScope
++from .._core._tasks import TaskHandle
+ from ..abc import (
+     AsyncBackend,
+     IPSockAddrType,
+@@ -100,6 +100,7 @@
+     UNIXDatagramPacketType,
+ )
+ from ..abc._eventloop import StrOrBytesPath
++from ..abc._tasks import _validate_spawned_coro, get_callable_name
+ from ..lowlevel import RunVar
+ from ..streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
+ 
+@@ -336,12 +337,6 @@
+     return task
+ 
+ 
+-def get_callable_name(func: Callable) -> str:
+-    module = getattr(func, "__module__", None)
+-    qualname = getattr(func, "__qualname__", None)
+-    return ".".join([x for x in (module, qualname) if x])
+-
+-
+ #
+ # Event loop
+ #
+@@ -728,9 +723,10 @@
+ 
+ 
+ class _AsyncioTaskStatus(abc.TaskStatus):
+-    def __init__(self, future: asyncio.Future, parent_id: int):
++    def __init__(self, future: asyncio.Future, parent_id: int, spawner: asyncio.Task):
+         self._future = future
+         self._parent_id = parent_id
++        self._spawner = spawner
+ 
+     def started(self, value: T_contra | None = None) -> None:
+         try:
+@@ -741,8 +737,11 @@
+                     "called 'started' twice on the same task status"
+                 ) from None
+ 
++        # Reparent the task to the task group's host task, unless started() was called
++        # synchronously by the task that called start(), before the task was spawned
+         task = cast(asyncio.Task, current_task())
+-        _task_states[task].parent_id = self._parent_id
++        if task is not self._spawner:
++            _task_states[task].parent_id = self._parent_id
+ 
+ 
+ if sys.version_info >= (3, 12):
+@@ -830,11 +829,9 @@
+         finally:
+             del exc_val, exc_tb, self._exceptions
+ 
+-    def _spawn(
++    def _spawn_task_handle(
+         self,
+-        func: Callable[[Unpack[PosArgsT]], Awaitable[Any]],
+-        args: tuple[Unpack[PosArgsT]],
+-        name: object,
++        handle: TaskHandle[Any],
+         task_status_future: asyncio.Future | None = None,
+     ) -> asyncio.Task:
+         def task_done(_task: asyncio.Task) -> None:
+@@ -889,24 +886,15 @@
+                 "This task group is not active; no new tasks can be started."
+             )
+ 
+-        kwargs = {}
+-        if task_status_future:
++        if task_status_future is not None and not task_status_future.done():
++            # The task will be reparented to the task group's host task when it calls
++            # task_status.started()
+             parent_id = id(current_task())
+-            kwargs["task_status"] = _AsyncioTaskStatus(
+-                task_status_future, id(self.cancel_scope._host_task)
+-            )
+         else:
+             parent_id = id(self.cancel_scope._host_task)
+ 
+-        coro = func(*args, **kwargs)
+-        if not iscoroutine(coro):
+-            prefix = f"{func.__module__}." if hasattr(func, "__module__") else ""
+-            raise TypeError(
+-                f"Expected {prefix}{func.__qualname__}() to return a coroutine, but "
+-                f"the return value ({coro!r}) is not a coroutine object"
+-            )
+-
+-        name = get_callable_name(func) if name is None else str(name)
++        coro = handle._run_coro()
++        name = handle.name
+         loop = asyncio.get_running_loop()
+         if (
+             (factory := loop.get_task_factory())
+@@ -932,24 +920,52 @@
+ 
+     def start_soon(
+         self,
+-        func: Callable[[Unpack[PosArgsT]], Awaitable[Any]],
++        func: Callable[[Unpack[PosArgsT]], Awaitable[T_Retval]],
+         *args: Unpack[PosArgsT],
+         name: object = None,
+-    ) -> None:
+-        self._spawn(func, args, name)
++    ) -> TaskHandle[T_Retval]:
++        if not self._entered or not self.cancel_scope._active:
++            raise RuntimeError(
++                "This task group is not active; no new tasks can be started."
++            )
+ 
++        coro = _validate_spawned_coro(func, func(*args))
++        handle = TaskHandle[T_Retval](
++            coro, get_callable_name(func) if name is None else str(name)
++        )
++        self._spawn_task_handle(handle)
++        return handle
++
+     async def start(
+-        self, func: Callable[..., Awaitable[Any]], *args: object, name: object = None
++        self,
++        func: Callable[..., Awaitable[Any]],
++        *args: object,
++        name: object = None,
++        return_handle: bool = False,
+     ) -> Any:
++        if not self._entered or not self.cancel_scope._active:
++            raise RuntimeError(
++                "This task group is not active; no new tasks can be started."
++            )
++
+         future: asyncio.Future = asyncio.Future()
+-        task = self._spawn(func, args, name, future)
++        task_status = _AsyncioTaskStatus(
++            future,
++            id(self.cancel_scope._host_task),
++            cast(asyncio.Task, current_task()),
++        )
++        coro = _validate_spawned_coro(func, func(*args, task_status=task_status))
++        handle = TaskHandle[Any](
++            coro, get_callable_name(func) if name is None else str(name)
++        )
++        task = self._spawn_task_handle(handle, future)
+ 
+         # If the task raises an exception after sending a start value without a switch
+         # point between, the task group is cancelled and this method never proceeds to
+         # process the completed future. That's why we have to have a shielded cancel
+         # scope here.
+         try:
+-            return await future
++            handle._start_value = await future
+         except CancelledError:
+             # Cancel the task and wait for it to exit before returning
+             task.cancel()
+@@ -957,6 +973,8 @@
+                 await task
+ 
+             raise
++
++        return handle if return_handle else handle._start_value
+ 
+ 
+ #
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/src/anyio/_backends/_trio.py b/src/anyio/_backends/_trio.py
+--- a/src/anyio/_backends/_trio.py	2026-07-20 18:02:11
++++ b/src/anyio/_backends/_trio.py	2026-07-20 18:38:21
+@@ -78,8 +78,10 @@
+ )
+ from .._core._synchronization import Semaphore as BaseSemaphore
+ from .._core._tasks import CancelScope as BaseCancelScope
++from .._core._tasks import TaskHandle
+ from ..abc import IPSockAddrType, UDPPacketType, UNIXDatagramPacketType
+ from ..abc._eventloop import AsyncBackend, StrOrBytesPath
++from ..abc._tasks import _validate_spawned_coro, get_callable_name
+ from ..streams.memory import MemoryObjectSendStream
+ 
+ if TYPE_CHECKING:
+@@ -166,6 +168,28 @@
+ #
+ 
+ 
++class _TrioTaskStatus(abc.TaskStatus):
++    """
++    Wraps trio's own task status so that ``started()`` can also be called
++    synchronously, before the coroutine to run has even been returned to ``start()``.
++    """
++
++    def __init__(self) -> None:
++        self._trio_status: trio.TaskStatus[Any] | None = None
++        self._started_by_spawner = False
++        self._start_value: Any = None
++
++    def started(self, value: Any = None) -> None:
++        if self._trio_status is not None:
++            self._trio_status.started(value)
++        elif self._started_by_spawner:
++            raise RuntimeError("called 'started' twice on the same task status")
++        else:
++            self._started_by_spawner = True
++
++        self._start_value = value
++
++
+ class TaskGroup(abc.TaskGroup):
+     def __init__(self) -> None:
+         self._entered = False
+@@ -201,28 +225,69 @@
+             del exc_val, exc_tb
+             self._active = False
+ 
++    def _spawn_task_handle(self, handle: TaskHandle[Any]) -> None:
++        if not self._active:
++            raise RuntimeError(
++                "This task group is not active; no new tasks can be started."
++            )
++
++        self._nursery.start_soon(handle._run_coro, name=handle.name)
++
+     def start_soon(
+         self,
+-        func: Callable[[Unpack[PosArgsT]], Awaitable[Any]],
++        func: Callable[[Unpack[PosArgsT]], Awaitable[T_Retval]],
+         *args: Unpack[PosArgsT],
+         name: object = None,
+-    ) -> None:
++    ) -> TaskHandle[T_Retval]:
+         if not self._active:
+             raise RuntimeError(
+                 "This task group is not active; no new tasks can be started."
+             )
+ 
+-        self._nursery.start_soon(func, *args, name=name)
++        coro = _validate_spawned_coro(func, func(*args))
++        handle = TaskHandle[T_Retval](
++            coro, get_callable_name(func) if name is None else str(name)
++        )
++        # Pass the original callable as the fallback name so that trio derives the
++        # task's name exactly as it would if func had been spawned directly
++        self._nursery.start_soon(
++            handle._run_coro, name=name if name is not None else func
++        )
++        return handle
+ 
+     async def start(
+-        self, func: Callable[..., Awaitable[Any]], *args: object, name: object = None
++        self,
++        func: Callable[..., Awaitable[Any]],
++        *args: object,
++        name: object = None,
++        return_handle: bool = False,
+     ) -> Any:
+         if not self._active:
+             raise RuntimeError(
+                 "This task group is not active; no new tasks can be started."
+             )
+ 
+-        return await self._nursery.start(func, *args, name=name)
++        task_status = _TrioTaskStatus()
++        coro = _validate_spawned_coro(func, func(*args, task_status=task_status))
++        handle = TaskHandle[Any](
++            coro, get_callable_name(func) if name is None else str(name)
++        )
++        task_name = name if name is not None else func
++        if task_status._started_by_spawner:
++            # func signalled readiness synchronously, before returning the coroutine,
++            # so the task can be spawned directly into the nursery
++            self._nursery.start_soon(handle._run_coro, name=task_name)
++            handle._start_value = task_status._start_value
++        else:
++            outer_status = task_status
++
++            async def runner(*, task_status: trio.TaskStatus[Any]) -> None:
++                outer_status._trio_status = task_status
++                await handle._run_coro()
++
++            handle._start_value = await self._nursery.start(runner, name=task_name)
++
++        return handle if return_handle else handle._start_value
+ 
+ 
+ #
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/src/anyio/_core/_tasks.py b/src/anyio/_core/_tasks.py
+--- a/src/anyio/_core/_tasks.py	2026-07-20 18:02:11
++++ b/src/anyio/_core/_tasks.py	2026-07-20 18:38:44
+@@ -199,7 +199,10 @@
+ @final
+ class TaskHandle(Generic[T_co]):
+     """
+-    Returned from :meth:`TaskGroup.create_task() <.abc.TaskGroup.create_task>`.
++    Returned from :meth:`TaskGroup.create_task() <.abc.TaskGroup.create_task>`,
++    :meth:`TaskGroup.start_soon() <.abc.TaskGroup.start_soon>` and
++    :meth:`TaskGroup.start() <.abc.TaskGroup.start>` (the latter only with
++    ``return_handle=True``).
+     Can be awaited on to get the return value of the task (or the raised exception).
+     If the task was terminated by a :exc:`BaseException`, :exc:`TaskFailed` will be
+     raised (or its subclass :exc:`TaskCancelled` if the task was cancelled).
+@@ -242,6 +245,7 @@
+         "_finished_event",
+         "_return_value",
+         "_exception",
++        "_start_value",
+     )
+ 
+     _return_value: T_co
+@@ -252,8 +256,9 @@
+         self._coro = coro
+         self._cancel_scope = CancelScope()
+         self._finished_event = Event()
+-        self._name = name or coro.__qualname__
++        self._name = name if name is not None else coro.__qualname__
+         self._exception: BaseException | None = None
++        self._start_value: Any = None
+ 
+     async def _run_coro(self) -> None:
+         __tracebackhide__ = True
+@@ -263,10 +268,14 @@
+                 retval = await self._coro
+             except BaseException as exc:
+                 self._exception = exc
++                self._finished_event.set()
++                # Drop this frame's references to the handle and the exception so the
++                # propagated exception's traceback doesn't keep the handle (and thus
++                # the exception itself) alive in a reference cycle
++                del self, exc
+                 raise
+             else:
+                 self._return_value = retval
+-            finally:
+                 self._finished_event.set()
+ 
+     def cancel(self) -> None:
+@@ -317,6 +326,20 @@
+     def name(self) -> str:
+         """The name of the task."""
+         return self._name
++
++    @property
++    def start_value(self) -> Any:
++        """
++        The value the task passed to ``task_status.started()``.
++
++        Only meaningful for tasks spawned via
++        :meth:`TaskGroup.start() <.abc.TaskGroup.start>`. This is ``None`` if
++        ``task_status.started()`` was called without a value, or if the task was
++        spawned by any other method.
++
++        .. versionadded:: 4.15.0
++        """
++        return self._start_value
+ 
+     @property
+     def exception(self) -> BaseException | None:
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/src/anyio/abc/_tasks.py b/src/anyio/abc/_tasks.py
+--- a/src/anyio/abc/_tasks.py	2026-07-20 18:02:11
++++ b/src/anyio/abc/_tasks.py	2026-07-20 18:37:58
+@@ -4,10 +4,9 @@
+ from abc import ABCMeta, abstractmethod
+ from collections.abc import Awaitable, Callable, Coroutine
+ from contextvars import Context
+-from functools import partial
+ from inspect import iscoroutine
+ from types import TracebackType
+-from typing import TYPE_CHECKING, Any, Protocol, overload
++from typing import TYPE_CHECKING, Any, Protocol, cast, overload
+ 
+ if sys.version_info >= (3, 13):
+     from typing import TypeVar
+@@ -27,6 +26,26 @@
+ PosArgsT = TypeVarTuple("PosArgsT")
+ 
+ 
++def get_callable_name(func: Callable[..., Any]) -> str:
++    module = getattr(func, "__module__", None)
++    qualname = getattr(func, "__qualname__", None)
++    return ".".join([x for x in (module, qualname) if x])
++
++
++def _validate_spawned_coro(
++    func: Callable[..., Any], coro: Awaitable[T_Retval]
++) -> Coroutine[Any, Any, T_Retval]:
++    """Raise a helpful error if calling ``func`` did not produce a coroutine."""
++    if not iscoroutine(coro):
++        prefix = f"{func.__module__}." if hasattr(func, "__module__") else ""
++        raise TypeError(
++            f"Expected {prefix}{func.__qualname__}() to return a coroutine, but "
++            f"the return value ({coro!r}) is not a coroutine object"
++        )
++
++    return cast("Coroutine[Any, Any, T_Retval]", coro)
++
++
+ class TaskStatus(Protocol[T_contra]):
+     @overload
+     def started(self: TaskStatus[None]) -> None: ...
+@@ -96,27 +115,41 @@
+ 
+         handle = TaskHandle[T_Retval](coro, name)
+         if context is not None:
+-            context.run(partial(self.start_soon, handle._run_coro, name=handle.name))
++            context.run(self._spawn_task_handle, handle)
+         else:
+-            self.start_soon(handle._run_coro, name=handle.name)
++            self._spawn_task_handle(handle)
+ 
+         return handle
+ 
++    def _spawn_task_handle(self, handle: TaskHandle[Any]) -> object:
++        """
++        Schedule the coroutine wrapped by the given task handle to run in this task
++        group.
++
++        """
++        # Fallback for third party task group implementations; the concrete backends
++        # override this
++        return self.start_soon(handle._run_coro, name=handle.name)
++
+     @abstractmethod
+     def start_soon(
+         self,
+-        func: Callable[[Unpack[PosArgsT]], Awaitable[Any]],
++        func: Callable[[Unpack[PosArgsT]], Awaitable[T_Retval]],
+         *args: Unpack[PosArgsT],
+         name: object = None,
+-    ) -> None:
++    ) -> TaskHandle[T_Retval]:
+         """
+         Start a new task in this task group.
+ 
+         :param func: a coroutine function
+         :param args: positional arguments to call the function with
+         :param name: name of the task, for the purposes of introspection and debugging
++        :return: a task handle
+ 
+         .. versionadded:: 3.0
++
++        .. versionchanged:: 4.15.0
++            Now returns a :class:`~anyio.TaskHandle` (previously returned ``None``).
+         """
+ 
+     @abstractmethod
+@@ -125,6 +158,7 @@
+         func: Callable[..., Awaitable[Any]],
+         *args: object,
+         name: object = None,
++        return_handle: bool = False,
+     ) -> Any:
+         """
+         Start a new task and wait until it signals for readiness.
+@@ -133,6 +167,10 @@
+         :class:`TaskStatus`). Awaiting on this method will return whatever was passed to
+         ``task_status.started()`` (``None`` by default).
+ 
++        The target callable may also be a synchronous callable that signals readiness by
++        calling ``task_status.started()`` before returning the coroutine object to run
++        as the task.
++
+         .. note:: The :class:`TaskStatus` class is generic, and the type argument should
+             indicate the type of the value that will be passed to
+             ``task_status.started()``.
+@@ -141,13 +179,24 @@
+             argument
+         :param args: positional arguments to call the function with
+         :param name: an optional name for the task, for introspection and debugging
+-        :return: the value passed to ``task_status.started()``
++        :param return_handle: if ``True``, return the task's
++            :class:`~anyio.TaskHandle` instead of the value passed to
++            ``task_status.started()`` (which is then available as
++            :attr:`~anyio.TaskHandle.start_value` on the handle)
++        :return: the value passed to ``task_status.started()``, or the task handle if
++            ``return_handle=True``
+         :raises RuntimeError: if the task finishes without calling
+-            ``task_status.started()``
++            ``task_status.started()``, or if ``task_status.started()`` is called more
++            than once before the task is spawned
+ 
+         .. seealso:: :ref:`start_initialize`
+ 
+         .. versionadded:: 3.0
++
++        .. versionchanged:: 4.15.0
++            Added the ``return_handle`` parameter, and support for synchronous
++            callables that call ``task_status.started()`` before returning a coroutine
++            object.
+         """
+ 
+     @abstractmethod
+diff -ruN -x .venv -x __pycache__ -x .pytest_cache -x .git -x .claude -x *.egg-info -x .coverage* a/tests/test_taskgroups.py b/tests/test_taskgroups.py
+--- a/tests/test_taskgroups.py	2026-07-20 18:02:11
++++ b/tests/test_taskgroups.py	2026-07-20 18:36:57
+@@ -320,13 +320,10 @@
+     def task_fn(*, task_status: TaskStatus[str] = TASK_STATUS_IGNORED) -> None:
+         task_status.started("hello")
+ 
+-    if anyio_backend_name == "trio":
+-        pattern = "appears to be synchronous"
+-    else:
+-        pattern = "is not a coroutine object"
+-
++    # Since start() gained TaskHandle support in 4.15.0, both backends raise the same
++    # TypeError (previously trio said the function "appears to be synchronous")
+     async with anyio.create_task_group() as tg:
+-        with pytest.raises(TypeError, match=pattern):
++        with pytest.raises(TypeError, match="is not a coroutine object"):
+             await tg.start(task_fn)  # type: ignore[arg-type]
+ 
+ 
+@@ -1404,7 +1401,7 @@
+ @pytest.mark.parametrize(
+     "anyio_backend", asyncio_params
+ )  # trio does not check for this yet
+-async def test_cancelscope_exit_in_wrong_task() -> None:
++async def test_cancelscope_exit_in_wrong_task(anyio_backend_name: str) -> None:
+     async def enter_scope(scope: CancelScope) -> None:
+         scope.__enter__()
+ 
+@@ -1412,9 +1409,24 @@
+         scope.__exit__(None, None, None)
+ 
+     scope = CancelScope()
+-    async with create_task_group() as tg:
+-        tg.start_soon(enter_scope, scope)
++    # Since start_soon() gained TaskHandle support in 4.15.0, each task runs inside the
++    # handle's cancel scope, so leaving ``scope`` entered when the task exits now makes
++    # the handle's scope exit raise on asyncio, as it's no longer the task's innermost
++    # cancel scope
++    if anyio_backend_name == "asyncio":
++        with pytest.raises(ExceptionGroup) as exc:
++            async with create_task_group() as tg:
++                tg.start_soon(enter_scope, scope)
+ 
++        assert len(exc.value.exceptions) == 1
++        assert str(exc.value.exceptions[0]) == (
++            "Attempted to exit a cancel scope that isn't the current tasks's current "
++            "cancel scope"
++        )
++    else:
++        async with create_task_group() as tg:
++            tg.start_soon(enter_scope, scope)
++
+     with pytest.raises(ExceptionGroup) as exc:
+         async with create_task_group() as tg:
+             tg.start_soon(exit_scope, scope)
+@@ -2193,3 +2205,364 @@
+         assert str(handle.exception) == "dummy error"
+         assert handle.status is TaskHandle.Status.FAILED
+         await handle.wait()
++
++
++class TestStartSoonHandle:
++    async def test_return_value(self) -> None:
++        async def taskfunc(x: int, y: int) -> int:
++            return x + y
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(taskfunc, 2, 4)
++            assert isinstance(handle, TaskHandle)
++            assert handle.status is TaskHandle.Status.PENDING
++            with pytest.raises(TaskNotFinished, match="the task has not finished yet"):
++                handle.return_value  # noqa: B018
++
++            assert await handle == 6
++
++        assert handle.return_value == 6
++        assert handle.exception is None
++        assert handle.status is TaskHandle.Status.FINISHED
++
++    async def test_default_name(self) -> None:
++        async def taskfunc() -> str | None:
++            return get_current_task().name
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(taskfunc)
++            expected_name = (
++                f"{__name__}.TestStartSoonHandle.test_default_name.<locals>.taskfunc"
++            )
++            assert handle.name == expected_name
++            # The task's introspected name must match the handle's name
++            assert await handle == expected_name
++
++    async def test_custom_name(self) -> None:
++        async def taskfunc() -> str | None:
++            return get_current_task().name
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(taskfunc, name="custom name")
++            assert handle.name == "custom name"
++            assert await handle == "custom name"
++
++    async def test_cancel(self) -> None:
++        """Cancelling an individual task must not affect its siblings."""
++        sibling_finished = False
++
++        async def taskfunc() -> None:
++            await sleep_forever()
++
++        async def sibling() -> None:
++            nonlocal sibling_finished
++            await wait_all_tasks_blocked()
++            sibling_finished = True
++
++        async with create_task_group() as tg:
++            tg.start_soon(sibling)
++            handle = tg.start_soon(taskfunc)
++            await wait_all_tasks_blocked()
++            handle.cancel()
++            assert handle.status is TaskHandle.Status.CANCELLING
++            with pytest.raises(TaskCancelled, match="the task was cancelled"):
++                await handle
++
++        assert handle.status is TaskHandle.Status.CANCELLED
++        assert sibling_finished
++        assert not tg.cancel_scope.cancel_called
++
++    async def test_exception_delivered_to_task_group(self) -> None:
++        async def taskfunc() -> NoReturn:
++            raise RuntimeError("dummy error")
++
++        with pytest.RaisesGroup(pytest.RaisesExc(RuntimeError, match="dummy error")):
++            async with create_task_group() as tg:
++                handle = tg.start_soon(taskfunc)
++                with pytest.raises(TaskFailed, match="the task raised an exception"):
++                    await handle
++
++        assert handle.status is TaskHandle.Status.FAILED
++        assert isinstance(handle.exception, RuntimeError)
++
++    async def test_wait(self) -> None:
++        async def taskfunc() -> str:
++            return "return value"
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(taskfunc)
++            await handle.wait()
++            assert handle.status is TaskHandle.Status.FINISHED
++            assert handle.return_value == "return value"
++
++    async def test_start_value_is_none(self) -> None:
++        async def taskfunc() -> None:
++            pass
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(taskfunc)
++            assert handle.start_value is None
++
++    async def test_non_coroutine_callable(self) -> None:
++        """
++        Both backends must raise the same TypeError; previously trio raised its own
++        error saying the function "appears to be synchronous".
++        """
++
++        def sync_fn() -> None:
++            pass
++
++        funcname = (
++            f"{__name__}.TestStartSoonHandle.test_non_coroutine_callable."
++            f"<locals>.sync_fn"
++        )
++        async with create_task_group() as tg:
++            with pytest.raises(
++                TypeError,
++                match=(
++                    f"Expected {re.escape(funcname)}\\(\\) to return a coroutine, "
++                    f"but the return value \\(None\\) is not a coroutine object"
++                ),
++            ):
++                tg.start_soon(sync_fn)  # type: ignore[arg-type]
++
++    async def test_sync_callable_returning_coro(self) -> None:
++        """
++        A synchronous callable returning a coroutine object must still work, with the
++        synchronous part running in the calling task.
++        """
++        outer_task_id = get_current_task().id
++
++        async def taskfunc() -> str:
++            return "return value"
++
++        def wrapper() -> Coroutine[Any, Any, str]:
++            assert get_current_task().id == outer_task_id
++            return taskfunc()
++
++        async with create_task_group() as tg:
++            handle = tg.start_soon(wrapper)
++            assert await handle == "return value"
++
++    async def test_inactive_task_group(self) -> None:
++        async with create_task_group() as tg:
++            pass
++
++        with pytest.raises(
++            RuntimeError,
++            match="This task group is not active; no new tasks can be started",
++        ):
++            tg.start_soon(sleep, 0)
++
++
++class TestStartHandle:
++    async def test_default_returns_start_value(self) -> None:
++        """The default (no return_handle) behavior must remain unchanged."""
++
++        async def taskfunc(*, task_status: TaskStatus[str]) -> None:
++            task_status.started("start value")
++
++        async with create_task_group() as tg:
++            value = await tg.start(taskfunc)
++            assert value == "start value"
++            assert not isinstance(value, TaskHandle)
++
++    async def test_return_handle(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus[str]) -> str:
++            task_status.started("start value")
++            return "return value"
++
++        async with create_task_group() as tg:
++            handle = await tg.start(taskfunc, return_handle=True)
++            assert isinstance(handle, TaskHandle)
++            assert handle.start_value == "start value"
++            assert await handle == "return value"
++
++        assert handle.status is TaskHandle.Status.FINISHED
++
++    async def test_return_handle_no_start_value(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus) -> str:
++            task_status.started()
++            return "return value"
++
++        async with create_task_group() as tg:
++            handle = await tg.start(taskfunc, return_handle=True)
++            assert isinstance(handle, TaskHandle)
++            assert handle.start_value is None
++            assert await handle == "return value"
++
++    async def test_return_handle_cancel(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus) -> None:
++            task_status.started()
++            await sleep_forever()
++
++        async with create_task_group() as tg:
++            handle = await tg.start(taskfunc, return_handle=True)
++            handle.cancel()
++            with pytest.raises(TaskCancelled, match="the task was cancelled"):
++                await handle
++
++        assert handle.status is TaskHandle.Status.CANCELLED
++        assert not tg.cancel_scope.cancel_called
++
++    async def test_return_handle_crash_after_started_call(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus[int]) -> NoReturn:
++            task_status.started(2)
++            raise RuntimeError("dummy error")
++
++        with pytest.RaisesGroup(pytest.RaisesExc(RuntimeError, match="dummy error")):
++            async with create_task_group() as tg:
++                handle = await tg.start(taskfunc, return_handle=True)
++                assert handle.start_value == 2
++
++        assert handle.status is TaskHandle.Status.FAILED
++        assert isinstance(handle.exception, RuntimeError)
++
++    async def test_return_handle_crash_before_started_call(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus) -> NoReturn:
++            raise RuntimeError("dummy error")
++
++        async with create_task_group() as tg:
++            with pytest.raises(RuntimeError, match="dummy error"):
++                await tg.start(taskfunc, return_handle=True)
++
++    async def test_return_handle_task_name(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus) -> str | None:
++            task_status.started()
++            return get_current_task().name
++
++        async with create_task_group() as tg:
++            handle = await tg.start(taskfunc, return_handle=True)
++            expected_name = (
++                f"{__name__}.TestStartHandle.test_return_handle_task_name."
++                f"<locals>.taskfunc"
++            )
++            assert handle.name == expected_name
++            assert await handle == expected_name
++
++    async def test_inactive_task_group(self) -> None:
++        async def taskfunc(*, task_status: TaskStatus) -> None:
++            task_status.started()
++
++        async with create_task_group() as tg:
++            pass
++
++        with pytest.raises(
++            RuntimeError,
++            match="This task group is not active; no new tasks can be started",
++        ):
++            await tg.start(taskfunc, return_handle=True)
++
++
++class TestStartSyncCallable:
++    """
++    Tests for passing start() a synchronous callable that signals readiness by calling
++    ``task_status.started()`` before returning the coroutine to run.
++    """
++
++    async def test_started_before_coro_returned(self) -> None:
++        task_ran = False
++
++        async def taskfunc() -> str:
++            nonlocal task_ran
++            task_ran = True
++            return "return value"
++
++        def wrapper(
++            arg: str, *, task_status: TaskStatus[str]
++        ) -> Coroutine[Any, Any, str]:
++            task_status.started(f"started:{arg}")
++            return taskfunc()
++
++        async with create_task_group() as tg:
++            value = await tg.start(wrapper, "foo")
++            assert value == "started:foo"
++
++        assert task_ran
++
++    async def test_started_before_coro_returned_no_value(self) -> None:
++        async def taskfunc() -> None:
++            pass
++
++        def wrapper(*, task_status: TaskStatus) -> Coroutine[Any, Any, None]:
++            task_status.started()
++            return taskfunc()
++
++        async with create_task_group() as tg:
++            assert await tg.start(wrapper) is None
++
++    async def test_return_handle(self) -> None:
++        async def taskfunc() -> str:
++            return "return value"
++
++        def wrapper(*, task_status: TaskStatus[str]) -> Coroutine[Any, Any, str]:
++            task_status.started("start value")
++            return taskfunc()
++
++        async with create_task_group() as tg:
++            handle = await tg.start(wrapper, return_handle=True)
++            assert isinstance(handle, TaskHandle)
++            assert handle.start_value == "start value"
++            assert await handle == "return value"
++
++    async def test_started_called_twice(self) -> None:
++        """
++        Calling started() twice before returning the coroutine must raise a
++        RuntimeError out of start() instead of delivering it to the task group.
++        """
++
++        async def taskfunc() -> None:
++            pass
++
++        def wrapper(*, task_status: TaskStatus[int]) -> Coroutine[Any, Any, None]:
++            task_status.started(1)
++            task_status.started(2)
++            return taskfunc()
++
++        async with create_task_group() as tg:
++            with pytest.raises(
++                RuntimeError, match="called 'started' twice on the same task status"
++            ):
++                await tg.start(wrapper)
++
++    async def test_started_twice_in_task_after_sync_start(self) -> None:
++        """
++        A second started() call from within the spawned task must raise a RuntimeError
++        in the task, delivering it to the task group.
++        """
++        wrapper_status: TaskStatus[int] | None = None
++
++        async def taskfunc() -> None:
++            assert wrapper_status is not None
++            wrapper_status.started(2)
++
++        def wrapper(*, task_status: TaskStatus[int]) -> Coroutine[Any, Any, None]:
++            nonlocal wrapper_status
++            wrapper_status = task_status
++            task_status.started(1)
++            return taskfunc()
++
++        with pytest.RaisesGroup(
++            pytest.RaisesExc(
++                RuntimeError, match="called 'started' twice on the same task status"
++            )
++        ):
++            async with create_task_group() as tg:
++                assert await tg.start(wrapper) == 1
++
++    async def test_exception_in_task(self) -> None:
++        """
++        An exception raised by the task after a synchronous started() call must be
++        delivered to the task group.
++        """
++
++        async def taskfunc() -> NoReturn:
++            raise RuntimeError("dummy error")
++
++        def wrapper(*, task_status: TaskStatus) -> Coroutine[Any, Any, None]:
++            task_status.started()
++            return taskfunc()
++
++        with pytest.RaisesGroup(pytest.RaisesExc(RuntimeError, match="dummy error")):
++            async with create_task_group() as tg:
++                await tg.start(wrapper)
