@@ -1,0 +1,101 @@
+{
+  "task": "redis-async-maint-notifications",
+  "config": "fable+sonnet@cc-fanout",
+  "driver": "cc",
+  "lead_model": "claude-fable-5",
+  "sidekick_model": "claude-sonnet-5",
+  "score": {
+    "score": 0.9,
+    "passed": 6,
+    "total": 7,
+    "detail": "weighted checkpoints (task v1)",
+    "checkpoints": {
+      "handshake": true,
+      "timeout_relaxation": true,
+      "moving": true,
+      "pool": true,
+      "repro_test": true,
+      "self_consistent": false,
+      "existing_suite_regression": true
+    },
+    "modified_guarded_files": [],
+    "blockers": null,
+    "grader_pass": null,
+    "tails": {
+      "handshake": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "3 passed, 1 warning in 0.01s"
+      ],
+      "timeout_relaxation": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "3 passed, 1 warning in 0.01s"
+      ],
+      "moving": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "3 passed, 1 warning in 0.01s"
+      ],
+      "pool": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "1 passed, 1 warning in 0.01s"
+      ],
+      "self_consistent": [
+        "/private/var/folders/hj/_j2mx6hd7_b1_pnjzwkktlsr0000gn/T/grade-ramn-dtrqaqbo/agent/redis/asyncio/connection.py:695: ResourceWarning: unclosed Connection <redis.asyncio.connection.Connection(host=1.2.3.4,port=6379,db=0)>",
+        "  _warnings.warn(",
+        "ResourceWarning: Enable tracemalloc to get the object allocation traceback"
+      ],
+      "repro_test": [
+        "failures on pristine=999 vs own tree=2",
+        "1 warning, 2 errors in 0.25s"
+      ],
+      "existing_suite_regression": [
+        "",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "152 passed, 1 warning in 17.03s"
+      ]
+    }
+  },
+  "wall_seconds": 1238.9,
+  "error": null,
+  "lead_summary": "",
+  "transcript": "/Users/brianendo/Projects/sidekick-harness/results/redis-async-maint-notifications__fable+sonnet@cc-fanout__1784605988.transcript.jsonl",
+  "contamination_hits": [],
+  "cost_usd": 17.8959,
+  "tokens": {
+    "input": 296,
+    "output": 171476,
+    "cache_write": 608193,
+    "cache_read": 21170483
+  },
+  "lead_turns": 37,
+  "sidekick_turns": 113,
+  "lead_code_edits": 1,
+  "delegations": 2,
+  "first_delegation_turn": 36,
+  "refusals": 0,
+  "fallbacks_served": 0,
+  "by_role_model": {
+    "lead/claude-fable-5": {
+      "calls": 1,
+      "input_tokens": 70,
+      "output_tokens": 44563,
+      "cache_write_tokens": 203000,
+      "cache_read_tokens": 4792227,
+      "cost_usd": 9.5586
+    },
+    "sidekick/claude-sonnet-5": {
+      "calls": 1,
+      "input_tokens": 226,
+      "output_tokens": 126913,
+      "cache_write_tokens": 405193,
+      "cache_read_tokens": 16378256,
+      "cost_usd": 8.3373
+    }
+  },
+  "other_subagent_calls": 0,
+  "cc_reported_cost_usd": 11.7724663,
+  "agent_exit_code": 0
+}
