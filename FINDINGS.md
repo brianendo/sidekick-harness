@@ -2,7 +2,7 @@
 
 *2026-07-16 → 2026-07-20. A minimal replication and extension of Cognition's
 ["Making Fable cheaper than Opus"](https://cognition.com/blog/making-fable-cheaper-than-opus),
-run on tasks from the sibling [`rl-environments`](../rl-environments) project
+run on tasks from the sibling [`rl-environments`](https://github.com/brianendo/rl-environments) project
 (planted-truth worlds, verifier-owned graders). All agent runs via headless
 Claude Code on a Max subscription; costs are notional (API list prices applied
 to actual token usage). **Every cell below is n=1** — directional, not

@@ -26,7 +26,7 @@ metrics behind the result can be observed directly on any lead/sidekick pair.
 All cells are **n=1** (directional, not confirmatory — see
 [FINDINGS.md](FINDINGS.md) for full caveats and transcripts). Tasks are
 investigation-heavy planted-truth worlds from the sibling
-[`rl-environments`](../rl-environments) project; identical score across each
+[`rl-environments`](https://github.com/brianendo/rl-environments) project; identical score across each
 solo/delegation pair unless noted.
 
 **1. Delegation won on cost in 2 of 6 task pairs — and the preconditions are
@@ -180,7 +180,7 @@ are counted separately as `other_subagent_calls`.
 The built-in toy tasks are plumbing checks — too small for delegation
 patterns to differentiate (the blog itself notes delegation shows minimal
 benefit on short tasks). The real measurement runs on tasks from the sibling
-[`rl-environments`](../rl-environments) project: investigation-heavy worlds
+[`rl-environments`](https://github.com/brianendo/rl-environments) project: investigation-heavy worlds
 with a planted hidden truth, symptoms-only tickets, and shape-agnostic hidden
 graders. Any directory under `~/Projects/rl-environments/tasks/` (override
 with `RLENV_TASKS_DIR`) containing `task.md` + `world/` + `grade.py` is
