@@ -53,9 +53,19 @@ conclusion holds in a stronger form: on work that is serial all the way
 down, the lead keeps the accumulated context and outsources only the one
 task that benefits from fresh eyes.
 
+*A fourth mode:* on `redis-async-maint-notifications` (deep **additive**
+real-repo port), the lead investigated ~35 turns and then briefed **two
+sidekicks in adjacent messages — one implementing the port, one writing the
+hermetic test suite for it concurrently** ("being added by someone else, in
+parallel"). Implementation/test parallelism, unprompted. Its one observable
+cost: the two workstreams drifted slightly — 2 of the test sidekick's 43
+tests fail against the implementation sidekick's pool-edge behavior (the
+run's only lost checkpoint). Parallel briefs buy wall-clock and buy the
+lead out of both jobs, at a small integration-drift risk.
+
 ## 2. Delegation economics: it's where the tokens go, not unit depth
 
-All six solo-vs-delegation cost pairs, identical score (1.00 unless noted):
+All seven solo-vs-delegation cost pairs (scores 1.00 unless noted):
 
 | Task | Solo | Best delegation | Winner |
 |---|---|---|---|
@@ -65,6 +75,12 @@ All six solo-vs-delegation cost pairs, identical score (1.00 unless noted):
 | marketplace-q3-milestone (3 shallow epics, owned world) | **$4.58 / 8 min** | $5.73 @fanout / 10 min | solo |
 | marketplace-quarter-close (3 **deep** epics, owned world) | **$5.21 / 10 min** | $6.35 @fanout / 11 min | solo |
 | anyio-start-task-handles (1 deep **invasive** feature, real repo) | **$17.95 / 31 min** | $22.06 @fanout / 38 min | solo |
+| redis-async-maint-notifications (1 deep **additive** port, real repo) | $53.57 / 35 min | **$17.90 @fanout / 21 min (−67%)**, score 0.90¹ | **delegation** |
+
+¹ All hidden *contract* checkpoints pass in both runs; the 0.10 is the
+agent's-own-tests checkpoint (2/43 of the test-sidekick's tests fail against
+the impl-sidekick's pool-edge behavior — the integration-drift cost of the
+parallel impl/tests fan-out, see §1).
 
 Two laws died in sequence here. "Delegation benefit scales with task size"
 was falsified by the milestone row. Its replacement — "delegation pays when
@@ -105,14 +121,25 @@ exactly (105k vs 107k output), and the sidekick's $2.14 review — plus the
 lead-side tokens spent consuming it — was pure overhead at equal score.
 When the lead won't hand off the unit, the economics never get to run.
 
-So the delegation-wins regime, as currently mapped: **a unit that is deep
+So the delegation-wins regime: **a unit that is deep
 (discovery/iteration-heavy), additive (separable once diagnosed), and
-briefable as a contract** — pandera is the exemplar, celery the marginal
-case — while both shallow units (overhead dominates) and invasive units
-(the lead correctly keeps them) go to solo. Narrower than we hoped when
-setting out to "prove delegation is cheaper," and worth stating honestly:
-2 of 6 pairs favor delegation, and the structural preconditions are
-identifiable in advance.
+briefable as a contract** — while both shallow units (overhead dominates)
+and invasive units (the lead correctly keeps them) go to solo. 3 of 7 pairs
+favor delegation, and the preconditions are identifiable in advance.
+
+**The redis row is the law's prospective confirmation — its strongest
+evidence.** After quarter-close and anyio falsified two weaker versions of
+the law, `redis-async-maint-notifications` was *built to the sharpened
+law's precondition set* (port a subsystem to async beside its untouched
+sync twin: deep, discovery-heavy, additive, briefable as "match the sync
+semantics") with the prediction registered in its task.toml before any
+run. The prediction held, at the largest margin yet: **−67%** ($53.57 →
+$17.90) plus a 1.7× wall-clock win. The token decomposition is the law in
+one line: the solo lead burned **42M cache-read tokens ($42 of its $53.57)**
+accumulating and re-reading the port context at fable rates; the fanout
+lead read 4.8M ($4.79) and left the other 16.4M to the sidekick at
+sonnet's 10× cheaper cache rate. Delegation profits exactly on the context
+the lead never has to accumulate.
 
 Delegation retains two wins even where it costs more: **lead code edits**
 (milestone: 18 solo → 1 fan-out; quarter-close: 10 solo → 1) — the lead's
@@ -196,16 +223,15 @@ runs audited clean.
   structure+prompt) means every number above needs repeats before strong
   claims. The headline cells to repeat first: pandera@fanout,
   quarter-close@fanout, milestone@fanout.
-- **The delegation-wins side of the law rests on TWO pairs** (pandera −50%,
-  celery −$0.26) after two replication attempts landed solo-side for
-  structurally-diagnosable reasons (quarter-close: spec-transfer depth;
-  anyio: invasive unit, lead declined to hand off). Next probes, in order of
-  information value: (1) repeat pandera@fanout — the −50% is the load-bearing
-  cell and it is n=1; (2) harvest another deep **additive** real-repo
-  feature (new module/subsystem layer, clean seam after diagnosis) — the
-  regime the law now predicts delegation wins; (3) an opus-lead cell on
-  anyio to see whether weaker judgment delegates the invasive unit anyway,
-  and what that costs.
+- **The delegation-wins side now rests on THREE pairs** (redis −67%
+  prospective, pandera −50%, celery −$0.26) against four solo-side pairs
+  with structurally-diagnosable causes (shallow ×2, spec-transfer depth,
+  invasive unit). Next probes, in order of information value: (1) repeats
+  of the two headline cells (redis@fanout, pandera@fanout) — both n=1;
+  (2) an opus-lead cell on redis or anyio to see whether weaker judgment
+  delegates differently, and what that costs; (3) a fanout repeat on redis
+  to see whether the parallel impl/tests split (and its integration-drift
+  cost) recurs.
 - **anyio contamination note**: the fanout run's scanner hits were audited
   benign — the flagged `pip download anyio==4.11.0` fetched a release two
   minors OLDER than the world (cannot contain the fix; the unpinned
